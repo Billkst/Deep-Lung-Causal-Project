@@ -1,0 +1,18 @@
+# === 忽略数据文件 (防止上传过大文件) ===
+data/PANCAN/
+data/LUAD/
+data/*.csv
+data/*.txt
+data/*.gz
+
+# === 忽略 Python 缓存和环境 ===
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.hypothesis/
+.env
+.venv/
+conda_envs/
+
+# === 忽略 Kiro 的临时配置 (可选) ===
+.kiro/
