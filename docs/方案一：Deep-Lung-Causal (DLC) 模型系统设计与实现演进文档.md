@@ -188,3 +188,150 @@ $$\\text{Genetics} \= 0.5 \\cdot \\sum\_{i=1}^{20} \\text{Gene}\_i$$
    * Age 与 PM2.5 相关系数: \[r\]  
    * 交互场景下 EGFR 突变组的阳性率: \[X\]%  
 5. **产出文件:** 4 个 CSV 文件已保存。
+
+第五章：对比算法实验平台详细设计规范 (Baseline Implementation Specs)
+版本： V6.0 (2026 SOTA Edition) 适用范围： 全量对比算法复现 (Phase 1 - Phase 3) 核心变更： 全面引入 2024-2025 年 SOTA 模型 (TabR, HyperFast, TransTEE) 以适配顶级会议标准；保留 XGBoost 与 MOGONET；废弃 LR, Deep MLP, CEVAE。
+
+5.1 核心工程原则 (Engineering Principles)
+SOTA 优先原则 (SOTA First): 对比算法必须代表当前年份 (2024-2026) 或该领域的绝对经典 (Classic Anchor) 水平，确保实验具备顶级说服力。
+
+官方数据验证原则 (Official Benchmark First):
+
+所有算法必须优先在官方/标准数据集上通过性能验收（Accuracy/AUC/PEHE 达标），方可用于 DLC 项目。
+
+严禁使用生成的假数据进行逻辑验证。
+
+单卡适配原则 (Hardware Adaptation):
+
+所有模型设计必须适配单卡 RTX 3090 (24GB VRAM) 环境。
+
+针对显存占用较高的 Transformer 类模型 (TabR, TransTEE)，需提供 Batch Size 调优建议或梯度累积策略。
+
+严格的可复现性: 全局随机种子 RANDOM_SEED = 42。
+
+5.2 模块架构详设 (src/baselines/)
+5.2.1 抽象基类 (base_model.py)
+统一接口: 定义 fit(X, y), predict(X), predict_proba(X), evaluate(X, y)。
+
+参数管理: 实现 get_params() 和 set_params()。
+
+5.2.2 Phase 1: 经典机器学习基线
+1. XGBoost (xgb_baseline.py)
+
+定位: 表格数据经典锚点 (Classic Anchor)。
+
+实现细节:
+
+集成 Early Stopping，必须从训练集中划分 Internal Validation Set (10%-20%)，严禁使用测试集泄露。
+
+验证数据: UCI Breast Cancer (sklearn 内置)。
+
+验收标准: Accuracy > 0.95。
+
+5.2.3 Phase 2: 表格与图网络 SOTA (深度学习)
+2. TabR (tabr_baseline.py) - 2024 ICLR
+
+定位: 表格数据 SOTA (Retrieval-augmented Transformer)。
+
+实现细节:
+
+实现 Retrieval Component：基于 k-NN 构建 Context Set。
+
+实现 Transformer Encoder：融合 Query 和 Context 特征。
+
+验证数据: UCI Breast Cancer (sklearn 内置)。
+
+验收标准: Accuracy > 0.95 (需持平或优于 XGBoost)。
+
+3. HyperFast (hyperfast_baseline.py) - 2024 NeurIPS
+
+定位: 小样本表格数据 SOTA (Meta-learning Foundation Model)。
+
+实现细节:
+
+实现 Hypernetwork：根据数据集统计信息动态生成主网络权重。
+
+支持秒级推理 (In-context Inference)。
+
+验证数据: UCI Breast Cancer (sklearn 内置)。
+
+验收标准: Accuracy > 0.93 (Zero-shot/Few-shot 场景下的高标准)。
+
+4. MOGONET (mogonet_baseline.py) - 2021 Nat. Comm.
+
+定位: 多组学图融合基线 (Multi-omics Graph SOTA)。
+
+数据加载 (ROSMAPDataset):
+
+路径: data/baselines_official/ROSMAP/
+
+关键逻辑: 必须读取 1_tr.csv, 1_te.csv 等 8 个文件，并使用 pd.concat 将训练集和测试集合并，以便后续统一使用 Seed=42 进行划分。
+
+实现细节: VCDN (View Correlation Discovery Network) 模块。
+
+验证数据: ROSMAP (需手动下载)。
+
+验收标准: Accuracy > 0.80。
+
+5.2.4 Phase 3: 因果推断 SOTA
+5. TransTEE (transtee_baseline.py) - 2022 ICLR
+
+定位: 基于 Transformer 的因果效应估算 SOTA (替代 CEVAE)。
+
+实现细节:
+
+使用 Transformer Encoder 提取协变量特征，捕捉高阶交互。
+
+采用双头结构 (Target Heads) 分别预测 Control/Treatment group 结果。
+
+验证数据: IHDP (Infant Health and Development Program)。
+
+路径: data/baselines_official/IHDP/ihdp_npci_1.csv (仅使用第一次模拟数据验证代码)。
+
+验收标准: PEHE Error < 0.6 (显著优于传统方法的 ~2.0+)。
+
+5.3 官方数据集管理规范 (Data Management)
+所有非内置数据集必须严格遵循以下目录结构，若文件缺失，代码必须抛出 FileNotFoundError 并终止运行。
+
+Plaintext
+
+Project_1/
+└── data/
+    └── baselines_official/
+        ├── ROSMAP/          # 供 MOGONET 使用
+        │   ├── 1_tr.csv, 1_te.csv
+        │   ├── 2_tr.csv, 2_te.csv
+        │   ├── 3_tr.csv, 3_te.csv
+        │   └── labels_tr.csv, labels_te.csv
+        └── IHDP/            # 供 TransTEE 使用
+            └── ihdp_npci_1.csv
+5.4 验证与执行工作流 (Execution Workflows)
+5.4.1 Stage A: 官方基准验证脚本 (tests/verify_baselines_official.py)
+必须包含以下 5 个独立测试函数：
+
+test_xgboost_on_breast_cancer: 验证 XGB 准确率 > 0.95。
+
+test_tabr_on_breast_cancer: 验证 TabR 准确率 > 0.95。
+
+test_hyperfast_on_breast_cancer: 验证 HyperFast 准确率 > 0.93。
+
+test_mogonet_on_rosmap:
+
+检查 ROSMAP 8 个文件是否存在。
+
+验证 pd.concat 合并后的数据维度是否正确。
+
+验证训练后准确率 > 0.80。
+
+test_transtee_on_ihdp:
+
+检查 ihdp_npci_1.csv 是否存在。
+
+验证 PEHE Error < 0.6。
+
+5.4.2 Stage B: DLC 全量评估脚本 (src/run_baselines_dlc.py)
+输入: data/pancan_synthetic_interaction.csv (Pre-training Data)。
+
+流程: 统一加载数据 -> 8:1:1 划分 -> 依次运行 5 个模型 -> 输出 Markdown 汇总表。
+
+输出: 包含 Accuracy, AUC, F1 (分类模型) 和 PEHE/ATE (因果模型) 的综合报告。

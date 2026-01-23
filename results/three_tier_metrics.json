@@ -1,0 +1,232 @@
+{
+  "tier1_general_performance": {
+    "experiment_a": {
+      "XGBoost": {
+        "accuracy": 0.6346153846153846,
+        "precision": 0.6111111111111112,
+        "recall": 0.4782608695652174,
+        "f1_binary": 0.5365853658536586,
+        "f1_macro": 0.6174990321331785,
+        "f1_weighted": 0.6268352243962,
+        "auc_roc": 0.785607196401799
+      },
+      "TabR": {
+        "accuracy": 0.7307692307692307,
+        "precision": 0.7142857142857143,
+        "recall": 0.6521739130434783,
+        "f1_binary": 0.6818181818181818,
+        "f1_macro": 0.7242424242424242,
+        "f1_weighted": 0.7291375291375292,
+        "auc_roc": 0.8020989505247376
+      },
+      "HyperFast": {
+        "accuracy": 0.4423076923076923,
+        "precision": 0.4423076923076923,
+        "recall": 1.0,
+        "f1_binary": 0.6133333333333333,
+        "f1_macro": 0.30666666666666664,
+        "f1_weighted": 0.27128205128205124,
+        "auc_roc": 0.5
+      },
+      "MOGONET": {
+        "accuracy": 0.75,
+        "precision": 0.6785714285714286,
+        "recall": 0.8260869565217391,
+        "f1_binary": 0.7450980392156863,
+        "f1_macro": 0.7499075101738809,
+        "f1_weighted": 0.7504624491305957,
+        "auc_roc": 0.8500749625187407
+      }
+    },
+    "experiment_b": {
+      "XGBoost": {
+        "accuracy": 0.75,
+        "precision": 0.8125,
+        "recall": 0.5652173913043478,
+        "f1_binary": 0.6666666666666666,
+        "f1_macro": 0.7333333333333334,
+        "f1_weighted": 0.741025641025641,
+        "auc_roc": 0.8635682158920539
+      },
+      "TabR": {
+        "accuracy": 0.7115384615384616,
+        "precision": 0.7,
+        "recall": 0.6086956521739131,
+        "f1_binary": 0.6511627906976745,
+        "f1_macro": 0.7026305756767061,
+        "f1_weighted": 0.7085691662512097,
+        "auc_roc": 0.8095952023988006
+      },
+      "HyperFast": {
+        "accuracy": 0.4423076923076923,
+        "precision": 0.4423076923076923,
+        "recall": 1.0,
+        "f1_binary": 0.6133333333333333,
+        "f1_macro": 0.30666666666666664,
+        "f1_weighted": 0.27128205128205124,
+        "auc_roc": 0.5
+      },
+      "MOGONET": {
+        "accuracy": 0.7307692307692307,
+        "precision": 0.8461538461538461,
+        "recall": 0.4782608695652174,
+        "f1_binary": 0.6111111111111112,
+        "f1_macro": 0.7026143790849673,
+        "f1_weighted": 0.7131724484665661,
+        "auc_roc": 0.8395802098950524
+      }
+    }
+  },
+  "tier2_egfr_mechanism": {
+    "experiment_a": {
+      "XGBoost": {
+        "recall_egfr_mutant": 0.0,
+        "recall_egfr_wild": 0.4782608695652174,
+        "delta_recall": -0.4782608695652174,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      },
+      "TabR": {
+        "recall_egfr_mutant": 0.0,
+        "recall_egfr_wild": 0.6521739130434783,
+        "delta_recall": -0.6521739130434783,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      },
+      "HyperFast": {
+        "recall_egfr_mutant": 0.0,
+        "recall_egfr_wild": 1.0,
+        "delta_recall": -1.0,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      },
+      "MOGONET": {
+        "recall_egfr_mutant": 0.0,
+        "recall_egfr_wild": 0.8260869565217391,
+        "delta_recall": -0.8260869565217391,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      },
+      "TransTEE": {
+        "mean_ite_egfr_mutant": -0.001939359470270574,
+        "mean_ite_egfr_wild": 0.04451483488082886,
+        "delta_cate_egfr": -0.04645419493317604,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      }
+    },
+    "experiment_b": {
+      "XGBoost": {
+        "recall_egfr_mutant": 0.0,
+        "recall_egfr_wild": 0.5652173913043478,
+        "delta_recall": -0.5652173913043478,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      },
+      "TabR": {
+        "recall_egfr_mutant": 0.0,
+        "recall_egfr_wild": 0.6086956521739131,
+        "delta_recall": -0.6086956521739131,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      },
+      "HyperFast": {
+        "recall_egfr_mutant": 0.0,
+        "recall_egfr_wild": 1.0,
+        "delta_recall": -1.0,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      },
+      "MOGONET": {
+        "recall_egfr_mutant": 0.0,
+        "recall_egfr_wild": 0.4782608695652174,
+        "delta_recall": -0.4782608695652174,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      },
+      "TransTEE": {
+        "mean_ite_egfr_mutant": 0.04157673567533493,
+        "mean_ite_egfr_wild": 0.08975327014923096,
+        "delta_cate_egfr": -0.04817653447389603,
+        "n_egfr_mutant": 7,
+        "n_egfr_wild": 45
+      }
+    }
+  },
+  "tier3_tp53_negative_control": {
+    "experiment_a": {
+      "XGBoost": {
+        "recall_tp53_mutant": 0.5555555555555556,
+        "recall_tp53_wild": 0.2,
+        "delta_recall": 0.35555555555555557,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      },
+      "TabR": {
+        "recall_tp53_mutant": 0.7777777777777778,
+        "recall_tp53_wild": 0.2,
+        "delta_recall": 0.5777777777777777,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      },
+      "HyperFast": {
+        "recall_tp53_mutant": 1.0,
+        "recall_tp53_wild": 1.0,
+        "delta_recall": 0.0,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      },
+      "MOGONET": {
+        "recall_tp53_mutant": 0.8888888888888888,
+        "recall_tp53_wild": 0.6,
+        "delta_recall": 0.28888888888888886,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      },
+      "TransTEE": {
+        "mean_ite_tp53_mutant": 0.01572548970580101,
+        "mean_ite_tp53_wild": 0.06667620688676834,
+        "delta_cate_tp53": -0.05095071718096733,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      }
+    },
+    "experiment_b": {
+      "XGBoost": {
+        "recall_tp53_mutant": 0.6666666666666666,
+        "recall_tp53_wild": 0.2,
+        "delta_recall": 0.4666666666666666,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      },
+      "TabR": {
+        "recall_tp53_mutant": 0.6666666666666666,
+        "recall_tp53_wild": 0.4,
+        "delta_recall": 0.2666666666666666,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      },
+      "HyperFast": {
+        "recall_tp53_mutant": 1.0,
+        "recall_tp53_wild": 1.0,
+        "delta_recall": 0.0,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      },
+      "MOGONET": {
+        "recall_tp53_mutant": 0.5555555555555556,
+        "recall_tp53_wild": 0.2,
+        "delta_recall": 0.35555555555555557,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      },
+      "TransTEE": {
+        "mean_ite_tp53_mutant": 0.0986475870013237,
+        "mean_ite_tp53_wild": 0.06387627869844437,
+        "delta_cate_tp53": 0.034771308302879333,
+        "n_tp53_mutant": 29,
+        "n_tp53_wild": 23
+      }
+    }
+  }
+}

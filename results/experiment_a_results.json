@@ -1,0 +1,60 @@
+{
+  "experiment": "A",
+  "description": "Small Sample Baseline (LUAD Only)",
+  "dataset": {
+    "train": "luad_synthetic_interaction (train split)",
+    "test": "luad_synthetic_interaction (test split)",
+    "split_ratio": "8:1:1",
+    "seed": 42
+  },
+  "models": {
+    "XGBoost": {
+      "accuracy": 0.6346153846153846,
+      "precision": 0.6111111111111112,
+      "recall": 0.4782608695652174,
+      "f1": 0.5365853658536586,
+      "auc_roc": 0.785607196401799,
+      "train_time": 55.43198537826538,
+      "inference_time": 0.21955418586730957,
+      "status": "success"
+    },
+    "TabR": {
+      "accuracy": 0.7307692307692307,
+      "precision": 0.7142857142857143,
+      "recall": 0.6521739130434783,
+      "f1": 0.6818181818181818,
+      "auc_roc": 0.8020989505247376,
+      "train_time": 12.535904884338379,
+      "inference_time": 0.136244535446167,
+      "status": "success"
+    },
+    "HyperFast": {
+      "accuracy": 0.4423076923076923,
+      "precision": 0.4423076923076923,
+      "recall": 1.0,
+      "f1": 0.6133333333333333,
+      "auc_roc": 0.5,
+      "train_time": 3.419665575027466,
+      "inference_time": 0.028516054153442383,
+      "status": "success"
+    },
+    "MOGONET": {
+      "accuracy": 0.75,
+      "precision": 0.6785714285714286,
+      "recall": 0.8260869565217391,
+      "f1": 0.7450980392156863,
+      "auc_roc": 0.8500749625187407,
+      "train_time": 2.993342161178589,
+      "inference_time": 0.041649818420410156,
+      "status": "success"
+    },
+    "TransTEE": {
+      "ate": 0.038261380046606064,
+      "ite_mean": 0.038261380046606064,
+      "ite_std": 0.28845617175102234,
+      "train_time": 1.1495254039764404,
+      "inference_time": 0.003199338912963867,
+      "status": "success"
+    }
+  }
+}

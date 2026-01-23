@@ -1,0 +1,315 @@
+INFO:src.baselines.tabr_baseline:开始训练 TabR 模型...
+INFO:src.baselines.tabr_baseline:数据划分：训练集 436 样本，验证集 77 样本
+INFO:src.baselines.tabr_baseline:检索池构建完成：436 个样本，k=5
+
+Training TabR:   0%|          | 0/30 [00:00<?, ?it/s]
+Training TabR:   0%|          | 0/30 [00:00<?, ?it/s, train_loss=0.5596, val_loss=0.5105]
+Training TabR:   3%|▎         | 1/30 [00:00<00:26,  1.09it/s, train_loss=0.5596, val_loss=0.5105]
+Training TabR:   3%|▎         | 1/30 [00:01<00:26,  1.09it/s, train_loss=0.4741, val_loss=0.5162]
+Training TabR:   7%|▋         | 2/30 [00:01<00:21,  1.32it/s, train_loss=0.4741, val_loss=0.5162]
+Training TabR:   7%|▋         | 2/30 [00:02<00:21,  1.32it/s, train_loss=0.4477, val_loss=0.5429]
+Training TabR:  10%|█         | 3/30 [00:02<00:19,  1.39it/s, train_loss=0.4477, val_loss=0.5429]
+Training TabR:  10%|█         | 3/30 [00:02<00:19,  1.39it/s, train_loss=0.4160, val_loss=0.5622]
+Training TabR:  13%|█▎        | 4/30 [00:02<00:18,  1.44it/s, train_loss=0.4160, val_loss=0.5622]
+Training TabR:  13%|█▎        | 4/30 [00:03<00:18,  1.44it/s, train_loss=0.3764, val_loss=0.5978]
+Training TabR:  17%|█▋        | 5/30 [00:03<00:17,  1.44it/s, train_loss=0.3764, val_loss=0.5978]
+Training TabR:  17%|█▋        | 5/30 [00:04<00:17,  1.44it/s, train_loss=0.3441, val_loss=0.6192]
+Training TabR:  20%|██        | 6/30 [00:04<00:15,  1.50it/s, train_loss=0.3441, val_loss=0.6192]
+Training TabR:  20%|██        | 6/30 [00:04<00:15,  1.50it/s, train_loss=0.3172, val_loss=0.6427]
+Training TabR:  23%|██▎       | 7/30 [00:04<00:15,  1.45it/s, train_loss=0.3172, val_loss=0.6427]
+Training TabR:  23%|██▎       | 7/30 [00:05<00:15,  1.45it/s, train_loss=0.2928, val_loss=0.7550]
+Training TabR:  27%|██▋       | 8/30 [00:05<00:15,  1.40it/s, train_loss=0.2928, val_loss=0.7550]
+Training TabR:  27%|██▋       | 8/30 [00:06<00:15,  1.40it/s, train_loss=0.2553, val_loss=0.7865]
+Training TabR:  30%|███       | 9/30 [00:06<00:15,  1.39it/s, train_loss=0.2553, val_loss=0.7865]
+Training TabR:  30%|███       | 9/30 [00:07<00:15,  1.39it/s, train_loss=0.2330, val_loss=0.7923]
+Training TabR:  33%|███▎      | 10/30 [00:07<00:14,  1.38it/s, train_loss=0.2330, val_loss=0.7923]
+Training TabR:  33%|███▎      | 10/30 [00:07<00:14,  1.38it/s, train_loss=0.2257, val_loss=0.8816]INFO:src.baselines.tabr_baseline:Early Stopping 触发，在 Epoch 11 停止训练
+
+Training TabR:  33%|███▎      | 10/30 [00:07<00:15,  1.27it/s, train_loss=0.2257, val_loss=0.8816]
+INFO:src.baselines.tabr_baseline:TabR 模型训练完成
+
+Training HyperFast:   0%|          | 0/30 [00:00<?, ?it/s]
+Training HyperFast:   0%|          | 0/30 [00:00<?, ?it/s, train_loss=9035.5852, val_loss=884.5934]
+Training HyperFast:   3%|▎         | 1/30 [00:00<00:07,  4.06it/s, train_loss=9035.5852, val_loss=884.5934]
+Training HyperFast:   3%|▎         | 1/30 [00:00<00:07,  4.06it/s, train_loss=423.9642, val_loss=50.7122]  
+Training HyperFast:   7%|▋         | 2/30 [00:00<00:06,  4.07it/s, train_loss=423.9642, val_loss=50.7122]
+Training HyperFast:   7%|▋         | 2/30 [00:00<00:06,  4.07it/s, train_loss=175.0770, val_loss=19.5971]
+Training HyperFast:  10%|█         | 3/30 [00:00<00:06,  4.10it/s, train_loss=175.0770, val_loss=19.5971]
+Training HyperFast:  10%|█         | 3/30 [00:00<00:06,  4.10it/s, train_loss=87.9131, val_loss=10.8991] 
+Training HyperFast:  13%|█▎        | 4/30 [00:00<00:06,  4.12it/s, train_loss=87.9131, val_loss=10.8991]
+Training HyperFast:  13%|█▎        | 4/30 [00:01<00:06,  4.12it/s, train_loss=34.4181, val_loss=4.0593] 
+Training HyperFast:  17%|█▋        | 5/30 [00:01<00:06,  4.12it/s, train_loss=34.4181, val_loss=4.0593]
+Training HyperFast:  17%|█▋        | 5/30 [00:01<00:06,  4.12it/s, train_loss=31.0203, val_loss=1.9350]
+Training HyperFast:  20%|██        | 6/30 [00:01<00:05,  4.13it/s, train_loss=31.0203, val_loss=1.9350]
+Training HyperFast:  20%|██        | 6/30 [00:01<00:05,  4.13it/s, train_loss=30.9907, val_loss=1.4364]
+Training HyperFast:  23%|██▎       | 7/30 [00:01<00:05,  4.13it/s, train_loss=30.9907, val_loss=1.4364]
+Training HyperFast:  23%|██▎       | 7/30 [00:01<00:05,  4.13it/s, train_loss=13.4155, val_loss=0.7948]
+Training HyperFast:  27%|██▋       | 8/30 [00:01<00:05,  4.13it/s, train_loss=13.4155, val_loss=0.7948]
+Training HyperFast:  27%|██▋       | 8/30 [00:02<00:05,  4.13it/s, train_loss=9.3741, val_loss=0.7540] 
+Training HyperFast:  30%|███       | 9/30 [00:02<00:05,  4.13it/s, train_loss=9.3741, val_loss=0.7540]
+Training HyperFast:  30%|███       | 9/30 [00:02<00:05,  4.13it/s, train_loss=9.1377, val_loss=0.6656]
+Training HyperFast:  33%|███▎      | 10/30 [00:02<00:05,  3.87it/s, train_loss=9.1377, val_loss=0.6656]
+Training HyperFast:  33%|███▎      | 10/30 [00:02<00:05,  3.87it/s, train_loss=7.8827, val_loss=0.6696]
+Training HyperFast:  37%|███▋      | 11/30 [00:02<00:05,  3.66it/s, train_loss=7.8827, val_loss=0.6696]
+Training HyperFast:  37%|███▋      | 11/30 [00:03<00:05,  3.66it/s, train_loss=3.1934, val_loss=0.8975]
+Training HyperFast:  40%|████      | 12/30 [00:03<00:04,  3.73it/s, train_loss=3.1934, val_loss=0.8975]
+Training HyperFast:  40%|████      | 12/30 [00:03<00:04,  3.73it/s, train_loss=4.1468, val_loss=0.7064]
+Training HyperFast:  43%|████▎     | 13/30 [00:03<00:04,  3.81it/s, train_loss=4.1468, val_loss=0.7064]
+Training HyperFast:  43%|████▎     | 13/30 [00:03<00:04,  3.81it/s, train_loss=1.3464, val_loss=0.7092]
+Training HyperFast:  47%|████▋     | 14/30 [00:03<00:04,  3.92it/s, train_loss=1.3464, val_loss=0.7092]
+Training HyperFast:  47%|████▋     | 14/30 [00:03<00:04,  3.92it/s, train_loss=1.1152, val_loss=0.7061]
+Training HyperFast:  50%|█████     | 15/30 [00:03<00:03,  3.98it/s, train_loss=1.1152, val_loss=0.7061]
+Training HyperFast:  50%|█████     | 15/30 [00:04<00:03,  3.98it/s, train_loss=1.9037, val_loss=0.7325]
+Training HyperFast:  53%|█████▎    | 16/30 [00:04<00:03,  3.99it/s, train_loss=1.9037, val_loss=0.7325]
+Training HyperFast:  53%|█████▎    | 16/30 [00:04<00:03,  3.99it/s, train_loss=1.2221, val_loss=0.7153]
+Training HyperFast:  57%|█████▋    | 17/30 [00:04<00:03,  4.03it/s, train_loss=1.2221, val_loss=0.7153]
+Training HyperFast:  57%|█████▋    | 17/30 [00:04<00:03,  4.03it/s, train_loss=1.1390, val_loss=0.7197]
+Training HyperFast:  60%|██████    | 18/30 [00:04<00:02,  4.04it/s, train_loss=1.1390, val_loss=0.7197]
+Training HyperFast:  60%|██████    | 18/30 [00:04<00:02,  4.04it/s, train_loss=1.4496, val_loss=0.7258]
+Training HyperFast:  63%|██████▎   | 19/30 [00:04<00:02,  4.09it/s, train_loss=1.4496, val_loss=0.7258]
+Training HyperFast:  63%|██████▎   | 19/30 [00:04<00:02,  4.09it/s, train_loss=1.0955, val_loss=0.6902]
+Training HyperFast:  63%|██████▎   | 19/30 [00:04<00:02,  3.80it/s, train_loss=1.0955, val_loss=0.6902]
+
+Training MOGONET:   0%|          | 0/30 [00:00<?, ?it/s]
+Training MOGONET:   0%|          | 0/30 [00:00<?, ?it/s, train_loss=0.6965]
+Training MOGONET:   3%|▎         | 1/30 [00:00<00:03,  7.44it/s, train_loss=0.6965]
+Training MOGONET:   3%|▎         | 1/30 [00:00<00:03,  7.44it/s, train_loss=0.6948]
+Training MOGONET:   3%|▎         | 1/30 [00:00<00:03,  7.44it/s, train_loss=0.6935]
+Training MOGONET:   3%|▎         | 1/30 [00:00<00:03,  7.44it/s, train_loss=0.6915]
+Training MOGONET:   3%|▎         | 1/30 [00:00<00:03,  7.44it/s, train_loss=0.6905]
+Training MOGONET:   3%|▎         | 1/30 [00:00<00:03,  7.44it/s, train_loss=0.6905, val_loss=0.6896, val_acc=0.7143]
+Training MOGONET:  17%|█▋        | 5/30 [00:00<00:01, 21.90it/s, train_loss=0.6905, val_loss=0.6896, val_acc=0.7143]
+Training MOGONET:  17%|█▋        | 5/30 [00:00<00:01, 21.90it/s, train_loss=0.6880]                                 
+Training MOGONET:  17%|█▋        | 5/30 [00:00<00:01, 21.90it/s, train_loss=0.6836]
+Training MOGONET:  17%|█▋        | 5/30 [00:00<00:01, 21.90it/s, train_loss=0.6817]
+Training MOGONET:  17%|█▋        | 5/30 [00:00<00:01, 21.90it/s, train_loss=0.6782]
+Training MOGONET:  17%|█▋        | 5/30 [00:00<00:01, 21.90it/s, train_loss=0.6719]
+Training MOGONET:  17%|█▋        | 5/30 [00:00<00:01, 21.90it/s, train_loss=0.6719, val_loss=0.6778, val_acc=0.6883]
+Training MOGONET:  33%|███▎      | 10/30 [00:00<00:00, 32.72it/s, train_loss=0.6719, val_loss=0.6778, val_acc=0.6883]
+Training MOGONET:  33%|███▎      | 10/30 [00:00<00:00, 32.72it/s, train_loss=0.6679]                                 
+Training MOGONET:  33%|███▎      | 10/30 [00:00<00:00, 32.72it/s, train_loss=0.6620]
+Training MOGONET:  33%|███▎      | 10/30 [00:00<00:00, 32.72it/s, train_loss=0.6545]
+Training MOGONET:  33%|███▎      | 10/30 [00:00<00:00, 32.72it/s, train_loss=0.6448]
+Training MOGONET:  33%|███▎      | 10/30 [00:00<00:00, 32.72it/s, train_loss=0.6371]
+Training MOGONET:  33%|███▎      | 10/30 [00:00<00:00, 32.72it/s, train_loss=0.6371, val_loss=0.6530, val_acc=0.6753]
+Training MOGONET:  50%|█████     | 15/30 [00:00<00:00, 38.17it/s, train_loss=0.6371, val_loss=0.6530, val_acc=0.6753]
+Training MOGONET:  50%|█████     | 15/30 [00:00<00:00, 38.17it/s, train_loss=0.6290]                                 
+Training MOGONET:  50%|█████     | 15/30 [00:00<00:00, 38.17it/s, train_loss=0.6146]
+Training MOGONET:  50%|█████     | 15/30 [00:00<00:00, 38.17it/s, train_loss=0.6001]
+Training MOGONET:  50%|█████     | 15/30 [00:00<00:00, 38.17it/s, train_loss=0.5908]
+Training MOGONET:  50%|█████     | 15/30 [00:00<00:00, 38.17it/s, train_loss=0.5735]
+Training MOGONET:  50%|█████     | 15/30 [00:00<00:00, 38.17it/s, train_loss=0.5735, val_loss=0.6099, val_acc=0.6883]
+Training MOGONET:  67%|██████▋   | 20/30 [00:00<00:00, 41.44it/s, train_loss=0.5735, val_loss=0.6099, val_acc=0.6883]
+Training MOGONET:  67%|██████▋   | 20/30 [00:00<00:00, 41.44it/s, train_loss=0.5618]                                 
+Training MOGONET:  67%|██████▋   | 20/30 [00:00<00:00, 41.44it/s, train_loss=0.5413]
+Training MOGONET:  67%|██████▋   | 20/30 [00:00<00:00, 41.44it/s, train_loss=0.5141]
+Training MOGONET:  67%|██████▋   | 20/30 [00:00<00:00, 41.44it/s, train_loss=0.5247]
+Training MOGONET:  67%|██████▋   | 20/30 [00:00<00:00, 41.44it/s, train_loss=0.5008]
+Training MOGONET:  67%|██████▋   | 20/30 [00:00<00:00, 41.44it/s, train_loss=0.5008, val_loss=0.5694, val_acc=0.7532]
+Training MOGONET:  83%|████████▎ | 25/30 [00:00<00:00, 43.56it/s, train_loss=0.5008, val_loss=0.5694, val_acc=0.7532]
+Training MOGONET:  83%|████████▎ | 25/30 [00:00<00:00, 43.56it/s, train_loss=0.5109]                                 
+Training MOGONET:  83%|████████▎ | 25/30 [00:00<00:00, 43.56it/s, train_loss=0.5046]
+Training MOGONET:  83%|████████▎ | 25/30 [00:00<00:00, 43.56it/s, train_loss=0.4933]
+Training MOGONET:  83%|████████▎ | 25/30 [00:00<00:00, 43.56it/s, train_loss=0.4986]
+Training MOGONET:  83%|████████▎ | 25/30 [00:00<00:00, 43.56it/s, train_loss=0.4848]
+Training MOGONET:  83%|████████▎ | 25/30 [00:00<00:00, 43.56it/s, train_loss=0.4848, val_loss=0.5717, val_acc=0.7403]
+Training MOGONET: 100%|██████████| 30/30 [00:00<00:00, 44.45it/s, train_loss=0.4848, val_loss=0.5717, val_acc=0.7403]
+Training MOGONET: 100%|██████████| 30/30 [00:00<00:00, 38.39it/s, train_loss=0.4848, val_loss=0.5717, val_acc=0.7403]
+
+Training TransTEE:   0%|          | 0/30 [00:00<?, ?it/s]
+Training TransTEE:   0%|          | 0/30 [00:00<?, ?it/s, train_loss=0.2809, val_loss=0.1917]
+Training TransTEE:   3%|▎         | 1/30 [00:00<00:06,  4.69it/s, train_loss=0.2809, val_loss=0.1917]
+Training TransTEE:   3%|▎         | 1/30 [00:00<00:06,  4.69it/s, train_loss=0.1712, val_loss=0.1819]
+Training TransTEE:   7%|▋         | 2/30 [00:00<00:05,  5.27it/s, train_loss=0.1712, val_loss=0.1819]
+Training TransTEE:   7%|▋         | 2/30 [00:00<00:05,  5.27it/s, train_loss=0.1312, val_loss=0.1228]
+Training TransTEE:  10%|█         | 3/30 [00:00<00:04,  5.47it/s, train_loss=0.1312, val_loss=0.1228]
+Training TransTEE:  10%|█         | 3/30 [00:00<00:04,  5.47it/s, train_loss=0.0999, val_loss=0.1246]
+Training TransTEE:  13%|█▎        | 4/30 [00:00<00:04,  5.62it/s, train_loss=0.0999, val_loss=0.1246]
+Training TransTEE:  13%|█▎        | 4/30 [00:00<00:04,  5.62it/s, train_loss=0.0924, val_loss=0.1138]
+Training TransTEE:  17%|█▋        | 5/30 [00:00<00:04,  5.68it/s, train_loss=0.0924, val_loss=0.1138]
+Training TransTEE:  17%|█▋        | 5/30 [00:01<00:04,  5.68it/s, train_loss=0.0718, val_loss=0.1177]
+Training TransTEE:  20%|██        | 6/30 [00:01<00:04,  5.65it/s, train_loss=0.0718, val_loss=0.1177]
+Training TransTEE:  20%|██        | 6/30 [00:01<00:04,  5.65it/s, train_loss=0.0682, val_loss=0.1203]
+Training TransTEE:  23%|██▎       | 7/30 [00:01<00:04,  5.69it/s, train_loss=0.0682, val_loss=0.1203]
+Training TransTEE:  23%|██▎       | 7/30 [00:01<00:04,  5.69it/s, train_loss=0.0538, val_loss=0.0963]
+Training TransTEE:  27%|██▋       | 8/30 [00:01<00:03,  5.68it/s, train_loss=0.0538, val_loss=0.0963]
+Training TransTEE:  27%|██▋       | 8/30 [00:01<00:03,  5.68it/s, train_loss=0.0432, val_loss=0.0848]
+Training TransTEE:  30%|███       | 9/30 [00:01<00:03,  5.68it/s, train_loss=0.0432, val_loss=0.0848]
+Training TransTEE:  30%|███       | 9/30 [00:01<00:03,  5.68it/s, train_loss=0.0478, val_loss=0.1257]
+Training TransTEE:  33%|███▎      | 10/30 [00:01<00:03,  5.72it/s, train_loss=0.0478, val_loss=0.1257]
+Training TransTEE:  33%|███▎      | 10/30 [00:01<00:03,  5.72it/s, train_loss=0.0495, val_loss=0.0935]
+Training TransTEE:  37%|███▋      | 11/30 [00:01<00:03,  5.70it/s, train_loss=0.0495, val_loss=0.0935]
+Training TransTEE:  37%|███▋      | 11/30 [00:02<00:03,  5.70it/s, train_loss=0.0393, val_loss=0.0900]
+Training TransTEE:  40%|████      | 12/30 [00:02<00:03,  5.72it/s, train_loss=0.0393, val_loss=0.0900]
+Training TransTEE:  40%|████      | 12/30 [00:02<00:03,  5.72it/s, train_loss=0.0370, val_loss=0.1169]
+Training TransTEE:  43%|████▎     | 13/30 [00:02<00:03,  5.64it/s, train_loss=0.0370, val_loss=0.1169]
+Training TransTEE:  43%|████▎     | 13/30 [00:02<00:03,  5.64it/s, train_loss=0.0330, val_loss=0.0794]
+Training TransTEE:  47%|████▋     | 14/30 [00:02<00:02,  5.67it/s, train_loss=0.0330, val_loss=0.0794]
+Training TransTEE:  47%|████▋     | 14/30 [00:02<00:02,  5.67it/s, train_loss=0.0350, val_loss=0.0977]
+Training TransTEE:  50%|█████     | 15/30 [00:02<00:02,  5.67it/s, train_loss=0.0350, val_loss=0.0977]
+Training TransTEE:  50%|█████     | 15/30 [00:02<00:02,  5.67it/s, train_loss=0.0280, val_loss=0.0961]
+Training TransTEE:  53%|█████▎    | 16/30 [00:02<00:02,  5.64it/s, train_loss=0.0280, val_loss=0.0961]
+Training TransTEE:  53%|█████▎    | 16/30 [00:03<00:02,  5.64it/s, train_loss=0.0261, val_loss=0.1065]
+Training TransTEE:  57%|█████▋    | 17/30 [00:03<00:02,  5.66it/s, train_loss=0.0261, val_loss=0.1065]
+Training TransTEE:  57%|█████▋    | 17/30 [00:03<00:02,  5.66it/s, train_loss=0.0202, val_loss=0.0931]
+Training TransTEE:  60%|██████    | 18/30 [00:03<00:02,  5.65it/s, train_loss=0.0202, val_loss=0.0931]
+Training TransTEE:  60%|██████    | 18/30 [00:03<00:02,  5.65it/s, train_loss=0.0198, val_loss=0.1031]
+Training TransTEE:  63%|██████▎   | 19/30 [00:03<00:01,  5.71it/s, train_loss=0.0198, val_loss=0.1031]
+Training TransTEE:  63%|██████▎   | 19/30 [00:03<00:01,  5.71it/s, train_loss=0.0236, val_loss=0.0761]
+Training TransTEE:  67%|██████▋   | 20/30 [00:03<00:01,  5.73it/s, train_loss=0.0236, val_loss=0.0761]
+Training TransTEE:  67%|██████▋   | 20/30 [00:03<00:01,  5.73it/s, train_loss=0.0185, val_loss=0.1117]
+Training TransTEE:  70%|███████   | 21/30 [00:03<00:01,  5.76it/s, train_loss=0.0185, val_loss=0.1117]
+Training TransTEE:  70%|███████   | 21/30 [00:03<00:01,  5.76it/s, train_loss=0.0169, val_loss=0.0762]
+Training TransTEE:  73%|███████▎  | 22/30 [00:03<00:01,  5.80it/s, train_loss=0.0169, val_loss=0.0762]
+Training TransTEE:  73%|███████▎  | 22/30 [00:04<00:01,  5.80it/s, train_loss=0.0118, val_loss=0.0718]
+Training TransTEE:  77%|███████▋  | 23/30 [00:04<00:01,  5.77it/s, train_loss=0.0118, val_loss=0.0718]
+Training TransTEE:  77%|███████▋  | 23/30 [00:04<00:01,  5.77it/s, train_loss=0.0172, val_loss=0.0738]
+Training TransTEE:  80%|████████  | 24/30 [00:04<00:01,  5.70it/s, train_loss=0.0172, val_loss=0.0738]
+Training TransTEE:  80%|████████  | 24/30 [00:04<00:01,  5.70it/s, train_loss=0.0149, val_loss=0.0896]
+Training TransTEE:  83%|████████▎ | 25/30 [00:04<00:00,  5.73it/s, train_loss=0.0149, val_loss=0.0896]
+Training TransTEE:  83%|████████▎ | 25/30 [00:04<00:00,  5.73it/s, train_loss=0.0150, val_loss=0.0768]
+Training TransTEE:  87%|████████▋ | 26/30 [00:04<00:00,  5.70it/s, train_loss=0.0150, val_loss=0.0768]
+Training TransTEE:  87%|████████▋ | 26/30 [00:04<00:00,  5.70it/s, train_loss=0.0121, val_loss=0.0843]
+Training TransTEE:  90%|█████████ | 27/30 [00:04<00:00,  5.74it/s, train_loss=0.0121, val_loss=0.0843]
+Training TransTEE:  90%|█████████ | 27/30 [00:04<00:00,  5.74it/s, train_loss=0.0175, val_loss=0.0951]
+Training TransTEE:  93%|█████████▎| 28/30 [00:04<00:00,  5.80it/s, train_loss=0.0175, val_loss=0.0951]
+Training TransTEE:  93%|█████████▎| 28/30 [00:05<00:00,  5.80it/s, train_loss=0.0155, val_loss=0.0920]
+Training TransTEE:  97%|█████████▋| 29/30 [00:05<00:00,  5.85it/s, train_loss=0.0155, val_loss=0.0920]
+Training TransTEE:  97%|█████████▋| 29/30 [00:05<00:00,  5.85it/s, train_loss=0.0102, val_loss=0.0888]
+Training TransTEE: 100%|██████████| 30/30 [00:05<00:00,  5.87it/s, train_loss=0.0102, val_loss=0.0888]
+Training TransTEE: 100%|██████████| 30/30 [00:05<00:00,  5.70it/s, train_loss=0.0102, val_loss=0.0888]
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/evaluate_three_tier_metrics_fix.py", line 650, in <module>
+    main()
+  File "/home/UserData/ljx/Project_1/src/evaluate_three_tier_metrics_fix.py", line 635, in main
+    tier2_metrics = evaluator.compute_tier2_egfr_mechanism(X, y, treatment)
+  File "/home/UserData/ljx/Project_1/src/evaluate_three_tier_metrics_fix.py", line 368, in compute_tier2_egfr_mechanism
+    ite = model.predict_ite(X, treatment)
+TypeError: TransTEEBaseline.predict_ite() takes 2 positional arguments but 3 were given
+
+ERROR conda.cli.main_run:execute(127): `conda run python src/evaluate_three_tier_metrics_fix.py` failed. (See above for error)
+================================================================================
+Task 19.4-Fix: 修正与补全三层评估指标
+================================================================================
+[INFO] 加载 LUAD 全量数据集...
+[SUCCESS] LUAD 全量数据加载完成
+  - 样本数: 513
+  - EGFR 突变样本数: 67
+  - EGFR 野生型样本数: 446
+
+[INFO] 准备数据...
+  - 特征数: 22 + 1 (PM2.5)
+  - 样本数: 513
+  - Treatment=1: 256
+  - Treatment=0: 257
+  - PM2.5 特征索引: 22
+
+================================================================================
+训练所有模型（使用 LUAD 全量数据）
+================================================================================
+
+[1/5] 训练 XGBoost...
+  - XGBoost 训练完成
+
+[2/5] 训练 TabR...
+  - TabR 训练完成
+
+[3/5] 训练 HyperFast...
+[HyperFast] 自动计算类别权重: [0.90833333 1.1122449 ]
+[HyperFast] 类别分布: [240 196]
+
+[HyperFast] Early stopping at epoch 20
+  - HyperFast 训练完成
+
+[4/5] 训练 MOGONET...
+
+[MOGONET] 开始训练...
+[MOGONET] 配置: hidden_dim=64, n_gcn_layers=3, k_neighbors=10, scaler=robust
+[MOGONET] 正在标准化特征...
+[MOGONET] 视图 1: (513, 3) -> 标准化完成
+[MOGONET] 视图 2: (513, 20) -> 标准化完成
+[MOGONET] 正在构建 k-NN 图 (k=10)...
+[MOGONET] 构建视图 1 的图结构...
+[MOGONET] 视图 1: 4360 条边
+[MOGONET] 构建视图 2 的图结构...
+[MOGONET] 视图 2: 4360 条边
+[MOGONET] 正在为验证集构建图结构...
+[MOGONET] 开始训练循环 (epochs=30)...
+[MOGONET] 训练完成，已加载最佳模型
+  - MOGONET 训练完成
+
+[5/5] 训练 TransTEE...
+  - TransTEE 训练完成
+
+[SUCCESS] 所有模型训练完成
+
+================================================================================
+层级 1：通用性能 (General Performance)
+================================================================================
+
+XGBoost:
+  - AUC-ROC: 0.9043
+  - F1-Score (Macro): 0.8130
+  - F1-Score (Weighted): 0.8156
+
+TabR:
+  - AUC-ROC: 0.9590
+  - F1-Score (Macro): 0.9087
+  - F1-Score (Weighted): 0.9099
+
+HyperFast:
+  - AUC-ROC: 0.5043
+  - F1-Score (Macro): 0.3105
+  - F1-Score (Weighted): 0.2796
+[MOGONET] 正在预测 513 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+[MOGONET] 正在预测 513 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+
+MOGONET:
+  - AUC-ROC: 0.8326
+  - F1-Score (Macro): 0.7496
+  - F1-Score (Weighted): 0.7511
+
+================================================================================
+层级 2：机制特异性验证（阳性对照 - EGFR）
+================================================================================
+
+XGBoost:
+  - Recall (EGFR-Mutant): 0.6316 (n=67)
+  - Recall (EGFR-Wild): 0.7594 (n=446)
+  - Δ Recall: -0.1279
+  - Proxy ΔCATE (EGFR): -0.0053
+
+TabR:
+  - Recall (EGFR-Mutant): 0.7895 (n=67)
+  - Recall (EGFR-Wild): 0.8679 (n=446)
+  - Δ Recall: -0.0785
+  - Proxy ΔCATE (EGFR): +0.0633
+
+HyperFast:
+  - Recall (EGFR-Mutant): 1.0000 (n=67)
+  - Recall (EGFR-Wild): 1.0000 (n=446)
+  - Δ Recall: +0.0000
+  - Proxy ΔCATE (EGFR): +0.0012
+[MOGONET] 正在预测 513 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+[MOGONET] 正在预测 513 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+[MOGONET] 正在预测 513 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+[MOGONET] 正在预测 513 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+
+MOGONET:
+  - Recall (EGFR-Mutant): 0.6316 (n=67)
+  - Recall (EGFR-Wild): 0.7783 (n=446)
+  - Δ Recall: -0.1467
+  - Proxy ΔCATE (EGFR): +0.0255
+

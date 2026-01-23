@@ -1,0 +1,59 @@
+{
+  "dataset": "pancan_synthetic_interaction",
+  "split": {
+    "train": 0.8,
+    "val": 0.1,
+    "test": 0.1,
+    "seed": 42
+  },
+  "models": {
+    "XGBoost": {
+      "accuracy": 0.8425110132158591,
+      "precision": 0.6818181818181818,
+      "recall": 0.34285714285714286,
+      "f1": 0.45627376425855515,
+      "auc_roc": 0.793389202884428,
+      "train_time": 48.039661169052124,
+      "inference_time": 0.2122054100036621,
+      "status": "success"
+    },
+    "TabR": {
+      "accuracy": 0.8348017621145375,
+      "precision": 0.5984251968503937,
+      "recall": 0.4342857142857143,
+      "f1": 0.5033112582781457,
+      "auc_roc": 0.771253167023972,
+      "train_time": 136.15612983703613,
+      "inference_time": 0.22320103645324707,
+      "status": "success"
+    },
+    "HyperFast": {
+      "accuracy": 0.8072687224669604,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc_roc": 0.5,
+      "train_time": 59.7268705368042,
+      "inference_time": 0.0901956558227539,
+      "status": "success"
+    },
+    "MOGONET": {
+      "accuracy": 0.8348017621145375,
+      "precision": 0.6582278481012658,
+      "recall": 0.29714285714285715,
+      "f1": 0.4094488188976378,
+      "auc_roc": 0.7812434223348275,
+      "train_time": 10.458332777023315,
+      "inference_time": 0.4295156002044678,
+      "status": "success"
+    },
+    "TransTEE": {
+      "ate": 0.06880480796098709,
+      "ite_mean": 0.06880480796098709,
+      "ite_std": 0.10575012117624283,
+      "train_time": 18.998632669448853,
+      "inference_time": 0.008212089538574219,
+      "status": "success"
+    }
+  }
+}

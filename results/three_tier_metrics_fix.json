@@ -1,0 +1,138 @@
+{
+  "tier1_general_performance": {
+    "XGBoost": {
+      "accuracy": 0.8167641325536062,
+      "precision": 0.8277511961722488,
+      "recall": 0.7489177489177489,
+      "f1_binary": 0.7863636363636364,
+      "f1_macro": 0.8129770400248215,
+      "f1_weighted": 0.8156228169969861,
+      "auc_roc": 0.9043397500844309
+    },
+    "TabR": {
+      "accuracy": 0.9103313840155945,
+      "precision": 0.9342723004694836,
+      "recall": 0.8614718614718615,
+      "f1_binary": 0.8963963963963963,
+      "f1_macro": 0.9086792978545555,
+      "f1_weighted": 0.9099004050170625,
+      "auc_roc": 0.9589512142703632
+    },
+    "HyperFast": {
+      "accuracy": 0.4502923976608187,
+      "precision": 0.4502923976608187,
+      "recall": 1.0,
+      "f1_binary": 0.6209677419354839,
+      "f1_macro": 0.31048387096774194,
+      "f1_weighted": 0.27961705338615356,
+      "auc_roc": 0.5043290043290043
+    },
+    "MOGONET": {
+      "accuracy": 0.7504873294346979,
+      "precision": 0.7051792828685259,
+      "recall": 0.7662337662337663,
+      "f1_binary": 0.7344398340248963,
+      "f1_macro": 0.7495728581889187,
+      "f1_weighted": 0.7510773108835875,
+      "auc_roc": 0.8325504282951092
+    }
+  },
+  "tier2_egfr_mechanism": {
+    "XGBoost": {
+      "recall_egfr_mutant": 0.631578947368421,
+      "recall_egfr_wild": 0.7594339622641509,
+      "delta_recall": -0.12785501489572992,
+      "mean_proxy_ite_egfr_mutant": -0.0076598478481173515,
+      "mean_proxy_ite_egfr_wild": -0.0024031437933444977,
+      "proxy_delta_cate_egfr": -0.005256704054772854,
+      "n_egfr_mutant": 67,
+      "n_egfr_wild": 446
+    },
+    "TabR": {
+      "recall_egfr_mutant": 0.7894736842105263,
+      "recall_egfr_wild": 0.8679245283018868,
+      "delta_recall": -0.0784508440913605,
+      "mean_proxy_ite_egfr_mutant": 0.04897482320666313,
+      "mean_proxy_ite_egfr_wild": -0.01435758825391531,
+      "proxy_delta_cate_egfr": 0.06333240866661072,
+      "n_egfr_mutant": 67,
+      "n_egfr_wild": 446
+    },
+    "HyperFast": {
+      "recall_egfr_mutant": 1.0,
+      "recall_egfr_wild": 1.0,
+      "delta_recall": 0.0,
+      "mean_proxy_ite_egfr_mutant": 0.0,
+      "mean_proxy_ite_egfr_wild": -0.001236202660948038,
+      "proxy_delta_cate_egfr": 0.001236202660948038,
+      "n_egfr_mutant": 67,
+      "n_egfr_wild": 446
+    },
+    "MOGONET": {
+      "recall_egfr_mutant": 0.631578947368421,
+      "recall_egfr_wild": 0.7783018867924528,
+      "delta_recall": -0.1467229394240318,
+      "mean_proxy_ite_egfr_mutant": -0.05625603720545769,
+      "mean_proxy_ite_egfr_wild": -0.08176281303167343,
+      "proxy_delta_cate_egfr": 0.025506775826215744,
+      "n_egfr_mutant": 67,
+      "n_egfr_wild": 446
+    },
+    "TransTEE": {
+      "mean_ite_egfr_mutant": 0.05068031698465347,
+      "mean_ite_egfr_wild": 0.0734722837805748,
+      "delta_cate_egfr": -0.022791966795921326,
+      "n_egfr_mutant": 67,
+      "n_egfr_wild": 446
+    }
+  },
+  "tier3_tp53_negative_control": {
+    "XGBoost": {
+      "recall_tp53_mutant": 0.8205128205128205,
+      "recall_tp53_wild": 0.6,
+      "delta_recall": 0.2205128205128205,
+      "mean_proxy_ite_tp53_mutant": -0.01294904388487339,
+      "mean_proxy_ite_tp53_wild": 0.00696374149993062,
+      "proxy_delta_cate_tp53": -0.019912784919142723,
+      "n_tp53_mutant": 259,
+      "n_tp53_wild": 254
+    },
+    "TabR": {
+      "recall_tp53_mutant": 0.8974358974358975,
+      "recall_tp53_wild": 0.7866666666666666,
+      "delta_recall": 0.11076923076923084,
+      "mean_proxy_ite_tp53_mutant": -0.03209232538938522,
+      "mean_proxy_ite_tp53_wild": 0.02043205127120018,
+      "proxy_delta_cate_tp53": -0.0525243766605854,
+      "n_tp53_mutant": 259,
+      "n_tp53_wild": 254
+    },
+    "HyperFast": {
+      "recall_tp53_mutant": 1.0,
+      "recall_tp53_wild": 1.0,
+      "delta_recall": 0.0,
+      "mean_proxy_ite_tp53_mutant": -0.0018429311458021402,
+      "mean_proxy_ite_tp53_wild": -0.00029144558357074857,
+      "proxy_delta_cate_tp53": -0.0015514856204390526,
+      "n_tp53_mutant": 259,
+      "n_tp53_wild": 254
+    },
+    "MOGONET": {
+      "recall_tp53_mutant": 0.9487179487179487,
+      "recall_tp53_wild": 0.38666666666666666,
+      "delta_recall": 0.562051282051282,
+      "mean_proxy_ite_tp53_mutant": -0.05888395383954048,
+      "mean_proxy_ite_tp53_wild": -0.09836388379335403,
+      "proxy_delta_cate_tp53": 0.03947992995381355,
+      "n_tp53_mutant": 259,
+      "n_tp53_wild": 254
+    },
+    "TransTEE": {
+      "mean_ite_tp53_mutant": 0.07396252453327179,
+      "mean_ite_tp53_wild": 0.06696034222841263,
+      "delta_cate_tp53": 0.007002182304859161,
+      "n_tp53_mutant": 259,
+      "n_tp53_wild": 254
+    }
+  }
+}
