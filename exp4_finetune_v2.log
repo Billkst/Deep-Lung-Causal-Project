@@ -1,0 +1,40 @@
+
+============================================================
+DLC EXP4: Transfer Learning (手术刀微调版)
+============================================================
+训练设备: cuda
+
+[Step 1] 加载 LUAD 数据集...
+
+============================================================
+加载 LUAD 数据集 (场景: interaction)
+============================================================
+✓ 找到已生成的 CSV 文件: /home/UserData/ljx/Project_1/data/luad_synthetic_interaction.csv
+CSV 数据加载完成:
+  - 样本数: 513
+  - 特征数: 23
+  - 正类比例: 45.03%
+  - 特征列: ['Age', 'Gender', 'TP53'] ... ['EGFR', 'Virtual_PM2.5']
+
+[Step 2] 加载 PANCAN 预训练权重...
+✅ 权重加载成功！
+
+[Step 3] 智能锁定参数...
+   ❄️ 已冻结骨干网络 (VAE/Encoder)
+   🔥 正在微调: ['outcome_head_1', 'hypergraph_nn', 'outcome_head_0']
+   📊 可训练参数: 128962
+
+[Step 4] 开始微调 (Custom Loop)...
+Epoch 10/100 | Loss: 0.8573 | Val AUC: 0.5221
+Epoch 20/100 | Loss: 0.8672 | Val AUC: 0.5221
+Epoch 30/100 | Loss: 0.8501 | Val AUC: 0.5210
+Epoch 40/100 | Loss: 0.8466 | Val AUC: 0.5195
+Epoch 50/100 | Loss: 0.8466 | Val AUC: 0.5175
+Epoch 60/100 | Loss: 0.8426 | Val AUC: 0.5153
+Epoch 70/100 | Loss: 0.8485 | Val AUC: 0.5122
+Epoch 80/100 | Loss: 0.8326 | Val AUC: 0.5053
+Epoch 90/100 | Loss: 0.7671 | Val AUC: 0.4775
+Epoch 100/100 | Loss: 0.7320 | Val AUC: 0.2674
+
+✅ 微调模型已保存至: results/LUAD_Finetuned/dlc_finetuned.pth
+📊 Final AUC: 0.2674

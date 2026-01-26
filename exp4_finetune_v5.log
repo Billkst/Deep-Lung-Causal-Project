@@ -1,0 +1,37 @@
+
+============================================================
+DLC EXP4: Transfer Learning (Linear Probing Mode)
+============================================================
+训练设备: cuda
+
+[Step 1] 加载 LUAD 数据集...
+
+============================================================
+加载 LUAD 数据集 (场景: interaction)
+============================================================
+✓ 找到已生成的 CSV 文件: /home/UserData/ljx/Project_1/data/luad_synthetic_interaction.csv
+CSV 数据加载完成:
+  - 样本数: 513
+  - 特征数: 23
+  - 正类比例: 45.03%
+  - 特征列: ['Age', 'Gender', 'TP53'] ... ['EGFR', 'Virtual_PM2.5']
+
+[Step 2] 加载 PANCAN 预训练权重...
+✅ 权重加载成功！
+
+[Step 3] 执行严格冻结策略...
+   ❄️ 已冻结: Encoder, Hypergraph, Decoder
+   🔥 正在微调: ['outcome_head_1', 'outcome_head_0']
+   📊 可训练参数: 25922 (极少，防止过拟合)
+
+[Pre-check] 微调前初始 AUC: 0.5233
+
+[Step 4] 开始微调 (Linear Probing)...
+Epoch 10/50 | Loss: 0.6949 | Val AUC: 0.4592
+Epoch 20/50 | Loss: 0.6936 | Val AUC: 0.4575
+Epoch 30/50 | Loss: 0.6933 | Val AUC: 0.4531
+Epoch 40/50 | Loss: 0.6932 | Val AUC: 0.4506
+Epoch 50/50 | Loss: 0.6932 | Val AUC: 0.4510
+
+🏆 最佳 Val AUC: 0.5141
+✅ 模型已保存至: results/LUAD_Finetuned/dlc_finetuned.pth

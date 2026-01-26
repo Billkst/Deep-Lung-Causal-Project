@@ -1,0 +1,212 @@
+
+======================================================================
+DLC Final SOTA Training Pipeline
+Phase 7: Performance SOTA & Scientific Validation
+======================================================================
+开始时间: 2026-01-25 16:57:41
+
+============================================================
+加载 PANCAN 数据集 (场景: interaction)
+============================================================
+✓ 找到已生成的 CSV 文件: /home/UserData/ljx/Project_1/data/pancan_synthetic_interaction.csv
+CSV 数据加载完成:
+  - 样本数: 9080
+  - 特征数: 23
+  - 正类比例: 19.32%
+  - 特征列: ['Age', 'Gender', 'TP53'] ... ['EGFR', 'Virtual_PM2.5']
+
+数据划分:
+  训练集: 7264 样本
+  测试集: 1816 样本
+[I 2026-01-25 16:57:41,163] A new study created in memory with name: dlc_optimization
+
+============================================================
+DLCNet 超参数优化
+============================================================
+试验次数: 50
+训练集大小: 5811
+验证集大小: 1453
+每试验训练轮数: 15
+HSIC 约束阈值: 0.05
+============================================================
+
+  0%|          | 0/50 [00:00<?, ?it/s]                                      [I 2026-01-25 17:05:18,275] Trial 0 finished with value: 0.8315985084959858 and parameters: {'d_hidden': 96, 'num_layers': 4, 'lambda_hsic': 2.9106359131330697, 'lr': 0.0006251373574521745, 'batch_size': 32}. Best is trial 0 with value: 0.8315985084959858.
+  0%|          | 0/50 [07:37<?, ?it/s]Best trial: 0. Best value: 0.831599:   0%|          | 0/50 [07:37<?, ?it/s]Best trial: 0. Best value: 0.831599:   2%|▏         | 1/50 [07:37<6:13:18, 457.11s/it]                                                                                      [I 2026-01-25 17:12:54,253] Trial 1 finished with value: 0.831156705087875 and parameters: {'d_hidden': 224, 'num_layers': 3, 'lambda_hsic': 2.607024758370768, 'lr': 1.1527987128232396e-05, 'batch_size': 32}. Best is trial 0 with value: 0.8315985084959858.
+Best trial: 0. Best value: 0.831599:   2%|▏         | 1/50 [15:13<6:13:18, 457.11s/it]Best trial: 0. Best value: 0.831599:   2%|▏         | 1/50 [15:13<6:13:18, 457.11s/it]Best trial: 0. Best value: 0.831599:   4%|▍         | 2/50 [15:13<6:05:09, 456.44s/it]                                                                                      [I 2026-01-25 17:19:41,826] Trial 2 finished with value: 0.8309881821383894 and parameters: {'d_hidden': 64, 'num_layers': 1, 'lambda_hsic': 0.4059611610484306, 'lr': 0.00037520558551242813, 'batch_size': 128}. Best is trial 0 with value: 0.8315985084959858.
+Best trial: 0. Best value: 0.831599:   4%|▍         | 2/50 [22:00<6:05:09, 456.44s/it]Best trial: 0. Best value: 0.831599:   4%|▍         | 2/50 [22:00<6:05:09, 456.44s/it]Best trial: 0. Best value: 0.831599:   6%|▌         | 3/50 [22:00<5:40:04, 434.13s/it]                                                                                      [I 2026-01-25 17:26:58,046] Trial 3 finished with value: 0.8315408159547205 and parameters: {'d_hidden': 64, 'num_layers': 2, 'lambda_hsic': 0.5404103854647329, 'lr': 0.00023345864076016249, 'batch_size': 32}. Best is trial 0 with value: 0.8315985084959858.
+Best trial: 0. Best value: 0.831599:   6%|▌         | 3/50 [29:16<5:40:04, 434.13s/it]Best trial: 0. Best value: 0.831599:   6%|▌         | 3/50 [29:16<5:40:04, 434.13s/it]Best trial: 0. Best value: 0.831599:   8%|▊         | 4/50 [29:16<5:33:27, 434.95s/it]                                                                                      [I 2026-01-25 17:36:33,466] Trial 4 finished with value: 0.8298343313130824 and parameters: {'d_hidden': 160, 'num_layers': 1, 'lambda_hsic': 1.6409286730647923, 'lr': 3.247673570627447e-05, 'batch_size': 128}. Best is trial 0 with value: 0.8315985084959858.
+Best trial: 0. Best value: 0.831599:   8%|▊         | 4/50 [38:52<5:33:27, 434.95s/it]Best trial: 0. Best value: 0.831599:   8%|▊         | 4/50 [38:52<5:33:27, 434.95s/it]Best trial: 0. Best value: 0.831599:  10%|█         | 5/50 [38:52<6:04:12, 485.61s/it]                                                                                      [I 2026-01-25 17:54:16,725] Trial 5 finished with value: 0.8318960805509333 and parameters: {'d_hidden': 224, 'num_layers': 2, 'lambda_hsic': 0.1567993391672301, 'lr': 0.0011290133559092666, 'batch_size': 128}. Best is trial 5 with value: 0.8318960805509333.
+Best trial: 0. Best value: 0.831599:  10%|█         | 5/50 [56:35<6:04:12, 485.61s/it]Best trial: 5. Best value: 0.831896:  10%|█         | 5/50 [56:35<6:04:12, 485.61s/it]Best trial: 5. Best value: 0.831896:  12%|█▏        | 6/50 [56:35<8:20:08, 682.01s/it]                                                                                      [I 2026-01-25 18:12:09,258] Trial 6 finished with value: 0.8322756367434686 and parameters: {'d_hidden': 32, 'num_layers': 4, 'lambda_hsic': 0.3292759134423616, 'lr': 0.0009717775305059633, 'batch_size': 128}. Best is trial 6 with value: 0.8322756367434686.
+Best trial: 5. Best value: 0.831896:  12%|█▏        | 6/50 [1:14:28<8:20:08, 682.01s/it]Best trial: 6. Best value: 0.832276:  12%|█▏        | 6/50 [1:14:28<8:20:08, 682.01s/it]Best trial: 6. Best value: 0.832276:  14%|█▍        | 7/50 [1:14:28<9:40:16, 809.68s/it]                                                                                        [I 2026-01-25 18:20:27,249] Trial 7 pruned. 
+Best trial: 6. Best value: 0.832276:  14%|█▍        | 7/50 [1:22:46<9:40:16, 809.68s/it]Best trial: 6. Best value: 0.832276:  14%|█▍        | 7/50 [1:22:46<9:40:16, 809.68s/it]Best trial: 6. Best value: 0.832276:  16%|█▌        | 8/50 [1:22:46<8:17:19, 710.45s/it]                                                                                        [I 2026-01-25 18:32:15,201] Trial 8 pruned. 
+Best trial: 6. Best value: 0.832276:  16%|█▌        | 8/50 [1:34:34<8:17:19, 710.45s/it]Best trial: 6. Best value: 0.832276:  16%|█▌        | 8/50 [1:34:34<8:17:19, 710.45s/it]Best trial: 6. Best value: 0.832276:  18%|█▊        | 9/50 [1:34:34<8:04:56, 709.67s/it]                                                                                        [I 2026-01-25 18:50:03,239] Trial 9 finished with value: 0.8320752310738101 and parameters: {'d_hidden': 96, 'num_layers': 2, 'lambda_hsic': 1.2172847081122433, 'lr': 2.6471141828218167e-05, 'batch_size': 128}. Best is trial 6 with value: 0.8322756367434686.
+Best trial: 6. Best value: 0.832276:  18%|█▊        | 9/50 [1:52:22<8:04:56, 709.67s/it]Best trial: 6. Best value: 0.832276:  18%|█▊        | 9/50 [1:52:22<8:04:56, 709.67s/it]Best trial: 6. Best value: 0.832276:  20%|██        | 10/50 [1:52:22<9:06:52, 820.31s/it]                                                                                         [I 2026-01-25 19:08:12,931] Trial 10 finished with value: 0.8328920360001457 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 8.691089486124962, 'lr': 0.0040877179237697285, 'batch_size': 64}. Best is trial 10 with value: 0.8328920360001457.
+Best trial: 6. Best value: 0.832276:  20%|██        | 10/50 [2:10:31<9:06:52, 820.31s/it]Best trial: 10. Best value: 0.832892:  20%|██        | 10/50 [2:10:31<9:06:52, 820.31s/it]Best trial: 10. Best value: 0.832892:  22%|██▏       | 11/50 [2:10:31<9:46:47, 902.75s/it]                                                                                          [I 2026-01-25 19:26:24,971] Trial 11 finished with value: 0.832797906064397 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 8.51495564169749, 'lr': 0.003579359838262837, 'batch_size': 64}. Best is trial 10 with value: 0.8328920360001457.
+Best trial: 10. Best value: 0.832892:  22%|██▏       | 11/50 [2:28:43<9:46:47, 902.75s/it]Best trial: 10. Best value: 0.832892:  22%|██▏       | 11/50 [2:28:43<9:46:47, 902.75s/it]Best trial: 10. Best value: 0.832892:  24%|██▍       | 12/50 [2:28:43<10:08:12, 960.34s/it]                                                                                           [I 2026-01-25 19:46:49,632] Trial 12 finished with value: 0.8341278709630403 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 8.183514536477993, 'lr': 0.009548063542090106, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 10. Best value: 0.832892:  24%|██▍       | 12/50 [2:49:08<10:08:12, 960.34s/it]Best trial: 12. Best value: 0.834128:  24%|██▍       | 12/50 [2:49:08<10:08:12, 960.34s/it]Best trial: 12. Best value: 0.834128:  26%|██▌       | 13/50 [2:49:08<10:41:35, 1040.41s/it]                                                                                            [I 2026-01-25 19:52:21,303] Trial 13 pruned. 
+Best trial: 12. Best value: 0.834128:  26%|██▌       | 13/50 [2:54:40<10:41:35, 1040.41s/it]Best trial: 12. Best value: 0.834128:  26%|██▌       | 13/50 [2:54:40<10:41:35, 1040.41s/it]Best trial: 12. Best value: 0.834128:  28%|██▊       | 14/50 [2:54:40<8:15:48, 826.34s/it]                                                                                            [I 2026-01-25 20:01:19,740] Trial 14 finished with value: 0.8323424386333548 and parameters: {'d_hidden': 256, 'num_layers': 3, 'lambda_hsic': 5.6878786997812805, 'lr': 0.002683559852012212, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  28%|██▊       | 14/50 [3:03:38<8:15:48, 826.34s/it]Best trial: 12. Best value: 0.834128:  28%|██▊       | 14/50 [3:03:38<8:15:48, 826.34s/it]Best trial: 12. Best value: 0.834128:  30%|███       | 15/50 [3:03:38<7:11:24, 739.55s/it]                                                                                          [I 2026-01-25 20:10:18,341] Trial 15 finished with value: 0.831880898303232 and parameters: {'d_hidden': 128, 'num_layers': 3, 'lambda_hsic': 5.607580760906546, 'lr': 0.002228448146803253, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  30%|███       | 15/50 [3:12:37<7:11:24, 739.55s/it]Best trial: 12. Best value: 0.834128:  30%|███       | 15/50 [3:12:37<7:11:24, 739.55s/it]Best trial: 12. Best value: 0.834128:  32%|███▏      | 16/50 [3:12:37<6:24:48, 679.07s/it]                                                                                          [I 2026-01-25 20:17:18,540] Trial 16 finished with value: 0.8316713832849526 and parameters: {'d_hidden': 192, 'num_layers': 2, 'lambda_hsic': 5.2876335632800995, 'lr': 0.009752840863329212, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  32%|███▏      | 16/50 [3:19:37<6:24:48, 679.07s/it]Best trial: 12. Best value: 0.834128:  32%|███▏      | 16/50 [3:19:37<6:24:48, 679.07s/it]Best trial: 12. Best value: 0.834128:  34%|███▍      | 17/50 [3:19:37<5:30:40, 601.23s/it]                                                                                          [I 2026-01-25 20:24:08,730] Trial 17 finished with value: 0.8319962833857628 and parameters: {'d_hidden': 128, 'num_layers': 4, 'lambda_hsic': 1.5430241956026414, 'lr': 0.003995306966672563, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  34%|███▍      | 17/50 [3:26:27<5:30:40, 601.23s/it]Best trial: 12. Best value: 0.834128:  34%|███▍      | 17/50 [3:26:27<5:30:40, 601.23s/it]Best trial: 12. Best value: 0.834128:  36%|███▌      | 18/50 [3:26:27<4:50:02, 543.82s/it]                                                                                          [I 2026-01-25 20:30:56,832] Trial 18 finished with value: 0.8318808983032321 and parameters: {'d_hidden': 192, 'num_layers': 3, 'lambda_hsic': 0.67672657686629, 'lr': 0.0014945047084861903, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  36%|███▌      | 18/50 [3:33:15<4:50:02, 543.82s/it]Best trial: 12. Best value: 0.834128:  36%|███▌      | 18/50 [3:33:15<4:50:02, 543.82s/it]Best trial: 12. Best value: 0.834128:  38%|███▊      | 19/50 [3:33:15<4:19:54, 503.06s/it]                                                                                          [I 2026-01-25 20:33:39,169] Trial 19 pruned. 
+Best trial: 12. Best value: 0.834128:  38%|███▊      | 19/50 [3:35:58<4:19:54, 503.06s/it]Best trial: 12. Best value: 0.834128:  38%|███▊      | 19/50 [3:35:58<4:19:54, 503.06s/it]Best trial: 12. Best value: 0.834128:  40%|████      | 20/50 [3:35:58<3:20:22, 400.76s/it]                                                                                          [I 2026-01-25 20:36:23,441] Trial 20 pruned. 
+Best trial: 12. Best value: 0.834128:  40%|████      | 20/50 [3:38:42<3:20:22, 400.76s/it]Best trial: 12. Best value: 0.834128:  40%|████      | 20/50 [3:38:42<3:20:22, 400.76s/it]Best trial: 12. Best value: 0.834128:  42%|████▏     | 21/50 [3:38:42<2:39:23, 329.77s/it]                                                                                          [I 2026-01-25 20:43:11,440] Trial 21 finished with value: 0.8325853545965773 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 9.49610216797775, 'lr': 0.003286636878470959, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  42%|████▏     | 21/50 [3:45:30<2:39:23, 329.77s/it]Best trial: 12. Best value: 0.834128:  42%|████▏     | 21/50 [3:45:30<2:39:23, 329.77s/it]Best trial: 12. Best value: 0.834128:  44%|████▍     | 22/50 [3:45:30<2:44:51, 353.25s/it]                                                                                          [I 2026-01-25 20:49:59,874] Trial 22 finished with value: 0.8330134939817571 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 7.679548832345778, 'lr': 0.0019399495012438217, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  44%|████▍     | 22/50 [3:52:18<2:44:51, 353.25s/it]Best trial: 12. Best value: 0.834128:  44%|████▍     | 22/50 [3:52:18<2:44:51, 353.25s/it]Best trial: 12. Best value: 0.834128:  46%|████▌     | 23/50 [3:52:18<2:46:24, 369.81s/it]                                                                                          [I 2026-01-25 20:52:43,156] Trial 23 pruned. 
+Best trial: 12. Best value: 0.834128:  46%|████▌     | 23/50 [3:55:01<2:46:24, 369.81s/it]Best trial: 12. Best value: 0.834128:  46%|████▌     | 23/50 [3:55:01<2:46:24, 369.81s/it]Best trial: 12. Best value: 0.834128:  48%|████▊     | 24/50 [3:55:01<2:13:23, 307.84s/it]                                                                                          [I 2026-01-25 20:55:26,637] Trial 24 pruned. 
+Best trial: 12. Best value: 0.834128:  48%|████▊     | 24/50 [3:57:45<2:13:23, 307.84s/it]Best trial: 12. Best value: 0.834128:  48%|████▊     | 24/50 [3:57:45<2:13:23, 307.84s/it]Best trial: 12. Best value: 0.834128:  50%|█████     | 25/50 [3:57:45<1:50:13, 264.53s/it]                                                                                          [I 2026-01-25 21:02:12,585] Trial 25 finished with value: 0.8314208761978793 and parameters: {'d_hidden': 96, 'num_layers': 2, 'lambda_hsic': 3.9184915960094595, 'lr': 0.0056741399442178765, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  50%|█████     | 25/50 [4:04:31<1:50:13, 264.53s/it]Best trial: 12. Best value: 0.834128:  50%|█████     | 25/50 [4:04:31<1:50:13, 264.53s/it]Best trial: 12. Best value: 0.834128:  52%|█████▏    | 26/50 [4:04:31<2:02:46, 306.96s/it]                                                                                          [I 2026-01-25 21:09:27,464] Trial 26 finished with value: 0.8319416272940376 and parameters: {'d_hidden': 128, 'num_layers': 3, 'lambda_hsic': 4.306451479509104, 'lr': 0.002132296375144403, 'batch_size': 32}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  52%|█████▏    | 26/50 [4:11:46<2:02:46, 306.96s/it]Best trial: 12. Best value: 0.834128:  52%|█████▏    | 26/50 [4:11:46<2:02:46, 306.96s/it]Best trial: 12. Best value: 0.834128:  54%|█████▍    | 27/50 [4:11:46<2:12:22, 345.34s/it]                                                                                          [I 2026-01-25 21:12:11,678] Trial 27 pruned. 
+Best trial: 12. Best value: 0.834128:  54%|█████▍    | 27/50 [4:14:30<2:12:22, 345.34s/it]Best trial: 12. Best value: 0.834128:  54%|█████▍    | 27/50 [4:14:30<2:12:22, 345.34s/it]Best trial: 12. Best value: 0.834128:  56%|█████▌    | 28/50 [4:14:30<1:46:41, 291.00s/it]                                                                                          [I 2026-01-25 21:19:00,361] Trial 28 finished with value: 0.8317351487252984 and parameters: {'d_hidden': 192, 'num_layers': 3, 'lambda_hsic': 6.935747297120166, 'lr': 0.004768748778066625, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  56%|█████▌    | 28/50 [4:21:19<1:46:41, 291.00s/it]Best trial: 12. Best value: 0.834128:  56%|█████▌    | 28/50 [4:21:19<1:46:41, 291.00s/it]Best trial: 12. Best value: 0.834128:  58%|█████▊    | 29/50 [4:21:19<1:54:12, 326.30s/it]                                                                                          [I 2026-01-25 21:26:20,577] Trial 29 finished with value: 0.8320114656334641 and parameters: {'d_hidden': 256, 'num_layers': 4, 'lambda_hsic': 3.2148322645414638, 'lr': 0.0005313782358507871, 'batch_size': 32}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  58%|█████▊    | 29/50 [4:28:39<1:54:12, 326.30s/it]Best trial: 12. Best value: 0.834128:  58%|█████▊    | 29/50 [4:28:39<1:54:12, 326.30s/it]Best trial: 12. Best value: 0.834128:  60%|██████    | 30/50 [4:28:39<2:00:09, 360.48s/it]                                                                                          [I 2026-01-25 21:33:06,801] Trial 30 finished with value: 0.8325580265507149 and parameters: {'d_hidden': 128, 'num_layers': 2, 'lambda_hsic': 0.9527431117572879, 'lr': 0.001157928108329328, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  60%|██████    | 30/50 [4:35:25<2:00:09, 360.48s/it]Best trial: 12. Best value: 0.834128:  60%|██████    | 30/50 [4:35:25<2:00:09, 360.48s/it]Best trial: 12. Best value: 0.834128:  62%|██████▏   | 31/50 [4:35:25<1:58:29, 374.20s/it]                                                                                          [I 2026-01-25 21:39:55,044] Trial 31 finished with value: 0.8330651136239419 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 9.829926925035037, 'lr': 0.003443170301777186, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  62%|██████▏   | 31/50 [4:42:13<1:58:29, 374.20s/it]Best trial: 12. Best value: 0.834128:  62%|██████▏   | 31/50 [4:42:13<1:58:29, 374.20s/it]Best trial: 12. Best value: 0.834128:  64%|██████▍   | 32/50 [4:42:13<1:55:19, 384.41s/it]                                                                                          [I 2026-01-25 21:46:42,981] Trial 32 finished with value: 0.8327068125781886 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 8.126965329592194, 'lr': 0.006215651440805844, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  64%|██████▍   | 32/50 [4:49:01<1:55:19, 384.41s/it]Best trial: 12. Best value: 0.834128:  64%|██████▍   | 32/50 [4:49:01<1:55:19, 384.41s/it]Best trial: 12. Best value: 0.834128:  66%|██████▌   | 33/50 [4:49:01<1:50:55, 391.47s/it]                                                                                          [I 2026-01-25 21:49:55,558] Trial 33 pruned. 
+Best trial: 12. Best value: 0.834128:  66%|██████▌   | 33/50 [4:52:14<1:50:55, 391.47s/it]Best trial: 12. Best value: 0.834128:  66%|██████▌   | 33/50 [4:52:14<1:50:55, 391.47s/it]Best trial: 12. Best value: 0.834128:  68%|██████▊   | 34/50 [4:52:14<1:28:28, 331.80s/it]                                                                                          [I 2026-01-25 21:57:08,820] Trial 34 finished with value: 0.8321693610095587 and parameters: {'d_hidden': 96, 'num_layers': 3, 'lambda_hsic': 9.880725203257946, 'lr': 0.0006597244894366384, 'batch_size': 32}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  68%|██████▊   | 34/50 [4:59:27<1:28:28, 331.80s/it]Best trial: 12. Best value: 0.834128:  68%|██████▊   | 34/50 [4:59:27<1:28:28, 331.80s/it]Best trial: 12. Best value: 0.834128:  70%|███████   | 35/50 [4:59:27<1:30:33, 362.24s/it]                                                                                          [I 2026-01-25 21:59:51,743] Trial 35 pruned. 
+Best trial: 12. Best value: 0.834128:  70%|███████   | 35/50 [5:02:10<1:30:33, 362.24s/it]Best trial: 12. Best value: 0.834128:  70%|███████   | 35/50 [5:02:10<1:30:33, 362.24s/it]Best trial: 12. Best value: 0.834128:  72%|███████▏  | 36/50 [5:02:10<1:10:34, 302.45s/it]                                                                                          [I 2026-01-25 22:07:09,739] Trial 36 finished with value: 0.831288790642877 and parameters: {'d_hidden': 160, 'num_layers': 4, 'lambda_hsic': 6.742930905127086, 'lr': 0.0016130941501451045, 'batch_size': 32}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  72%|███████▏  | 36/50 [5:09:28<1:10:34, 302.45s/it]Best trial: 12. Best value: 0.834128:  72%|███████▏  | 36/50 [5:09:28<1:10:34, 302.45s/it]Best trial: 12. Best value: 0.834128:  74%|███████▍  | 37/50 [5:09:28<1:14:20, 343.11s/it]                                                                                          [I 2026-01-25 22:13:54,698] Trial 37 finished with value: 0.8310610569273559 and parameters: {'d_hidden': 128, 'num_layers': 2, 'lambda_hsic': 3.0877242323372056, 'lr': 0.006809944854680531, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  74%|███████▍  | 37/50 [5:16:13<1:14:20, 343.11s/it]Best trial: 12. Best value: 0.834128:  74%|███████▍  | 37/50 [5:16:13<1:14:20, 343.11s/it]Best trial: 12. Best value: 0.834128:  76%|███████▌  | 38/50 [5:16:13<1:12:19, 361.66s/it]                                                                                          [I 2026-01-25 22:16:37,840] Trial 38 pruned. 
+Best trial: 12. Best value: 0.834128:  76%|███████▌  | 38/50 [5:18:56<1:12:19, 361.66s/it]Best trial: 12. Best value: 0.834128:  76%|███████▌  | 38/50 [5:18:56<1:12:19, 361.66s/it]Best trial: 12. Best value: 0.834128:  78%|███████▊  | 39/50 [5:18:56<55:23, 302.11s/it]                                                                                          [I 2026-01-25 22:23:27,744] Trial 39 finished with value: 0.8318566067069098 and parameters: {'d_hidden': 160, 'num_layers': 4, 'lambda_hsic': 7.596581598688745, 'lr': 0.0009568049410101211, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  78%|███████▊  | 39/50 [5:25:46<55:23, 302.11s/it]Best trial: 12. Best value: 0.834128:  78%|███████▊  | 39/50 [5:25:46<55:23, 302.11s/it]Best trial: 12. Best value: 0.834128:  80%|████████  | 40/50 [5:25:46<55:44, 334.45s/it]                                                                                        [I 2026-01-25 22:29:59,828] Trial 40 finished with value: 0.8327462864222122 and parameters: {'d_hidden': 192, 'num_layers': 1, 'lambda_hsic': 5.362000820812339, 'lr': 0.004164645944047773, 'batch_size': 128}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  80%|████████  | 40/50 [5:32:18<55:44, 334.45s/it]Best trial: 12. Best value: 0.834128:  80%|████████  | 40/50 [5:32:18<55:44, 334.45s/it]Best trial: 12. Best value: 0.834128:  82%|████████▏ | 41/50 [5:32:18<52:45, 351.74s/it]                                                                                        [I 2026-01-25 22:36:47,779] Trial 41 finished with value: 0.8324396050186439 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 8.369224271959029, 'lr': 0.0029782342434501877, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  82%|████████▏ | 41/50 [5:39:06<52:45, 351.74s/it]Best trial: 12. Best value: 0.834128:  82%|████████▏ | 41/50 [5:39:06<52:45, 351.74s/it]Best trial: 12. Best value: 0.834128:  84%|████████▍ | 42/50 [5:39:06<49:08, 368.60s/it]                                                                                        [I 2026-01-25 22:43:35,646] Trial 42 finished with value: 0.832819161211179 and parameters: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 8.493957955286744, 'lr': 0.0038277469041674175, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  84%|████████▍ | 42/50 [5:45:54<49:08, 368.60s/it]Best trial: 12. Best value: 0.834128:  84%|████████▍ | 42/50 [5:45:54<49:08, 368.60s/it]Best trial: 12. Best value: 0.834128:  86%|████████▌ | 43/50 [5:45:54<44:22, 380.38s/it]                                                                                        [I 2026-01-25 22:50:23,760] Trial 43 finished with value: 0.8316744197344931 and parameters: {'d_hidden': 128, 'num_layers': 3, 'lambda_hsic': 6.41866066612253, 'lr': 0.007735971644493102, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  86%|████████▌ | 43/50 [5:52:42<44:22, 380.38s/it]Best trial: 12. Best value: 0.834128:  86%|████████▌ | 43/50 [5:52:42<44:22, 380.38s/it]Best trial: 12. Best value: 0.834128:  88%|████████▊ | 44/50 [5:52:42<38:52, 388.70s/it]                                                                                        [I 2026-01-25 22:53:06,886] Trial 44 pruned. 
+Best trial: 12. Best value: 0.834128:  88%|████████▊ | 44/50 [5:55:25<38:52, 388.70s/it]Best trial: 12. Best value: 0.834128:  88%|████████▊ | 44/50 [5:55:25<38:52, 388.70s/it]Best trial: 12. Best value: 0.834128:  90%|█████████ | 45/50 [5:55:25<26:45, 321.03s/it]                                                                                        [I 2026-01-25 22:55:44,752] Trial 45 pruned. 
+Best trial: 12. Best value: 0.834128:  90%|█████████ | 45/50 [5:58:03<26:45, 321.03s/it]Best trial: 12. Best value: 0.834128:  90%|█████████ | 45/50 [5:58:03<26:45, 321.03s/it]Best trial: 12. Best value: 0.834128:  92%|█████████▏| 46/50 [5:58:03<18:08, 272.08s/it]                                                                                        [I 2026-01-25 22:58:27,970] Trial 46 pruned. 
+Best trial: 12. Best value: 0.834128:  92%|█████████▏| 46/50 [6:00:46<18:08, 272.08s/it]Best trial: 12. Best value: 0.834128:  92%|█████████▏| 46/50 [6:00:46<18:08, 272.08s/it]Best trial: 12. Best value: 0.834128:  94%|█████████▍| 47/50 [6:00:46<11:58, 239.42s/it]                                                                                        [I 2026-01-25 23:05:13,362] Trial 47 finished with value: 0.8322209806517435 and parameters: {'d_hidden': 128, 'num_layers': 2, 'lambda_hsic': 0.39134909437784166, 'lr': 0.005090621804174459, 'batch_size': 64}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  94%|█████████▍| 47/50 [6:07:32<11:58, 239.42s/it]Best trial: 12. Best value: 0.834128:  94%|█████████▍| 47/50 [6:07:32<11:58, 239.42s/it]Best trial: 12. Best value: 0.834128:  96%|█████████▌| 48/50 [6:07:32<09:38, 289.21s/it]                                                                                        [I 2026-01-25 23:12:55,582] Trial 48 finished with value: 0.8337847521649886 and parameters: {'d_hidden': 192, 'num_layers': 3, 'lambda_hsic': 5.751847619618912, 'lr': 0.008411929423147502, 'batch_size': 32}. Best is trial 12 with value: 0.8341278709630403.
+Best trial: 12. Best value: 0.834128:  96%|█████████▌| 48/50 [6:15:14<09:38, 289.21s/it]Best trial: 12. Best value: 0.834128:  96%|█████████▌| 48/50 [6:15:14<09:38, 289.21s/it]Best trial: 12. Best value: 0.834128:  98%|█████████▊| 49/50 [6:15:14<05:41, 341.11s/it]                                                                                        [I 2026-01-25 23:15:48,881] Trial 49 pruned. 
+Best trial: 12. Best value: 0.834128:  98%|█████████▊| 49/50 [6:18:07<05:41, 341.11s/it]Best trial: 12. Best value: 0.834128:  98%|█████████▊| 49/50 [6:18:07<05:41, 341.11s/it]Best trial: 12. Best value: 0.834128: 100%|██████████| 50/50 [6:18:07<00:00, 290.77s/it]Best trial: 12. Best value: 0.834128: 100%|██████████| 50/50 [6:18:07<00:00, 453.75s/it]
+
+============================================================
+优化完成!
+============================================================
+完成试验数: 50
+最佳验证 AUC: 0.8341
+最佳超参数:
+  - d_hidden: 160
+  - num_layers: 3
+  - lambda_hsic: 8.183514536477993
+  - lr: 0.009548063542090106
+  - batch_size: 64
+============================================================
+
+
+============================================================
+训练最终模型
+============================================================
+超参数: {'d_hidden': 160, 'num_layers': 3, 'lambda_hsic': 8.183514536477993, 'lr': 0.009548063542090106, 'batch_size': 64}
+训练轮数: 100
+训练设备: cuda
+训练集大小: 5811, 验证集大小: 1453
+
+==================================================
+阶段 1: VAE Warmup (20 epochs)
+==================================================
+Epoch 1/20 - Loss: 0.8335, Train HSIC: 0.0088, Val HSIC: 0.0008
+Epoch 2/20 - Loss: 0.3683, Train HSIC: 0.0005, Val HSIC: 0.0004
+Epoch 3/20 - Loss: 0.1793, Train HSIC: 0.0003, Val HSIC: 0.0003
+Epoch 4/20 - Loss: 0.1103, Train HSIC: 0.0003, Val HSIC: 0.0003
+Epoch 5/20 - Loss: 0.0783, Train HSIC: 0.0003, Val HSIC: 0.0003
+Epoch 6/20 - Loss: 0.0637, Train HSIC: 0.0002, Val HSIC: 0.0003
+Epoch 7/20 - Loss: 0.0531, Train HSIC: 0.0002, Val HSIC: 0.0002
+Epoch 8/20 - Loss: 0.0464, Train HSIC: 0.0002, Val HSIC: 0.0002
+Epoch 9/20 - Loss: 0.0413, Train HSIC: 0.0002, Val HSIC: 0.0002
+Epoch 10/20 - Loss: 0.0361, Train HSIC: 0.0002, Val HSIC: 0.0002
+Epoch 11/20 - Loss: 0.0337, Train HSIC: 0.0002, Val HSIC: 0.0002
+Epoch 12/20 - Loss: 0.0312, Train HSIC: 0.0002, Val HSIC: 0.0002
+Epoch 13/20 - Loss: 0.0291, Train HSIC: 0.0002, Val HSIC: 0.0002
+Epoch 14/20 - Loss: 0.0271, Train HSIC: 0.0002, Val HSIC: 0.0002
+Epoch 15/20 - Loss: 0.0248, Train HSIC: 0.0002, Val HSIC: 0.0001
+Epoch 16/20 - Loss: 0.0238, Train HSIC: 0.0002, Val HSIC: 0.0001
+Epoch 17/20 - Loss: 0.0234, Train HSIC: 0.0001, Val HSIC: 0.0001
+Epoch 18/20 - Loss: 0.0224, Train HSIC: 0.0001, Val HSIC: 0.0001
+Epoch 19/20 - Loss: 0.0207, Train HSIC: 0.0001, Val HSIC: 0.0001
+Epoch 20/20 - Loss: 0.0195, Train HSIC: 0.0001, Val HSIC: 0.0001
+
+==================================================
+阶段 2: Interaction Learning (30 epochs)
+==================================================
+Epoch 1/30 - Loss: 0.4196, Val AUC: 0.8264
+Epoch 2/30 - Loss: 0.3627, Val AUC: 0.8273
+Epoch 3/30 - Loss: 0.3586, Val AUC: 0.8274
+Epoch 4/30 - Loss: 0.3589, Val AUC: 0.8276
+Epoch 5/30 - Loss: 0.3585, Val AUC: 0.8280
+Epoch 6/30 - Loss: 0.3558, Val AUC: 0.8279
+Epoch 7/30 - Loss: 0.3571, Val AUC: 0.8281
+Epoch 8/30 - Loss: 0.3552, Val AUC: 0.8282
+Epoch 9/30 - Loss: 0.3564, Val AUC: 0.8284
+Epoch 10/30 - Loss: 0.3549, Val AUC: 0.8284
+Epoch 11/30 - Loss: 0.3552, Val AUC: 0.8286
+Epoch 12/30 - Loss: 0.3527, Val AUC: 0.8286
+Epoch 13/30 - Loss: 0.3541, Val AUC: 0.8287
+Epoch 14/30 - Loss: 0.3561, Val AUC: 0.8287
+Epoch 15/30 - Loss: 0.3531, Val AUC: 0.8287
+Epoch 16/30 - Loss: 0.3555, Val AUC: 0.8288
+Epoch 17/30 - Loss: 0.3512, Val AUC: 0.8290
+Epoch 18/30 - Loss: 0.3512, Val AUC: 0.8289
+Epoch 19/30 - Loss: 0.3501, Val AUC: 0.8289
+Epoch 20/30 - Loss: 0.3538, Val AUC: 0.8291
+Epoch 21/30 - Loss: 0.3517, Val AUC: 0.8293
+Epoch 22/30 - Loss: 0.3527, Val AUC: 0.8292
+Epoch 23/30 - Loss: 0.3507, Val AUC: 0.8293
+Epoch 24/30 - Loss: 0.3494, Val AUC: 0.8293
+Epoch 25/30 - Loss: 0.3505, Val AUC: 0.8294
+Epoch 26/30 - Loss: 0.3500, Val AUC: 0.8295
+Epoch 27/30 - Loss: 0.3494, Val AUC: 0.8295
+Epoch 28/30 - Loss: 0.3487, Val AUC: 0.8296
+Epoch 29/30 - Loss: 0.3488, Val AUC: 0.8296
+Epoch 30/30 - Loss: 0.3464, Val AUC: 0.8296
+
+==================================================
+阶段 3: Joint Fine-tuning (50 epochs)
+==================================================
+Epoch 1/50 - Train Loss: 0.3585, Val Loss: 0.3557, Val AUC: 0.8296
+Epoch 2/50 - Train Loss: 0.3565, Val Loss: 0.3558, Val AUC: 0.8296
+Epoch 3/50 - Train Loss: 0.3558, Val Loss: 0.3569, Val AUC: 0.8296
+Epoch 4/50 - Train Loss: 0.3551, Val Loss: 0.3578, Val AUC: 0.8297
+Epoch 5/50 - Train Loss: 0.3555, Val Loss: 0.3569, Val AUC: 0.8297
+Epoch 6/50 - Train Loss: 0.3539, Val Loss: 0.3572, Val AUC: 0.8297
+Epoch 7/50 - Train Loss: 0.3547, Val Loss: 0.3571, Val AUC: 0.8297
+Epoch 8/50 - Train Loss: 0.3516, Val Loss: 0.3571, Val AUC: 0.8298
+Epoch 9/50 - Train Loss: 0.3525, Val Loss: 0.3567, Val AUC: 0.8298
+Epoch 10/50 - Train Loss: 0.3525, Val Loss: 0.3572, Val AUC: 0.8298
+Epoch 11/50 - Train Loss: 0.3523, Val Loss: 0.3569, Val AUC: 0.8297
+
+Early stopping triggered at epoch 11
+
+已加载最佳模型 (Val Loss: 0.3557)
+
+============================================================
+计算评估指标
+============================================================
+
+分类指标:
+  Accuracy:  0.8530
+  Precision: 0.7763
+  Recall:    0.3362
+  F1 Score:  0.4692
+  AUC-ROC:   0.8158
+
+因果指标:
+  PEHE:      0.6760
+  Sensitivity (Age, ε=0.1):   0.0001
+  Sensitivity (PM2.5, ε=0.1): 0.0014
+
+CATE 统计:
+  Mean CATE: -0.3912
+  Std CATE:  0.2625
+
+模型已保存至: results/dlc_final_sota.pth
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/dlc/run_final_sota.py", line 766, in <module>
+    main()
+  File "/home/UserData/ljx/Project_1/src/dlc/run_final_sota.py", line 743, in main
+    save_results(
+  File "/home/UserData/ljx/Project_1/src/dlc/run_final_sota.py", line 576, in save_results
+    report_content = f"""# DLC Final SOTA Evaluation Report
+ValueError: Invalid format specifier
