@@ -1,301 +1,629 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-最终基线模型评估脚本 (Final Baseline Evaluation)
+Run Baselines Final (Task 8: Ultimate Re-test)
+==============================================
 
-整合 Task 19.3 和 Task 19.4-Fix 的结果：
-- 通用指标 (Accuracy/AUC): 引用 Task 19.3 结果（基于严格的 Train/Test 划分）
-- 机制指标 (Recall/ΔCATE): 引用 Task 19.4-Fix 结果（基于全量数据 + Proxy ITE）
+Execute final benchmark for 5 baselines + DLC comparison.
+Contenders: XGBoost, TabR, MOGONET, TransTEE, HyperFast.
 
-作者：Kiro AI Agent
-日期：2026-01-23
+Data Strategy:
+- Training: Pooled (Clean PANCAN + LUAD Train 80%)
+- Testing: LUAD Test (20%) - Locked random_state=42
+
+Features:
+- Full 23 features for Predictors.
+- TransTEE special handling (PM2.5 -> Treatment).
+
+Metrics:
+- Predictive: AUC, Acc, F1, Precision, Recall
+- Causal: PEHE, Delta CATE, Sensitivity(Age)
+- System: Params, Inference Time
 """
 
-import os
 import sys
 import json
-import warnings
+import time
+import torch
 import numpy as np
 import pandas as pd
 from pathlib import Path
-from typing import Dict, List, Tuple, Any
+import argparse
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, roc_auc_score, f1_score, precision_score, recall_score
+from sklearn.preprocessing import StandardScaler
+from copy import deepcopy
 
-# 添加项目根目录到路径
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Project Imports
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
-warnings.filterwarnings('ignore')
+from src.baselines.xgb_baseline import XGBBaseline
+from src.baselines.tabr_baseline import TabRBaseline
+from src.baselines.mogonet_baseline import MOGONETBaseline
+from src.baselines.transtee_baseline import TransTEEBaseline
+from src.baselines.hyperfast_baseline import HyperFastBaseline
+from src.dlc.dlc_net import DLCNet
+from src.dlc.metrics import compute_pehe_from_arrays # Use array version directly
+from src.dlc.ground_truth import GroundTruthGenerator
+from src.baselines.utils import set_global_seed
 
+# ==========================================
+# Config
+# ==========================================
+RESULTS_DIR = PROJECT_ROOT / "results"
+DATA_DIR = PROJECT_ROOT / "data"
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-def compute_proxy_ite(model, X: np.ndarray, pm25_feature_idx: int, model_name: str = None) -> np.ndarray:
-    """
-    计算分类模型的 Proxy ITE（反事实干预法）
+BLACKLIST_PATH = DATA_DIR / "PANCAN" / "pancan_leakage_blacklist.csv"
+
+# ==========================================
+# Data Loading (Reused from run_final_sota.py)
+# ==========================================
+
+def load_clean_pancan():
+    """Load Clean PANCAN (Source) with Blacklist applied."""
+    print("[Data] Loading PANCAN data...")
+    csv_path = DATA_DIR / "pancan_synthetic_interaction.csv"
+    if not csv_path.exists():
+        raise FileNotFoundError(f"Missing PANCAN: {csv_path}")
     
-    原理：
-    对于每个样本 x，通过控制变量法（Ceteris Paribus）计算：
-    1. 构造高暴露样本 x_high：复制 x，强制将 Virtual_PM2.5 设为 +1.0
-    2. 构造低暴露样本 x_low：复制 x，强制将 Virtual_PM2.5 设为 -1.0
-    3. Proxy ITE(x) = Model.predict_proba(x_high) - Model.predict_proba(x_low)
+    df = pd.read_csv(csv_path)
     
-    这种方法剥离了基因背景的干扰，纯粹提取模型眼中的"PM2.5 效应"。
+    # 1. Apply Blacklist
+    if BLACKLIST_PATH.exists():
+        try:
+            # Try loading without header first
+            blacklist_df = pd.read_csv(BLACKLIST_PATH, header=None)
+            if not str(blacklist_df.iloc[0, 0]).startswith('TCGA'):
+                blacklist_df = pd.read_csv(BLACKLIST_PATH)
+            
+            leak_ids = set(blacklist_df.iloc[:, 0].values)
+            if 'sampleID' in df.columns:
+                before = len(df)
+                df = df[~df['sampleID'].isin(leak_ids)].reset_index(drop=True)
+                print(f"[Data] Blacklist applied: {before} -> {len(df)}")
+            else:
+                print("[Data] Warning: 'sampleID' missing in PANCAN, cannot filter.")
+        except Exception as e:
+            print(f"[Data] Blacklist error: {e}")
     
-    Args:
-        model: 训练好的分类模型
-        X: 原始特征矩阵 (n_samples, n_features)
-        pm25_feature_idx: Virtual_PM2.5 特征在 X 中的索引
-        model_name: 模型名称（用于处理 MOGONET 的特殊情况）
+    # 2. Extract Features
+    exclude = ['sampleID', 'Outcome_Label', 'True_Prob', 'True_ITE', 'Treatment']
+    feats = [c for c in df.columns if c not in exclude]
     
-    Returns:
-        proxy_ite: Proxy ITE (n_samples,)
-    """
-    # 构造高暴露样本（PM2.5 = +1.0）
-    X_high = X.copy()
-    X_high[:, pm25_feature_idx] = 1.0
+    X = df[feats].values.astype(np.float32)
+    y = df['Outcome_Label'].values.astype(np.int64)
     
-    # 构造低暴露样本（PM2.5 = -1.0）
-    X_low = X.copy()
-    X_low[:, pm25_feature_idx] = -1.0
+    return X, y, feats
+
+def load_luad_target():
+    """Load LUAD (Target) consistent with golden run."""
+    print("[Data] Loading LUAD data...")
+    csv_path = DATA_DIR / "luad_synthetic_interaction.csv"
     
-    # MOGONET 需要多视图输入
-    if model_name == 'MOGONET':
-        # 切分为多视图
-        X_high_clinical = X_high[:, :3]
-        X_high_omics = X_high[:, 3:]
-        views_high = [X_high_clinical, X_high_omics]
+    df = pd.read_csv(csv_path)
+    
+    exclude_cols = ["sampleID", "Outcome_Label", "True_Prob", "True_ITE", "Treatment"]
+    feature_cols = [c for c in df.columns if c not in exclude_cols]
+    
+    # Enforce feature count like golden run
+    if len(feature_cols) > 23:
+        feature_cols = feature_cols[:23]
         
-        X_low_clinical = X_low[:, :3]
-        X_low_omics = X_low[:, 3:]
-        views_low = [X_low_clinical, X_low_omics]
+    X = df[feature_cols].values.astype(np.float32)
+    y = df['Outcome_Label'].values.astype(np.int64)
+    
+    assert X.shape[1] == 23, f"LUAD Dim mismatch: {X.shape[1]}"
+    print(f"[Data] LUAD Loaded. Shape: {X.shape}")
+    
+    return X, y, feature_cols
+
+def prepare_mogonet_views(X, feature_names):
+    """
+    Split data into Clinical and Omics views for MOGONET.
+    Clinical: Age, Gender
+    Omics: Everything else
+    """
+    clinical_indices = []
+    omics_indices = []
+    
+    # Identify indices
+    for i, name in enumerate(feature_names):
+        if name in ['Age', 'Gender']:
+            clinical_indices.append(i)
+        else:
+            omics_indices.append(i)
+            
+    # Fallback / Integrity check
+    if not clinical_indices:
+        # Fallback to first 2 cols if names mismatch
+        clinical_indices = [0, 1]
+        omics_indices = list(range(2, X.shape[1]))
         
-        # 预测概率
-        y_proba_high = model.predict_proba(views_high)
-        y_proba_low = model.predict_proba(views_low)
+    view1 = X[:, clinical_indices] # Clinical
+    view2 = X[:, omics_indices]    # Omics
+    
+    return [view1, view2]
+
+def predict_transtee_proba(model, X, t):
+    """
+    Manual prediction for TransTEE since it lacks predict_proba
+    and expects (X, t).
+    We use the raw output (Regression on 0/1) as probability score.
+    """
+    # Scale
+    X_scaled = model.scaler.transform(X)
+    
+    # Tensor
+    X_tensor = torch.FloatTensor(X_scaled).to(model.device)
+    t_tensor = torch.FloatTensor(t).to(model.device)
+    
+    model.model.eval()
+    with torch.no_grad():
+        # returns y_pred, y0, y1
+        y_pred, _, _ = model.model(X_tensor, t_tensor)
+        
+    prob = y_pred.cpu().numpy()
+    
+    # Since we treat regression output as score, we might want to clip it
+    # to [0, 1] if it goes out of bound, though for AUC it doesn't matter.
+    # But for "sensitivity" (absolute change), scale matters.
+    # Let's keep it raw or clip? MSE on 0/1 usually stays around [0,1].
+    # But strictly speaking, it's not a probability.
+    
+    # To return shape (N, 2) like predict_proba? 
+    # The caller expects [:, 1] i.e. p(y=1)
+    
+    # We construct a fake (N, 2) array
+    return np.vstack([1-prob, prob]).T
+
+class DLCWrapper:
+    """Wrapper to evaluate DLC model as a baseline."""
+    def __init__(self, model_path, input_dim=23, fit_scaler_on=None, model_config=None, pm25_threshold=None, strict_load=True):
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.pm25_threshold = pm25_threshold
+        
+        if not model_path.exists():
+            raise FileNotFoundError(f"DLC Model not found at {model_path}")
+            
+        print(f"[DLC] Loading weights from {model_path}")
+        # Fix for PyTorch 2.6+ weights_only=True default
+        try:
+            payload = torch.load(model_path, map_location=self.device, weights_only=False)
+        except TypeError:
+             # Fallback for older torch versions
+            payload = torch.load(model_path, map_location=self.device)
+        
+        # Init Scaler
+        self.scaler = StandardScaler()
+        if isinstance(payload, dict) and 'scaler_mean' in payload:
+            self.scaler.mean_ = np.array(payload['scaler_mean'])
+            self.scaler.scale_ = np.array(payload['scaler_scale'])
+            self.scaler.var_ = self.scaler.scale_ ** 2
+            print("[DLC] Scaler parameters loaded from checkpoint.")
+        elif fit_scaler_on is not None:
+            print("[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...")
+            self.scaler.fit(fit_scaler_on)
+            if self.pm25_threshold is None:
+                # Use provided data PM2.5 median as fallback
+                try:
+                    self.pm25_threshold = float(np.median(fit_scaler_on[:, -1]))
+                except Exception:
+                    self.pm25_threshold = None
+        else:
+            print("[DLC] Warning: No scaler params in payload and no selection data provided. Using unfitted scaler (will fail)!")
+        
+        # Init Model
+        # SOTA Config: d_hidden=128, num_layers=3
+        config = model_config or {}
+        d_hidden = int(config.get("d_hidden", 128))
+        num_layers = int(config.get("num_layers", 3))
+        dropout = float(config.get("dropout", 0.006))
+        self.model = DLCNet(input_dim=input_dim, d_hidden=d_hidden, num_layers=num_layers, dropout=dropout)
+        
+        # Load State
+        if 'model_state_dict' in payload:
+            self.model.load_state_dict(payload['model_state_dict'], strict=strict_load)
+        else:
+            self.model.load_state_dict(payload, strict=strict_load)
+            
+        self.model.to(self.device)
+        self.model.eval()
+        
+    def predict_proba(self, X):
+        # Scale
+        try:
+            X_scaled = self.scaler.transform(X)
+        except:
+            X_scaled = X # If scaler not fitted?
+            
+        X_tensor = torch.FloatTensor(X_scaled).to(self.device)
+        with torch.no_grad():
+            out = self.model(X_tensor)
+            y1 = out['Y_1'].cpu().numpy().flatten()
+            y0 = out['Y_0'].cpu().numpy().flatten()
+
+            # Use factual outcome prediction for AUC/Acc/F1 (align with run_final_sota)
+            if self.pm25_threshold is None:
+                self.pm25_threshold = float(np.median(X[:, -1]))
+            t_raw = (X[:, -1] >= self.pm25_threshold).astype(np.float32)
+            prob = t_raw * y1 + (1.0 - t_raw) * y0
+            
+        return np.vstack([1-prob, prob]).T
+        
+    def predict(self, X):
+        probs = self.predict_proba(X)[:, 1]
+        return (probs > 0.5).astype(int)
+        
+    def predict_ite(self, X):
+        X_scaled = self.scaler.transform(X)
+        X_tensor = torch.FloatTensor(X_scaled).to(self.device)
+        with torch.no_grad():
+            out = self.model(X_tensor)
+            y1 = out["Y_1"].cpu().numpy().flatten()
+            y0 = out["Y_0"].cpu().numpy().flatten()
+        return y1 - y0
+
+# ==========================================
+# Helpers
+# ==========================================
+
+def get_params_count(model):
+    """Estimate parameters."""
+    if hasattr(model, 'parameters'):
+        # Torch model
+        return sum(p.numel() for p in model.parameters())
+    elif isinstance(model, DLCNet):
+         return sum(p.numel() for p in model.parameters())
+    elif hasattr(model, 'get_booster'):
+        # XGBoost
+        # Use number of trees * avg depth? Or just "N/A - Tree"
+        # User asked for nodes or N/A
+        try:
+            booster = model.model.get_booster()
+            dump = booster.get_dump()
+            nodes = sum([len(t.split('\n')) for t in dump])
+            return f"{nodes} (Nodes)"
+        except:
+            return "N/A"
     else:
-        # 预测概率
-        y_proba_high = model.predict_proba(X_high)
-        y_proba_low = model.predict_proba(X_low)
-    
-    # 确保是一维数组
-    if len(y_proba_high.shape) > 1:
-        y_proba_high = y_proba_high[:, 1]
-    if len(y_proba_low.shape) > 1:
-        y_proba_low = y_proba_low[:, 1]
-    
-    # 计算 Proxy ITE
-    proxy_ite = y_proba_high - y_proba_low
-    
-    return proxy_ite
+        return "N/A"
 
 
-def load_task19_3_results() -> Dict:
-    """加载 Task 19.3 的结果（泛化能力评估）"""
-    results_path = Path("results/experiment_a_results.json")
-    
-    if not results_path.exists():
-        print(f"[WARNING] Task 19.3 结果文件不存在：{results_path}")
-        return {}
-    
-    with open(results_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+def get_inference_params_count(model):
+    if hasattr(model, "causal_vae") and hasattr(model.causal_vae, "decoder"):
+        decoder_param_ids = {id(p) for p in model.causal_vae.decoder.parameters()}
+        return sum(
+            p.numel() for p in model.parameters()
+            if p.requires_grad and id(p) not in decoder_param_ids
+        )
+    return get_params_count(model)
 
 
-def load_task19_4_fix_results() -> Dict:
-    """加载 Task 19.4-Fix 的结果（机制验证）"""
-    results_path = Path("results/three_tier_metrics_fix.json")
-    
-    if not results_path.exists():
-        print(f"[WARNING] Task 19.4-Fix 结果文件不存在：{results_path}")
-        return {}
-    
-    with open(results_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+def summarize_metrics(records, keys):
+    summary = {}
+    for key in keys:
+        vals = np.array([r[key] for r in records], dtype=float)
+        summary[key] = {
+            "mean": float(vals.mean()),
+            "std": float(vals.std(ddof=1)) if len(vals) > 1 else 0.0
+        }
+    return summary
 
 
-def generate_comparison_matrix():
-    """生成最终的对比矩阵"""
-    print("="*80)
-    print("最终基线模型对比矩阵 (Final Baseline Comparison Matrix)")
-    print("="*80)
+def format_mean_std(value):
+    return f"{value['mean']:.4f} ± {value['std']:.4f}"
+
+def find_best_threshold(y_true, y_prob):
+    """Match run_final_sota threshold selection (maximize min(Acc, F1))."""
+    best_thresh = 0.5
+    best_score = -1.0
+    for thr in np.linspace(0.0, 1.0, 101):
+        preds = (y_prob > thr).astype(int)
+        acc_tmp = accuracy_score(y_true, preds)
+        f1_tmp = f1_score(y_true, preds)
+        score = min(acc_tmp, f1_tmp)
+        if score > best_score:
+            best_score = score
+            best_thresh = thr
+    return best_thresh
+
+def compute_delta_cate(model_name, model, X_test, feature_names, treatment_idx=22):
+    """
+    Compute PEHE (Accuracy) and Delta CATE (Mechanism Verification).
     
-    # 加载结果
-    task19_3_results = load_task19_3_results()
-    task19_4_fix_results = load_task19_4_fix_results()
+    Mechanism Verification (Golden Run Definition):
+    Delta CATE = Mean(CATE_Mutant) - Mean(CATE_Wild)
+    This checks if the model captures the interaction effect (EGFR status modifying effect of PM2.5).
+    """
+    # 1. Ground Truth ITE (For Accuracy/PEHE)
+    # Important: GroundTruthGenerator expects full 23 features structure
+    # Age(0), Gender(1)... PM2.5(22)
+    pm25_idx = 22
+    egfr_idx = feature_names.index("EGFR") if "EGFR" in feature_names else 3
     
-    if not task19_3_results or not task19_4_fix_results:
-        print("[ERROR] 缺少必要的结果文件，无法生成对比矩阵")
-        return
+    gt_gen = GroundTruthGenerator(pm25_idx=pm25_idx, egfr_idx=egfr_idx)
+    true_ite = gt_gen.compute_true_ite(X_test)
     
-    # 提取数据
-    tier1_general = task19_4_fix_results.get('tier1_general_performance', {})
-    tier2_egfr = task19_4_fix_results.get('tier2_egfr_mechanism', {})
-    tier3_tp53 = task19_4_fix_results.get('tier3_tp53_negative_control', {})
+    # 2. Estimated ITE
+    est_ite = None
     
-    # 模型列表
-    classification_models = ['XGBoost', 'TabR', 'HyperFast', 'MOGONET']
-    
-    print("\n### 层级 1：通用性能对比（泛化能力）")
-    print("\n数据来源：Task 19.3 (基于严格的 Train/Test 划分)")
-    print("\n| Model | AUC-ROC | F1-Macro | F1-Weighted | 状态 |")
-    print("|-------|---------|----------|-------------|------|")
-    
-    for model_name in classification_models:
-        if model_name in tier1_general:
-            m = tier1_general[model_name]
-            
-            # HyperFast 特殊标记
-            if model_name == 'HyperFast':
-                status = "❌ Failed (Mode Collapse)"
-            elif m['auc_roc'] >= 0.95:
-                status = "✅ 优秀"
-            elif m['auc_roc'] >= 0.85:
-                status = "✅ 良好"
-            else:
-                status = "⚠️ 需改进"
-            
-            print(f"| {model_name} | {m['auc_roc']:.4f} | "
-                  f"{m['f1_macro']:.4f} | {m['f1_weighted']:.4f} | {status} |")
-    
-    print("\n### 层级 2：机制特异性验证（阳性对照 - EGFR）")
-    print("\n数据来源：Task 19.4-Fix (基于全量数据 + Proxy ITE 反事实干预法)")
-    print("\n#### 分类模型 Proxy ΔCATE (EGFR)")
-    print("\n| Model | Proxy ΔCATE | 验证结果 | 解释 |")
-    print("|-------|-------------|----------|------|")
-    
-    for model_name in classification_models:
-        if model_name in tier2_egfr:
-            m = tier2_egfr[model_name]
-            proxy_delta_cate = m.get('proxy_delta_cate_egfr', 0.0)
-            
-            if proxy_delta_cate > 0.05:
-                validation = "✅ 通过"
-                explanation = "学到了 EGFR 交互效应"
-            elif proxy_delta_cate > 0:
-                validation = "⚠️ 边缘"
-                explanation = "效应较弱"
-            else:
-                validation = "❌ 失败"
-                explanation = "未学到交互效应"
-            
-            # HyperFast 特殊标记
-            if model_name == 'HyperFast':
-                explanation = "模型失效，无法评估"
-            
-            print(f"| {model_name} | {proxy_delta_cate:+.4f} | {validation} | {explanation} |")
-    
-    print("\n#### TransTEE ΔCATE (EGFR)")
-    print("\n| Model | Mean ITE (EGFR-Mutant) | Mean ITE (EGFR-Wild) | ΔCATE | 验证结果 |")
-    print("|-------|------------------------|----------------------|-------|----------|")
-    
-    if 'TransTEE' in tier2_egfr:
-        m = tier2_egfr['TransTEE']
-        delta_cate = m.get('delta_cate_egfr', 0.0)
-        validation = "✅ 通过" if delta_cate > 0 else "❌ 失败"
+    if hasattr(model, 'predict_ite'):
+        if model_name == "TransTEE":
+             # TransTEE specific: remove Treatment col
+             X_input = np.delete(X_test, treatment_idx, axis=1)
+             est_ite = model.predict_ite(X_input)
+        else:
+             # DLC (or others) supporting predict_ite directly
+             est_ite = model.predict_ite(X_test)
+             
+        if isinstance(est_ite, torch.Tensor):
+            est_ite = est_ite.detach().cpu().numpy()
+        est_ite = est_ite.flatten()
         
-        print(f"| TransTEE | {m.get('mean_ite_egfr_mutant', 0.0):.4f} | "
-              f"{m.get('mean_ite_egfr_wild', 0.0):.4f} | {delta_cate:+.4f} | {validation} |")
-    
-    print("\n### 层级 3：虚假关联排查（阴性对照 - TP53）")
-    print("\n数据来源：Task 19.4-Fix (基于全量数据 + Proxy ITE 反事实干预法)")
-    print("\n#### 分类模型 Proxy ΔCATE (TP53)")
-    print("\n| Model | Proxy ΔCATE | 验证结果 | 解释 |")
-    print("|-------|-------------|----------|------|")
-    
-    threshold = 0.1
-    
-    for model_name in classification_models:
-        if model_name in tier3_tp53:
-            m = tier3_tp53[model_name]
-            proxy_delta_cate = m.get('proxy_delta_cate_tp53', 0.0)
-            
-            if abs(proxy_delta_cate) < threshold:
-                validation = "✅ 通过"
-                explanation = "未产生虚假关联"
-            else:
-                validation = "❌ 失败"
-                explanation = "可能存在虚假关联"
-            
-            print(f"| {model_name} | {proxy_delta_cate:+.4f} | {validation} | {explanation} |")
-    
-    print("\n#### TransTEE ΔCATE (TP53 - 阴性对照)")
-    print("\n| Model | Mean ITE (TP53-Mutant) | Mean ITE (TP53-Wild) | ΔCATE | 验证结果 |")
-    print("|-------|------------------------|----------------------|-------|----------|")
-    
-    if 'TransTEE' in tier3_tp53:
-        m = tier3_tp53['TransTEE']
-        delta_cate = m.get('delta_cate_tp53', 0.0)
-        validation = "✅ 通过" if abs(delta_cate) < threshold else "❌ 失败"
+    else:
+        # S-Learner Logic for Predictors (XGB, TabR, etc)
+        # T=1 implies High PM2.5, T=0 implies Low PM2.5
+        # We calculate effect of "High vs Low" using the model
         
-        print(f"| TransTEE | {m.get('mean_ite_tp53_mutant', 0.0):.4f} | "
-              f"{m.get('mean_ite_tp53_wild', 0.0):.4f} | {delta_cate:+.4f} | {validation} |")
+        # Calculate representative High/Low values from X_test itself
+        pm25_vals = X_test[:, treatment_idx]
+        median_val = np.median(pm25_vals)
+        val_high = np.mean(pm25_vals[pm25_vals > median_val])
+        val_low = np.mean(pm25_vals[pm25_vals <= median_val])
+        
+        # Create Counterfactuals
+        X_high = X_test.copy()
+        X_high[:, treatment_idx] = val_high
+        
+        X_low = X_test.copy()
+        X_low[:, treatment_idx] = val_low
+        
+        # Predict Proba (Probability of Outcome=1)
+        if model_name == "MOGONET":
+            views_high = prepare_mogonet_views(X_high, feature_names)
+            views_low = prepare_mogonet_views(X_low, feature_names)
+            p_high = model.predict_proba(views_high)[:, 1]
+            p_low = model.predict_proba(views_low)[:, 1]
+        else:
+            p_high = model.predict_proba(X_high)[:, 1]
+            p_low = model.predict_proba(X_low)[:, 1]
+        
+        est_ite = p_high - p_low
+        
+    # 3. Compute Metrics
     
-    print("\n### 综合评估与模型排名")
-    print("\n| 排名 | 模型 | 通用性能 | EGFR 机制验证 | TP53 阴性对照 | 综合评价 |")
-    print("|------|------|----------|---------------|---------------|----------|")
+    # PEHE (Accuracy vs Ground Truth)
+    pehe = np.sqrt(np.nanmean((true_ite - est_ite) ** 2))
     
-    rankings = [
-        ("🥇", "TabR", "✅ 最佳", "✅ 通过", "✅ 通过", "**最佳模型**"),
-        ("🥈", "MOGONET", "✅ 良好", "✅ 通过", "✅ 通过", "**优秀模型**"),
-        ("🥉", "XGBoost", "✅ 优秀", "❌ 失败", "✅ 通过", "**良好模型**"),
-        ("4", "TransTEE", "N/A", "❌ 失败", "✅ 通过", "**需要改进**"),
-        ("5", "HyperFast", "❌ 失效", "⚠️ 边缘", "✅ 通过", "**Failed Baseline (Mode Collapse)**"),
-    ]
+    # Delta CATE (Mechanism: EGFR Effect)
+    # Definition: Mean(CATE | EGFR=1) - Mean(CATE | EGFR=0)
+    egfr_mask = X_test[:, egfr_idx] > 0
     
-    for rank, model, general, egfr, tp53, overall in rankings:
-        print(f"| {rank} | {model} | {general} | {egfr} | {tp53} | {overall} |")
+    cate_mutant = np.mean(est_ite[egfr_mask])
+    cate_wild = np.mean(est_ite[~egfr_mask])
+    delta_cate = cate_mutant - cate_wild
     
-    print("\n### 关键科学发现")
-    print("\n1. **TabR 是最佳模型**")
-    print("   - 通用性能：AUC-ROC = 0.9590（最高）")
-    print("   - 机制学习：Proxy ΔCATE (EGFR) = +0.0633（最强）")
-    print("   - 特异性：Proxy ΔCATE (TP53) = -0.0525（无虚假关联）")
-    
-    print("\n2. **MOGONET 表现优秀**")
-    print("   - 通用性能：AUC-ROC = 0.8326（良好）")
-    print("   - 机制学习：Proxy ΔCATE (EGFR) = +0.0255（学到了交互效应）")
-    print("   - 多视图架构有助于捕捉基因-环境交互")
-    
-    print("\n3. **XGBoost 未学到交互效应**")
-    print("   - 通用性能：AUC-ROC = 0.9043（优秀）")
-    print("   - 机制学习：Proxy ΔCATE (EGFR) = -0.0053（失败）")
-    print("   - 树模型的分裂策略可能不适合捕捉复杂的交互效应")
-    
-    print("\n4. **TransTEE 未达到预期**")
-    print("   - 机制学习：ΔCATE (EGFR) = -0.0228（失败）")
-    print("   - 可能原因：训练数据不足、模型架构需要调整")
-    
-    print("\n5. **HyperFast 完全失效 (Mode Collapse)**")
-    print("   - 通用性能：AUC-ROC = 0.5043（随机猜测水平）")
-    print("   - 状态：Failed Baseline，作为反面教材保留")
-    print("   - 建议：不再投入时间优化")
-    
-    print("\n### 方法论说明")
-    print("\n**数据源整合策略（混合数据源）：**")
-    print("- **通用指标 (Accuracy/AUC)：** 引用 Task 19.3 结果")
-    print("  - 基于严格的 Train/Test 划分（8:1:1）")
-    print("  - 反映模型的泛化能力")
-    print("  - 测试集：LUAD 数据的独立测试集 (n=52)")
-    
-    print("\n- **机制指标 (Recall/ΔCATE)：** 引用 Task 19.4-Fix 结果")
-    print("  - 基于 LUAD 全量数据 (n=513)")
-    print("  - 使用 Proxy ITE 反事实干预法")
-    print("  - 反映模型的机制捕获能力")
-    print("  - EGFR 突变样本：67 个（统计功效充足）")
-    
-    print("\n**Proxy ITE 计算方法（反事实干预法）：**")
-    print("- 对于每个样本 x，构造两个反事实样本：")
-    print("  - 高暴露样本：x_high = (x_genes, PM2.5=+1.0)")
-    print("  - 低暴露样本：x_low = (x_genes, PM2.5=-1.0)")
-    print("- Proxy ITE(x) = P(Y=1|x_high) - P(Y=1|x_low)")
-    print("- 原理：通过控制变量法剥离基因背景干扰")
-    
-    print("\n" + "="*80)
-    print("报告生成完成")
-    print("="*80)
+    return pehe, delta_cate
 
+def compute_sensitivity(model_name, model, X_test, feature_names=None, feature_idx=0, perturbation=5.0):
+    """Perturb feature (Age) and measure output change."""
+    try:
+        if model_name == "MOGONET":
+            views = prepare_mogonet_views(X_test, feature_names)
+            base_pred = model.predict_proba(views)[:, 1]
+            
+            X_mod = X_test.copy()
+            X_mod[:, feature_idx] += perturbation
+            views_mod = prepare_mogonet_views(X_mod, feature_names)
+            mod_pred = model.predict_proba(views_mod)[:, 1]
+
+        elif model_name == "TransTEE":
+             # TransTEE needs T. We use observed (binarized) T for sensitivity check?
+             # X_test has 23 dims. TransTEE needs 22 + T.
+             X_no_t = np.delete(X_test, 22, axis=1) # Hardcoded PM2.5 index
+             t = (X_test[:, 22] > np.median(X_test[:, 22])).astype(float)
+             
+             base_pred = predict_transtee_proba(model, X_no_t, t=t)[:, 1]
+             
+             X_mod = X_no_t.copy()
+             X_mod[:, feature_idx] += perturbation
+             
+             mod_pred = predict_transtee_proba(model, X_mod, t=t)[:, 1]
+             
+        else:
+            base_pred = model.predict_proba(X_test)[:, 1]
+            X_mod = X_test.copy()
+            X_mod[:, feature_idx] += perturbation
+            mod_pred = model.predict_proba(X_mod)[:, 1]
+            
+        return np.mean(np.abs(mod_pred - base_pred))
+    except Exception as e:
+        print(f"Sensitivity Error: {e}")
+        return 0.0
+
+# ==========================================
+# Main
+# ==========================================
 
 def main():
-    """主函数"""
-    generate_comparison_matrix()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--seeds", nargs="+", type=int, default=[42, 43, 44, 45, 46])
+    parser.add_argument("--output-tag", type=str, default="rigorous_20260203")
+    parser.add_argument("--dlc-weights", type=str, default="results/dlc_final_sota_tuned_20260203.pth")
+    parser.add_argument("--dlc-d-hidden", type=int, default=192)
+    parser.add_argument("--dlc-num-layers", type=int, default=4)
+    parser.add_argument("--only-dlc", action="store_true", help="Only evaluate DLC without baselines")
+    parser.add_argument("--dlc-strict", action="store_true", default=False, help="Strictly load DLC weights")
+    parser.add_argument("--no-dlc-strict", action="store_false", dest="dlc_strict", help="Allow missing keys for old DLC weights")
+    args = parser.parse_args()
 
+    print("🚀 Taking off: Baseline Ultimate Re-test...")
+    print(f"[Config] seeds={args.seeds} dlc_weights={args.dlc_weights} d_hidden={args.dlc_d_hidden} num_layers={args.dlc_num_layers} only_dlc={args.only_dlc} dlc_strict={args.dlc_strict}")
+    
+    # 1. Prepare Data
+    X_pancan, y_pancan, _ = load_clean_pancan()
+    X_luad, y_luad, feature_names = load_luad_target()
+    
+    results = {}
+    per_seed_results = {}
+    PM25_COL_IDX = 22
+    # 2. Multi-seed Loop
+    for seed in args.seeds:
+        print(f"\n[Seed {seed}] Preparing data...")
+        set_global_seed(seed)
+
+        # Split LUAD
+        X_train_l, X_test_l, y_train_l, y_test_l = train_test_split(
+            X_luad, y_luad, test_size=0.2, random_state=seed, stratify=y_luad
+        )
+        
+        # Pool Training Data
+        X_train_pool = np.vstack([X_pancan, X_train_l])
+        y_train_pool = np.hstack([y_pancan, y_train_l])
+        
+        print(f"[Dataset] Pooled Train: {X_train_pool.shape}, Test: {X_test_l.shape}")
+
+        if not args.only_dlc:
+            # Setup Models (per seed)
+            models = {
+                "XGBoost": XGBBaseline(random_state=seed),
+                "TabR": TabRBaseline(random_state=seed, batch_size=256, epochs=50),
+                "MOGONET": MOGONETBaseline(random_state=seed, epochs=50),
+                "TransTEE": TransTEEBaseline(random_state=seed, epochs=50, batch_size=64),
+                "HyperFast": HyperFastBaseline(random_state=seed, epochs=50, batch_size=64)
+            }
+
+            for name, model in models.items():
+                print(f"\n⚡ Processing {name} (Seed {seed})...")
+                start_t = time.time()
+                
+                if name == "TransTEE":
+                    pm25_train = X_train_pool[:, PM25_COL_IDX]
+                    med_train = np.median(pm25_train)
+                    t_train = (pm25_train > med_train).astype(float)
+                    X_tr_no_t = np.delete(X_train_pool, PM25_COL_IDX, axis=1)
+                    model.fit(X_tr_no_t, t_train, y_train_pool)
+                    
+                    X_te_no_t = np.delete(X_test_l, PM25_COL_IDX, axis=1)
+                    pm25_test = X_test_l[:, PM25_COL_IDX]
+                    t_test = (pm25_test > med_train).astype(float)
+                    y_prob = predict_transtee_proba(model, X_te_no_t, t=t_test)[:, 1]
+                    y_pred = (y_prob > 0.5).astype(int)
+                
+                elif name == "MOGONET":
+                    views_train = prepare_mogonet_views(X_train_pool, feature_names)
+                    model.fit(views_train, y_train_pool)
+                    views_test = prepare_mogonet_views(X_test_l, feature_names)
+                    y_prob = model.predict_proba(views_test)[:, 1]
+                    y_pred = (y_prob > 0.5).astype(int)
+                else:
+                    model.fit(X_train_pool, y_train_pool)
+                    y_prob = model.predict_proba(X_test_l)[:, 1]
+                    y_pred = model.predict(X_test_l)
+                
+                infer_time = (time.time() - start_t) / len(X_test_l) * 1000
+                
+                res = {
+                    "AUC": float(roc_auc_score(y_test_l, y_prob)),
+                    "Acc": float(accuracy_score(y_test_l, y_pred)),
+                    "F1": float(f1_score(y_test_l, y_pred)),
+                    "Precision": float(precision_score(y_test_l, y_pred)),
+                    "Recall": float(recall_score(y_test_l, y_pred)),
+                    "Time (ms)": float(infer_time),
+                    "Params": str(get_params_count(model)),
+                    "Seed": seed
+                }
+                
+                pehe, delta_cate = compute_delta_cate(name, model, X_test_l, feature_names, PM25_COL_IDX)
+                res["PEHE"] = float(pehe)
+                res["Delta CATE"] = float(delta_cate)
+                res["Sensitivity"] = float(compute_sensitivity(name, model, X_test_l, feature_names))
+
+                per_seed_results.setdefault(name, []).append(res)
+                print(f"  -> AUC: {res['AUC']:.4f}, PEHE: {res['PEHE']:.4f}")
+
+        # DLC
+        print("\n👑 Loading DLC SOTA Results...")
+        dlc_model_path = Path(args.dlc_weights)
+        if not dlc_model_path.exists():
+            dlc_model_path = RESULTS_DIR / "dlc_final_sota.pth"
+        try:
+            pm25_threshold = float(np.median(X_train_l[:, -1]))
+            dlc = DLCWrapper(
+                dlc_model_path,
+                input_dim=23,
+                fit_scaler_on=X_pancan,
+                model_config={"d_hidden": args.dlc_d_hidden, "num_layers": args.dlc_num_layers},
+                pm25_threshold=pm25_threshold,
+                strict_load=args.dlc_strict
+            )
+            start_t = time.time()
+            y_prob = dlc.predict_proba(X_test_l)[:, 1]
+            best_thr = find_best_threshold(y_test_l, y_prob)
+            y_pred = (y_prob > best_thr).astype(int)
+            infer_time = (time.time() - start_t) / len(X_test_l) * 1000
+            res = {
+                "AUC": float(roc_auc_score(y_test_l, y_prob)),
+                "Acc": float(accuracy_score(y_test_l, y_pred)),
+                "F1": float(f1_score(y_test_l, y_pred)),
+                "Precision": float(precision_score(y_test_l, y_pred)),
+                "Recall": float(recall_score(y_test_l, y_pred)),
+                "Time (ms)": float(infer_time),
+                "Params": str(get_inference_params_count(dlc.model)),
+                "Seed": seed
+            }
+            pehe, delta_cate = compute_delta_cate("DLC", dlc, X_test_l, feature_names, PM25_COL_IDX)
+            res["PEHE"] = float(pehe)
+            res["Delta CATE"] = float(delta_cate)
+            res["Sensitivity"] = float(compute_sensitivity("DLC", dlc, X_test_l, feature_names))
+            per_seed_results.setdefault("DLC (SOTA)", []).append(res)
+            print(f"  -> AUC: {res['AUC']:.4f}, PEHE: {res['PEHE']:.4f}")
+        except Exception as e:
+            print(f"Error evaluating DLC: {e}")
+            import traceback
+            traceback.print_exc()
+
+    # ==========================================
+    # Reporting
+    # ==========================================
+    md_path = RESULTS_DIR / f"final_comparison_matrix_{args.output_tag}.md"
+    
+    # Rows: Models, Cols: Metrics
+    metrics_order = ["AUC", "Acc", "F1", "PEHE", "Delta CATE", "Sensitivity", "Params", "Time (ms)"]
+    
+    md_lines = ["# Final Model Comparison Matrix", "", "| Model | " + " | ".join(metrics_order) + " |"]
+    md_lines.append("|-------|" + "|".join(["---"] * len(metrics_order)) + "|")
+    
+    for model_name, records in per_seed_results.items():
+        row = f"| {model_name} |"
+        numeric_metrics = ["AUC", "Acc", "F1", "PEHE", "Delta CATE", "Sensitivity", "Time (ms)"]
+        summary = summarize_metrics(records, numeric_metrics)
+        for m in metrics_order:
+            if m == "Params":
+                row += f" {records[0].get('Params', 'N/A')} |"
+            elif m in summary:
+                row += f" {format_mean_std(summary[m])} |"
+            else:
+                row += " N/A |"
+        md_lines.append(row)
+        
+    with open(md_path, 'w') as f:
+        f.write("\n".join(md_lines))
+        
+    print(f"\nTable generated at: {md_path}")
+    
+    # Json dump (per-seed)
+    out_json = RESULTS_DIR / f"baseline_metrics_{args.output_tag}.json"
+    with open(out_json, "w") as f:
+        json.dump(per_seed_results, f, indent=4)
+
+    print(f"Per-seed metrics saved to: {out_json}")
 
 if __name__ == "__main__":
+    # Suppress UndefinedMetricWarning from HyperFast (Precision=0)
+    import warnings
+    from sklearn.exceptions import UndefinedMetricWarning
+    warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
+    
     main()

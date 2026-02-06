@@ -22,10 +22,12 @@ import torch
 from typing import Union, Optional, Any
 import warnings
 
+from .ground_truth import GroundTruthGenerator
+
 
 def compute_pehe(
-    y_true_ite: Union[np.ndarray, torch.Tensor],
-    y_pred_ite: Union[np.ndarray, torch.Tensor]
+    model_pred_ite: Union[np.ndarray, torch.Tensor],
+    X_features: Optional[Union[np.ndarray, torch.Tensor, Any]] = None
 ) -> float:
     """
     计算 PEHE (Precision in Estimation of Heterogeneous Effect)。
@@ -34,10 +36,8 @@ def compute_pehe(
     衡量预测 ITE 与真实 ITE 之间的均方根误差。
     
     Args:
-        y_true_ite: 真实个体治疗效应 [N] 或 [N, 1]
-                    可以是 np.ndarray 或 torch.Tensor
-        y_pred_ite: 预测个体治疗效应 [N] 或 [N, 1]
-                    可以是 np.ndarray 或 torch.Tensor
+        model_pred_ite: 模型预测 ITE [N] 或 [N, 1]
+        X_features: 特征矩阵，用于生成 Ground Truth ITE
     
     Returns:
         float: PEHE 值，即 sqrt(mean((y_true - y_pred)^2))
@@ -54,14 +54,55 @@ def compute_pehe(
         - 自动展平为一维数组
     
     Example:
-        >>> y_true = np.array([0.5, 0.3, 0.7, 0.2])
         >>> y_pred = np.array([0.4, 0.35, 0.65, 0.25])
-        >>> pehe = compute_pehe(y_true, y_pred)
+        >>> X = np.random.randn(4, 23)
+        >>> pehe = compute_pehe(y_pred, X)
         >>> print(f"PEHE: {pehe:.4f}")
     
     References:
         Hill, J. L. (2011). Bayesian nonparametric modeling for causal inference.
         Journal of Computational and Graphical Statistics, 20(1), 217-240.
+    """
+    if X_features is None:
+        raise ValueError("X_features 不能为空，需用于生成 Ground Truth ITE")
+
+    feature_columns = getattr(X_features, 'columns', None)
+
+    if isinstance(model_pred_ite, torch.Tensor):
+        model_pred_ite = model_pred_ite.detach().cpu().numpy()
+
+    if isinstance(X_features, torch.Tensor):
+        X_features = X_features.detach().cpu().numpy()
+
+    model_pred_ite = np.asarray(model_pred_ite)
+    X_features_np = np.asarray(X_features)
+
+    # 兼容旧接口: compute_pehe(true_ite, pred_ite)
+    if model_pred_ite.shape == X_features_np.shape:
+        if model_pred_ite.ndim in (1, 2):
+            if model_pred_ite.ndim == 2 and model_pred_ite.shape[1] == 1:
+                model_pred_ite = model_pred_ite.flatten()
+                X_features_np = X_features_np.flatten()
+            return compute_pehe_from_arrays(model_pred_ite, X_features_np)
+
+    generator = GroundTruthGenerator(feature_names=feature_columns)
+    true_ite = generator.compute_true_ite(X_features_np)
+    return compute_pehe_from_arrays(true_ite, model_pred_ite)
+
+
+def compute_pehe_from_arrays(
+    y_true_ite: Union[np.ndarray, torch.Tensor],
+    y_pred_ite: Union[np.ndarray, torch.Tensor]
+) -> float:
+    """
+    计算 PEHE (Precision in Estimation of Heterogeneous Effect)。
+
+    Args:
+        y_true_ite: 真实个体治疗效应 [N] 或 [N, 1]
+        y_pred_ite: 预测个体治疗效应 [N] 或 [N, 1]
+
+    Returns:
+        float: PEHE 值
     """
     # 类型转换: torch.Tensor -> np.ndarray
     if isinstance(y_true_ite, torch.Tensor):
@@ -202,10 +243,14 @@ def compute_cate(
                 
                 # 检查返回值类型
                 if isinstance(outputs_treat, dict):
-                    # DLCNet 风格: 返回字典包含 'pred' (logits)
-                    # 需要 sigmoid 转换为概率
-                    prob_treat = torch.sigmoid(outputs_treat['pred']).squeeze().cpu().numpy()
-                    prob_control = torch.sigmoid(outputs_control['pred']).squeeze().cpu().numpy()
+                    # DLCNet 风格: 返回字典包含 'Y_1' 概率
+                    if 'Y_1' in outputs_treat:
+                        prob_treat = outputs_treat['Y_1'].squeeze().cpu().numpy()
+                        prob_control = outputs_control['Y_1'].squeeze().cpu().numpy()
+                    else:
+                        # 兼容返回 logits 的情况
+                        prob_treat = torch.sigmoid(outputs_treat['pred']).squeeze().cpu().numpy()
+                        prob_control = torch.sigmoid(outputs_control['pred']).squeeze().cpu().numpy()
                 else:
                     # 普通模型: forward 直接返回预测值
                     # 假设已经是概率或需要 sigmoid
@@ -240,7 +285,8 @@ def compute_sensitivity_score(
     X: torch.Tensor,
     confounder_idx: int,
     epsilon: Optional[float] = None,
-    device: Optional[torch.device] = None
+    device: Optional[torch.device] = None,
+    treatment_col_idx: int = 2
 ) -> float:
     """
     计算模型对混杂因素扰动的敏感性分数。
@@ -260,14 +306,14 @@ def compute_sensitivity_score(
         device: 计算设备，默认为 None（自动检测）
     
     Returns:
-        float: 敏感性分数 = mean(|pred_original - pred_perturbed|)
+        float: 敏感性分数 = mean(|ITE_original - ITE_perturbed|)
                值域 [0, 1]，越高表示越敏感
     
     Formula:
         如果 epsilon 为 None:
             epsilon = std(X[:, confounder_idx])
         X_perturbed[:, confounder_idx] = X[:, confounder_idx] + epsilon
-        sensitivity = mean(|f(X) - f(X_perturbed)|)
+        sensitivity = mean(|ITE(X) - ITE(X_perturbed)|)
     
     Note:
         - 用于评估模型是否正确捕获混杂效应
@@ -323,18 +369,18 @@ def compute_sensitivity_score(
     
     # 禁用梯度计算
     with torch.no_grad():
-        # 创建扰动数据（使用加法而非乘法）
+        # 创建扰动数据（使用深拷贝）
         X_perturbed = X.clone()
         X_perturbed[:, confounder_idx] = X[:, confounder_idx] + epsilon
-        
-        # 获取原始预测
-        pred_original = _get_prediction(model, X)
-        
-        # 获取扰动后预测
-        pred_perturbed = _get_prediction(model, X_perturbed)
-        
-        # 计算敏感性分数: mean(|pred_original - pred_perturbed|)
-        sensitivity = np.mean(np.abs(pred_original - pred_perturbed))
+
+        # 计算原始 ITE
+        ite_original = _compute_ite_from_model(model, X, treatment_col_idx)
+
+        # 计算扰动后 ITE
+        ite_perturbed = _compute_ite_from_model(model, X_perturbed, treatment_col_idx)
+
+        # 计算敏感性分数: mean(|ITE_original - ITE_perturbed|)
+        sensitivity = np.mean(np.abs(ite_original - ite_perturbed))
     
     return float(sensitivity)
 
@@ -377,6 +423,46 @@ def _get_prediction(
         return model.predict_proba(X_np)[:, 1]
     
     raise TypeError("模型必须实现 forward() 或 predict_proba() 方法")
+
+
+def _get_probability_prediction(
+    model: Any,
+    X: torch.Tensor
+) -> np.ndarray:
+    """
+    获取概率预测值，用于 ITE 计算。
+    """
+    if hasattr(model, 'forward'):
+        outputs = model(X)
+        if isinstance(outputs, dict):
+            if 'pred' in outputs:
+                return torch.sigmoid(outputs['pred']).squeeze().cpu().numpy()
+            if 'Y_1' in outputs:
+                return outputs['Y_1'].squeeze().cpu().numpy()
+        return torch.sigmoid(outputs).squeeze().cpu().numpy()
+
+    if hasattr(model, 'predict_proba'):
+        X_np = X.cpu().numpy() if isinstance(X, torch.Tensor) else X
+        return model.predict_proba(X_np)[:, 1]
+
+    raise TypeError("模型必须实现 forward() 或 predict_proba() 方法")
+
+
+def _compute_ite_from_model(
+    model: Any,
+    X: torch.Tensor,
+    treatment_col_idx: int,
+    high_val: float = 1.0,
+    low_val: float = -1.0
+) -> np.ndarray:
+    X_treat = X.clone()
+    X_control = X.clone()
+    X_treat[:, treatment_col_idx] = float(high_val)
+    X_control[:, treatment_col_idx] = float(low_val)
+
+    prob_treat = _get_probability_prediction(model, X_treat)
+    prob_control = _get_probability_prediction(model, X_control)
+    return prob_treat - prob_control
 
 
 def compute_ate(

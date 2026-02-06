@@ -1,0 +1,34 @@
+[I 2026-01-26 13:44:55,341] A new study created in memory with name: no-name-a83647a3-6362-4320-9259-e93434032c39
+[I 2026-01-26 13:45:05,587] Trial 0 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 64, 'num_layers': 3, 'lambda_hsic': 0.11758676633379544, 'lr_fine_tune': 6.337888105253192e-05, 'dropout': 0.13264892807957296}. Best is trial 0 with value: 0.9521531100478469.
+[I 2026-01-26 13:45:13,936] Trial 1 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 128, 'num_layers': 3, 'lambda_hsic': 0.5599048080164395, 'lr_fine_tune': 0.0006401255757337557, 'dropout': 0.005694665146369515}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:45:23,253] Trial 2 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 256, 'num_layers': 2, 'lambda_hsic': 0.044926002595266634, 'lr_fine_tune': 1.017780788059849e-05, 'dropout': 0.04716107010875964}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:45:29,996] Trial 3 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 128, 'num_layers': 1, 'lambda_hsic': 0.0003194051298834092, 'lr_fine_tune': 3.786911327055232e-05, 'dropout': 0.26285583746316343}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:45:39,276] Trial 4 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 256, 'num_layers': 2, 'lambda_hsic': 0.0002120037494531892, 'lr_fine_tune': 0.00010238300769288359, 'dropout': 0.3219610488799986}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:45:48,535] Trial 5 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 256, 'num_layers': 2, 'lambda_hsic': 0.3921252846505277, 'lr_fine_tune': 3.778594359614875e-05, 'dropout': 0.3549333756261911}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:45:55,017] Trial 6 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 64, 'num_layers': 1, 'lambda_hsic': 0.04491013828554568, 'lr_fine_tune': 1.2833159177245194e-05, 'dropout': 0.4954543836886178}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:46:01,840] Trial 7 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 128, 'num_layers': 1, 'lambda_hsic': 0.03168706571889654, 'lr_fine_tune': 1.8464735479261886e-05, 'dropout': 0.36279869244618423}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:46:09,551] Trial 8 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 64, 'num_layers': 3, 'lambda_hsic': 0.011111204684912801, 'lr_fine_tune': 0.0009289261207180709, 'dropout': 0.19933773999141902}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:46:18,908] Trial 9 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 256, 'num_layers': 2, 'lambda_hsic': 0.0022659629170473494, 'lr_fine_tune': 0.0004731857585887023, 'dropout': 0.48944874818665035}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:46:27,395] Trial 10 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 128, 'num_layers': 3, 'lambda_hsic': 0.6061370132896826, 'lr_fine_tune': 0.00022711410960630019, 'dropout': 0.01510122932330017}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:46:35,137] Trial 11 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 128, 'num_layers': 2, 'lambda_hsic': 0.9690489116361386, 'lr_fine_tune': 0.00019097499127490876, 'dropout': 0.001115107876879907}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:46:46,060] Trial 12 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 256, 'num_layers': 3, 'lambda_hsic': 0.16193924431671328, 'lr_fine_tune': 0.0009633160835155178, 'dropout': 0.08917087173550214}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:46:55,488] Trial 13 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 256, 'num_layers': 2, 'lambda_hsic': 0.003669006646118326, 'lr_fine_tune': 0.0003254240228299603, 'dropout': 0.08119313329476124}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:47:03,996] Trial 14 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 128, 'num_layers': 3, 'lambda_hsic': 0.12572660687379397, 'lr_fine_tune': 8.896399951382263e-05, 'dropout': 0.15862017374177648}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:47:11,772] Trial 15 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 128, 'num_layers': 2, 'lambda_hsic': 0.021843226875458036, 'lr_fine_tune': 2.6687850075047277e-05, 'dropout': 0.07082951658756224}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:47:21,263] Trial 16 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 256, 'num_layers': 2, 'lambda_hsic': 0.002282120638367876, 'lr_fine_tune': 0.0005058268220984832, 'dropout': 0.05402329177292596}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:47:29,809] Trial 17 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 128, 'num_layers': 3, 'lambda_hsic': 0.2130772987241979, 'lr_fine_tune': 0.0001476254195626191, 'dropout': 0.21587197601418884}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:47:37,845] Trial 18 finished with value: 0.9521531100478469 and parameters: {'d_hidden': 256, 'num_layers': 1, 'lambda_hsic': 0.05648078024910305, 'lr_fine_tune': 5.999746232054495e-05, 'dropout': 0.132403919171585}. Best is trial 1 with value: 0.9545454545454546.
+[I 2026-01-26 13:47:45,002] Trial 19 finished with value: 0.9545454545454546 and parameters: {'d_hidden': 64, 'num_layers': 2, 'lambda_hsic': 0.010524418453336284, 'lr_fine_tune': 1.1716898622843691e-05, 'dropout': 0.039085877899352174}. Best is trial 1 with value: 0.9545454545454546.
+Loading Data Globally for Optimization...
+Using Device: cuda
+Start Bayesian Optimization...
+
+optimization Finished!
+Best Params: {'d_hidden': 128, 'num_layers': 3, 'lambda_hsic': 0.5599048080164395, 'lr_fine_tune': 0.0006401255757337557, 'dropout': 0.005694665146369515}
+Best Value: 0.9545454545454546
+
+Best Trial Details:
+  AUC: 0.9545454545454546
+  Sensitivity: 0.00019989089923910797
+  Delta CATE: -4.491262268601803e-07
+Results saved to /home/UserData/ljx/Project_1/results/best_hyperparameters.json

@@ -1,0 +1,451 @@
+🚀 Taking off: Baseline Ultimate Re-test...
+[Config] seeds=[42, 43, 44, 45, 46] dlc_weights=/home/UserData/ljx/Project_1/results/dlc_final_sota_v13.pth d_hidden=256 num_layers=4 only_dlc=True dlc_strict=True
+[Data] Loading PANCAN data...
+[Data] Blacklist applied: 9080 -> 8567
+[Data] Loading LUAD data...
+[Data] LUAD Loaded. Shape: (513, 23)
+
+[Seed 42] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v13.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+
+[Seed 43] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v13.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+
+[Seed 44] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v13.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+
+[Seed 45] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v13.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+
+[Seed 46] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v13.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+
+Table generated at: /home/UserData/ljx/Project_1/results/final_comparison_matrix_dlc_sweep_v13.md
+Per-seed metrics saved to: /home/UserData/ljx/Project_1/results/baseline_metrics_dlc_sweep_v13.json
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 553, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload, strict=strict_load)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 553, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload, strict=strict_load)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 553, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload, strict=strict_load)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 553, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload, strict=strict_load)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 553, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload, strict=strict_load)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 192]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([192, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 192]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([192, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 192]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([192, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([576, 192]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([576]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.3.weight: copying a param with shape torch.Size([192, 192]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([96, 192]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 96]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+
+

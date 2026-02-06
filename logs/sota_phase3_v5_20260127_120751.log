@@ -1,0 +1,61 @@
+=== DLC Final SOTA Runs (Phase 3) ===
+Loading data...
+Applying blacklist from data/PANCAN/pancan_leakage_blacklist.csv...
+Filtered 513 leaked samples. Current: 8567
+Aligning PANCAN features to LUAD feature space...
+PANCAN aligned shape: (8567, 25)
+PANCAN: (8567, 23), LUAD: (513, 23)
+
+[Phase 1] Pre-training on PANCAN (100 epochs)...
+  Ep 10: Loss 0.5239
+  Ep 20: Loss 0.5101
+  Ep 30: Loss 0.4745
+  Ep 40: Loss 0.4534
+  Ep 50: Loss 0.4336
+  Ep 60: Loss 0.4056
+  Ep 70: Loss 0.3927
+  Ep 80: Loss 0.3799
+  Ep 90: Loss 0.3689
+  Ep 100: Loss 0.3564
+
+[Phase 2] Fine-tuning on LUAD (140 epochs)...
+  Ep 5: Loss 1.1482 | AUC 0.6865 | CATE -0.0105
+  Ep 10: Loss 0.9656 | AUC 0.6732 | CATE -0.0311
+  Ep 15: Loss 0.8349 | AUC 0.7174 | CATE -0.0440
+  Ep 20: Loss 0.7680 | AUC 0.7361 | CATE -0.0457
+  Ep 25: Loss 0.7270 | AUC 0.7407 | CATE -0.0473
+  Ep 30: Loss 0.6999 | AUC 0.7433 | CATE -0.0483
+  Ep 35: Loss 0.6652 | AUC 0.7460 | CATE -0.0474
+  Ep 40: Loss 0.6489 | AUC 0.7571 | CATE -0.0432
+  Ep 45: Loss 0.6436 | AUC 0.7765 | CATE -0.0337
+  Ep 50: Loss 0.6133 | AUC 0.7784 | CATE -0.0253
+  Ep 55: Loss 0.6174 | AUC 0.7822 | CATE -0.0256
+  Ep 60: Loss 0.5948 | AUC 0.7826 | CATE -0.0278
+  Ep 65: Loss 0.5864 | AUC 0.7822 | CATE -0.0303
+  Ep 70: Loss 0.5745 | AUC 0.7807 | CATE -0.0326
+  Ep 75: Loss 0.5564 | AUC 0.7788 | CATE -0.0331
+  Ep 80: Loss 0.5483 | AUC 0.7803 | CATE -0.0346
+  Ep 85: Loss 0.5406 | AUC 0.7799 | CATE -0.0397
+  Ep 90: Loss 0.5247 | AUC 0.7815 | CATE -0.0376
+  Ep 95: Loss 0.5184 | AUC 0.7841 | CATE -0.0360
+  Ep 100: Loss 0.5043 | AUC 0.7914 | CATE -0.0334
+  Ep 105: Loss 0.4887 | AUC 0.7876 | CATE -0.0296
+  Ep 110: Loss 0.4621 | AUC 0.7879 | CATE -0.0348
+  Ep 115: Loss 0.4568 | AUC 0.7860 | CATE -0.0274
+  Ep 120: Loss 0.4442 | AUC 0.7876 | CATE -0.0179
+  Ep 125: Loss 0.4206 | AUC 0.7708 | CATE -0.0211
+  Ep 130: Loss 0.4083 | AUC 0.7796 | CATE -0.0102
+  Ep 135: Loss 0.3844 | AUC 0.7727 | CATE -0.0114
+  Ep 140: Loss 0.3566 | AUC 0.7635 | CATE -0.0277
+
+=== Final SOTA Results ===
+{
+    "AUC": 0.7631578947368421,
+    "ACC": 0.6796116504854369,
+    "F1": 0.611764705882353,
+    "PEHE": 0.13535105115704607,
+    "Delta_CATE": -0.027730830013751984,
+    "Sens_Age": 0.04723992943763733
+}
+Report saved to results/final_sota_report.md
+

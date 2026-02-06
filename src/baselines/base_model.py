@@ -110,6 +110,15 @@ class BaseModel(ABC):
             NotImplementedError: 子类必须实现此方法
         """
         pass
+
+    def count_parameters(self) -> str:
+        """
+        计算模型参数量
+        
+        Returns:
+            str: 参数量统计字符串
+        """
+        return "N/A"
     
     def get_params(self) -> Dict[str, Any]:
         """

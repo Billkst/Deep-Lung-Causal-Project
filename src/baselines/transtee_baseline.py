@@ -502,6 +502,15 @@ class TransTEEBaseline(BaseModel):
         
         return self
     
+    def count_parameters(self) -> str:
+        """
+        计算模型参数量
+        """
+        if self.model is None:
+            return "Not Trained"
+        params = sum(p.numel() for p in self.model.parameters())
+        return str(params)
+
     def predict_ite(self, X):
         """
         预测个体治疗效应 (ITE)

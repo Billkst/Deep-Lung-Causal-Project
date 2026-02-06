@@ -1,0 +1,176 @@
+=== DLC Final SOTA Runs (Phase 3) ===
+[Config] tag=tuned_sota_auc_push_20260204i d_hidden=192 num_layers=4 lambda_hsic=0.02 lambda_pred=4.5 lambda_ite=0.7 lambda_cate=1.4 lambda_prob=2.0 lambda_adv=0.5 lambda_sens=0.2 sens_eps_scale=0.5
+[Seed] 42
+Loading data...
+Applying blacklist from data/PANCAN/pancan_leakage_blacklist.csv...
+Filtered 513 leaked samples. Current: 8567
+Aligning PANCAN features to LUAD feature space...
+PANCAN aligned shape: (8567, 25)
+PANCAN: (8567, 23), LUAD: (513, 23)
+Scaler vars: min=0.030960266788788313, max=214.61184717252607
+
+[Phase 1] Pre-training on PANCAN (100 epochs)...
+  Ep 1: Loss 3.8044
+  Ep 2: Loss 2.9382
+  Ep 3: Loss 2.8319
+  Ep 4: Loss 2.6889
+  Ep 5: Loss 2.5753
+  Ep 6: Loss 2.4493
+  Ep 7: Loss 2.3658
+  Ep 8: Loss 2.3136
+  Ep 9: Loss 2.2649
+  Ep 10: Loss 2.2000
+  Ep 11: Loss 2.2142
+  Ep 12: Loss 2.1659
+  Ep 13: Loss 2.1495
+  Ep 14: Loss 2.1617
+  Ep 15: Loss 2.1523
+  Ep 16: Loss 2.1187
+  Ep 17: Loss 2.1359
+  Ep 18: Loss 2.1289
+  Ep 19: Loss 2.1100
+  Ep 20: Loss 2.1200
+  Ep 21: Loss 2.1263
+  Ep 22: Loss 2.1047
+  Ep 23: Loss 2.1097
+  Ep 24: Loss 2.1137
+  Ep 25: Loss 2.1075
+  Ep 26: Loss 2.1029
+  Ep 27: Loss 2.1053
+  Ep 28: Loss 2.1076
+  Ep 29: Loss 2.0973
+  Ep 30: Loss 2.0966
+  Ep 31: Loss 2.0925
+  Ep 32: Loss 2.0959
+  Ep 33: Loss 2.0831
+  Ep 34: Loss 2.0867
+  Ep 35: Loss 2.0890
+  Ep 36: Loss 2.0879
+  Ep 37: Loss 2.0853
+  Ep 38: Loss 2.0856
+  Ep 39: Loss 2.0831
+  Ep 40: Loss 2.0827
+  Ep 41: Loss 2.0914
+  Ep 42: Loss 2.0815
+  Ep 43: Loss 2.0786
+  Ep 44: Loss 2.0741
+  Ep 45: Loss 2.0808
+  Ep 46: Loss 2.0810
+  Ep 47: Loss 2.0727
+  Ep 48: Loss 2.0726
+  Ep 49: Loss 2.0733
+  Ep 50: Loss 2.0732
+  Ep 51: Loss 2.0738
+  Ep 52: Loss 2.0734
+  Ep 53: Loss 2.0687
+  Ep 54: Loss 2.0710
+  Ep 55: Loss 2.0695
+  Ep 56: Loss 2.0666
+  Ep 57: Loss 2.0664
+  Ep 58: Loss 2.0635
+  Ep 59: Loss 2.0678
+  Ep 60: Loss 2.0621
+  Ep 61: Loss 2.0667
+  Ep 62: Loss 2.0609
+  Ep 63: Loss 2.0607
+  Ep 64: Loss 2.0582
+  Ep 65: Loss 2.0626
+  Ep 66: Loss 2.0569
+  Ep 67: Loss 2.0566
+  Ep 68: Loss 2.0565
+  Ep 69: Loss 2.0585
+  Ep 70: Loss 2.0534
+  Ep 71: Loss 2.0496
+  Ep 72: Loss 2.0531
+  Ep 73: Loss 2.0480
+  Ep 74: Loss 2.0506
+  Ep 75: Loss 2.0556
+  Ep 76: Loss 2.0510
+  Ep 77: Loss 2.0486
+  Ep 78: Loss 2.0509
+  Ep 79: Loss 2.0409
+  Ep 80: Loss 2.0468
+  Ep 81: Loss 2.0398
+  Ep 82: Loss 2.0396
+  Ep 83: Loss 2.0348
+  Ep 84: Loss 2.0349
+  Ep 85: Loss 2.0319
+  Ep 86: Loss 2.0376
+  Ep 87: Loss 2.0307
+  Ep 88: Loss 2.0331
+  Ep 89: Loss 2.0297
+  Ep 90: Loss 2.0203
+  Ep 91: Loss 2.0288
+  Ep 92: Loss 2.0212
+  Ep 93: Loss 2.0179
+  Ep 94: Loss 2.0245
+  Ep 95: Loss 2.0137
+  Ep 96: Loss 2.0155
+  Ep 97: Loss 2.0114
+  Ep 98: Loss 2.0117
+  Ep 99: Loss 2.0125
+  Ep 100: Loss 2.0087
+
+[Phase 2] Fine-tuning on LUAD (50 epochs)...
+  Ep 1: Loss 2.8004 | AUC 0.8715 | CATE 0.1504 | PEHE 0.0695 | Sens 0.0031
+  Ep 2: Loss 2.7052 | AUC 0.8707 | CATE 0.1496 | PEHE 0.0667 | Sens 0.0029
+  Ep 3: Loss 2.6622 | AUC 0.8745 | CATE 0.1443 | PEHE 0.0745 | Sens 0.0026
+  Ep 4: Loss 2.6538 | AUC 0.8699 | CATE 0.1455 | PEHE 0.0737 | Sens 0.0026
+  Ep 5: Loss 2.6335 | AUC 0.8688 | CATE 0.1459 | PEHE 0.0745 | Sens 0.0026
+  Ep 6: Loss 2.5954 | AUC 0.8699 | CATE 0.1397 | PEHE 0.0751 | Sens 0.0025
+  Ep 7: Loss 2.6016 | AUC 0.8699 | CATE 0.1340 | PEHE 0.0798 | Sens 0.0025
+  Ep 8: Loss 2.5842 | AUC 0.8673 | CATE 0.1335 | PEHE 0.0841 | Sens 0.0025
+  Ep 9: Loss 2.5813 | AUC 0.8680 | CATE 0.1303 | PEHE 0.0807 | Sens 0.0025
+  Ep 10: Loss 2.5659 | AUC 0.8673 | CATE 0.1305 | PEHE 0.0808 | Sens 0.0025
+  Ep 11: Loss 2.5329 | AUC 0.8677 | CATE 0.1275 | PEHE 0.0822 | Sens 0.0024
+  Ep 12: Loss 2.5568 | AUC 0.8673 | CATE 0.1275 | PEHE 0.0767 | Sens 0.0024
+  Ep 13: Loss 2.5270 | AUC 0.8688 | CATE 0.1234 | PEHE 0.0808 | Sens 0.0024
+  Ep 14: Loss 2.5153 | AUC 0.8665 | CATE 0.1248 | PEHE 0.0803 | Sens 0.0024
+  Ep 15: Loss 2.5221 | AUC 0.8642 | CATE 0.1265 | PEHE 0.0802 | Sens 0.0024
+  Ep 16: Loss 2.5195 | AUC 0.8654 | CATE 0.1234 | PEHE 0.0773 | Sens 0.0024
+  Ep 17: Loss 2.5070 | AUC 0.8650 | CATE 0.1230 | PEHE 0.0754 | Sens 0.0024
+  Ep 18: Loss 2.4979 | AUC 0.8631 | CATE 0.1230 | PEHE 0.0717 | Sens 0.0023
+  Ep 19: Loss 2.5105 | AUC 0.8635 | CATE 0.1238 | PEHE 0.0705 | Sens 0.0023
+  Ep 20: Loss 2.4944 | AUC 0.8616 | CATE 0.1240 | PEHE 0.0707 | Sens 0.0023
+  Ep 21: Loss 2.4686 | AUC 0.8616 | CATE 0.1216 | PEHE 0.0731 | Sens 0.0023
+  Ep 22: Loss 2.4736 | AUC 0.8604 | CATE 0.1179 | PEHE 0.0743 | Sens 0.0023
+  Ep 23: Loss 2.4759 | AUC 0.8600 | CATE 0.1205 | PEHE 0.0731 | Sens 0.0023
+  Ep 24: Loss 2.4635 | AUC 0.8608 | CATE 0.1147 | PEHE 0.0742 | Sens 0.0023
+  Ep 25: Loss 2.4693 | AUC 0.8600 | CATE 0.1246 | PEHE 0.0710 | Sens 0.0023
+  Ep 26: Loss 2.4704 | AUC 0.8616 | CATE 0.1194 | PEHE 0.0696 | Sens 0.0023
+  Ep 27: Loss 2.4494 | AUC 0.8612 | CATE 0.1185 | PEHE 0.0719 | Sens 0.0023
+  Ep 28: Loss 2.4371 | AUC 0.8581 | CATE 0.1223 | PEHE 0.0751 | Sens 0.0023
+  Ep 29: Loss 2.4361 | AUC 0.8589 | CATE 0.1155 | PEHE 0.0785 | Sens 0.0023
+  Ep 30: Loss 2.4487 | AUC 0.8574 | CATE 0.1183 | PEHE 0.0744 | Sens 0.0023
+  Ep 31: Loss 2.4255 | AUC 0.8566 | CATE 0.1183 | PEHE 0.0765 | Sens 0.0024
+  Ep 32: Loss 2.4089 | AUC 0.8574 | CATE 0.1166 | PEHE 0.0746 | Sens 0.0024
+  Ep 33: Loss 2.4257 | AUC 0.8566 | CATE 0.1153 | PEHE 0.0729 | Sens 0.0023
+  Ep 34: Loss 2.4215 | AUC 0.8581 | CATE 0.1176 | PEHE 0.0717 | Sens 0.0023
+  Ep 35: Loss 2.4076 | AUC 0.8566 | CATE 0.1192 | PEHE 0.0685 | Sens 0.0023
+  Ep 36: Loss 2.3972 | AUC 0.8558 | CATE 0.1181 | PEHE 0.0695 | Sens 0.0023
+  Ep 37: Loss 2.4053 | AUC 0.8558 | CATE 0.1196 | PEHE 0.0681 | Sens 0.0024
+  Ep 38: Loss 2.3983 | AUC 0.8558 | CATE 0.1185 | PEHE 0.0696 | Sens 0.0024
+  Ep 39: Loss 2.4059 | AUC 0.8558 | CATE 0.1164 | PEHE 0.0731 | Sens 0.0024
+  Ep 40: Loss 2.4038 | AUC 0.8528 | CATE 0.1204 | PEHE 0.0708 | Sens 0.0025
+  Ep 41: Loss 2.3903 | AUC 0.8543 | CATE 0.1167 | PEHE 0.0727 | Sens 0.0025
+  Ep 42: Loss 2.3641 | AUC 0.8558 | CATE 0.1148 | PEHE 0.0725 | Sens 0.0025
+  Ep 43: Loss 2.3911 | AUC 0.8558 | CATE 0.1147 | PEHE 0.0710 | Sens 0.0025
+  Ep 44: Loss 2.3839 | AUC 0.8524 | CATE 0.1197 | PEHE 0.0710 | Sens 0.0025
+  Ep 45: Loss 2.3656 | AUC 0.8558 | CATE 0.1114 | PEHE 0.0733 | Sens 0.0025
+  Ep 46: Loss 2.3718 | AUC 0.8509 | CATE 0.1197 | PEHE 0.0714 | Sens 0.0025
+  Ep 47: Loss 2.3645 | AUC 0.8520 | CATE 0.1174 | PEHE 0.0726 | Sens 0.0025
+  Ep 48: Loss 2.3631 | AUC 0.8547 | CATE 0.1141 | PEHE 0.0732 | Sens 0.0025
+  Ep 49: Loss 2.3513 | AUC 0.8490 | CATE 0.1238 | PEHE 0.0705 | Sens 0.0026
+  Ep 50: Loss 2.3463 | AUC 0.8497 | CATE 0.1204 | PEHE 0.0724 | Sens 0.0026
+
+=== Final SOTA Results ===
+{
+    "AUC": 0.8707093821510298,
+    "ACC": 0.7961165048543689,
+    "F1": 0.7835051546391752,
+    "PEHE": 0.066713940539114,
+    "Delta_CATE": 0.14956806600093842,
+    "Sens_Age": 0.002877020975574851
+}
+Report saved to results/final_sota_report_tuned_sota_auc_push_20260204i.md
+

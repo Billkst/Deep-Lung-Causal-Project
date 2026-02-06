@@ -1,0 +1,263 @@
+INFO:src.baselines.tabr_baseline:开始训练 TabR 模型...
+INFO:src.baselines.tabr_baseline:数据划分：训练集 7630 样本，验证集 1347 样本
+INFO:src.baselines.tabr_baseline:检索池构建完成：7630 个样本，k=5
+
+Training TabR:   0%|          | 0/50 [00:00<?, ?it/s]
+Training TabR:   0%|          | 0/50 [00:01<?, ?it/s, train_loss=0.3897, val_loss=0.3880]
+Training TabR:   2%|▏         | 1/50 [00:01<01:02,  1.28s/it, train_loss=0.3897, val_loss=0.3880]
+Training TabR:   2%|▏         | 1/50 [00:02<01:02,  1.28s/it, train_loss=0.3505, val_loss=0.3802]
+Training TabR:   4%|▍         | 2/50 [00:02<00:49,  1.03s/it, train_loss=0.3505, val_loss=0.3802]
+Training TabR:   4%|▍         | 2/50 [00:02<00:49,  1.03s/it, train_loss=0.3447, val_loss=0.3843]
+Training TabR:   6%|▌         | 3/50 [00:02<00:44,  1.06it/s, train_loss=0.3447, val_loss=0.3843]
+Training TabR:   6%|▌         | 3/50 [00:03<00:44,  1.06it/s, train_loss=0.3372, val_loss=0.3891]
+Training TabR:   8%|▊         | 4/50 [00:03<00:41,  1.11it/s, train_loss=0.3372, val_loss=0.3891]
+Training TabR:   8%|▊         | 4/50 [00:04<00:41,  1.11it/s, train_loss=0.3302, val_loss=0.3978]
+Training TabR:  10%|█         | 5/50 [00:04<00:39,  1.14it/s, train_loss=0.3302, val_loss=0.3978]
+Training TabR:  10%|█         | 5/50 [00:05<00:39,  1.14it/s, train_loss=0.3270, val_loss=0.4129]
+Training TabR:  12%|█▏        | 6/50 [00:05<00:38,  1.15it/s, train_loss=0.3270, val_loss=0.4129]
+Training TabR:  12%|█▏        | 6/50 [00:06<00:38,  1.15it/s, train_loss=0.3191, val_loss=0.4063]
+Training TabR:  14%|█▍        | 7/50 [00:06<00:37,  1.15it/s, train_loss=0.3191, val_loss=0.4063]
+Training TabR:  14%|█▍        | 7/50 [00:07<00:37,  1.15it/s, train_loss=0.3134, val_loss=0.4375]
+Training TabR:  16%|█▌        | 8/50 [00:07<00:36,  1.16it/s, train_loss=0.3134, val_loss=0.4375]
+Training TabR:  16%|█▌        | 8/50 [00:08<00:36,  1.16it/s, train_loss=0.3024, val_loss=0.4270]
+Training TabR:  18%|█▊        | 9/50 [00:08<00:35,  1.16it/s, train_loss=0.3024, val_loss=0.4270]
+Training TabR:  18%|█▊        | 9/50 [00:08<00:35,  1.16it/s, train_loss=0.2980, val_loss=0.4439]
+Training TabR:  20%|██        | 10/50 [00:08<00:34,  1.16it/s, train_loss=0.2980, val_loss=0.4439]
+Training TabR:  20%|██        | 10/50 [00:09<00:34,  1.16it/s, train_loss=0.2903, val_loss=0.4668]
+Training TabR:  22%|██▏       | 11/50 [00:09<00:33,  1.16it/s, train_loss=0.2903, val_loss=0.4668]
+Training TabR:  22%|██▏       | 11/50 [00:10<00:33,  1.16it/s, train_loss=0.2851, val_loss=0.4602]INFO:src.baselines.tabr_baseline:Early Stopping 触发，在 Epoch 12 停止训练
+
+Training TabR:  22%|██▏       | 11/50 [00:10<00:37,  1.03it/s, train_loss=0.2851, val_loss=0.4602]
+INFO:src.baselines.tabr_baseline:TabR 模型训练完成
+
+Training MOGONET:   0%|          | 0/50 [00:00<?, ?it/s]
+Training MOGONET:   0%|          | 0/50 [00:00<?, ?it/s, train_loss=0.6939]
+Training MOGONET:   2%|▏         | 1/50 [00:00<00:11,  4.36it/s, train_loss=0.6939]
+Training MOGONET:   2%|▏         | 1/50 [00:00<00:11,  4.36it/s, train_loss=0.6801]
+Training MOGONET:   2%|▏         | 1/50 [00:00<00:11,  4.36it/s, train_loss=0.6668]
+Training MOGONET:   2%|▏         | 1/50 [00:00<00:11,  4.36it/s, train_loss=0.6513]
+Training MOGONET:   2%|▏         | 1/50 [00:00<00:11,  4.36it/s, train_loss=0.6338]
+Training MOGONET:   2%|▏         | 1/50 [00:00<00:11,  4.36it/s, train_loss=0.6338, val_loss=0.6130, val_acc=0.8092]
+Training MOGONET:   2%|▏         | 1/50 [00:00<00:11,  4.36it/s, train_loss=0.6123]                                 
+Training MOGONET:  12%|█▏        | 6/50 [00:00<00:02, 20.84it/s, train_loss=0.6123]
+Training MOGONET:  12%|█▏        | 6/50 [00:00<00:02, 20.84it/s, train_loss=0.5930]
+Training MOGONET:  12%|█▏        | 6/50 [00:00<00:02, 20.84it/s, train_loss=0.5764]
+Training MOGONET:  12%|█▏        | 6/50 [00:00<00:02, 20.84it/s, train_loss=0.5672]
+Training MOGONET:  12%|█▏        | 6/50 [00:00<00:02, 20.84it/s, train_loss=0.5621]
+Training MOGONET:  12%|█▏        | 6/50 [00:00<00:02, 20.84it/s, train_loss=0.5621, val_loss=0.5247, val_acc=0.8092]
+Training MOGONET:  12%|█▏        | 6/50 [00:00<00:02, 20.84it/s, train_loss=0.5576]                                 
+Training MOGONET:  12%|█▏        | 6/50 [00:00<00:02, 20.84it/s, train_loss=0.5468]
+Training MOGONET:  24%|██▍       | 12/50 [00:00<00:01, 32.45it/s, train_loss=0.5468]
+Training MOGONET:  24%|██▍       | 12/50 [00:00<00:01, 32.45it/s, train_loss=0.5354]
+Training MOGONET:  24%|██▍       | 12/50 [00:00<00:01, 32.45it/s, train_loss=0.5229]
+Training MOGONET:  24%|██▍       | 12/50 [00:00<00:01, 32.45it/s, train_loss=0.5165]
+Training MOGONET:  24%|██▍       | 12/50 [00:00<00:01, 32.45it/s, train_loss=0.5165, val_loss=0.4967, val_acc=0.8092]
+Training MOGONET:  24%|██▍       | 12/50 [00:00<00:01, 32.45it/s, train_loss=0.5104]                                 
+Training MOGONET:  24%|██▍       | 12/50 [00:00<00:01, 32.45it/s, train_loss=0.5040]
+Training MOGONET:  34%|███▍      | 17/50 [00:00<00:00, 37.79it/s, train_loss=0.5040]
+Training MOGONET:  34%|███▍      | 17/50 [00:00<00:00, 37.79it/s, train_loss=0.4929]
+Training MOGONET:  34%|███▍      | 17/50 [00:00<00:00, 37.79it/s, train_loss=0.4857]
+Training MOGONET:  34%|███▍      | 17/50 [00:00<00:00, 37.79it/s, train_loss=0.4760]
+Training MOGONET:  34%|███▍      | 17/50 [00:00<00:00, 37.79it/s, train_loss=0.4760, val_loss=0.4587, val_acc=0.8092]
+Training MOGONET:  34%|███▍      | 17/50 [00:00<00:00, 37.79it/s, train_loss=0.4657]                                 
+Training MOGONET:  34%|███▍      | 17/50 [00:00<00:00, 37.79it/s, train_loss=0.4582]
+Training MOGONET:  44%|████▍     | 22/50 [00:00<00:00, 41.41it/s, train_loss=0.4582]
+Training MOGONET:  44%|████▍     | 22/50 [00:00<00:00, 41.41it/s, train_loss=0.4466]
+Training MOGONET:  44%|████▍     | 22/50 [00:00<00:00, 41.41it/s, train_loss=0.4370]
+Training MOGONET:  44%|████▍     | 22/50 [00:00<00:00, 41.41it/s, train_loss=0.4271]
+Training MOGONET:  44%|████▍     | 22/50 [00:00<00:00, 41.41it/s, train_loss=0.4271, val_loss=0.4229, val_acc=0.8233]
+Training MOGONET:  44%|████▍     | 22/50 [00:00<00:00, 41.41it/s, train_loss=0.4169]                                 
+Training MOGONET:  44%|████▍     | 22/50 [00:00<00:00, 41.41it/s, train_loss=0.4110]
+Training MOGONET:  54%|█████▍    | 27/50 [00:00<00:00, 43.83it/s, train_loss=0.4110]
+Training MOGONET:  54%|█████▍    | 27/50 [00:00<00:00, 43.83it/s, train_loss=0.4047]
+Training MOGONET:  54%|█████▍    | 27/50 [00:00<00:00, 43.83it/s, train_loss=0.4006]
+Training MOGONET:  54%|█████▍    | 27/50 [00:00<00:00, 43.83it/s, train_loss=0.3987]
+Training MOGONET:  54%|█████▍    | 27/50 [00:00<00:00, 43.83it/s, train_loss=0.3987, val_loss=0.4060, val_acc=0.8411]
+Training MOGONET:  54%|█████▍    | 27/50 [00:00<00:00, 43.83it/s, train_loss=0.3916]                                 
+Training MOGONET:  54%|█████▍    | 27/50 [00:00<00:00, 43.83it/s, train_loss=0.3906]
+Training MOGONET:  64%|██████▍   | 32/50 [00:00<00:00, 45.48it/s, train_loss=0.3906]
+Training MOGONET:  64%|██████▍   | 32/50 [00:00<00:00, 45.48it/s, train_loss=0.3944]
+Training MOGONET:  64%|██████▍   | 32/50 [00:00<00:00, 45.48it/s, train_loss=0.3911]
+Training MOGONET:  64%|██████▍   | 32/50 [00:00<00:00, 45.48it/s, train_loss=0.3855]
+Training MOGONET:  64%|██████▍   | 32/50 [00:00<00:00, 45.48it/s, train_loss=0.3855, val_loss=0.3903, val_acc=0.8389]
+Training MOGONET:  64%|██████▍   | 32/50 [00:00<00:00, 45.48it/s, train_loss=0.3812]                                 
+Training MOGONET:  64%|██████▍   | 32/50 [00:00<00:00, 45.48it/s, train_loss=0.3761]
+Training MOGONET:  74%|███████▍  | 37/50 [00:00<00:00, 46.58it/s, train_loss=0.3761]
+Training MOGONET:  74%|███████▍  | 37/50 [00:00<00:00, 46.58it/s, train_loss=0.3727]
+Training MOGONET:  74%|███████▍  | 37/50 [00:01<00:00, 46.58it/s, train_loss=0.3720]
+Training MOGONET:  74%|███████▍  | 37/50 [00:01<00:00, 46.58it/s, train_loss=0.3713]
+Training MOGONET:  74%|███████▍  | 37/50 [00:01<00:00, 46.58it/s, train_loss=0.3713, val_loss=0.3852, val_acc=0.8374]
+Training MOGONET:  74%|███████▍  | 37/50 [00:01<00:00, 46.58it/s, train_loss=0.3740]                                 
+Training MOGONET:  74%|███████▍  | 37/50 [00:01<00:00, 46.58it/s, train_loss=0.3727]
+Training MOGONET:  84%|████████▍ | 42/50 [00:01<00:00, 47.17it/s, train_loss=0.3727]
+Training MOGONET:  84%|████████▍ | 42/50 [00:01<00:00, 47.17it/s, train_loss=0.3704]
+Training MOGONET:  84%|████████▍ | 42/50 [00:01<00:00, 47.17it/s, train_loss=0.3704]
+Training MOGONET:  84%|████████▍ | 42/50 [00:01<00:00, 47.17it/s, train_loss=0.3660]
+Training MOGONET:  84%|████████▍ | 42/50 [00:01<00:00, 47.17it/s, train_loss=0.3660, val_loss=0.3824, val_acc=0.8426]
+Training MOGONET:  84%|████████▍ | 42/50 [00:01<00:00, 47.17it/s, train_loss=0.3665]                                 
+Training MOGONET:  84%|████████▍ | 42/50 [00:01<00:00, 47.17it/s, train_loss=0.3640]
+Training MOGONET:  94%|█████████▍| 47/50 [00:01<00:00, 47.57it/s, train_loss=0.3640]
+Training MOGONET:  94%|█████████▍| 47/50 [00:01<00:00, 47.57it/s, train_loss=0.3686]
+Training MOGONET:  94%|█████████▍| 47/50 [00:01<00:00, 47.57it/s, train_loss=0.3707]
+Training MOGONET:  94%|█████████▍| 47/50 [00:01<00:00, 47.57it/s, train_loss=0.3629]
+Training MOGONET:  94%|█████████▍| 47/50 [00:01<00:00, 47.57it/s, train_loss=0.3629, val_loss=0.3813, val_acc=0.8426]
+Training MOGONET: 100%|██████████| 50/50 [00:01<00:00, 40.38it/s, train_loss=0.3629, val_loss=0.3813, val_acc=0.8426]
+
+Training TransTEE:   0%|          | 0/50 [00:00<?, ?it/s]
+Training TransTEE:   0%|          | 0/50 [00:01<?, ?it/s, train_loss=0.1180, val_loss=0.1158]
+Training TransTEE:   2%|▏         | 1/50 [00:01<01:37,  1.98s/it, train_loss=0.1180, val_loss=0.1158]
+Training TransTEE:   2%|▏         | 1/50 [00:03<01:37,  1.98s/it, train_loss=0.1068, val_loss=0.1167]
+Training TransTEE:   4%|▍         | 2/50 [00:03<01:35,  1.99s/it, train_loss=0.1068, val_loss=0.1167]
+Training TransTEE:   4%|▍         | 2/50 [00:05<01:35,  1.99s/it, train_loss=0.1053, val_loss=0.1204]
+Training TransTEE:   6%|▌         | 3/50 [00:05<01:33,  1.99s/it, train_loss=0.1053, val_loss=0.1204]
+Training TransTEE:   6%|▌         | 3/50 [00:07<01:33,  1.99s/it, train_loss=0.1035, val_loss=0.1172]
+Training TransTEE:   8%|▊         | 4/50 [00:07<01:31,  1.99s/it, train_loss=0.1035, val_loss=0.1172]
+Training TransTEE:   8%|▊         | 4/50 [00:09<01:31,  1.99s/it, train_loss=0.1019, val_loss=0.1218]
+Training TransTEE:  10%|█         | 5/50 [00:09<01:29,  2.00s/it, train_loss=0.1019, val_loss=0.1218]
+Training TransTEE:  10%|█         | 5/50 [00:11<01:29,  2.00s/it, train_loss=0.1011, val_loss=0.1191]
+Training TransTEE:  12%|█▏        | 6/50 [00:11<01:27,  2.00s/it, train_loss=0.1011, val_loss=0.1191]
+Training TransTEE:  12%|█▏        | 6/50 [00:13<01:27,  2.00s/it, train_loss=0.0986, val_loss=0.1229]
+Training TransTEE:  14%|█▍        | 7/50 [00:13<01:26,  2.00s/it, train_loss=0.0986, val_loss=0.1229]
+Training TransTEE:  14%|█▍        | 7/50 [00:15<01:26,  2.00s/it, train_loss=0.1006, val_loss=0.1202]
+Training TransTEE:  16%|█▌        | 8/50 [00:15<01:24,  2.00s/it, train_loss=0.1006, val_loss=0.1202]
+Training TransTEE:  16%|█▌        | 8/50 [00:17<01:24,  2.00s/it, train_loss=0.0972, val_loss=0.1250]
+Training TransTEE:  18%|█▊        | 9/50 [00:17<01:22,  2.00s/it, train_loss=0.0972, val_loss=0.1250]
+Training TransTEE:  18%|█▊        | 9/50 [00:19<01:22,  2.00s/it, train_loss=0.0978, val_loss=0.1314]
+Training TransTEE:  20%|██        | 10/50 [00:19<01:20,  2.00s/it, train_loss=0.0978, val_loss=0.1314]
+Training TransTEE:  20%|██        | 10/50 [00:21<01:20,  2.00s/it, train_loss=0.0964, val_loss=0.1259]
+Training TransTEE:  20%|██        | 10/50 [00:21<01:27,  2.20s/it, train_loss=0.0964, val_loss=0.1259]
+
+Training HyperFast:   0%|          | 0/50 [00:00<?, ?it/s]
+Training HyperFast:   0%|          | 0/50 [00:01<?, ?it/s, train_loss=14521852.8558, val_loss=1.1581]
+Training HyperFast:   2%|▏         | 1/50 [00:01<00:49,  1.00s/it, train_loss=14521852.8558, val_loss=1.1581]
+Training HyperFast:   2%|▏         | 1/50 [00:02<00:49,  1.00s/it, train_loss=2817.7183, val_loss=2.9477]    
+Training HyperFast:   4%|▍         | 2/50 [00:02<00:48,  1.01s/it, train_loss=2817.7183, val_loss=2.9477]
+Training HyperFast:   4%|▍         | 2/50 [00:03<00:48,  1.01s/it, train_loss=723.4070, val_loss=5.8201] 
+Training HyperFast:   6%|▌         | 3/50 [00:03<00:47,  1.02s/it, train_loss=723.4070, val_loss=5.8201]
+Training HyperFast:   6%|▌         | 3/50 [00:04<00:47,  1.02s/it, train_loss=397.6683, val_loss=4.1451]
+Training HyperFast:   8%|▊         | 4/50 [00:04<00:46,  1.02s/it, train_loss=397.6683, val_loss=4.1451]
+Training HyperFast:   8%|▊         | 4/50 [00:05<00:46,  1.02s/it, train_loss=54.0615, val_loss=3.2193] 
+Training HyperFast:  10%|█         | 5/50 [00:05<00:45,  1.02s/it, train_loss=54.0615, val_loss=3.2193]
+Training HyperFast:  10%|█         | 5/50 [00:06<00:45,  1.02s/it, train_loss=28.6384, val_loss=1.5702]
+Training HyperFast:  12%|█▏        | 6/50 [00:06<00:44,  1.02s/it, train_loss=28.6384, val_loss=1.5702]
+Training HyperFast:  12%|█▏        | 6/50 [00:07<00:44,  1.02s/it, train_loss=36.8523, val_loss=2.6477]
+Training HyperFast:  14%|█▍        | 7/50 [00:07<00:43,  1.02s/it, train_loss=36.8523, val_loss=2.6477]
+Training HyperFast:  14%|█▍        | 7/50 [00:08<00:43,  1.02s/it, train_loss=14.3332, val_loss=0.7185]
+Training HyperFast:  16%|█▌        | 8/50 [00:08<00:42,  1.02s/it, train_loss=14.3332, val_loss=0.7185]
+Training HyperFast:  16%|█▌        | 8/50 [00:09<00:42,  1.02s/it, train_loss=100.4785, val_loss=1.7926]
+Training HyperFast:  18%|█▊        | 9/50 [00:09<00:41,  1.02s/it, train_loss=100.4785, val_loss=1.7926]
+Training HyperFast:  18%|█▊        | 9/50 [00:10<00:41,  1.02s/it, train_loss=19.7426, val_loss=2.1869] 
+Training HyperFast:  20%|██        | 10/50 [00:10<00:40,  1.02s/it, train_loss=19.7426, val_loss=2.1869]
+Training HyperFast:  20%|██        | 10/50 [00:11<00:40,  1.02s/it, train_loss=12.4865, val_loss=1.7693]
+Training HyperFast:  22%|██▏       | 11/50 [00:11<00:39,  1.02s/it, train_loss=12.4865, val_loss=1.7693]
+Training HyperFast:  22%|██▏       | 11/50 [00:12<00:39,  1.02s/it, train_loss=1.5011, val_loss=0.7774] 
+Training HyperFast:  24%|██▍       | 12/50 [00:12<00:38,  1.02s/it, train_loss=1.5011, val_loss=0.7774]
+Training HyperFast:  24%|██▍       | 12/50 [00:13<00:38,  1.02s/it, train_loss=1.6573, val_loss=0.7488]
+Training HyperFast:  26%|██▌       | 13/50 [00:13<00:37,  1.02s/it, train_loss=1.6573, val_loss=0.7488]
+Training HyperFast:  26%|██▌       | 13/50 [00:14<00:37,  1.02s/it, train_loss=1.8103, val_loss=1.2336]
+Training HyperFast:  28%|██▊       | 14/50 [00:14<00:36,  1.02s/it, train_loss=1.8103, val_loss=1.2336]
+Training HyperFast:  28%|██▊       | 14/50 [00:15<00:36,  1.02s/it, train_loss=1.3043, val_loss=0.6943]
+Training HyperFast:  30%|███       | 15/50 [00:15<00:35,  1.02s/it, train_loss=1.3043, val_loss=0.6943]
+Training HyperFast:  30%|███       | 15/50 [00:16<00:35,  1.02s/it, train_loss=1.2175, val_loss=0.7928]
+Training HyperFast:  32%|███▏      | 16/50 [00:16<00:34,  1.02s/it, train_loss=1.2175, val_loss=0.7928]
+Training HyperFast:  32%|███▏      | 16/50 [00:17<00:34,  1.02s/it, train_loss=139.2694, val_loss=1.0286]
+Training HyperFast:  34%|███▍      | 17/50 [00:17<00:33,  1.02s/it, train_loss=139.2694, val_loss=1.0286]
+Training HyperFast:  34%|███▍      | 17/50 [00:18<00:33,  1.02s/it, train_loss=0.9884, val_loss=0.7698]  
+Training HyperFast:  36%|███▌      | 18/50 [00:18<00:32,  1.02s/it, train_loss=0.9884, val_loss=0.7698]
+Training HyperFast:  36%|███▌      | 18/50 [00:19<00:32,  1.02s/it, train_loss=0.9208, val_loss=0.7145]
+Training HyperFast:  38%|███▊      | 19/50 [00:19<00:31,  1.02s/it, train_loss=0.9208, val_loss=0.7145]
+Training HyperFast:  38%|███▊      | 19/50 [00:20<00:31,  1.02s/it, train_loss=16.3348, val_loss=0.7015]
+Training HyperFast:  40%|████      | 20/50 [00:20<00:30,  1.02s/it, train_loss=16.3348, val_loss=0.7015]
+Training HyperFast:  40%|████      | 20/50 [00:21<00:30,  1.02s/it, train_loss=0.9636, val_loss=0.8629] 
+Training HyperFast:  42%|████▏     | 21/50 [00:21<00:29,  1.02s/it, train_loss=0.9636, val_loss=0.8629]
+Training HyperFast:  42%|████▏     | 21/50 [00:22<00:29,  1.02s/it, train_loss=0.8508, val_loss=0.7317]
+Training HyperFast:  44%|████▍     | 22/50 [00:22<00:28,  1.02s/it, train_loss=0.8508, val_loss=0.7317]
+Training HyperFast:  44%|████▍     | 22/50 [00:23<00:28,  1.02s/it, train_loss=0.7997, val_loss=0.6979]
+Training HyperFast:  46%|████▌     | 23/50 [00:23<00:27,  1.02s/it, train_loss=0.7997, val_loss=0.6979]
+Training HyperFast:  46%|████▌     | 23/50 [00:24<00:27,  1.02s/it, train_loss=2.7627, val_loss=0.6932]
+Training HyperFast:  48%|████▊     | 24/50 [00:24<00:26,  1.02s/it, train_loss=2.7627, val_loss=0.6932]
+Training HyperFast:  48%|████▊     | 24/50 [00:25<00:26,  1.02s/it, train_loss=0.7311, val_loss=0.6933]
+Training HyperFast:  50%|█████     | 25/50 [00:25<00:25,  1.02s/it, train_loss=0.7311, val_loss=0.6933]
+Training HyperFast:  50%|█████     | 25/50 [00:26<00:25,  1.02s/it, train_loss=0.7772, val_loss=0.7448]
+Training HyperFast:  52%|█████▏    | 26/50 [00:26<00:24,  1.02s/it, train_loss=0.7772, val_loss=0.7448]
+Training HyperFast:  52%|█████▏    | 26/50 [00:27<00:24,  1.02s/it, train_loss=0.8175, val_loss=0.7133]
+Training HyperFast:  54%|█████▍    | 27/50 [00:27<00:23,  1.02s/it, train_loss=0.8175, val_loss=0.7133]
+Training HyperFast:  54%|█████▍    | 27/50 [00:28<00:23,  1.02s/it, train_loss=0.7540, val_loss=0.6935]
+Training HyperFast:  56%|█████▌    | 28/50 [00:28<00:22,  1.02s/it, train_loss=0.7540, val_loss=0.6935]
+Training HyperFast:  56%|█████▌    | 28/50 [00:29<00:22,  1.02s/it, train_loss=1.1115, val_loss=0.7724]
+Training HyperFast:  58%|█████▊    | 29/50 [00:29<00:21,  1.02s/it, train_loss=1.1115, val_loss=0.7724]
+Training HyperFast:  58%|█████▊    | 29/50 [00:30<00:21,  1.02s/it, train_loss=55.6871, val_loss=0.7347]
+Training HyperFast:  60%|██████    | 30/50 [00:30<00:20,  1.02s/it, train_loss=55.6871, val_loss=0.7347]
+Training HyperFast:  60%|██████    | 30/50 [00:31<00:20,  1.02s/it, train_loss=17.0630, val_loss=0.7131]
+Training HyperFast:  62%|██████▏   | 31/50 [00:31<00:19,  1.02s/it, train_loss=17.0630, val_loss=0.7131]
+Training HyperFast:  62%|██████▏   | 31/50 [00:32<00:19,  1.02s/it, train_loss=1.7680, val_loss=0.6986] 
+Training HyperFast:  64%|██████▍   | 32/50 [00:32<00:18,  1.02s/it, train_loss=1.7680, val_loss=0.6986]
+Training HyperFast:  64%|██████▍   | 32/50 [00:33<00:18,  1.02s/it, train_loss=0.8072, val_loss=0.7447]
+Training HyperFast:  66%|██████▌   | 33/50 [00:33<00:17,  1.02s/it, train_loss=0.8072, val_loss=0.7447]
+Training HyperFast:  66%|██████▌   | 33/50 [00:34<00:17,  1.02s/it, train_loss=0.7382, val_loss=0.6957]
+Training HyperFast:  66%|██████▌   | 33/50 [00:34<00:17,  1.05s/it, train_loss=0.7382, val_loss=0.6957]
+
+🚀 Taking off: Baseline Ultimate Re-test...
+[Data] Loading PANCAN data...
+[Data] Blacklist applied: 9080 -> 8567
+[Data] Loading LUAD data...
+[Data] LUAD Loaded. Shape: (513, 23)
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+⚡ Processing XGBoost...
+  -> AUC: 0.8734, PEHE: 0.1017
+
+⚡ Processing TabR...
+  -> AUC: 0.8600, PEHE: 0.1444
+
+⚡ Processing MOGONET...
+
+[MOGONET] 开始训练...
+[MOGONET] 配置: hidden_dim=128, n_gcn_layers=3, k_neighbors=10, scaler=robust
+[MOGONET] 正在标准化特征...
+[MOGONET] 视图 1: (8977, 2) -> 标准化完成
+[MOGONET] 视图 2: (8977, 21) -> 标准化完成
+[MOGONET] 正在构建 k-NN 图 (k=10)...
+[MOGONET] 构建视图 1 的图结构...
+[MOGONET] 视图 1: 76300 条边
+[MOGONET] 构建视图 2 的图结构...
+[MOGONET] 视图 2: 76300 条边
+[MOGONET] 正在为验证集构建图结构...
+[MOGONET] 开始训练循环 (epochs=50)...
+[MOGONET] 训练完成，已加载最佳模型
+[MOGONET] 正在预测 103 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+[MOGONET] 正在预测 103 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+[MOGONET] 正在预测 103 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+[MOGONET] 正在预测 103 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+[MOGONET] 正在预测 103 个样本...
+[MOGONET] 正在构建测试集图结构...
+[MOGONET] 预测完成
+  -> AUC: 0.8520, PEHE: 0.1105
+
+⚡ Processing TransTEE...
+
+[TransTEE] Early stopping at epoch 11
+  -> AUC: 0.8223, PEHE: 0.2031
+
+⚡ Processing HyperFast...
+[HyperFast] 自动计算类别权重: [0.61781377 2.62199313]
+[HyperFast] 类别分布: [6175 1455]
+
+[HyperFast] Early stopping at epoch 34
+  -> AUC: 0.5000, PEHE: 0.0949
+
+👑 Loading DLC SOTA Results (Golden Run)...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+  -> AUC: 0.8509, PEHE: 0.3278
+
+Table generated at: /home/UserData/ljx/Project_1/results/final_comparison_matrix.md
+

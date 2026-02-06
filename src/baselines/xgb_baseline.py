@@ -249,6 +249,21 @@ class XGBBaseline(BaseModel):
             'f1': f1_score(y, y_pred, average='binary'),
             'auc_roc': roc_auc_score(y, y_proba)
         }
+
+    def count_parameters(self) -> str:
+        """
+        计算模型参数量 (估算树的总节点数)
+        """
+        try:
+            if self.model is None:
+                return "Not Trained"
+            # Get number of nodes as proxy for parameters
+            # Each node has a split condition (feature + threshold) or leaf value
+            df = self.model.get_booster().trees_to_dataframe()
+            n_nodes = df.shape[0]
+            return f"{n_nodes} (Nodes)"
+        except Exception:
+            return "N/A (Tree Ensemble)"
     
     def get_params(self) -> Dict[str, any]:
         """

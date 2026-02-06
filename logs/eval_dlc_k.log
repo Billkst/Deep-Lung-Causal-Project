@@ -1,0 +1,9 @@
+usage: run_baselines_final.py [-h] [--seeds SEEDS [SEEDS ...]]
+                              [--output-tag OUTPUT_TAG]
+                              [--dlc-weights DLC_WEIGHTS]
+                              [--dlc-d-hidden DLC_D_HIDDEN]
+                              [--dlc-num-layers DLC_NUM_LAYERS] [--only-dlc]
+                              [--dlc-strict] [--no-dlc-strict]
+run_baselines_final.py: error: unrecognized arguments: --init-weights results/dlc_final_sota_v21_auc_push.pth
+
+ERROR conda.cli.main_run:execute(127): `conda run python src/run_baselines_final.py --only-dlc --init-weights results/dlc_final_sota_v21_auc_push.pth --dlc-d-hidden 192 --dlc-num-layers 4 --no-dlc-strict --seeds 10` failed. (See above for error)

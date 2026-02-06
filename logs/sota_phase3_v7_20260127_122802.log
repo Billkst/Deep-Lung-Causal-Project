@@ -1,0 +1,57 @@
+=== DLC Final SOTA Runs (Phase 3) ===
+Loading data...
+Applying blacklist from data/PANCAN/pancan_leakage_blacklist.csv...
+Filtered 513 leaked samples. Current: 8567
+Aligning PANCAN features to LUAD feature space...
+PANCAN aligned shape: (8567, 25)
+PANCAN: (8567, 23), LUAD: (513, 23)
+
+[Phase 1] Pre-training on PANCAN (100 epochs)...
+  Ep 10: Loss 0.3634
+  Ep 20: Loss 0.3477
+  Ep 30: Loss 0.3314
+  Ep 40: Loss 0.3133
+  Ep 50: Loss 0.3018
+  Ep 60: Loss 0.2891
+  Ep 70: Loss 0.2929
+  Ep 80: Loss 0.2698
+  Ep 90: Loss 0.2619
+  Ep 100: Loss 0.2499
+
+[Phase 2] Fine-tuning on LUAD (120 epochs)...
+  Ep 5: Loss 0.6017 | AUC 0.7906 | CATE 0.1325
+  Ep 10: Loss 0.5220 | AUC 0.7963 | CATE 0.1277
+  Ep 15: Loss 0.4856 | AUC 0.7963 | CATE 0.1344
+  Ep 20: Loss 0.4626 | AUC 0.7971 | CATE 0.1366
+  Ep 25: Loss 0.4473 | AUC 0.7902 | CATE 0.1389
+  Ep 30: Loss 0.4309 | AUC 0.7841 | CATE 0.1438
+  Ep 35: Loss 0.4204 | AUC 0.7822 | CATE 0.1452
+  Ep 40: Loss 0.4077 | AUC 0.7803 | CATE 0.1463
+  Ep 45: Loss 0.4024 | AUC 0.7731 | CATE 0.1514
+  Ep 50: Loss 0.3855 | AUC 0.7723 | CATE 0.1574
+  Ep 55: Loss 0.3799 | AUC 0.7666 | CATE 0.1552
+  Ep 60: Loss 0.3721 | AUC 0.7632 | CATE 0.1558
+  Ep 65: Loss 0.3626 | AUC 0.7563 | CATE 0.1557
+  Ep 70: Loss 0.3545 | AUC 0.7513 | CATE 0.1572
+  Ep 75: Loss 0.3390 | AUC 0.7468 | CATE 0.1572
+  Ep 80: Loss 0.3356 | AUC 0.7410 | CATE 0.1536
+  Ep 85: Loss 0.3228 | AUC 0.7387 | CATE 0.1502
+  Ep 90: Loss 0.3169 | AUC 0.7403 | CATE 0.1493
+  Ep 95: Loss 0.3083 | AUC 0.7368 | CATE 0.1467
+  Ep 100: Loss 0.3007 | AUC 0.7426 | CATE 0.1479
+  Ep 105: Loss 0.2833 | AUC 0.7475 | CATE 0.1431
+  Ep 110: Loss 0.2738 | AUC 0.7414 | CATE 0.1414
+  Ep 115: Loss 0.2646 | AUC 0.7475 | CATE 0.1375
+  Ep 120: Loss 0.2578 | AUC 0.7391 | CATE 0.1419
+
+=== Final SOTA Results ===
+{
+    "AUC": 0.7391304347826086,
+    "ACC": 0.7475728155339806,
+    "F1": 0.6904761904761905,
+    "PEHE": 0.07963459576150601,
+    "Delta_CATE": 0.14185386896133423,
+    "Sens_Age": 0.04139937087893486
+}
+Report saved to results/final_sota_report.md
+

@@ -1,0 +1,101 @@
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 551, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 551, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 551, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 551, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 551, in main
+    dlc = DLCWrapper(
+  File "/home/UserData/ljx/Project_1/src/run_baselines_final.py", line 228, in __init__
+    self.model.load_state_dict(payload)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+
+🚀 Taking off: Baseline Ultimate Re-test...
+[Config] seeds=[42, 43, 44, 45, 46] dlc_weights=/home/UserData/ljx/Project_1/results/dlc_final_sota_v7.pth d_hidden=128 num_layers=3 only_dlc=True
+[Data] Loading PANCAN data...
+[Data] Blacklist applied: 9080 -> 8567
+[Data] Loading LUAD data...
+[Data] LUAD Loaded. Shape: (513, 23)
+
+[Seed 42] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v7.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+
+[Seed 43] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v7.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+
+[Seed 44] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v7.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+
+[Seed 45] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v7.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+
+[Seed 46] Preparing data...
+[Dataset] Pooled Train: (8977, 23), Test: (103, 23)
+
+👑 Loading DLC SOTA Results...
+[DLC] Loading weights from /home/UserData/ljx/Project_1/results/dlc_final_sota_v7.pth
+[DLC] Warning: No scaler in checkpoint. Fitting scaler on provided training data...
+Error evaluating DLC: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "adv_age_head.0.weight", "adv_age_head.0.bias", "adv_age_head.2.weight", "adv_age_head.2.bias". 
+
+Table generated at: /home/UserData/ljx/Project_1/results/final_comparison_matrix_dlc_sweep_v7_h128_l3.md
+Per-seed metrics saved to: /home/UserData/ljx/Project_1/results/baseline_metrics_dlc_sweep_v7_h128_l3.json
+

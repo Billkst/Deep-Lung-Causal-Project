@@ -1,0 +1,57 @@
+=== DLC Final SOTA Runs (Phase 3) ===
+Loading data...
+Applying blacklist from data/PANCAN/pancan_leakage_blacklist.csv...
+Filtered 513 leaked samples. Current: 8567
+Aligning PANCAN features to LUAD feature space...
+PANCAN aligned shape: (8567, 25)
+PANCAN: (8567, 23), LUAD: (513, 23)
+
+[Phase 1] Pre-training on PANCAN (100 epochs)...
+  Ep 10: Loss 0.3540
+  Ep 20: Loss 0.3464
+  Ep 30: Loss 0.3290
+  Ep 40: Loss 0.3155
+  Ep 50: Loss 0.3056
+  Ep 60: Loss 0.2865
+  Ep 70: Loss 0.2794
+  Ep 80: Loss 0.2763
+  Ep 90: Loss 0.2667
+  Ep 100: Loss 0.2727
+
+[Phase 2] Fine-tuning on LUAD (120 epochs)...
+  Ep 5: Loss 0.6554 | AUC 0.7326 | CATE -0.0022
+  Ep 10: Loss 0.5520 | AUC 0.7315 | CATE -0.0040
+  Ep 15: Loss 0.4939 | AUC 0.7300 | CATE -0.0026
+  Ep 20: Loss 0.4691 | AUC 0.7422 | CATE -0.0019
+  Ep 25: Loss 0.4486 | AUC 0.7578 | CATE -0.0007
+  Ep 30: Loss 0.4389 | AUC 0.7746 | CATE 0.0039
+  Ep 35: Loss 0.4210 | AUC 0.7750 | CATE 0.0049
+  Ep 40: Loss 0.4081 | AUC 0.7838 | CATE 0.0045
+  Ep 45: Loss 0.4015 | AUC 0.7879 | CATE 0.0045
+  Ep 50: Loss 0.3873 | AUC 0.7910 | CATE 0.0045
+  Ep 55: Loss 0.3794 | AUC 0.7925 | CATE 0.0037
+  Ep 60: Loss 0.3718 | AUC 0.7891 | CATE 0.0022
+  Ep 65: Loss 0.3635 | AUC 0.7887 | CATE 0.0004
+  Ep 70: Loss 0.3616 | AUC 0.7887 | CATE -0.0007
+  Ep 75: Loss 0.3547 | AUC 0.7914 | CATE -0.0021
+  Ep 80: Loss 0.3505 | AUC 0.7887 | CATE -0.0035
+  Ep 85: Loss 0.3475 | AUC 0.7815 | CATE -0.0051
+  Ep 90: Loss 0.3396 | AUC 0.7868 | CATE -0.0061
+  Ep 95: Loss 0.3402 | AUC 0.7838 | CATE -0.0076
+  Ep 100: Loss 0.3383 | AUC 0.7792 | CATE -0.0079
+  Ep 105: Loss 0.3313 | AUC 0.7761 | CATE -0.0096
+  Ep 110: Loss 0.3248 | AUC 0.7746 | CATE -0.0095
+  Ep 115: Loss 0.3290 | AUC 0.7715 | CATE -0.0094
+  Ep 120: Loss 0.3210 | AUC 0.7708 | CATE -0.0094
+
+=== Final SOTA Results ===
+{
+    "AUC": 0.7707856598016781,
+    "ACC": 0.7184466019417476,
+    "F1": 0.6419753086419753,
+    "PEHE": 0.09076500655728909,
+    "Delta_CATE": -0.00936431996524334,
+    "Sens_Age": 0.026571223512291908
+}
+Report saved to results/final_sota_report.md
+

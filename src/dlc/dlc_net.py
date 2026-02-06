@@ -10,10 +10,40 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
+from torch.autograd import Function
 from typing import Dict
 from src.baselines.base_model import BaseModel
 from src.dlc.causal_vae import CausalVAE
 from src.dlc.hypergraph_nn import DynamicHypergraphNN
+
+
+class GradientReversalFn(Function):
+    """
+    Gradient Reversal Layer (GRL) Function.
+    Forward: identity.
+    Backward: reverse gradient (multiply by -alpha).
+    """
+    @staticmethod
+    def forward(ctx, x, alpha):
+        ctx.alpha = alpha
+        return x.view_as(x)
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        output = grad_output.neg() * ctx.alpha
+        return output, None
+
+
+class GradientReversalLayer(nn.Module):
+    """
+    Gradient Reversal Layer (GRL) Module.
+    """
+    def __init__(self, alpha=1.0):
+        super(GradientReversalLayer, self).__init__()
+        self.alpha = alpha
+
+    def forward(self, x):
+        return GradientReversalFn.apply(x, self.alpha)
 
 
 class DLCNet(BaseModel, nn.Module):
@@ -41,6 +71,7 @@ class DLCNet(BaseModel, nn.Module):
         num_layers: int = 2,
         lambda_hsic: float = 0.1,
         lambda_pred: float = 1.0,
+        dropout: float = 0.1,
         random_state: int = 42
     ):
         """
@@ -55,6 +86,7 @@ class DLCNet(BaseModel, nn.Module):
             num_layers: 超图卷积层数 (默认 2)
             lambda_hsic: HSIC 损失权重 (默认 0.1)
             lambda_pred: 预测损失权重 (默认 1.0)
+            dropout: Dropout 概率 (默认 0.1)
             random_state: 随机种子 (默认 42)
         """
         # 初始化两个父类
@@ -70,6 +102,7 @@ class DLCNet(BaseModel, nn.Module):
         self.num_layers = num_layers
         self.lambda_hsic = lambda_hsic
         self.lambda_pred = lambda_pred
+        self.dropout = dropout
         
         # 设置随机种子
         torch.manual_seed(random_state)
@@ -92,6 +125,16 @@ class DLCNet(BaseModel, nn.Module):
             num_heads=num_heads,
             num_layers=num_layers
         )
+
+        # v25: 结构化修正 - Age 对抗头 (Adversarial Head)
+        # 目标: 强制 Z_effect 不包含 Age 信息
+        # 结构: Z_effect -> GRL -> MLP -> Predicted Age (Classification via Bins)
+        self.grl = GradientReversalLayer(alpha=1.0)
+        self.adv_age_head = nn.Sequential(
+            nn.Linear(d_effect, d_hidden // 2),
+            nn.ReLU(),
+            nn.Linear(d_hidden // 2, 3) # 3-class Classification
+        )
         
         # 子任务 3.2.2: 实现双头预测器
         # 预测头输入: 全局池化后的超图表征 [B, d_hidden]
@@ -101,7 +144,7 @@ class DLCNet(BaseModel, nn.Module):
         self.outcome_head_0 = nn.Sequential(
             nn.Linear(d_hidden, d_hidden // 2),
             nn.ReLU(),
-            nn.Dropout(0.1),
+            nn.Dropout(dropout),
             nn.Linear(d_hidden // 2, 1),
             nn.Sigmoid()  # 输出概率 [0, 1]
         )
@@ -110,7 +153,7 @@ class DLCNet(BaseModel, nn.Module):
         self.outcome_head_1 = nn.Sequential(
             nn.Linear(d_hidden, d_hidden // 2),
             nn.ReLU(),
-            nn.Dropout(0.1),
+            nn.Dropout(dropout),
             nn.Linear(d_hidden // 2, 1),
             nn.Sigmoid()  # 输出概率 [0, 1]
         )
@@ -124,9 +167,10 @@ class DLCNet(BaseModel, nn.Module):
         
         Args:
             X: 输入特征 [B, 23]
+               假设输入顺序为: [Age, Gender, Genes(20), PM2.5]
                - X[:, :2]: 混杂特征 (Age, Gender)
-               - X[:, 2]: 环境特征 (PM2.5)
-               - X[:, 3:]: 基因特征 (Top 20 Genes)
+               - X[:, 2:-1]: 基因特征 (Top 20 Genes)
+               - X[:, -1]: 环境特征 (PM2.5)
         
         Returns:
             字典包含:
@@ -141,8 +185,11 @@ class DLCNet(BaseModel, nn.Module):
         
         # 步骤 1: 特征分割
         # X_conf = X[:, :2]      # Age, Gender [B, 2]
-        # X_env = X[:, 2:3]      # PM2.5 [B, 1]
-        X_gene = X[:, 3:]      # Top 20 Genes [B, 20]
+        
+        # 修正: 适配实际数据顺序 [Age, Gender, Genes... , PM2.5]
+        # 之前错误假设: [Age, Gender, PM2.5, Genes...]
+        X_gene = X[:, 2:-1]      # Top 20 Genes [B, 20]
+        # X_env = X[:, -1:]      # PM2.5 [B, 1]
         
         # 步骤 2: 因果解耦
         # CausalVAE 接收所有特征作为输入
@@ -152,9 +199,15 @@ class DLCNet(BaseModel, nn.Module):
         Z_effect = vae_outputs['Z_effect']  # [B, d_effect]
         X_recon = vae_outputs['X_recon']    # [B, 23]
         
-        # 步骤 3: 超图交互建模
-        # 使用基因特征和效应表征构建动态超图
+        # 步骤 3: 超图交互建模 (同时也是 v25 的对抗输入)
+        # 3a. 使用基因特征和效应表征构建动态超图
         H_out = self.hypergraph_nn(X_gene, Z_effect)  # [B, 20, d_hidden]
+
+        # v25: 对抗性预测 Age
+        # 我们希望 Z_effect 无法预测 Age，从而使 grad(Age_pred, Z_effect) 经过 GRL 翻转后，
+        # 迫使 Encoder 去除 Z_effect 中的 Age 信息。
+        Z_effect_rev = self.grl(Z_effect)
+        Age_pred = self.adv_age_head(Z_effect_rev) # [B, 1]
         
         # 步骤 4: 全局池化
         # 对所有基因节点的表征进行平均池化
@@ -175,14 +228,16 @@ class DLCNet(BaseModel, nn.Module):
             'ITE': ITE,
             'Z_conf': Z_conf,
             'Z_effect': Z_effect,
-            'X_recon': X_recon
+            'X_recon': X_recon,
+            'Age_pred': Age_pred  # v25 Output
         }
     
     def compute_loss(
         self, 
         X: torch.Tensor, 
         y: torch.Tensor, 
-        outputs: Dict[str, torch.Tensor]
+        outputs: Dict[str, torch.Tensor],
+        t: torch.Tensor = None
     ) -> Dict[str, torch.Tensor]:
         """
         计算组合损失 (满足 REQ-F-008)。
@@ -191,6 +246,7 @@ class DLCNet(BaseModel, nn.Module):
             X: 输入特征 [B, 23]
             y: 真实标签 [B]
             outputs: forward() 的输出字典
+            t: 治疗变量 [B] (0/1)。如果未提供，尝试从 X[:, 2] 推断 (需确保 X 排列正确)
         
         Returns:
             字典包含:
@@ -201,6 +257,7 @@ class DLCNet(BaseModel, nn.Module):
         
         公式:
             L_total = L_recon + λ_hsic * L_hsic + λ_pred * L_pred
+            L_pred = t * BCE(Y1, y) + (1-t) * BCE(Y0, y)
         """
         # 1. 计算重构损失
         # CausalVAE 重构所有 23 维特征
@@ -212,10 +269,30 @@ class DLCNet(BaseModel, nn.Module):
             outputs['Z_effect']
         )
         
-        # 3. 计算预测损失
-        # 使用 Y(1) 作为主预测（暴露于环境风险的结局）
-        y_pred = outputs['Y_1'].squeeze()  # [B, 1] -> [B]
-        loss_pred = F.binary_cross_entropy(y_pred, y.float())
+        # 3. 计算预测损失 (Causal Loss: DragonNet style)
+        Y_0 = outputs['Y_0'].squeeze()
+        Y_1 = outputs['Y_1'].squeeze()
+        
+        # 确定治疗变量 t
+        if t is None:
+            # 尝试从 X[:, 2] (Env 特征) 推断
+            # 注意：这里假设 X[:, 2] 是标准化后的 PM2.5
+            # 如果 PM2.5 > 0 (Standardized) => T=1 (High Risk)
+            # 这是一个强假设，建议显示传递 t
+            t = (X[:, 2] > 0).float()
+        else:
+            t = t.float()
+        
+        # 确保 y 是 float
+        y = y.float()
+        
+        # 计算两头的损失
+        # 当 t=1 时，只监督 Y_1; 当 t=0 时，只监督 Y_0
+        loss_y1 = F.binary_cross_entropy(Y_1, y, reduction='none')
+        loss_y0 = F.binary_cross_entropy(Y_0, y, reduction='none')
+        
+        loss_pred_vec = t * loss_y1 + (1 - t) * loss_y0
+        loss_pred = loss_pred_vec.mean()
         
         # 4. 组合损失
         loss_total = (

@@ -289,19 +289,24 @@ class HyperFastBaseline(BaseModel):
         # 计算类别权重（应对类别不平衡）
         # 如果外部已提供类别权重，则使用外部权重；否则自动计算
         if self.class_weights is None:
-            from sklearn.utils.class_weight import compute_class_weight
-            class_weights_array = compute_class_weight(
-                'balanced', 
-                classes=np.unique(y_train), 
-                y=y_train
-            )
-            self.class_weights = torch.FloatTensor(class_weights_array)
-            print(f"[HyperFast] 自动计算类别权重: {class_weights_array}")
+            # Check if compute_class_weight is available
+            try:
+                from sklearn.utils.class_weight import compute_class_weight
+                class_weights_array = compute_class_weight(
+                    'balanced', 
+                    classes=np.unique(y_train), 
+                    y=y_train
+                )
+                self.class_weights = torch.FloatTensor(class_weights_array)
+                print(f"[HyperFast] 自动计算类别权重: {class_weights_array}")
+            except Exception as e:
+                print(f"[HyperFast] Warning: Could not compute class weights: {e}")
+                self.class_weights = None
         else:
             print(f"[HyperFast] 使用外部提供的类别权重: {self.class_weights.cpu().numpy()}")
         
-        # 确保类别权重在正确的设备上
-        self.class_weights = self.class_weights.to(self.device)
+        if self.class_weights is not None:
+             self.class_weights = self.class_weights.to(self.device)
         
         print(f"[HyperFast] 类别分布: {np.bincount(y_train)}")
         
@@ -331,6 +336,8 @@ class HyperFastBaseline(BaseModel):
         best_val_loss = float('inf')
         patience_counter = 0
         patience = 10
+        self.best_hypernetwork_state = None
+        self.best_classifier_state = None
         
         from tqdm import tqdm
         pbar = tqdm(range(self.epochs), desc="Training HyperFast")
@@ -342,28 +349,47 @@ class HyperFastBaseline(BaseModel):
             
             # 批量训练
             n_batches = int(np.ceil(len(X_train) / self.batch_size))
+            if n_batches == 0: n_batches = 1 # Avoid division by zero
             train_loss = 0.0
+            
+            # Shuffle indices
+            indices = np.random.permutation(len(X_train))
+            X_train_shuffled = X_train[indices]
+            y_train_shuffled = y_train[indices]
             
             for i in range(n_batches):
                 start_idx = i * self.batch_size
                 end_idx = min((i + 1) * self.batch_size, len(X_train))
+                if start_idx >= end_idx: break
                 
-                X_batch = torch.FloatTensor(X_train[start_idx:end_idx]).to(self.device)
-                y_batch = torch.LongTensor(y_train[start_idx:end_idx]).to(self.device)
+                X_batch = torch.FloatTensor(X_train_shuffled[start_idx:end_idx]).to(self.device)
+                y_batch = torch.LongTensor(y_train_shuffled[start_idx:end_idx]).to(self.device)
                 
+                # Check for NaNs
+                if torch.isnan(X_batch).any():
+                     print(f"[HyperFast] Warning: NaNs input detected at batch {i}")
+                     continue
+
                 # 前向传播
                 weights = self.hypernetwork(self.dataset_stats)
                 logits = self.classifier(X_batch, weights)
                 loss = criterion(logits, y_batch)
                 
+                if torch.isnan(loss):
+                    print(f"[HyperFast] Warning: Training loss is NaN at epoch {epoch}, batch {i}")
+                    continue
+
                 # 反向传播
                 optimizer.zero_grad()
                 loss.backward()
+                torch.nn.utils.clip_grad_norm_(self.hypernetwork.parameters(), 1.0) # Gradient clipping
+                torch.nn.utils.clip_grad_norm_(self.classifier.parameters(), 1.0)
                 optimizer.step()
                 
                 train_loss += loss.item()
             
-            train_loss /= n_batches
+            if n_batches > 0:
+                train_loss /= n_batches
             
             # 验证
             self.hypernetwork.eval()
@@ -396,15 +422,34 @@ class HyperFastBaseline(BaseModel):
             else:
                 patience_counter += 1
                 if patience_counter >= patience:
-                    # 恢复最佳模型
-                    self.hypernetwork.load_state_dict(self.best_hypernetwork_state)
-                    self.classifier.load_state_dict(self.best_classifier_state)
+                    if self.best_hypernetwork_state is not None:
+                        self.hypernetwork.load_state_dict(self.best_hypernetwork_state)
+                        self.classifier.load_state_dict(self.best_classifier_state)
                     print(f"\n[HyperFast] Early stopping at epoch {epoch+1}")
                     break
         
         pbar.close()
+
+        # Ensure best model is loaded if loop finished without early stopping
+        if patience_counter < patience and self.best_hypernetwork_state is not None:
+             print(f"[HyperFast] Training finished. Loading best model from state.")
+             self.hypernetwork.load_state_dict(self.best_hypernetwork_state)
+             self.classifier.load_state_dict(self.best_classifier_state)
         
         return self
+
+    def count_parameters(self) -> str:
+        """计算模型参数量"""
+        if self.hypernetwork is None:
+            # Initialize temporarily to count
+            temp_hypernet = Hypernetwork(10, self.hidden_dim) # dummy
+            temp_clf = DynamicClassifier(10) # dummy
+            params = sum(p.numel() for p in temp_hypernet.parameters()) + sum(p.numel() for p in temp_clf.parameters())
+            return f"{params} (Est.)"
+            
+        params = sum(p.numel() for p in self.hypernetwork.parameters()) + sum(p.numel() for p in self.classifier.parameters())
+        return f"{params}"
+
     
     def predict(self, X: np.ndarray) -> np.ndarray:
         """

@@ -1,0 +1,57 @@
+=== DLC Final SOTA Runs (Phase 3) ===
+Loading data...
+Applying blacklist from data/PANCAN/pancan_leakage_blacklist.csv...
+Filtered 513 leaked samples. Current: 8567
+Aligning PANCAN features to LUAD feature space...
+PANCAN aligned shape: (8567, 25)
+PANCAN: (8567, 23), LUAD: (513, 23)
+
+[Phase 1] Pre-training on PANCAN (100 epochs)...
+  Ep 10: Loss 0.8233
+  Ep 20: Loss 0.8024
+  Ep 30: Loss 0.8023
+  Ep 40: Loss 0.7787
+  Ep 50: Loss 0.7646
+  Ep 60: Loss 0.7475
+  Ep 70: Loss 0.7109
+  Ep 80: Loss 0.7001
+  Ep 90: Loss 0.6616
+  Ep 100: Loss 0.6525
+
+[Phase 2] Fine-tuning on LUAD (120 epochs)...
+  Ep 5: Loss 1.3041 | AUC 0.8497 | CATE 0.1225 | PEHE 0.0864 | Sens 0.0377
+  Ep 10: Loss 1.2148 | AUC 0.8520 | CATE 0.0845 | PEHE 0.0758 | Sens 0.0371
+  Ep 15: Loss 1.1158 | AUC 0.8570 | CATE 0.0649 | PEHE 0.0751 | Sens 0.0348
+  Ep 20: Loss 1.0632 | AUC 0.8566 | CATE 0.0521 | PEHE 0.0771 | Sens 0.0320
+  Ep 25: Loss 1.0506 | AUC 0.8562 | CATE 0.0494 | PEHE 0.0779 | Sens 0.0330
+  Ep 30: Loss 1.0448 | AUC 0.8562 | CATE 0.0449 | PEHE 0.0792 | Sens 0.0323
+  Ep 35: Loss 1.0097 | AUC 0.8608 | CATE 0.0468 | PEHE 0.0778 | Sens 0.0314
+  Ep 40: Loss 0.9383 | AUC 0.8600 | CATE 0.0378 | PEHE 0.0811 | Sens 0.0329
+  Ep 45: Loss 0.9653 | AUC 0.8566 | CATE 0.0491 | PEHE 0.0772 | Sens 0.0347
+  Ep 50: Loss 0.9195 | AUC 0.8551 | CATE 0.0624 | PEHE 0.0747 | Sens 0.0342
+  Ep 55: Loss 0.9395 | AUC 0.8570 | CATE 0.0623 | PEHE 0.0727 | Sens 0.0347
+  Ep 60: Loss 0.8978 | AUC 0.8513 | CATE 0.0694 | PEHE 0.0737 | Sens 0.0369
+  Ep 65: Loss 0.9146 | AUC 0.8532 | CATE 0.0643 | PEHE 0.0743 | Sens 0.0387
+  Ep 70: Loss 0.9225 | AUC 0.8509 | CATE 0.0213 | PEHE 0.0859 | Sens 0.0381
+  Ep 75: Loss 0.8963 | AUC 0.8501 | CATE 0.0275 | PEHE 0.0855 | Sens 0.0376
+  Ep 80: Loss 0.8783 | AUC 0.8482 | CATE 0.0222 | PEHE 0.0862 | Sens 0.0386
+  Ep 85: Loss 0.8336 | AUC 0.8471 | CATE 0.0258 | PEHE 0.0864 | Sens 0.0398
+  Ep 90: Loss 0.8300 | AUC 0.8486 | CATE 0.0458 | PEHE 0.0841 | Sens 0.0392
+  Ep 95: Loss 0.8077 | AUC 0.8478 | CATE 0.0505 | PEHE 0.0832 | Sens 0.0410
+  Ep 100: Loss 0.8236 | AUC 0.8494 | CATE 0.0409 | PEHE 0.0848 | Sens 0.0418
+  Ep 105: Loss 0.7722 | AUC 0.8490 | CATE 0.0726 | PEHE 0.0786 | Sens 0.0439
+  Ep 110: Loss 0.8184 | AUC 0.8474 | CATE 0.0605 | PEHE 0.0866 | Sens 0.0430
+  Ep 115: Loss 0.8056 | AUC 0.8467 | CATE 0.0724 | PEHE 0.0774 | Sens 0.0434
+  Ep 120: Loss 0.7105 | AUC 0.8452 | CATE 0.0622 | PEHE 0.0796 | Sens 0.0466
+
+=== Final SOTA Results ===
+{
+    "AUC": 0.8501144164759726,
+    "ACC": 0.7961165048543689,
+    "F1": 0.7640449438202247,
+    "PEHE": 0.08310059906042075,
+    "Delta_CATE": 0.11403566598892212,
+    "Sens_Age": 0.03742538020014763
+}
+Report saved to results/final_sota_report.md
+

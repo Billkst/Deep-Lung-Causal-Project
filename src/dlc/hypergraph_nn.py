@@ -98,42 +98,44 @@ class DynamicHypergraphNN(nn.Module):
         # X_gene: [B, num_genes] -> [B, num_genes, 1] -> [B, num_genes, d_hidden]
         X_emb = self.gene_embedding(X_gene.unsqueeze(-1))  # [B, num_genes, d_hidden]
         
-        # 2. 多头自注意力
-        # 注意：MultiheadAttention 返回 (output, attention_weights)
-        # attention_weights: [B, num_genes, num_genes] (平均所有头的注意力)
-        # 我们需要获取每个头的注意力分数，但 PyTorch 的 MultiheadAttention 默认返回平均值
-        # 为了获取每个头的注意力，我们需要手动计算
-        
-        # 使用 MultiheadAttention 的输出来构建超图
+        # 2. 多头自注意力 [B, num_heads, num_genes, num_genes]
         _, attn_weights = self.multi_head_attention(X_emb, X_emb, X_emb, average_attn_weights=False)
-        # attn_weights: [B, num_heads, num_genes, num_genes]
         
-        # 3. 为每个头构建超边
-        # 对每个节点，选择 Top-K 相似节点（包括自己）
-        k = min(5, num_genes)  # Top-K，最多 5 个节点
+        # 3. 向量化构建超图
+        # 目标: H [B, num_edges, num_genes]
+        # num_edges = num_heads * num_genes
         
-        # 初始化超图关联矩阵
-        H = torch.zeros(B, self.num_heads * num_genes, num_genes, device=X_gene.device)
+        # (1) 将 heads 和 genes 维度合并为 edges 维度
+        # attn_weights: [B, num_heads, target_genes, source_genes]
+        # reshape -> [B, num_heads * num_genes, num_genes]
+        attn_flat = attn_weights.view(B, self.num_heads * num_genes, num_genes)
         
-        edge_idx = 0
-        for h in range(self.num_heads):
-            attn_h = attn_weights[:, h, :, :]  # [B, num_genes, num_genes]
-            
-            # 对每个节点，选择 Top-K 相似节点
-            for v in range(num_genes):
-                # 获取节点 v 的注意力分数
-                attn_v = attn_h[:, v, :]  # [B, num_genes]
-                
-                # 选择 Top-K 节点
-                topk_values, topk_indices = torch.topk(attn_v, k=k, dim=-1)  # [B, k]
-                
-                # 构建超边：将 Top-K 节点标记为 1
-                for b in range(B):
-                    H[b, edge_idx, topk_indices[b]] = 1.0
-                    # 确保节点 v 自己也在超边中（如果不在 Top-K 中）
-                    H[b, edge_idx, v] = 1.0
-                
-                edge_idx += 1
+        # (2) 计算 Top-K
+        k = min(5, num_genes)
+        _, topk_indices = torch.topk(attn_flat, k=k, dim=-1)  # [B, num_edges, k]
+        
+        # (3) 初始化 H 并使用 scatter_ 填充
+        H = torch.zeros(B, self.num_edges, num_genes, device=X_gene.device)
+        src = torch.ones_like(topk_indices, dtype=torch.float)
+        H.scatter_(2, topk_indices, src)
+        
+        # (4) 确保自环 (Self-loops): 每个 edge e (对应 node v) 必须包含 node v
+        # edge e 对应于头 h 和节点 v，关系是: e = h * num_genes + v
+        # 所以 v = e % num_genes
+        
+        # 构造需要强制置 1 的索引
+        # 我们需要设置 H[b, e, e % num_genes] = 1
+        
+        # 生成 e 的索引 [0, 1, ..., num_edges-1]
+        e_indices = torch.arange(self.num_edges, device=X_gene.device)
+        # 计算对应的 v 索引
+        v_indices = e_indices % num_genes
+        
+        # 对所有 batch 执行赋值
+        # 使用切片广播: H[:, e_indices, v_indices] = 1.0 
+        # 注意: 高级索引 H[:, tensor, tensor] 会导致维度坍缩或不对齐，
+        # H[:, e, v] = 1 会广播到所有 B
+        H[:, e_indices, v_indices] = 1.0
         
         return H  # [B, num_edges, num_genes]
     

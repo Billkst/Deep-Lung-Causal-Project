@@ -1,0 +1,42 @@
+=== DLC Final SOTA Runs (Phase 3) ===
+Loading data...
+Applying blacklist from data/PANCAN/pancan_leakage_blacklist.csv...
+Filtered 513 leaked samples. Current: 8567
+Aligning PANCAN features to LUAD feature space...
+PANCAN aligned shape: (8567, 25)
+PANCAN: (8567, 23), LUAD: (513, 23)
+Scaler vars: min=0.030960266788788313, max=214.61184717252607
+
+[Phase 1] Pre-training on PANCAN (100 epochs)...
+  Ep 10: Loss 1.4090
+  Ep 20: Loss 1.3350
+  Ep 30: Loss 1.3166
+  Ep 40: Loss 1.3087
+  Ep 50: Loss 1.3082
+  Ep 60: Loss 1.2994
+  Ep 70: Loss 1.2943
+  Ep 80: Loss 1.2909
+  Ep 90: Loss 1.2878
+  Ep 100: Loss 1.2841
+
+[Phase 2] Fine-tuning on LUAD (40 epochs)...
+  Ep 5: Loss 1.5108 | AUC 0.8585 | CATE 0.1273 | PEHE 0.0675 | Sens 0.0010
+  Ep 10: Loss 1.4942 | AUC 0.8566 | CATE 0.1217 | PEHE 0.0677 | Sens 0.0010
+  Ep 15: Loss 1.4675 | AUC 0.8581 | CATE 0.1488 | PEHE 0.0551 | Sens 0.0011
+  Ep 20: Loss 1.4647 | AUC 0.8566 | CATE 0.1546 | PEHE 0.0604 | Sens 0.0012
+  Ep 25: Loss 1.4352 | AUC 0.8566 | CATE 0.1621 | PEHE 0.0570 | Sens 0.0013
+  Ep 30: Loss 1.4298 | AUC 0.8600 | CATE 0.1638 | PEHE 0.0572 | Sens 0.0013
+  Ep 35: Loss 1.4171 | AUC 0.8566 | CATE 0.1633 | PEHE 0.0627 | Sens 0.0013
+  Ep 40: Loss 1.4308 | AUC 0.8566 | CATE 0.1667 | PEHE 0.0616 | Sens 0.0015
+
+=== Final SOTA Results ===
+{
+    "AUC": 0.864607170099161,
+    "ACC": 0.8058252427184466,
+    "F1": 0.7916666666666666,
+    "PEHE": 0.04529994449080012,
+    "Delta_CATE": 0.1403101682662964,
+    "Sens_Age": 0.0010039223125204444
+}
+Report saved to results/final_sota_report.md
+

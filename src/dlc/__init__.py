@@ -12,6 +12,7 @@ DLC (Deep Lung Causal) 模型模块
 from .causal_vae import CausalVAE
 from .hypergraph_nn import DynamicHypergraphNN
 from .dlc_net import DLCNet
+from .ground_truth import GroundTruthGenerator
 from .metrics import (
     compute_pehe,
     compute_cate,
@@ -32,6 +33,7 @@ __all__ = [
     'CausalVAE',
     'DynamicHypergraphNN',
     'DLCNet',
+    'GroundTruthGenerator',
     # 因果指标
     'compute_pehe',
     'compute_cate',

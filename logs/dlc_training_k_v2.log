@@ -1,0 +1,15 @@
+usage: run_final_sota.py [-h] [--output-tag OUTPUT_TAG] [--d-hidden D_HIDDEN]
+                         [--num-layers NUM_LAYERS] [--lambda-hsic LAMBDA_HSIC]
+                         [--lambda-pred LAMBDA_PRED] [--lambda-ite LAMBDA_ITE]
+                         [--lambda-cate LAMBDA_CATE]
+                         [--lambda-prob LAMBDA_PROB] [--lambda-adv LAMBDA_ADV]
+                         [--lambda-sens LAMBDA_SENS]
+                         [--sens-eps-scale SENS_EPS_SCALE]
+                         [--epochs-pre EPOCHS_PRE] [--epochs-fine EPOCHS_FINE]
+                         [--log-every-pre LOG_EVERY_PRE]
+                         [--log-every-fine LOG_EVERY_FINE] [--seed SEED]
+                         [--init-weights INIT_WEIGHTS] [--init-strict]
+                         [--skip-pretrain]
+run_final_sota.py: error: ambiguous option: --epochs could match --epochs-pre, --epochs-fine
+
+ERROR conda.cli.main_run:execute(127): `conda run python src/dlc/run_final_sota.py --d_hidden 192 --num_layers 4 --lr 0.003 --weight_decay 1e-4 --batch_size 128 --epochs 100 --lambda_hsic 0.01 --lambda_pred 7.0 --lambda_ite 0.3 --lambda_cate 0.5 --lambda_prob 2.0 --lambda_adv 0.3 --lambda_sens 0.05 --sens_eps_scale 0.2 --seed 123 --save_path results/dlc_final_sota_v21_auc_push.pth --verbose` failed. (See above for error)

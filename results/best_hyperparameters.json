@@ -1,0 +1,15 @@
+{
+    "best_params": {
+        "d_hidden": 128,
+        "num_layers": 3,
+        "lambda_hsic": 0.5599048080164395,
+        "lr_fine_tune": 0.0006401255757337557,
+        "dropout": 0.005694665146369515
+    },
+    "best_score": 0.9545454545454546,
+    "best_trial_metrics": {
+        "auc": 0.9545454545454546,
+        "sensitivity": 0.00019989089923910797,
+        "delta_cate": -4.491262268601803e-07
+    }
+}

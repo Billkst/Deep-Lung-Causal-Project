@@ -1,0 +1,15 @@
+usage: run_final_sota.py [-h] [--output-tag OUTPUT_TAG] [--d-hidden D_HIDDEN]
+                         [--num-layers NUM_LAYERS] [--lambda-hsic LAMBDA_HSIC]
+                         [--lambda-pred LAMBDA_PRED] [--lambda-ite LAMBDA_ITE]
+                         [--lambda-cate LAMBDA_CATE]
+                         [--lambda-prob LAMBDA_PROB] [--lambda-adv LAMBDA_ADV]
+                         [--lambda-sens LAMBDA_SENS]
+                         [--sens-eps-scale SENS_EPS_SCALE]
+                         [--epochs-pre EPOCHS_PRE] [--epochs-fine EPOCHS_FINE]
+                         [--log-every-pre LOG_EVERY_PRE]
+                         [--log-every-fine LOG_EVERY_FINE] [--seed SEED]
+                         [--init-weights INIT_WEIGHTS] [--init-strict]
+                         [--skip-pretrain]
+run_final_sota.py: error: unrecognized arguments: --verbose
+
+ERROR conda.cli.main_run:execute(127): `conda run python src/dlc/run_final_sota.py --output-tag v23_pure_pred --d-hidden 256 --num-layers 4 --lambda-hsic 0.0 --lambda-pred 1.0 --lambda-ite 0.0 --lambda-cate 0.0 --lambda-prob 1.0 --lambda-adv 0.0 --lambda-sens 0.0 --seed 42 --epochs-pre 50 --epochs-fine 50 --verbose` failed. (See above for error)

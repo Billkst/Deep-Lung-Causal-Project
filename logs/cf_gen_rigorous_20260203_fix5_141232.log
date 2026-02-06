@@ -1,0 +1,16 @@
+🚀 CF-Gen Experiment for Comparison Matrix...
+Seeds: [42, 43, 44, 45, 46]
+[Seed 42] Pooled Train: (9490, 23), Test: (103, 23)
+  -> AUC: 0.8768, PEHE: 0.0940
+[Seed 43] Pooled Train: (9490, 23), Test: (103, 23)
+  -> AUC: 0.8177, PEHE: 0.1594
+[Seed 44] Pooled Train: (9490, 23), Test: (103, 23)
+  -> AUC: 0.8082, PEHE: 0.1155
+[Seed 45] Pooled Train: (9490, 23), Test: (103, 23)
+  -> AUC: 0.8783, PEHE: 0.0912
+[Seed 46] Pooled Train: (9490, 23), Test: (103, 23)
+  -> AUC: 0.8879, PEHE: 0.0753
+
+Saved: /home/UserData/ljx/Project_1/results/cf_gen_results_rigorous_20260203_fix5.json
+CF-Gen Summary -> AUC 0.8538 ± 0.0337, Acc 0.7689 ± 0.0225, F1 0.7023 ± 0.0345
+
