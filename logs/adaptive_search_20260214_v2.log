@@ -1,0 +1,34 @@
+[Stage1] Total candidates: 12
+[Stage1] (1/12) Running c01_balance
+[Stage1] Done c01_balance: global=1/6, pairwise={'w/o HGNN': 1, 'w/o VAE': 3, 'w/o HSIC': 3}
+[Stage1] (2/12) Running c02_pred_focus
+[Stage1] Done c02_pred_focus: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 5}
+[Stage1] (3/12) Running c03_causal_focus
+[Stage1] Done c03_causal_focus: global=1/6, pairwise={'w/o HGNN': 1, 'w/o VAE': 3, 'w/o HSIC': 5}
+[Stage1] (4/12) Running c04_low_sens
+[Stage1] Done c04_low_sens: global=0/6, pairwise={'w/o HGNN': 0, 'w/o VAE': 1, 'w/o HSIC': 3}
+[Stage1] (5/12) Running c05_pred_acc
+[Stage1] Done c05_pred_acc: global=2/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 5, 'w/o HSIC': 5}
+[Stage1] (6/12) Running c06_pred_f1
+[Stage1] Done c06_pred_f1: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 5, 'w/o HSIC': 5}
+[Stage1] (7/12) Running c07_mid_tradeoff
+[Stage1] Done c07_mid_tradeoff: global=0/6, pairwise={'w/o HGNN': 1, 'w/o VAE': 3, 'w/o HSIC': 4}
+[Stage1] (8/12) Running c08_cate_push
+[Stage1] Done c08_cate_push: global=1/6, pairwise={'w/o HGNN': 1, 'w/o VAE': 2, 'w/o HSIC': 5}
+[Stage1] (9/12) Running c09_low_hsic
+[Stage1] Done c09_low_hsic: global=0/6, pairwise={'w/o HGNN': 1, 'w/o VAE': 3, 'w/o HSIC': 2}
+[Stage1] (10/12) Running c10_high_hsic
+[Stage1] Done c10_high_hsic: global=0/6, pairwise={'w/o HGNN': 0, 'w/o VAE': 1, 'w/o HSIC': 3}
+[Stage1] (11/12) Running c11_sens_guard
+[Stage1] Done c11_sens_guard: global=1/6, pairwise={'w/o HGNN': 1, 'w/o VAE': 3, 'w/o HSIC': 3}
+[Stage1] (12/12) Running c12_acc_f1_swing
+[Stage1] Done c12_acc_f1_swing: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 6}
+[Stage2] Selected top-2 candidates
+[Stage2] (1/2) Running c02_pred_focus
+[Stage2] Done c02_pred_focus: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 4}
+[Stage2] (2/2) Running c12_acc_f1_swing
+[Stage2] Done c12_acc_f1_swing: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 6}
+[Done] Summary JSON: /home/UserData/ljx/Project_1/results/adaptive_search_summary_20260214_082734.json
+[Done] Summary Report: /home/UserData/ljx/Project_1/reports/task19.5_adaptive_search_summary_20260214_082734.md
+[Done] Best Stage2 Log: /home/UserData/ljx/Project_1/logs/adaptive_stage2_top2_c12_acc_f1_swing_20260214_082734.log
+[Done] Best Stage2 Raw: /home/UserData/ljx/Project_1/results/adaptive_stage2_top2_c12_acc_f1_swing_20260214_082734_raw.json

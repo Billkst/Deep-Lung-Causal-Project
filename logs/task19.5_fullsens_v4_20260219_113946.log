@@ -1,0 +1,7 @@
+RUN {'pred': 10.0, 'sens': 2.0, 'head_alpha': 0.01, 'head_weight': 1.2}
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=4.0494 recon=0.0512 hsic=0.0216 pred=0.3466 distill=0.0000 aux=0.3597
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=3.9282 recon=0.0212 hsic=0.0206 pred=0.3423 distill=0.0000 aux=0.3542

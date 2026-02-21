@@ -17,10 +17,12 @@ from src.dlc.ground_truth import GroundTruthGenerator
 import torch.nn.functional as F
 from torch.utils.data import TensorDataset, DataLoader
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import roc_auc_score, accuracy_score, f1_score
+from sklearn.metrics import roc_auc_score, accuracy_score, f1_score, recall_score
 from sklearn.model_selection import train_test_split
 
+print("Imports completed. Initializing device...", flush=True)
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(f"Device used: {DEVICE}", flush=True)
 
 def load_data_rigorous(seed):
     """
@@ -163,7 +165,7 @@ def train_epoch_sweep(model, loader, optimizer, params):
         running_loss += loss.item()
     return running_loss / len(loader)
 
-def evaluate_sweep(model, X, y, t, scaler, feat_names):
+def evaluate_sweep(model, X, y, t, ite_true, scaler, feat_names):
     model.eval()
     with torch.no_grad():
         X_scaled = scaler.transform(X)
@@ -171,15 +173,21 @@ def evaluate_sweep(model, X, y, t, scaler, feat_names):
         out = model(X_t)
         y0, y1 = out['Y_0'].cpu().numpy().squeeze(), out['Y_1'].cpu().numpy().squeeze()
         
-        # AUC/Acc
+        # AUC/Acc/F1/Sensitivity
         prob = t * y1 + (1.0 - t) * y0
         pred = (prob > 0.5).astype(int)
+        
         auc = roc_auc_score(y, prob)
         acc = accuracy_score(y, pred)
         f1 = f1_score(y, pred)
+        sens = recall_score(y, pred)
         
-        # Delta CATE
+        # Delta CATE & PEHE
         ite_pred = y1 - y0
+        
+        # PEHE - using provided true ITE
+        pehe = np.sqrt(np.mean((ite_pred - ite_true)**2))
+        
         if 'EGFR' in feat_names:
             idx = feat_names.index('EGFR')
             # Look up EGFR in the original X (unscaled) passed in? 
@@ -191,7 +199,7 @@ def evaluate_sweep(model, X, y, t, scaler, feat_names):
                 dc = 0.0
         else:
             dc = 0.0
-    return {'AUC': auc, 'ACC': acc, 'F1': f1, 'Delta_CATE': dc}
+    return {'AUC': auc, 'ACC': acc, 'F1': f1, 'Sensitivity': sens, 'PEHE': pehe, 'Delta_CATE': dc}
 
 def run_single_config(seed, override_params):
     # Base Config S (Final SOTA alignment)
@@ -274,7 +282,7 @@ def run_single_config(seed, override_params):
             print(f"    [Fine-tune Seed={seed}] Ep {epoch+1}/{PARAMS['epochs_fine']} Loss={loss:.4f}", flush=True)
         
     # Evaluate
-    return evaluate_sweep(model, X_l_te, y_l_te, t_l_te, scaler, feats)
+    return evaluate_sweep(model, X_l_te, y_l_te, t_l_te, ite_l_te, scaler, feats)
 
 def main():
     results = []
@@ -284,7 +292,7 @@ def main():
     for dh in [64, 128, 256]:
         for nl in [2, 3, 4, 5]:
             scores = []
-            for seed in [42, 43, 44, 45, 46]: # Strict 5 seeds
+            for seed in [42, 43, 44, 45, 46]:
                 try:
                     res = run_single_config(seed, {'d_hidden': dh, 'num_layers': nl})
                     print(f"  -> Seed {seed}: AUC={res['AUC']:.4f}, CATE={res['Delta_CATE']:.4f}", flush=True)
@@ -293,12 +301,21 @@ def main():
                     print(f"  -> Seed {seed}: Failed ({e})", flush=True)
             
             if scores:
-                avg_auc = np.mean([s['AUC'] for s in scores])
-                std_auc = np.std([s['AUC'] for s in scores])
-                avg_cate = np.mean([s['Delta_CATE'] for s in scores])
-                std_cate = np.std([s['Delta_CATE'] for s in scores])
-                print(f"Arch: Hidden={dh}, Layers={nl} -> AUC={avg_auc:.4f}±{std_auc:.4f}, CATE={avg_cate:.4f}±{std_cate:.4f}", flush=True)
-                results.append({'type': 'arch', 'd_hidden': dh, 'num_layers': nl, 'AUC': avg_auc, 'AUC_Std': std_auc, 'CATE': avg_cate, 'CATE_Std': std_cate})
+                avg = {k: np.mean([s[k] for s in scores]) for k in ['AUC', 'ACC', 'F1', 'Sensitivity', 'PEHE', 'Delta_CATE']}
+                std = {k: np.std([s[k] for s in scores]) for k in ['AUC', 'ACC', 'F1', 'Sensitivity', 'PEHE', 'Delta_CATE']}
+                
+                print(f"Arch: Hidden={dh}, Layers={nl} -> AUC={avg['AUC']:.4f}±{std['AUC']:.4f}, CATE={avg['Delta_CATE']:.4f}±{std['Delta_CATE']:.4f}", flush=True)
+                results.append({
+                    'type': 'arch', 
+                    'd_hidden': dh, 
+                    'num_layers': nl, 
+                    'AUC': avg['AUC'], 'AUC_Std': std['AUC'], 
+                    'ACC': avg['ACC'], 'ACC_Std': std['ACC'],
+                    'F1': avg['F1'], 'F1_Std': std['F1'],
+                    'Sensitivity': avg['Sensitivity'], 'Sensitivity_Std': std['Sensitivity'],
+                    'PEHE': avg['PEHE'], 'PEHE_Std': std['PEHE'],
+                    'CATE': avg['Delta_CATE'], 'CATE_Std': std['Delta_CATE']
+                })
                 pd.DataFrame(results).to_csv("results/parameter_sensitivity_results_final.csv", index=False)
             
     # 2. HSIC Group
@@ -314,12 +331,20 @@ def main():
                 print(f"  -> Seed {seed}: Failed ({e})", flush=True)
         
         if scores:
-            avg_auc = np.mean([s['AUC'] for s in scores])
-            std_auc = np.std([s['AUC'] for s in scores])
-            avg_cate = np.mean([s['Delta_CATE'] for s in scores])
-            std_cate = np.std([s['Delta_CATE'] for s in scores])
-            print(f"HSIC: lambda={hsic} -> AUC={avg_auc:.4f}±{std_auc:.4f}, CATE={avg_cate:.4f}±{std_cate:.4f}", flush=True)
-            results.append({'type': 'hsic', 'lambda_hsic': hsic, 'AUC': avg_auc, 'AUC_Std': std_auc, 'CATE': avg_cate, 'CATE_Std': std_cate})
+            avg = {k: np.mean([s[k] for s in scores]) for k in ['AUC', 'ACC', 'F1', 'Sensitivity', 'PEHE', 'Delta_CATE']}
+            std = {k: np.std([s[k] for s in scores]) for k in ['AUC', 'ACC', 'F1', 'Sensitivity', 'PEHE', 'Delta_CATE']}
+            
+            print(f"HSIC: lambda={hsic} -> AUC={avg['AUC']:.4f}±{std['AUC']:.4f}, CATE={avg['Delta_CATE']:.4f}±{std['Delta_CATE']:.4f}", flush=True)
+            results.append({
+                'type': 'hsic', 
+                'lambda_hsic': hsic, 
+                'AUC': avg['AUC'], 'AUC_Std': std['AUC'], 
+                'ACC': avg['ACC'], 'ACC_Std': std['ACC'],
+                'F1': avg['F1'], 'F1_Std': std['F1'],
+                'Sensitivity': avg['Sensitivity'], 'Sensitivity_Std': std['Sensitivity'],
+                'PEHE': avg['PEHE'], 'PEHE_Std': std['PEHE'],
+                'CATE': avg['Delta_CATE'], 'CATE_Std': std['Delta_CATE']
+            })
             pd.DataFrame(results).to_csv("results/parameter_sensitivity_results_final.csv", index=False)
 
     # 3. Model Weight Balance
@@ -335,15 +360,23 @@ def main():
                 print(f"  -> Seed {seed}: Failed ({e})", flush=True)
                 
         if scores:
-            avg_auc = np.mean([s['AUC'] for s in scores])
-            std_auc = np.std([s['AUC'] for s in scores])
-            avg_cate = np.mean([s['Delta_CATE'] for s in scores])
-            std_cate = np.std([s['Delta_CATE'] for s in scores])
-            print(f"CATE Weight: lambda={cate} -> AUC={avg_auc:.4f}±{std_auc:.4f}, CATE={avg_cate:.4f}±{std_cate:.4f}", flush=True)
-            results.append({'type': 'cate', 'lambda_cate': cate, 'AUC': avg_auc, 'AUC_Std': std_auc, 'CATE': avg_cate, 'CATE_Std': std_cate})
+            avg = {k: np.mean([s[k] for s in scores]) for k in ['AUC', 'ACC', 'F1', 'Sensitivity', 'PEHE', 'Delta_CATE']}
+            std = {k: np.std([s[k] for s in scores]) for k in ['AUC', 'ACC', 'F1', 'Sensitivity', 'PEHE', 'Delta_CATE']}
+            
+            print(f"CATE Weight: lambda={cate} -> AUC={avg['AUC']:.4f}±{std['AUC']:.4f}, CATE={avg['Delta_CATE']:.4f}±{std['Delta_CATE']:.4f}", flush=True)
+            results.append({
+                'type': 'cate', 
+                'lambda_cate': cate, 
+                'AUC': avg['AUC'], 'AUC_Std': std['AUC'], 
+                'ACC': avg['ACC'], 'ACC_Std': std['ACC'],
+                'F1': avg['F1'], 'F1_Std': std['F1'],
+                'Sensitivity': avg['Sensitivity'], 'Sensitivity_Std': std['Sensitivity'],
+                'PEHE': avg['PEHE'], 'PEHE_Std': std['PEHE'],
+                'CATE': avg['Delta_CATE'], 'CATE_Std': std['Delta_CATE']
+            })
             pd.DataFrame(results).to_csv("results/parameter_sensitivity_results_final.csv", index=False)
         
-    # Save
+    # Save final
     df = pd.DataFrame(results)
     df.to_csv("results/parameter_sensitivity_results_final.csv", index=False)
     print("Done. Saved to results/parameter_sensitivity_results_final.csv", flush=True)

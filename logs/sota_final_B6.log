@@ -1,0 +1,159 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/140 | loss_total=3.9226 recon=0.0631 hsic=0.0201 pred=0.3476
+[Full DLC (SOTA)] Epoch 10/140 | loss_total=3.8579 recon=0.0250 hsic=0.0193 pred=0.3457
+[Full DLC (SOTA)] Epoch 15/140 | loss_total=3.7631 recon=0.0180 hsic=0.0194 pred=0.3384
+[Full DLC (SOTA)] Epoch 20/140 | loss_total=3.7061 recon=0.0169 hsic=0.0195 pred=0.3328
+[Full DLC (SOTA)] Epoch 25/140 | loss_total=3.5319 recon=0.0133 hsic=0.0197 pred=0.3224
+[Full DLC (SOTA)] Epoch 30/140 | loss_total=3.4418 recon=0.0121 hsic=0.0198 pred=0.3179
+[Full DLC (SOTA)] Epoch 35/140 | loss_total=3.3093 recon=0.0114 hsic=0.0197 pred=0.3108
+[Full DLC (SOTA)] Epoch 40/140 | loss_total=3.2261 recon=0.0110 hsic=0.0197 pred=0.3078
+[Full DLC (SOTA)] Epoch 45/140 | loss_total=3.0979 recon=0.0096 hsic=0.0198 pred=0.3004
+[Full DLC (SOTA)] Epoch 50/140 | loss_total=3.0075 recon=0.0095 hsic=0.0198 pred=0.2967
+[Full DLC (SOTA)] Epoch 55/140 | loss_total=2.9810 recon=0.0093 hsic=0.0197 pred=0.2937
+[Full DLC (SOTA)] Epoch 60/140 | loss_total=2.9445 recon=0.0092 hsic=0.0195 pred=0.2905
+[Full DLC (SOTA)] Epoch 65/140 | loss_total=2.9166 recon=0.0085 hsic=0.0195 pred=0.2874
+[Full DLC (SOTA)] Epoch 70/140 | loss_total=2.8985 recon=0.0084 hsic=0.0194 pred=0.2860
+[Full DLC (SOTA)] Epoch 75/140 | loss_total=2.8693 recon=0.0083 hsic=0.0195 pred=0.2830
+[Full DLC (SOTA)] Epoch 80/140 | loss_total=2.8549 recon=0.0082 hsic=0.0193 pred=0.2814
+[Full DLC (SOTA)] Epoch 85/140 | loss_total=2.8246 recon=0.0079 hsic=0.0193 pred=0.2784
+[Full DLC (SOTA)] Epoch 90/140 | loss_total=2.8162 recon=0.0079 hsic=0.0195 pred=0.2779
+[Full DLC (SOTA)] Epoch 95/140 | loss_total=2.8258 recon=0.0079 hsic=0.0194 pred=0.2782
+[Full DLC (SOTA)] Epoch 100/140 | loss_total=2.8111 recon=0.0078 hsic=0.0192 pred=0.2769
+[Full DLC (SOTA)] Epoch 105/140 | loss_total=2.8120 recon=0.0076 hsic=0.0195 pred=0.2767
+[Full DLC (SOTA)] Epoch 110/140 | loss_total=2.7764 recon=0.0076 hsic=0.0193 pred=0.2737
+[Full DLC (SOTA)] Epoch 115/140 | loss_total=2.7883 recon=0.0076 hsic=0.0194 pred=0.2743
+[Full DLC (SOTA)] Epoch 120/140 | loss_total=2.7729 recon=0.0076 hsic=0.0194 pred=0.2734
+[Full DLC (SOTA)] Epoch 125/140 | loss_total=2.7840 recon=0.0075 hsic=0.0193 pred=0.2733
+[Full DLC (SOTA)] Epoch 130/140 | loss_total=2.7616 recon=0.0075 hsic=0.0193 pred=0.2724
+[Full DLC (SOTA)] Epoch 135/140 | loss_total=2.7698 recon=0.0074 hsic=0.0194 pred=0.2729
+[Full DLC (SOTA)] Epoch 140/140 | loss_total=2.7797 recon=0.0074 hsic=0.0193 pred=0.2740
+
+[Seed 43] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 43)
+[Full DLC (SOTA)] Epoch 5/140 | loss_total=3.9214 recon=0.0706 hsic=0.0201 pred=0.3471
+[Full DLC (SOTA)] Epoch 10/140 | loss_total=3.8397 recon=0.0238 hsic=0.0194 pred=0.3446
+[Full DLC (SOTA)] Epoch 15/140 | loss_total=3.7625 recon=0.0175 hsic=0.0192 pred=0.3380
+[Full DLC (SOTA)] Epoch 20/140 | loss_total=3.6911 recon=0.0164 hsic=0.0193 pred=0.3315
+[Full DLC (SOTA)] Epoch 25/140 | loss_total=3.5120 recon=0.0133 hsic=0.0196 pred=0.3205
+[Full DLC (SOTA)] Epoch 30/140 | loss_total=3.4267 recon=0.0126 hsic=0.0194 pred=0.3170
+[Full DLC (SOTA)] Epoch 35/140 | loss_total=3.2865 recon=0.0119 hsic=0.0192 pred=0.3090
+[Full DLC (SOTA)] Epoch 40/140 | loss_total=3.2001 recon=0.0118 hsic=0.0193 pred=0.3057
+[Full DLC (SOTA)] Epoch 45/140 | loss_total=3.0710 recon=0.0104 hsic=0.0193 pred=0.2981
+[Full DLC (SOTA)] Epoch 50/140 | loss_total=2.9890 recon=0.0102 hsic=0.0192 pred=0.2948
+[Full DLC (SOTA)] Epoch 55/140 | loss_total=2.9508 recon=0.0100 hsic=0.0193 pred=0.2911
+[Full DLC (SOTA)] Epoch 60/140 | loss_total=2.9144 recon=0.0098 hsic=0.0192 pred=0.2876
+[Full DLC (SOTA)] Epoch 65/140 | loss_total=2.8797 recon=0.0092 hsic=0.0191 pred=0.2843
+[Full DLC (SOTA)] Epoch 70/140 | loss_total=2.8613 recon=0.0092 hsic=0.0190 pred=0.2825
+[Full DLC (SOTA)] Epoch 75/140 | loss_total=2.8357 recon=0.0092 hsic=0.0191 pred=0.2797
+[Full DLC (SOTA)] Epoch 80/140 | loss_total=2.8264 recon=0.0091 hsic=0.0190 pred=0.2787
+[Full DLC (SOTA)] Epoch 85/140 | loss_total=2.7981 recon=0.0088 hsic=0.0190 pred=0.2759
+[Full DLC (SOTA)] Epoch 90/140 | loss_total=2.7937 recon=0.0087 hsic=0.0192 pred=0.2758
+[Full DLC (SOTA)] Epoch 95/140 | loss_total=2.7916 recon=0.0087 hsic=0.0191 pred=0.2751
+[Full DLC (SOTA)] Epoch 100/140 | loss_total=2.7834 recon=0.0086 hsic=0.0190 pred=0.2744
+[Full DLC (SOTA)] Epoch 105/140 | loss_total=2.7772 recon=0.0085 hsic=0.0192 pred=0.2737
+[Full DLC (SOTA)] Epoch 110/140 | loss_total=2.7565 recon=0.0085 hsic=0.0190 pred=0.2717
+[Full DLC (SOTA)] Epoch 115/140 | loss_total=2.7579 recon=0.0086 hsic=0.0191 pred=0.2718
+[Full DLC (SOTA)] Epoch 120/140 | loss_total=2.7507 recon=0.0084 hsic=0.0192 pred=0.2709
+[Full DLC (SOTA)] Epoch 125/140 | loss_total=2.7556 recon=0.0083 hsic=0.0191 pred=0.2710
+[Full DLC (SOTA)] Epoch 130/140 | loss_total=2.7355 recon=0.0083 hsic=0.0191 pred=0.2696
+[Full DLC (SOTA)] Epoch 135/140 | loss_total=2.7384 recon=0.0083 hsic=0.0191 pred=0.2701
+[Full DLC (SOTA)] Epoch 140/140 | loss_total=2.7481 recon=0.0083 hsic=0.0190 pred=0.2710
+
+[Seed 44] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 44)
+[Full DLC (SOTA)] Epoch 5/140 | loss_total=3.9110 recon=0.0570 hsic=0.0202 pred=0.3472
+[Full DLC (SOTA)] Epoch 10/140 | loss_total=3.8438 recon=0.0253 hsic=0.0195 pred=0.3447
+[Full DLC (SOTA)] Epoch 15/140 | loss_total=3.7805 recon=0.0203 hsic=0.0192 pred=0.3395
+[Full DLC (SOTA)] Epoch 20/140 | loss_total=3.7110 recon=0.0181 hsic=0.0191 pred=0.3335
+[Full DLC (SOTA)] Epoch 25/140 | loss_total=3.5439 recon=0.0143 hsic=0.0194 pred=0.3234
+[Full DLC (SOTA)] Epoch 30/140 | loss_total=3.4518 recon=0.0137 hsic=0.0196 pred=0.3188
+[Full DLC (SOTA)] Epoch 35/140 | loss_total=3.3344 recon=0.0133 hsic=0.0197 pred=0.3130
+[Full DLC (SOTA)] Epoch 40/140 | loss_total=3.2572 recon=0.0126 hsic=0.0201 pred=0.3109
+[Full DLC (SOTA)] Epoch 45/140 | loss_total=3.1334 recon=0.0111 hsic=0.0201 pred=0.3040
+[Full DLC (SOTA)] Epoch 50/140 | loss_total=3.0443 recon=0.0110 hsic=0.0202 pred=0.3001
+[Full DLC (SOTA)] Epoch 55/140 | loss_total=3.0225 recon=0.0107 hsic=0.0202 pred=0.2984
+[Full DLC (SOTA)] Epoch 60/140 | loss_total=2.9798 recon=0.0106 hsic=0.0201 pred=0.2933
+[Full DLC (SOTA)] Epoch 65/140 | loss_total=2.9511 recon=0.0098 hsic=0.0200 pred=0.2909
+[Full DLC (SOTA)] Epoch 70/140 | loss_total=2.9336 recon=0.0098 hsic=0.0200 pred=0.2892
+[Full DLC (SOTA)] Epoch 75/140 | loss_total=2.9075 recon=0.0097 hsic=0.0201 pred=0.2866
+[Full DLC (SOTA)] Epoch 80/140 | loss_total=2.8986 recon=0.0096 hsic=0.0200 pred=0.2858
+[Full DLC (SOTA)] Epoch 85/140 | loss_total=2.8729 recon=0.0093 hsic=0.0200 pred=0.2827
+[Full DLC (SOTA)] Epoch 90/140 | loss_total=2.8621 recon=0.0093 hsic=0.0202 pred=0.2822
+[Full DLC (SOTA)] Epoch 95/140 | loss_total=2.8705 recon=0.0092 hsic=0.0202 pred=0.2820
+[Full DLC (SOTA)] Epoch 100/140 | loss_total=2.8576 recon=0.0092 hsic=0.0200 pred=0.2812
+[Full DLC (SOTA)] Epoch 105/140 | loss_total=2.8519 recon=0.0090 hsic=0.0202 pred=0.2805
+[Full DLC (SOTA)] Epoch 110/140 | loss_total=2.8260 recon=0.0090 hsic=0.0200 pred=0.2782
+[Full DLC (SOTA)] Epoch 115/140 | loss_total=2.8356 recon=0.0090 hsic=0.0201 pred=0.2788
+[Full DLC (SOTA)] Epoch 120/140 | loss_total=2.8204 recon=0.0089 hsic=0.0201 pred=0.2775
+[Full DLC (SOTA)] Epoch 125/140 | loss_total=2.8259 recon=0.0088 hsic=0.0201 pred=0.2773
+[Full DLC (SOTA)] Epoch 130/140 | loss_total=2.8097 recon=0.0089 hsic=0.0201 pred=0.2764
+[Full DLC (SOTA)] Epoch 135/140 | loss_total=2.8129 recon=0.0088 hsic=0.0201 pred=0.2769
+[Full DLC (SOTA)] Epoch 140/140 | loss_total=2.8204 recon=0.0088 hsic=0.0200 pred=0.2778
+
+[Seed 45] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 45)
+[Full DLC (SOTA)] Epoch 5/140 | loss_total=3.9251 recon=0.0570 hsic=0.0200 pred=0.3482
+[Full DLC (SOTA)] Epoch 10/140 | loss_total=3.8586 recon=0.0247 hsic=0.0188 pred=0.3460
+[Full DLC (SOTA)] Epoch 15/140 | loss_total=3.7767 recon=0.0180 hsic=0.0185 pred=0.3392
+[Full DLC (SOTA)] Epoch 20/140 | loss_total=3.6985 recon=0.0173 hsic=0.0187 pred=0.3326
+[Full DLC (SOTA)] Epoch 25/140 | loss_total=3.5307 recon=0.0139 hsic=0.0189 pred=0.3220
+[Full DLC (SOTA)] Epoch 30/140 | loss_total=3.4441 recon=0.0130 hsic=0.0189 pred=0.3182
+[Full DLC (SOTA)] Epoch 35/140 | loss_total=3.3032 recon=0.0122 hsic=0.0187 pred=0.3101
+[Full DLC (SOTA)] Epoch 40/140 | loss_total=3.2149 recon=0.0120 hsic=0.0189 pred=0.3065
+[Full DLC (SOTA)] Epoch 45/140 | loss_total=3.0980 recon=0.0105 hsic=0.0189 pred=0.3002
+[Full DLC (SOTA)] Epoch 50/140 | loss_total=3.0161 recon=0.0103 hsic=0.0190 pred=0.2970
+[Full DLC (SOTA)] Epoch 55/140 | loss_total=2.9920 recon=0.0101 hsic=0.0191 pred=0.2950
+[Full DLC (SOTA)] Epoch 60/140 | loss_total=2.9490 recon=0.0100 hsic=0.0190 pred=0.2905
+[Full DLC (SOTA)] Epoch 65/140 | loss_total=2.9215 recon=0.0093 hsic=0.0189 pred=0.2880
+[Full DLC (SOTA)] Epoch 70/140 | loss_total=2.9044 recon=0.0093 hsic=0.0188 pred=0.2867
+[Full DLC (SOTA)] Epoch 75/140 | loss_total=2.8901 recon=0.0092 hsic=0.0190 pred=0.2850
+[Full DLC (SOTA)] Epoch 80/140 | loss_total=2.8695 recon=0.0090 hsic=0.0189 pred=0.2830
+[Full DLC (SOTA)] Epoch 85/140 | loss_total=2.8445 recon=0.0088 hsic=0.0189 pred=0.2802
+[Full DLC (SOTA)] Epoch 90/140 | loss_total=2.8363 recon=0.0087 hsic=0.0191 pred=0.2794
+[Full DLC (SOTA)] Epoch 95/140 | loss_total=2.8397 recon=0.0087 hsic=0.0190 pred=0.2793
+[Full DLC (SOTA)] Epoch 100/140 | loss_total=2.8328 recon=0.0086 hsic=0.0188 pred=0.2784
+[Full DLC (SOTA)] Epoch 105/140 | loss_total=2.8191 recon=0.0084 hsic=0.0191 pred=0.2777
+[Full DLC (SOTA)] Epoch 110/140 | loss_total=2.7967 recon=0.0084 hsic=0.0189 pred=0.2752
+[Full DLC (SOTA)] Epoch 115/140 | loss_total=2.8137 recon=0.0084 hsic=0.0190 pred=0.2769
+[Full DLC (SOTA)] Epoch 120/140 | loss_total=2.7942 recon=0.0083 hsic=0.0190 pred=0.2749
+[Full DLC (SOTA)] Epoch 125/140 | loss_total=2.7984 recon=0.0083 hsic=0.0190 pred=0.2747
+[Full DLC (SOTA)] Epoch 130/140 | loss_total=2.7767 recon=0.0082 hsic=0.0189 pred=0.2738
+[Full DLC (SOTA)] Epoch 135/140 | loss_total=2.7855 recon=0.0082 hsic=0.0190 pred=0.2741
+[Full DLC (SOTA)] Epoch 140/140 | loss_total=2.7963 recon=0.0082 hsic=0.0189 pred=0.2756
+
+[Seed 46] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 46)
+[Full DLC (SOTA)] Epoch 5/140 | loss_total=3.9320 recon=0.0742 hsic=0.0203 pred=0.3475
+[Full DLC (SOTA)] Epoch 10/140 | loss_total=3.8518 recon=0.0269 hsic=0.0197 pred=0.3453
+[Full DLC (SOTA)] Epoch 15/140 | loss_total=3.7720 recon=0.0200 hsic=0.0193 pred=0.3384
+[Full DLC (SOTA)] Epoch 20/140 | loss_total=3.6953 recon=0.0186 hsic=0.0192 pred=0.3320
+[Full DLC (SOTA)] Epoch 25/140 | loss_total=3.5200 recon=0.0144 hsic=0.0192 pred=0.3208
+[Full DLC (SOTA)] Epoch 30/140 | loss_total=3.4352 recon=0.0135 hsic=0.0191 pred=0.3168
+[Full DLC (SOTA)] Epoch 35/140 | loss_total=3.2886 recon=0.0127 hsic=0.0191 pred=0.3085
+[Full DLC (SOTA)] Epoch 40/140 | loss_total=3.2110 recon=0.0123 hsic=0.0193 pred=0.3056
+[Full DLC (SOTA)] Epoch 45/140 | loss_total=3.0797 recon=0.0109 hsic=0.0193 pred=0.2982
+[Full DLC (SOTA)] Epoch 50/140 | loss_total=2.9985 recon=0.0107 hsic=0.0194 pred=0.2952
+[Full DLC (SOTA)] Epoch 55/140 | loss_total=2.9744 recon=0.0104 hsic=0.0195 pred=0.2932
+[Full DLC (SOTA)] Epoch 60/140 | loss_total=2.9229 recon=0.0102 hsic=0.0193 pred=0.2880
+[Full DLC (SOTA)] Epoch 65/140 | loss_total=2.8936 recon=0.0095 hsic=0.0192 pred=0.2852
+[Full DLC (SOTA)] Epoch 70/140 | loss_total=2.8706 recon=0.0095 hsic=0.0192 pred=0.2832
+[Full DLC (SOTA)] Epoch 75/140 | loss_total=2.8564 recon=0.0093 hsic=0.0193 pred=0.2815
+[Full DLC (SOTA)] Epoch 80/140 | loss_total=2.8475 recon=0.0092 hsic=0.0192 pred=0.2801
+[Full DLC (SOTA)] Epoch 85/140 | loss_total=2.8136 recon=0.0089 hsic=0.0192 pred=0.2773
+[Full DLC (SOTA)] Epoch 90/140 | loss_total=2.8125 recon=0.0089 hsic=0.0194 pred=0.2773
+[Full DLC (SOTA)] Epoch 95/140 | loss_total=2.8151 recon=0.0088 hsic=0.0193 pred=0.2771
+[Full DLC (SOTA)] Epoch 100/140 | loss_total=2.8110 recon=0.0087 hsic=0.0191 pred=0.2765
+[Full DLC (SOTA)] Epoch 105/140 | loss_total=2.7987 recon=0.0086 hsic=0.0193 pred=0.2760
+[Full DLC (SOTA)] Epoch 110/140 | loss_total=2.7843 recon=0.0086 hsic=0.0192 pred=0.2743
+[Full DLC (SOTA)] Epoch 115/140 | loss_total=2.7955 recon=0.0085 hsic=0.0193 pred=0.2752
+[Full DLC (SOTA)] Epoch 120/140 | loss_total=2.7725 recon=0.0085 hsic=0.0193 pred=0.2736
+[Full DLC (SOTA)] Epoch 125/140 | loss_total=2.7779 recon=0.0084 hsic=0.0192 pred=0.2734
+[Full DLC (SOTA)] Epoch 130/140 | loss_total=2.7644 recon=0.0084 hsic=0.0192 pred=0.2725
+[Full DLC (SOTA)] Epoch 135/140 | loss_total=2.7666 recon=0.0083 hsic=0.0193 pred=0.2728
+[Full DLC (SOTA)] Epoch 140/140 | loss_total=2.7777 recon=0.0083 hsic=0.0192 pred=0.2740
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

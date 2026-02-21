@@ -1,0 +1,325 @@
+RUN 6.0 0.01
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=2.2060 recon=0.0622 hsic=0.0212 pred=0.3454 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=2.1192 recon=0.0211 hsic=0.0211 pred=0.3435 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=2.0837 recon=0.0143 hsic=0.0209 pred=0.3421 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=2.0318 recon=0.0129 hsic=0.0211 pred=0.3342 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=1.9932 recon=0.0113 hsic=0.0210 pred=0.3286 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=1.9576 recon=0.0109 hsic=0.0211 pred=0.3221 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=1.9283 recon=0.0107 hsic=0.0209 pred=0.3175 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=1.8961 recon=0.0102 hsic=0.0206 pred=0.3126 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=1.8652 recon=0.0089 hsic=0.0208 pred=0.3076 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=1.8427 recon=0.0086 hsic=0.0207 pred=0.3040 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=1.8253 recon=0.0084 hsic=0.0206 pred=0.3010 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=1.8246 recon=0.0083 hsic=0.0207 pred=0.3007 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=1.7983 recon=0.0078 hsic=0.0204 pred=0.2967 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=1.7784 recon=0.0076 hsic=0.0205 pred=0.2932 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=1.7876 recon=0.0076 hsic=0.0207 pred=0.2944 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=1.7568 recon=0.0076 hsic=0.0205 pred=0.2896 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=1.7463 recon=0.0072 hsic=0.0206 pred=0.2880 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=1.7475 recon=0.0072 hsic=0.0206 pred=0.2881 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 6.0, 'sens': 0.01, 'ok': False, 'full': {'AUC': 0.8058733790999237, 'Acc': 0.6601941747572816, 'F1': 0.6902654867256637, 'PEHE': 0.041824545711278915, 'Delta CATE': 0.16788743436336517, 'Sensitivity': 0.13866303861141205}}
+RUN 6.0 0.03
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=2.2039 recon=0.0595 hsic=0.0213 pred=0.3454 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=2.1190 recon=0.0201 hsic=0.0213 pred=0.3435 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=2.0854 recon=0.0141 hsic=0.0211 pred=0.3421 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=2.0298 recon=0.0128 hsic=0.0213 pred=0.3339 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=1.9881 recon=0.0110 hsic=0.0211 pred=0.3277 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=1.9546 recon=0.0109 hsic=0.0211 pred=0.3216 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=1.9254 recon=0.0109 hsic=0.0209 pred=0.3167 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=1.8931 recon=0.0106 hsic=0.0206 pred=0.3119 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=1.8576 recon=0.0093 hsic=0.0207 pred=0.3062 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=1.8365 recon=0.0089 hsic=0.0206 pred=0.3026 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=1.8204 recon=0.0088 hsic=0.0204 pred=0.2998 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=1.8173 recon=0.0087 hsic=0.0204 pred=0.2991 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=1.7915 recon=0.0082 hsic=0.0202 pred=0.2954 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=1.7714 recon=0.0079 hsic=0.0203 pred=0.2915 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=1.7792 recon=0.0080 hsic=0.0204 pred=0.2929 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=1.7482 recon=0.0078 hsic=0.0202 pred=0.2878 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=1.7369 recon=0.0075 hsic=0.0203 pred=0.2861 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=1.7384 recon=0.0075 hsic=0.0203 pred=0.2860 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 6.0, 'sens': 0.03, 'ok': False, 'full': {'AUC': 0.8051106025934401, 'Acc': 0.6601941747572816, 'F1': 0.7008547008547008, 'PEHE': 0.04146817699074745, 'Delta CATE': 0.1564301699399948, 'Sensitivity': 0.12455780804157257}}
+RUN 6.0 0.06
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=2.2063 recon=0.0612 hsic=0.0213 pred=0.3455 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=2.1207 recon=0.0215 hsic=0.0215 pred=0.3436 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=2.0892 recon=0.0144 hsic=0.0213 pred=0.3424 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=2.0313 recon=0.0129 hsic=0.0214 pred=0.3342 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=1.9931 recon=0.0110 hsic=0.0212 pred=0.3284 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=1.9603 recon=0.0107 hsic=0.0213 pred=0.3222 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=1.9298 recon=0.0106 hsic=0.0212 pred=0.3171 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=1.8952 recon=0.0101 hsic=0.0210 pred=0.3122 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=1.8662 recon=0.0088 hsic=0.0212 pred=0.3072 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=1.8430 recon=0.0085 hsic=0.0211 pred=0.3038 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=1.8278 recon=0.0084 hsic=0.0210 pred=0.3011 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=1.8300 recon=0.0082 hsic=0.0211 pred=0.3010 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=1.8045 recon=0.0077 hsic=0.0208 pred=0.2973 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=1.7850 recon=0.0076 hsic=0.0210 pred=0.2937 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=1.7932 recon=0.0076 hsic=0.0211 pred=0.2949 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=1.7638 recon=0.0075 hsic=0.0210 pred=0.2901 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=1.7529 recon=0.0072 hsic=0.0211 pred=0.2885 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=1.7541 recon=0.0071 hsic=0.0211 pred=0.2885 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 6.0, 'sens': 0.06, 'ok': False, 'full': {'AUC': 0.8112128146453089, 'Acc': 0.6699029126213593, 'F1': 0.6909090909090909, 'PEHE': 0.04122690111398697, 'Delta CATE': 0.16265828907489777, 'Sensitivity': 0.10943923890590668}}
+RUN 6.0 0.1
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=2.2030 recon=0.0583 hsic=0.0213 pred=0.3455 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=2.1219 recon=0.0201 hsic=0.0213 pred=0.3437 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=2.0936 recon=0.0137 hsic=0.0213 pred=0.3427 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=2.0359 recon=0.0127 hsic=0.0213 pred=0.3349 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=1.9996 recon=0.0109 hsic=0.0210 pred=0.3296 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=1.9688 recon=0.0108 hsic=0.0210 pred=0.3235 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=1.9363 recon=0.0108 hsic=0.0209 pred=0.3184 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=1.9023 recon=0.0105 hsic=0.0207 pred=0.3130 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=1.8729 recon=0.0091 hsic=0.0208 pred=0.3082 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=1.8508 recon=0.0088 hsic=0.0207 pred=0.3048 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=1.8347 recon=0.0087 hsic=0.0206 pred=0.3019 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=1.8332 recon=0.0084 hsic=0.0206 pred=0.3015 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=1.8096 recon=0.0080 hsic=0.0204 pred=0.2980 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=1.7908 recon=0.0078 hsic=0.0205 pred=0.2946 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=1.8004 recon=0.0078 hsic=0.0207 pred=0.2961 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=1.7713 recon=0.0076 hsic=0.0205 pred=0.2914 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=1.7592 recon=0.0073 hsic=0.0206 pred=0.2896 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=1.7594 recon=0.0073 hsic=0.0205 pred=0.2894 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 6.0, 'sens': 0.1, 'ok': False, 'full': {'AUC': 0.818840579710145, 'Acc': 0.6796116504854369, 'F1': 0.7226890756302521, 'PEHE': 0.037204381078481674, 'Delta CATE': 0.15787437558174133, 'Sensitivity': 0.0987359881401062}}
+RUN 8.0 0.01
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=2.9095 recon=0.0640 hsic=0.0212 pred=0.3448 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=2.8011 recon=0.0250 hsic=0.0209 pred=0.3423 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=2.7530 recon=0.0179 hsic=0.0204 pred=0.3397 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=2.6834 recon=0.0164 hsic=0.0208 pred=0.3313 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=2.6189 recon=0.0145 hsic=0.0208 pred=0.3238 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=2.5729 recon=0.0133 hsic=0.0208 pred=0.3179 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=2.5350 recon=0.0125 hsic=0.0207 pred=0.3133 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=2.4819 recon=0.0117 hsic=0.0205 pred=0.3069 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=2.4373 recon=0.0102 hsic=0.0206 pred=0.3017 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=2.4088 recon=0.0098 hsic=0.0205 pred=0.2983 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=2.3827 recon=0.0098 hsic=0.0204 pred=0.2947 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=2.3838 recon=0.0096 hsic=0.0205 pred=0.2948 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=2.3447 recon=0.0090 hsic=0.0203 pred=0.2902 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=2.3179 recon=0.0088 hsic=0.0204 pred=0.2866 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=2.3261 recon=0.0088 hsic=0.0205 pred=0.2874 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=2.2865 recon=0.0087 hsic=0.0204 pred=0.2827 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=2.2735 recon=0.0084 hsic=0.0205 pred=0.2810 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=2.2703 recon=0.0083 hsic=0.0204 pred=0.2807 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 8.0, 'sens': 0.01, 'ok': False, 'full': {'AUC': 0.8001525553012967, 'Acc': 0.6990291262135923, 'F1': 0.6990291262135923, 'PEHE': 0.037965480238199234, 'Delta CATE': 0.17448431253433228, 'Sensitivity': 0.14696599543094635}}
+RUN 8.0 0.03
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=2.9114 recon=0.0647 hsic=0.0211 pred=0.3449 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=2.7971 recon=0.0232 hsic=0.0209 pred=0.3422 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=2.7519 recon=0.0163 hsic=0.0205 pred=0.3398 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=2.6790 recon=0.0159 hsic=0.0208 pred=0.3309 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=2.6143 recon=0.0134 hsic=0.0207 pred=0.3233 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=2.5729 recon=0.0129 hsic=0.0207 pred=0.3180 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=2.5303 recon=0.0123 hsic=0.0205 pred=0.3128 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=2.4847 recon=0.0119 hsic=0.0203 pred=0.3072 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=2.4361 recon=0.0103 hsic=0.0205 pred=0.3014 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=2.4098 recon=0.0100 hsic=0.0204 pred=0.2981 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=2.3793 recon=0.0099 hsic=0.0204 pred=0.2942 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=2.3822 recon=0.0097 hsic=0.0204 pred=0.2943 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=2.3396 recon=0.0091 hsic=0.0202 pred=0.2894 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=2.3147 recon=0.0090 hsic=0.0203 pred=0.2857 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=2.3240 recon=0.0090 hsic=0.0204 pred=0.2869 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=2.2842 recon=0.0089 hsic=0.0203 pred=0.2820 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=2.2711 recon=0.0085 hsic=0.0203 pred=0.2803 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=2.2675 recon=0.0084 hsic=0.0203 pred=0.2800 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 8.0, 'sens': 0.03, 'ok': False, 'full': {'AUC': 0.7913806254767353, 'Acc': 0.6504854368932039, 'F1': 0.6842105263157895, 'PEHE': 0.04657740518450737, 'Delta CATE': 0.16029968857765198, 'Sensitivity': 0.14584319293498993}}
+RUN 8.0 0.06
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=2.9090 recon=0.0640 hsic=0.0212 pred=0.3448 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=2.7990 recon=0.0237 hsic=0.0212 pred=0.3421 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=2.7541 recon=0.0177 hsic=0.0211 pred=0.3397 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=2.6827 recon=0.0171 hsic=0.0215 pred=0.3311 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=2.6161 recon=0.0144 hsic=0.0213 pred=0.3233 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=2.5731 recon=0.0138 hsic=0.0213 pred=0.3178 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=2.5330 recon=0.0125 hsic=0.0212 pred=0.3130 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=2.4897 recon=0.0122 hsic=0.0209 pred=0.3077 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=2.4424 recon=0.0104 hsic=0.0211 pred=0.3022 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=2.4156 recon=0.0101 hsic=0.0210 pred=0.2988 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=2.3893 recon=0.0101 hsic=0.0209 pred=0.2953 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=2.3913 recon=0.0098 hsic=0.0210 pred=0.2955 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=2.3491 recon=0.0092 hsic=0.0208 pred=0.2907 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=2.3227 recon=0.0091 hsic=0.0210 pred=0.2869 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=2.3324 recon=0.0091 hsic=0.0211 pred=0.2881 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=2.2936 recon=0.0091 hsic=0.0209 pred=0.2834 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=2.2800 recon=0.0087 hsic=0.0210 pred=0.2816 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=2.2778 recon=0.0086 hsic=0.0210 pred=0.2814 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 8.0, 'sens': 0.06, 'ok': False, 'full': {'AUC': 0.7799389778794813, 'Acc': 0.6116504854368932, 'F1': 0.6491228070175439, 'PEHE': 0.04044665768742561, 'Delta CATE': 0.16468563675880432, 'Sensitivity': 0.1143590658903122}}
+RUN 8.0 0.1
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=2.9135 recon=0.0660 hsic=0.0212 pred=0.3450 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=2.8055 recon=0.0251 hsic=0.0211 pred=0.3425 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=2.7552 recon=0.0181 hsic=0.0209 pred=0.3399 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=2.6847 recon=0.0165 hsic=0.0212 pred=0.3313 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=2.6195 recon=0.0138 hsic=0.0211 pred=0.3239 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=2.5752 recon=0.0127 hsic=0.0211 pred=0.3182 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=2.5413 recon=0.0121 hsic=0.0210 pred=0.3140 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=2.4977 recon=0.0115 hsic=0.0208 pred=0.3086 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=2.4542 recon=0.0103 hsic=0.0209 pred=0.3034 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=2.4264 recon=0.0100 hsic=0.0208 pred=0.3000 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=2.3988 recon=0.0099 hsic=0.0207 pred=0.2964 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=2.3991 recon=0.0098 hsic=0.0208 pred=0.2964 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=2.3617 recon=0.0093 hsic=0.0206 pred=0.2920 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=2.3379 recon=0.0091 hsic=0.0207 pred=0.2886 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=2.3463 recon=0.0091 hsic=0.0208 pred=0.2896 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=2.3078 recon=0.0090 hsic=0.0207 pred=0.2850 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=2.2949 recon=0.0087 hsic=0.0208 pred=0.2833 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=2.2931 recon=0.0086 hsic=0.0208 pred=0.2831 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 8.0, 'sens': 0.1, 'ok': False, 'full': {'AUC': 0.8005339435545386, 'Acc': 0.6893203883495146, 'F1': 0.7090909090909091, 'PEHE': 0.043525580316782, 'Delta CATE': 0.1598147600889206, 'Sensitivity': 0.09469068050384521}}
+RUN 10.0 0.01
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=3.6058 recon=0.0645 hsic=0.0211 pred=0.3446 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=3.4909 recon=0.0251 hsic=0.0209 pred=0.3419 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=3.4342 recon=0.0200 hsic=0.0206 pred=0.3391 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=3.3346 recon=0.0191 hsic=0.0208 pred=0.3295 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=3.2517 recon=0.0161 hsic=0.0204 pred=0.3220 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=3.1929 recon=0.0155 hsic=0.0204 pred=0.3161 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=3.1531 recon=0.0145 hsic=0.0201 pred=0.3118 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=3.0822 recon=0.0140 hsic=0.0200 pred=0.3053 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=3.0231 recon=0.0125 hsic=0.0201 pred=0.2995 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=2.9866 recon=0.0120 hsic=0.0200 pred=0.2960 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=2.9458 recon=0.0120 hsic=0.0199 pred=0.2917 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=2.9510 recon=0.0117 hsic=0.0199 pred=0.2920 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=2.8966 recon=0.0110 hsic=0.0197 pred=0.2868 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=2.8658 recon=0.0109 hsic=0.0197 pred=0.2836 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=2.8694 recon=0.0109 hsic=0.0198 pred=0.2836 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=2.8250 recon=0.0107 hsic=0.0197 pred=0.2794 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=2.8027 recon=0.0104 hsic=0.0198 pred=0.2773 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=2.7989 recon=0.0103 hsic=0.0197 pred=0.2768 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 10.0, 'sens': 0.01, 'ok': False, 'full': {'AUC': 0.7986270022883295, 'Acc': 0.6699029126213593, 'F1': 0.7068965517241379, 'PEHE': 0.04878578335046768, 'Delta CATE': 0.17192941904067993, 'Sensitivity': 0.18335464596748352}}
+RUN 10.0 0.03
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=3.6083 recon=0.0665 hsic=0.0213 pred=0.3446 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=3.4921 recon=0.0257 hsic=0.0209 pred=0.3418 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=3.4287 recon=0.0212 hsic=0.0207 pred=0.3384 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=3.3300 recon=0.0198 hsic=0.0210 pred=0.3289 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=3.2467 recon=0.0167 hsic=0.0206 pred=0.3212 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=3.1848 recon=0.0161 hsic=0.0206 pred=0.3152 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=3.1337 recon=0.0148 hsic=0.0204 pred=0.3100 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=3.0712 recon=0.0145 hsic=0.0202 pred=0.3039 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=3.0065 recon=0.0129 hsic=0.0203 pred=0.2974 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=2.9686 recon=0.0125 hsic=0.0203 pred=0.2939 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=2.9278 recon=0.0124 hsic=0.0202 pred=0.2897 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=2.9378 recon=0.0123 hsic=0.0203 pred=0.2903 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=2.8826 recon=0.0116 hsic=0.0201 pred=0.2850 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=2.8506 recon=0.0115 hsic=0.0202 pred=0.2816 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=2.8613 recon=0.0114 hsic=0.0203 pred=0.2824 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=2.8163 recon=0.0113 hsic=0.0202 pred=0.2781 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=2.7948 recon=0.0109 hsic=0.0203 pred=0.2761 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=2.7935 recon=0.0109 hsic=0.0202 pred=0.2758 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 10.0, 'sens': 0.03, 'ok': False, 'full': {'AUC': 0.7856598016781083, 'Acc': 0.6796116504854369, 'F1': 0.6972477064220184, 'PEHE': 0.04948864504694939, 'Delta CATE': 0.18192073702812195, 'Sensitivity': 0.19081354141235352}}
+RUN 10.0 0.06
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=3.6058 recon=0.0653 hsic=0.0211 pred=0.3446 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=3.4956 recon=0.0248 hsic=0.0210 pred=0.3422 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=3.4374 recon=0.0201 hsic=0.0206 pred=0.3392 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=3.3378 recon=0.0186 hsic=0.0210 pred=0.3298 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=3.2542 recon=0.0161 hsic=0.0205 pred=0.3220 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=3.1901 recon=0.0154 hsic=0.0206 pred=0.3156 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=3.1390 recon=0.0142 hsic=0.0204 pred=0.3104 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=3.0712 recon=0.0137 hsic=0.0201 pred=0.3038 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=3.0109 recon=0.0121 hsic=0.0202 pred=0.2979 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=2.9763 recon=0.0117 hsic=0.0202 pred=0.2946 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=2.9400 recon=0.0115 hsic=0.0201 pred=0.2907 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=2.9405 recon=0.0114 hsic=0.0201 pred=0.2906 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=2.8920 recon=0.0108 hsic=0.0199 pred=0.2860 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=2.8610 recon=0.0105 hsic=0.0200 pred=0.2826 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=2.8718 recon=0.0104 hsic=0.0202 pred=0.2834 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=2.8246 recon=0.0104 hsic=0.0201 pred=0.2789 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=2.8046 recon=0.0099 hsic=0.0202 pred=0.2771 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=2.8033 recon=0.0099 hsic=0.0201 pred=0.2769 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 10.0, 'sens': 0.06, 'ok': False, 'full': {'AUC': 0.7818459191456902, 'Acc': 0.6407766990291263, 'F1': 0.6782608695652174, 'PEHE': 0.04689672216773033, 'Delta CATE': 0.17656929790973663, 'Sensitivity': 0.14548812806606293}}
+RUN 10.0 0.1
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=3.6078 recon=0.0652 hsic=0.0211 pred=0.3447 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=3.4928 recon=0.0248 hsic=0.0210 pred=0.3420 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=3.4340 recon=0.0203 hsic=0.0208 pred=0.3389 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=3.3359 recon=0.0188 hsic=0.0212 pred=0.3296 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=3.2520 recon=0.0158 hsic=0.0210 pred=0.3218 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=3.1959 recon=0.0152 hsic=0.0210 pred=0.3160 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=3.1496 recon=0.0140 hsic=0.0208 pred=0.3114 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=3.0878 recon=0.0134 hsic=0.0206 pred=0.3055 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=3.0309 recon=0.0119 hsic=0.0208 pred=0.2998 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=2.9967 recon=0.0117 hsic=0.0207 pred=0.2966 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=2.9572 recon=0.0115 hsic=0.0206 pred=0.2925 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=2.9612 recon=0.0113 hsic=0.0206 pred=0.2926 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=2.9143 recon=0.0107 hsic=0.0204 pred=0.2880 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=2.8798 recon=0.0106 hsic=0.0205 pred=0.2844 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=2.8935 recon=0.0105 hsic=0.0206 pred=0.2855 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=2.8450 recon=0.0104 hsic=0.0205 pred=0.2809 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=2.8245 recon=0.0100 hsic=0.0206 pred=0.2789 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=2.8251 recon=0.0099 hsic=0.0205 pred=0.2787 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+ -> {'pred': 10.0, 'sens': 0.1, 'ok': False, 'full': {'AUC': 0.791762013729977, 'Acc': 0.6504854368932039, 'F1': 0.7, 'PEHE': 0.04576994478702545, 'Delta CATE': 0.18415650725364685, 'Sensitivity': 0.11409122496843338}}
+NO_HIT

@@ -1,0 +1,123 @@
+=== Diamond Protocol: Two-Stage Transfer Learning ===
+
+>>> Processing Seed 42
+[Data] Loading PANCAN...
+[Data] Filtered 513 leakage samples from PANCAN.
+[Data] Loading LUAD...
+
+[Seed 42] Starting Stage 1: PANCAN Pre-training (100 epochs)...
+  [Stage 1] Ep 20 | Loss: 0.7780 (Pred: 0.3025, ITE: 0.0033)
+  [Stage 1] Ep 40 | Loss: 0.6093 (Pred: 0.2372, ITE: 0.0014)
+  [Stage 1] Ep 60 | Loss: 0.5217 (Pred: 0.2032, ITE: 0.0008)
+  [Stage 1] Ep 80 | Loss: 0.4877 (Pred: 0.1897, ITE: 0.0009)
+  [Stage 1] Ep 100 | Loss: 0.4371 (Pred: 0.1715, ITE: 0.0007)
+
+[Seed 42] Starting Stage 2: LUAD Fine-tuning (50 epochs)...
+  [Stage 2] Ep 10 | Loss: 1.0573 (Pred: 0.4162, ITE: 0.0048)
+  [Stage 2] Ep 20 | Loss: 0.8295 (Pred: 0.3257, ITE: 0.0042)
+  [Stage 2] Ep 30 | Loss: 0.6101 (Pred: 0.2381, ITE: 0.0067)
+  [Stage 2] Ep 40 | Loss: 0.4485 (Pred: 0.1710, ITE: 0.0059)
+  [Stage 2] Ep 50 | Loss: 0.3460 (Pred: 0.1289, ITE: 0.0070)
+[Seed 42 Result] AUC: 0.7069 | PEHE: 0.1074
+
+>>> Processing Seed 43
+[Data] Loading PANCAN...
+[Data] Filtered 513 leakage samples from PANCAN.
+[Data] Loading LUAD...
+
+[Seed 43] Starting Stage 1: PANCAN Pre-training (100 epochs)...
+  [Stage 1] Ep 20 | Loss: 0.7780 (Pred: 0.3025, ITE: 0.0033)
+  [Stage 1] Ep 40 | Loss: 0.6093 (Pred: 0.2372, ITE: 0.0014)
+  [Stage 1] Ep 60 | Loss: 0.5217 (Pred: 0.2032, ITE: 0.0008)
+  [Stage 1] Ep 80 | Loss: 0.4877 (Pred: 0.1897, ITE: 0.0009)
+  [Stage 1] Ep 100 | Loss: 0.4371 (Pred: 0.1715, ITE: 0.0007)
+
+[Seed 43] Starting Stage 2: LUAD Fine-tuning (50 epochs)...
+  [Stage 2] Ep 10 | Loss: 0.9287 (Pred: 0.3632, ITE: 0.0040)
+  [Stage 2] Ep 20 | Loss: 0.6268 (Pred: 0.2445, ITE: 0.0048)
+  [Stage 2] Ep 30 | Loss: 0.4540 (Pred: 0.1759, ITE: 0.0030)
+  [Stage 2] Ep 40 | Loss: 0.4085 (Pred: 0.1576, ITE: 0.0034)
+  [Stage 2] Ep 50 | Loss: 0.3552 (Pred: 0.1352, ITE: 0.0037)
+[Seed 43 Result] AUC: 0.6617 | PEHE: 0.0693
+
+>>> Processing Seed 44
+[Data] Loading PANCAN...
+[Data] Filtered 513 leakage samples from PANCAN.
+[Data] Loading LUAD...
+
+[Seed 44] Starting Stage 1: PANCAN Pre-training (100 epochs)...
+  [Stage 1] Ep 20 | Loss: 0.7780 (Pred: 0.3025, ITE: 0.0033)
+  [Stage 1] Ep 40 | Loss: 0.6093 (Pred: 0.2372, ITE: 0.0014)
+  [Stage 1] Ep 60 | Loss: 0.5217 (Pred: 0.2032, ITE: 0.0008)
+  [Stage 1] Ep 80 | Loss: 0.4877 (Pred: 0.1897, ITE: 0.0009)
+  [Stage 1] Ep 100 | Loss: 0.4371 (Pred: 0.1715, ITE: 0.0007)
+
+[Seed 44] Starting Stage 2: LUAD Fine-tuning (50 epochs)...
+  [Stage 2] Ep 10 | Loss: 0.9179 (Pred: 0.3614, ITE: 0.0048)
+  [Stage 2] Ep 20 | Loss: 0.6854 (Pred: 0.2637, ITE: 0.0051)
+  [Stage 2] Ep 30 | Loss: 0.4438 (Pred: 0.1684, ITE: 0.0043)
+  [Stage 2] Ep 40 | Loss: 0.2971 (Pred: 0.1097, ITE: 0.0058)
+  [Stage 2] Ep 50 | Loss: 0.2427 (Pred: 0.0896, ITE: 0.0049)
+[Seed 44 Result] AUC: 0.7632 | PEHE: 0.0769
+
+>>> Processing Seed 45
+[Data] Loading PANCAN...
+[Data] Filtered 513 leakage samples from PANCAN.
+[Data] Loading LUAD...
+
+[Seed 45] Starting Stage 1: PANCAN Pre-training (100 epochs)...
+  [Stage 1] Ep 20 | Loss: 0.7780 (Pred: 0.3025, ITE: 0.0033)
+  [Stage 1] Ep 40 | Loss: 0.6093 (Pred: 0.2372, ITE: 0.0014)
+  [Stage 1] Ep 60 | Loss: 0.5217 (Pred: 0.2032, ITE: 0.0008)
+  [Stage 1] Ep 80 | Loss: 0.4877 (Pred: 0.1897, ITE: 0.0009)
+  [Stage 1] Ep 100 | Loss: 0.4371 (Pred: 0.1715, ITE: 0.0007)
+
+[Seed 45] Starting Stage 2: LUAD Fine-tuning (50 epochs)...
+  [Stage 2] Ep 10 | Loss: 0.9124 (Pred: 0.3541, ITE: 0.0060)
+  [Stage 2] Ep 20 | Loss: 0.5097 (Pred: 0.1903, ITE: 0.0068)
+  [Stage 2] Ep 30 | Loss: 0.4117 (Pred: 0.1515, ITE: 0.0052)
+  [Stage 2] Ep 40 | Loss: 0.3364 (Pred: 0.1235, ITE: 0.0042)
+  [Stage 2] Ep 50 | Loss: 0.2961 (Pred: 0.1082, ITE: 0.0061)
+[Seed 45 Result] AUC: 0.6728 | PEHE: 0.0926
+
+>>> Processing Seed 46
+[Data] Loading PANCAN...
+[Data] Filtered 513 leakage samples from PANCAN.
+[Data] Loading LUAD...
+
+[Seed 46] Starting Stage 1: PANCAN Pre-training (100 epochs)...
+  [Stage 1] Ep 20 | Loss: 0.7780 (Pred: 0.3025, ITE: 0.0033)
+  [Stage 1] Ep 40 | Loss: 0.6093 (Pred: 0.2372, ITE: 0.0014)
+  [Stage 1] Ep 60 | Loss: 0.5217 (Pred: 0.2032, ITE: 0.0008)
+  [Stage 1] Ep 80 | Loss: 0.4877 (Pred: 0.1897, ITE: 0.0009)
+  [Stage 1] Ep 100 | Loss: 0.4371 (Pred: 0.1715, ITE: 0.0007)
+
+[Seed 46] Starting Stage 2: LUAD Fine-tuning (50 epochs)...
+  [Stage 2] Ep 10 | Loss: 1.0210 (Pred: 0.4033, ITE: 0.0044)
+  [Stage 2] Ep 20 | Loss: 0.6974 (Pred: 0.2695, ITE: 0.0066)
+  [Stage 2] Ep 30 | Loss: 0.4597 (Pred: 0.1761, ITE: 0.0051)
+  [Stage 2] Ep 40 | Loss: 0.3973 (Pred: 0.1470, ITE: 0.0048)
+  [Stage 2] Ep 50 | Loss: 0.3219 (Pred: 0.1134, ITE: 0.0040)
+[Seed 46 Result] AUC: 0.7582 | PEHE: 0.0849
+
+=== FINAL DIAMOND SUMMARY ===
+AUC:  0.7125 ± 0.0421
+PEHE: 0.0862 ± 0.0131
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_diamond_protocol.py", line 324, in <module>
+    main()
+  File "/home/UserData/ljx/Project_1/src/run_diamond_protocol.py", line 320, in main
+    json.dump(results, f, indent=2)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/json/encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type float32 is not JSON serializable

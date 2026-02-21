@@ -1,0 +1,129 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/110 | loss_total=3.8853 recon=0.0499 hsic=0.0218 pred=0.3467 distill=0.0000 aux=0.3595
+[Full DLC (SOTA)] Epoch 10/110 | loss_total=3.7704 recon=0.0198 hsic=0.0212 pred=0.3428 distill=0.0000 aux=0.3565
+[Full DLC (SOTA)] Epoch 15/110 | loss_total=3.6999 recon=0.0180 hsic=0.0214 pred=0.3403 distill=0.0000 aux=0.3458
+[Full DLC (SOTA)] Epoch 20/110 | loss_total=3.6229 recon=0.0168 hsic=0.0216 pred=0.3324 distill=0.0000 aux=0.3410
+[Full DLC (SOTA)] Epoch 25/110 | loss_total=3.5219 recon=0.0142 hsic=0.0213 pred=0.3241 distill=0.0000 aux=0.3325
+[Full DLC (SOTA)] Epoch 30/110 | loss_total=3.4804 recon=0.0135 hsic=0.0212 pred=0.3202 distill=0.0000 aux=0.3281
+[Full DLC (SOTA)] Epoch 35/110 | loss_total=3.4403 recon=0.0131 hsic=0.0210 pred=0.3167 distill=0.0000 aux=0.3225
+[Full DLC (SOTA)] Epoch 40/110 | loss_total=3.3872 recon=0.0125 hsic=0.0207 pred=0.3110 distill=0.0000 aux=0.3221
+[Full DLC (SOTA)] Epoch 45/110 | loss_total=3.3138 recon=0.0109 hsic=0.0205 pred=0.3044 distill=0.0000 aux=0.3165
+[Full DLC (SOTA)] Epoch 50/110 | loss_total=3.2781 recon=0.0108 hsic=0.0205 pred=0.3009 distill=0.0000 aux=0.3146
+[Full DLC (SOTA)] Epoch 55/110 | loss_total=3.2375 recon=0.0106 hsic=0.0204 pred=0.2972 distill=0.0000 aux=0.3097
+[Full DLC (SOTA)] Epoch 60/110 | loss_total=3.2155 recon=0.0105 hsic=0.0203 pred=0.2948 distill=0.0000 aux=0.3114
+[Full DLC (SOTA)] Epoch 65/110 | loss_total=3.1727 recon=0.0098 hsic=0.0204 pred=0.2911 distill=0.0000 aux=0.3064
+[Full DLC (SOTA)] Epoch 70/110 | loss_total=3.1752 recon=0.0097 hsic=0.0201 pred=0.2910 distill=0.0000 aux=0.3080
+[Full DLC (SOTA)] Epoch 75/110 | loss_total=3.1334 recon=0.0096 hsic=0.0201 pred=0.2876 distill=0.0000 aux=0.3020
+[Full DLC (SOTA)] Epoch 80/110 | loss_total=3.1254 recon=0.0095 hsic=0.0200 pred=0.2861 distill=0.0000 aux=0.3031
+[Full DLC (SOTA)] Epoch 85/110 | loss_total=3.1221 recon=0.0092 hsic=0.0199 pred=0.2864 distill=0.0000 aux=0.3021
+[Full DLC (SOTA)] Epoch 90/110 | loss_total=3.1106 recon=0.0091 hsic=0.0201 pred=0.2850 distill=0.0000 aux=0.3027
+[Full DLC (SOTA)] Epoch 95/110 | loss_total=3.1101 recon=0.0091 hsic=0.0200 pred=0.2852 distill=0.0000 aux=0.3013
+[Full DLC (SOTA)] Epoch 100/110 | loss_total=3.0630 recon=0.0091 hsic=0.0200 pred=0.2807 distill=0.0000 aux=0.2969
+[Full DLC (SOTA)] Epoch 105/110 | loss_total=3.0707 recon=0.0089 hsic=0.0201 pred=0.2816 distill=0.0000 aux=0.2986
+[Full DLC (SOTA)] Epoch 110/110 | loss_total=3.0647 recon=0.0089 hsic=0.0201 pred=0.2809 distill=0.0000 aux=0.2972
+
+[Seed 43] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 43)
+[Full DLC (SOTA)] Epoch 5/110 | loss_total=3.8825 recon=0.0600 hsic=0.0214 pred=0.3449 distill=0.0000 aux=0.3593
+[Full DLC (SOTA)] Epoch 10/110 | loss_total=3.7861 recon=0.0208 hsic=0.0213 pred=0.3438 distill=0.0000 aux=0.3567
+[Full DLC (SOTA)] Epoch 15/110 | loss_total=3.6909 recon=0.0158 hsic=0.0211 pred=0.3397 distill=0.0000 aux=0.3512
+[Full DLC (SOTA)] Epoch 20/110 | loss_total=3.6411 recon=0.0143 hsic=0.0215 pred=0.3346 distill=0.0000 aux=0.3443
+[Full DLC (SOTA)] Epoch 25/110 | loss_total=3.5893 recon=0.0119 hsic=0.0211 pred=0.3310 distill=0.0000 aux=0.3366
+[Full DLC (SOTA)] Epoch 30/110 | loss_total=3.5601 recon=0.0116 hsic=0.0210 pred=0.3281 distill=0.0000 aux=0.3344
+[Full DLC (SOTA)] Epoch 35/110 | loss_total=3.4938 recon=0.0113 hsic=0.0209 pred=0.3217 distill=0.0000 aux=0.3291
+[Full DLC (SOTA)] Epoch 40/110 | loss_total=3.4565 recon=0.0108 hsic=0.0206 pred=0.3181 distill=0.0000 aux=0.3270
+[Full DLC (SOTA)] Epoch 45/110 | loss_total=3.3894 recon=0.0096 hsic=0.0204 pred=0.3115 distill=0.0000 aux=0.3230
+[Full DLC (SOTA)] Epoch 50/110 | loss_total=3.3525 recon=0.0094 hsic=0.0204 pred=0.3081 distill=0.0000 aux=0.3195
+[Full DLC (SOTA)] Epoch 55/110 | loss_total=3.3301 recon=0.0092 hsic=0.0203 pred=0.3059 distill=0.0000 aux=0.3182
+[Full DLC (SOTA)] Epoch 60/110 | loss_total=3.3133 recon=0.0092 hsic=0.0201 pred=0.3037 distill=0.0000 aux=0.3196
+[Full DLC (SOTA)] Epoch 65/110 | loss_total=3.2852 recon=0.0086 hsic=0.0201 pred=0.3013 distill=0.0000 aux=0.3170
+[Full DLC (SOTA)] Epoch 70/110 | loss_total=3.2724 recon=0.0085 hsic=0.0202 pred=0.3000 distill=0.0000 aux=0.3158
+[Full DLC (SOTA)] Epoch 75/110 | loss_total=3.2583 recon=0.0085 hsic=0.0200 pred=0.2987 distill=0.0000 aux=0.3140
+[Full DLC (SOTA)] Epoch 80/110 | loss_total=3.2276 recon=0.0084 hsic=0.0200 pred=0.2959 distill=0.0000 aux=0.3089
+[Full DLC (SOTA)] Epoch 85/110 | loss_total=3.2136 recon=0.0082 hsic=0.0201 pred=0.2945 distill=0.0000 aux=0.3098
+[Full DLC (SOTA)] Epoch 90/110 | loss_total=3.2149 recon=0.0082 hsic=0.0199 pred=0.2944 distill=0.0000 aux=0.3104
+[Full DLC (SOTA)] Epoch 95/110 | loss_total=3.1967 recon=0.0082 hsic=0.0198 pred=0.2926 distill=0.0000 aux=0.3088
+[Full DLC (SOTA)] Epoch 100/110 | loss_total=3.2219 recon=0.0081 hsic=0.0200 pred=0.2952 distill=0.0000 aux=0.3088
+[Full DLC (SOTA)] Epoch 105/110 | loss_total=3.1586 recon=0.0079 hsic=0.0199 pred=0.2896 distill=0.0000 aux=0.3017
+[Full DLC (SOTA)] Epoch 110/110 | loss_total=3.1681 recon=0.0080 hsic=0.0196 pred=0.2900 distill=0.0000 aux=0.3045
+
+[Seed 44] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 44)
+[Full DLC (SOTA)] Epoch 5/110 | loss_total=3.8858 recon=0.0574 hsic=0.0212 pred=0.3456 distill=0.0000 aux=0.3585
+[Full DLC (SOTA)] Epoch 10/110 | loss_total=3.7571 recon=0.0260 hsic=0.0211 pred=0.3427 distill=0.0000 aux=0.3553
+[Full DLC (SOTA)] Epoch 15/110 | loss_total=3.6909 recon=0.0197 hsic=0.0212 pred=0.3390 distill=0.0000 aux=0.3494
+[Full DLC (SOTA)] Epoch 20/110 | loss_total=3.6221 recon=0.0184 hsic=0.0213 pred=0.3332 distill=0.0000 aux=0.3396
+[Full DLC (SOTA)] Epoch 25/110 | loss_total=3.5330 recon=0.0155 hsic=0.0210 pred=0.3253 distill=0.0000 aux=0.3314
+[Full DLC (SOTA)] Epoch 30/110 | loss_total=3.4843 recon=0.0156 hsic=0.0208 pred=0.3203 distill=0.0000 aux=0.3291
+[Full DLC (SOTA)] Epoch 35/110 | loss_total=3.4120 recon=0.0154 hsic=0.0207 pred=0.3135 distill=0.0000 aux=0.3239
+[Full DLC (SOTA)] Epoch 40/110 | loss_total=3.3754 recon=0.0146 hsic=0.0203 pred=0.3101 distill=0.0000 aux=0.3214
+[Full DLC (SOTA)] Epoch 45/110 | loss_total=3.2975 recon=0.0127 hsic=0.0205 pred=0.3028 distill=0.0000 aux=0.3151
+[Full DLC (SOTA)] Epoch 50/110 | loss_total=3.2724 recon=0.0126 hsic=0.0206 pred=0.3003 distill=0.0000 aux=0.3138
+[Full DLC (SOTA)] Epoch 55/110 | loss_total=3.2639 recon=0.0120 hsic=0.0205 pred=0.2996 distill=0.0000 aux=0.3129
+[Full DLC (SOTA)] Epoch 60/110 | loss_total=3.2107 recon=0.0119 hsic=0.0203 pred=0.2942 distill=0.0000 aux=0.3083
+[Full DLC (SOTA)] Epoch 65/110 | loss_total=3.1462 recon=0.0111 hsic=0.0203 pred=0.2883 distill=0.0000 aux=0.3053
+[Full DLC (SOTA)] Epoch 70/110 | loss_total=3.1491 recon=0.0109 hsic=0.0205 pred=0.2884 distill=0.0000 aux=0.3056
+[Full DLC (SOTA)] Epoch 75/110 | loss_total=3.1165 recon=0.0108 hsic=0.0203 pred=0.2852 distill=0.0000 aux=0.3008
+[Full DLC (SOTA)] Epoch 80/110 | loss_total=3.0987 recon=0.0107 hsic=0.0204 pred=0.2838 distill=0.0000 aux=0.2997
+[Full DLC (SOTA)] Epoch 85/110 | loss_total=3.0633 recon=0.0103 hsic=0.0204 pred=0.2799 distill=0.0000 aux=0.2991
+[Full DLC (SOTA)] Epoch 90/110 | loss_total=3.0559 recon=0.0102 hsic=0.0203 pred=0.2796 distill=0.0000 aux=0.2977
+[Full DLC (SOTA)] Epoch 95/110 | loss_total=3.0545 recon=0.0102 hsic=0.0204 pred=0.2793 distill=0.0000 aux=0.2963
+[Full DLC (SOTA)] Epoch 100/110 | loss_total=3.0319 recon=0.0101 hsic=0.0205 pred=0.2772 distill=0.0000 aux=0.2955
+[Full DLC (SOTA)] Epoch 105/110 | loss_total=3.0310 recon=0.0099 hsic=0.0205 pred=0.2772 distill=0.0000 aux=0.2933
+[Full DLC (SOTA)] Epoch 110/110 | loss_total=3.0148 recon=0.0099 hsic=0.0203 pred=0.2753 distill=0.0000 aux=0.2944
+
+[Seed 45] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 45)
+[Full DLC (SOTA)] Epoch 5/110 | loss_total=3.9293 recon=0.0575 hsic=0.0212 pred=0.3505 distill=0.0000 aux=0.3624
+[Full DLC (SOTA)] Epoch 10/110 | loss_total=3.7659 recon=0.0232 hsic=0.0212 pred=0.3432 distill=0.0000 aux=0.3520
+[Full DLC (SOTA)] Epoch 15/110 | loss_total=3.7229 recon=0.0187 hsic=0.0213 pred=0.3427 distill=0.0000 aux=0.3463
+[Full DLC (SOTA)] Epoch 20/110 | loss_total=3.6399 recon=0.0165 hsic=0.0216 pred=0.3349 distill=0.0000 aux=0.3411
+[Full DLC (SOTA)] Epoch 25/110 | loss_total=3.5778 recon=0.0143 hsic=0.0217 pred=0.3299 distill=0.0000 aux=0.3344
+[Full DLC (SOTA)] Epoch 30/110 | loss_total=3.5264 recon=0.0143 hsic=0.0214 pred=0.3247 distill=0.0000 aux=0.3323
+[Full DLC (SOTA)] Epoch 35/110 | loss_total=3.5274 recon=0.0142 hsic=0.0211 pred=0.3240 distill=0.0000 aux=0.3351
+[Full DLC (SOTA)] Epoch 40/110 | loss_total=3.4561 recon=0.0139 hsic=0.0208 pred=0.3173 distill=0.0000 aux=0.3284
+[Full DLC (SOTA)] Epoch 45/110 | loss_total=3.3889 recon=0.0129 hsic=0.0207 pred=0.3109 distill=0.0000 aux=0.3240
+[Full DLC (SOTA)] Epoch 50/110 | loss_total=3.3778 recon=0.0128 hsic=0.0206 pred=0.3097 distill=0.0000 aux=0.3261
+[Full DLC (SOTA)] Epoch 55/110 | loss_total=3.3410 recon=0.0127 hsic=0.0206 pred=0.3062 distill=0.0000 aux=0.3235
+[Full DLC (SOTA)] Epoch 60/110 | loss_total=3.3042 recon=0.0124 hsic=0.0202 pred=0.3026 distill=0.0000 aux=0.3212
+[Full DLC (SOTA)] Epoch 65/110 | loss_total=3.2589 recon=0.0116 hsic=0.0205 pred=0.2983 distill=0.0000 aux=0.3185
+[Full DLC (SOTA)] Epoch 70/110 | loss_total=3.2416 recon=0.0116 hsic=0.0203 pred=0.2966 distill=0.0000 aux=0.3194
+[Full DLC (SOTA)] Epoch 75/110 | loss_total=3.2212 recon=0.0116 hsic=0.0203 pred=0.2944 distill=0.0000 aux=0.3167
+[Full DLC (SOTA)] Epoch 80/110 | loss_total=3.2375 recon=0.0115 hsic=0.0203 pred=0.2960 distill=0.0000 aux=0.3190
+[Full DLC (SOTA)] Epoch 85/110 | loss_total=3.2302 recon=0.0111 hsic=0.0202 pred=0.2951 distill=0.0000 aux=0.3180
+[Full DLC (SOTA)] Epoch 90/110 | loss_total=3.1719 recon=0.0111 hsic=0.0203 pred=0.2896 distill=0.0000 aux=0.3135
+[Full DLC (SOTA)] Epoch 95/110 | loss_total=3.1672 recon=0.0110 hsic=0.0203 pred=0.2892 distill=0.0000 aux=0.3140
+[Full DLC (SOTA)] Epoch 100/110 | loss_total=3.1876 recon=0.0109 hsic=0.0203 pred=0.2911 distill=0.0000 aux=0.3148
+[Full DLC (SOTA)] Epoch 105/110 | loss_total=3.1626 recon=0.0107 hsic=0.0203 pred=0.2893 distill=0.0000 aux=0.3132
+[Full DLC (SOTA)] Epoch 110/110 | loss_total=3.1530 recon=0.0106 hsic=0.0201 pred=0.2880 distill=0.0000 aux=0.3125
+
+[Seed 46] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 46)
+[Full DLC (SOTA)] Epoch 5/110 | loss_total=3.9270 recon=0.0606 hsic=0.0211 pred=0.3496 distill=0.0000 aux=0.3616
+[Full DLC (SOTA)] Epoch 10/110 | loss_total=3.7895 recon=0.0230 hsic=0.0211 pred=0.3457 distill=0.0000 aux=0.3544
+[Full DLC (SOTA)] Epoch 15/110 | loss_total=3.7178 recon=0.0167 hsic=0.0210 pred=0.3424 distill=0.0000 aux=0.3472
+[Full DLC (SOTA)] Epoch 20/110 | loss_total=3.6817 recon=0.0158 hsic=0.0206 pred=0.3393 distill=0.0000 aux=0.3436
+[Full DLC (SOTA)] Epoch 25/110 | loss_total=3.6085 recon=0.0134 hsic=0.0208 pred=0.3329 distill=0.0000 aux=0.3379
+[Full DLC (SOTA)] Epoch 30/110 | loss_total=3.5673 recon=0.0139 hsic=0.0205 pred=0.3289 distill=0.0000 aux=0.3335
+[Full DLC (SOTA)] Epoch 35/110 | loss_total=3.5008 recon=0.0136 hsic=0.0202 pred=0.3221 distill=0.0000 aux=0.3312
+[Full DLC (SOTA)] Epoch 40/110 | loss_total=3.4896 recon=0.0135 hsic=0.0201 pred=0.3209 distill=0.0000 aux=0.3294
+[Full DLC (SOTA)] Epoch 45/110 | loss_total=3.4290 recon=0.0122 hsic=0.0198 pred=0.3155 distill=0.0000 aux=0.3264
+[Full DLC (SOTA)] Epoch 50/110 | loss_total=3.3841 recon=0.0120 hsic=0.0197 pred=0.3110 distill=0.0000 aux=0.3240
+[Full DLC (SOTA)] Epoch 55/110 | loss_total=3.3635 recon=0.0120 hsic=0.0197 pred=0.3090 distill=0.0000 aux=0.3200
+[Full DLC (SOTA)] Epoch 60/110 | loss_total=3.3167 recon=0.0118 hsic=0.0197 pred=0.3044 distill=0.0000 aux=0.3192
+[Full DLC (SOTA)] Epoch 65/110 | loss_total=3.3064 recon=0.0110 hsic=0.0195 pred=0.3036 distill=0.0000 aux=0.3194
+[Full DLC (SOTA)] Epoch 70/110 | loss_total=3.2727 recon=0.0109 hsic=0.0195 pred=0.3002 distill=0.0000 aux=0.3159
+[Full DLC (SOTA)] Epoch 75/110 | loss_total=3.2746 recon=0.0108 hsic=0.0196 pred=0.3002 distill=0.0000 aux=0.3179
+[Full DLC (SOTA)] Epoch 80/110 | loss_total=3.2504 recon=0.0108 hsic=0.0196 pred=0.2979 distill=0.0000 aux=0.3150
+[Full DLC (SOTA)] Epoch 85/110 | loss_total=3.1988 recon=0.0105 hsic=0.0195 pred=0.2932 distill=0.0000 aux=0.3109
+[Full DLC (SOTA)] Epoch 90/110 | loss_total=3.2218 recon=0.0103 hsic=0.0195 pred=0.2954 distill=0.0000 aux=0.3128
+[Full DLC (SOTA)] Epoch 95/110 | loss_total=3.1890 recon=0.0103 hsic=0.0195 pred=0.2921 distill=0.0000 aux=0.3116
+[Full DLC (SOTA)] Epoch 100/110 | loss_total=3.1687 recon=0.0102 hsic=0.0194 pred=0.2899 distill=0.0000 aux=0.3118
+[Full DLC (SOTA)] Epoch 105/110 | loss_total=3.1541 recon=0.0101 hsic=0.0194 pred=0.2890 distill=0.0000 aux=0.3077
+[Full DLC (SOTA)] Epoch 110/110 | loss_total=3.1726 recon=0.0101 hsic=0.0195 pred=0.2908 distill=0.0000 aux=0.3101
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

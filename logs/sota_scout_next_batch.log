@@ -1,0 +1,5 @@
+[START] A4 pred=10.0 ite=16.0 cate=12.0 sens=0.35 epochs=120
+[DONE] A4
+[START] A5 pred=9.5 ite=18.0 cate=13.0 sens=0.25 epochs=130
+[DONE] A5
+[ALL_DONE]

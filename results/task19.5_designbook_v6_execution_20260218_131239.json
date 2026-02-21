@@ -1,0 +1,74 @@
+{
+  "run_id": "20260218_131239",
+  "objective": "V6 adaptive-alpha validation on top of decoupled head.",
+  "rows": [
+    {
+      "run_id": "20260218_131239",
+      "candidate": "v6a_acc_guard",
+      "config": {
+        "name": "v6a_acc_guard",
+        "v6_alpha_grid": "0.0,0.1,0.2,0.3,0.4",
+        "v6_acc_floor": 0.82
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/task19.5_designbook_v6_stage1_01_v6a_acc_guard_20260218_131239_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/task19.5_designbook_v6_stage1_01_v6a_acc_guard_20260218_131239_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/task19.5_designbook_v6_stage1_01_v6a_acc_guard_20260218_131239.log",
+      "global_wins": 2,
+      "pairwise_wins": {
+        "w/o HGNN": 2,
+        "w/o VAE": 5,
+        "w/o HSIC": 4
+      },
+      "domination_margin": -0.07739523916333313,
+      "auc_gap_vs_hgnn": -0.0019069412662089391,
+      "acc_gap_vs_hgnn": -0.03883495145631066,
+      "hit": 0
+    },
+    {
+      "run_id": "20260218_131239",
+      "candidate": "v6b_balanced",
+      "config": {
+        "name": "v6b_balanced",
+        "v6_alpha_grid": "0.0,0.2,0.4,0.6",
+        "v6_acc_floor": 0.8
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/task19.5_designbook_v6_stage1_02_v6b_balanced_20260218_131239_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/task19.5_designbook_v6_stage1_02_v6b_balanced_20260218_131239_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/task19.5_designbook_v6_stage1_02_v6b_balanced_20260218_131239.log",
+      "global_wins": 2,
+      "pairwise_wins": {
+        "w/o HGNN": 2,
+        "w/o VAE": 5,
+        "w/o HSIC": 4
+      },
+      "domination_margin": -0.07989793064709894,
+      "auc_gap_vs_hgnn": -0.0022883295194506825,
+      "acc_gap_vs_hgnn": -0.03883495145631066,
+      "hit": 0
+    }
+  ],
+  "final_best": {
+    "run_id": "20260218_131239",
+    "candidate": "v6a_acc_guard",
+    "config": {
+      "name": "v6a_acc_guard",
+      "v6_alpha_grid": "0.0,0.1,0.2,0.3,0.4",
+      "v6_acc_floor": 0.82
+    },
+    "raw_path": "/home/UserData/ljx/Project_1/results/task19.5_designbook_v6_stage1_01_v6a_acc_guard_20260218_131239_raw.json",
+    "report_path": "/home/UserData/ljx/Project_1/reports/task19.5_designbook_v6_stage1_01_v6a_acc_guard_20260218_131239_report.md",
+    "log_path": "/home/UserData/ljx/Project_1/logs/task19.5_designbook_v6_stage1_01_v6a_acc_guard_20260218_131239.log",
+    "global_wins": 2,
+    "pairwise_wins": {
+      "w/o HGNN": 2,
+      "w/o VAE": 5,
+      "w/o HSIC": 4
+    },
+    "domination_margin": -0.07739523916333313,
+    "auc_gap_vs_hgnn": -0.0019069412662089391,
+    "acc_gap_vs_hgnn": -0.03883495145631066,
+    "hit": 0
+  },
+  "any_hit": false,
+  "stop_reason": "V6 adaptive alpha still did not cross classification boundary"
+}

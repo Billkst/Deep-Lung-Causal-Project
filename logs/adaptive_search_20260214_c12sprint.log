@@ -1,0 +1,20 @@
+[Stage1] Total candidates: 6
+[Stage1] (1/6) Running c13_c12_pred_up
+[Stage1] Done c13_c12_pred_up: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 5}
+[Stage1] (2/6) Running c14_c12_f1_peak
+[Stage1] Done c14_c12_f1_peak: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 4}
+[Stage1] (3/6) Running c15_c12_auc_guard
+[Stage1] Done c15_c12_auc_guard: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 4}
+[Stage1] (4/6) Running c16_c12_cate_recover
+[Stage1] Done c16_c12_cate_recover: global=2/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 5, 'w/o HSIC': 4}
+[Stage1] (5/6) Running c17_c12_sens_guard
+[Stage1] Done c17_c12_sens_guard: global=3/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 6}
+[Stage1] (6/6) Running c18_c12_hsic_rebalance
+[Stage1] Done c18_c12_hsic_rebalance: global=2/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 5, 'w/o HSIC': 6}
+[Stage2] Selected top-1 candidates
+[Stage2] (1/1) Running c14_c12_f1_peak
+[Stage2] Done c14_c12_f1_peak: global=2/6, pairwise={'w/o HGNN': 3, 'w/o VAE': 6, 'w/o HSIC': 3}
+[Done] Summary JSON: /home/UserData/ljx/Project_1/results/adaptive_search_summary_20260214_141459.json
+[Done] Summary Report: /home/UserData/ljx/Project_1/reports/task19.5_adaptive_search_summary_20260214_141459.md
+[Done] Best Stage2 Log: /home/UserData/ljx/Project_1/logs/adaptive_stage2_top1_c14_c12_f1_peak_20260214_141459.log
+[Done] Best Stage2 Raw: /home/UserData/ljx/Project_1/results/adaptive_stage2_top1_c14_c12_f1_peak_20260214_141459_raw.json

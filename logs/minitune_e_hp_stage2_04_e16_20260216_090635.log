@@ -1,0 +1,166 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/55 | loss_total=2.2669 recon=0.0510 hsic=0.0212 pred=0.3445
+[Full DLC (SOTA)] Val@Ep8 | score=0.1361 AUC=0.7961 Acc=0.8374 F1=0.5805 PEHE=0.0423 dCATE=0.0817 Sens=0.0082 thr=0.30 feasible=0
+[Full DLC (SOTA)] Epoch 10/55 | loss_total=2.1779 recon=0.0202 hsic=0.0209 pred=0.3423
+[Full DLC (SOTA)] Val@Ep12 | score=1003.4577 AUC=0.7959 Acc=0.8318 F1=0.5817 PEHE=0.0345 dCATE=0.1356 Sens=0.0126 thr=0.26 feasible=1
+[Full DLC (SOTA)] Epoch 15/55 | loss_total=2.1373 recon=0.0143 hsic=0.0206 pred=0.3406
+[Full DLC (SOTA)] Val@Ep16 | score=1003.4622 AUC=0.7982 Acc=0.8274 F1=0.5730 PEHE=0.0203 dCATE=0.1516 Sens=0.0128 thr=0.22 feasible=1
+[Full DLC (SOTA)] Val@Ep20 | score=1003.4639 AUC=0.7936 Acc=0.8296 F1=0.5785 PEHE=0.0222 dCATE=0.1506 Sens=0.0160 thr=0.25 feasible=1
+[Full DLC (SOTA)] Epoch 20/55 | loss_total=2.0866 recon=0.0137 hsic=0.0209 pred=0.3324
+[Full DLC (SOTA)] Val@Ep24 | score=1003.4321 AUC=0.7933 Acc=0.8196 F1=0.5691 PEHE=0.0231 dCATE=0.1559 Sens=0.0187 thr=0.22 feasible=1
+[Full DLC (SOTA)] Epoch 25/55 | loss_total=2.0414 recon=0.0125 hsic=0.0209 pred=0.3255
+[Full DLC (SOTA)] Val@Ep28 | score=1003.4351 AUC=0.7962 Acc=0.8218 F1=0.5628 PEHE=0.0305 dCATE=0.1809 Sens=0.0277 thr=0.23 feasible=1
+[Full DLC (SOTA)] Epoch 30/55 | loss_total=2.0056 recon=0.0122 hsic=0.0210 pred=0.3195
+[Full DLC (SOTA)] Val@Ep32 | score=1003.4396 AUC=0.7957 Acc=0.8263 F1=0.5642 PEHE=0.0229 dCATE=0.1683 Sens=0.0306 thr=0.24 feasible=1
+[Full DLC (SOTA)] Epoch 35/55 | loss_total=1.9747 recon=0.0118 hsic=0.0209 pred=0.3148
+[Full DLC (SOTA)] Val@Ep36 | score=1003.4286 AUC=0.7939 Acc=0.8263 F1=0.5593 PEHE=0.0257 dCATE=0.1767 Sens=0.0369 thr=0.23 feasible=1
+[Full DLC (SOTA)] Val@Ep40 | score=1003.3643 AUC=0.7909 Acc=0.8296 F1=0.5539 PEHE=0.0360 dCATE=0.1113 Sens=0.0409 thr=0.23 feasible=1
+[Full DLC (SOTA)] Epoch 40/55 | loss_total=1.9394 recon=0.0112 hsic=0.0206 pred=0.3092
+[Full DLC (SOTA)] Val@Ep44 | score=1003.3929 AUC=0.7920 Acc=0.8252 F1=0.5476 PEHE=0.0205 dCATE=0.1606 Sens=0.0449 thr=0.23 feasible=1
+[Full DLC (SOTA)] Epoch 45/55 | loss_total=1.9025 recon=0.0098 hsic=0.0207 pred=0.3036
+[Full DLC (SOTA)] Val@Ep48 | score=1003.3554 AUC=0.7886 Acc=0.8207 F1=0.5387 PEHE=0.0224 dCATE=0.1431 Sens=0.0419 thr=0.18 feasible=1
+[Full DLC (SOTA)] Epoch 50/55 | loss_total=1.8778 recon=0.0096 hsic=0.0205 pred=0.2998
+[Full DLC (SOTA)] Val@Ep52 | score=1003.3618 AUC=0.7897 Acc=0.8196 F1=0.5525 PEHE=0.0257 dCATE=0.1321 Sens=0.0456 thr=0.16 feasible=1
+[Full DLC (SOTA)] Epoch 55/55 | loss_total=1.8598 recon=0.0095 hsic=0.0204 pred=0.2967
+[Full DLC (SOTA)] Restored best checkpoint at epoch 20 (score=1003.4639, thr=0.25)
+[w/o HGNN] Epoch 5/40 | loss_total=1.5824 recon=0.2293 hsic=0.0162 pred=0.3371
+[w/o HGNN] Val@Ep8 | score=1003.3906 AUC=0.7828 Acc=0.8252 F1=0.5577 PEHE=0.0544 dCATE=0.1805 Sens=0.0357 thr=0.25 feasible=1
+[w/o HGNN] Epoch 10/40 | loss_total=1.3762 recon=0.0670 hsic=0.0188 pred=0.3249
+[w/o HGNN] Val@Ep12 | score=1003.4349 AUC=0.7856 Acc=0.8486 F1=0.5696 PEHE=0.0612 dCATE=0.1681 Sens=0.0429 thr=0.42 feasible=1
+[w/o HGNN] Epoch 15/40 | loss_total=1.2879 recon=0.0401 hsic=0.0212 pred=0.3096
+[w/o HGNN] Val@Ep16 | score=1003.3602 AUC=0.7683 Acc=0.8408 F1=0.5545 PEHE=0.0789 dCATE=0.1783 Sens=0.0541 thr=0.35 feasible=1
+[w/o HGNN] Val@Ep20 | score=1003.2097 AUC=0.7599 Acc=0.8096 F1=0.5210 PEHE=0.0907 dCATE=0.1722 Sens=0.0768 thr=0.25 feasible=1
+[w/o HGNN] Epoch 20/40 | loss_total=1.2209 recon=0.0316 hsic=0.0221 pred=0.2922
+[w/o HGNN] Val@Ep24 | score=1003.2376 AUC=0.7407 Acc=0.8352 F1=0.5163 PEHE=0.1001 dCATE=0.2049 Sens=0.0823 thr=0.37 feasible=1
+[w/o HGNN] Epoch 25/40 | loss_total=1.0810 recon=0.0239 hsic=0.0226 pred=0.2593
+[w/o HGNN] Val@Ep28 | score=1003.1476 AUC=0.7368 Acc=0.8107 F1=0.5198 PEHE=0.1197 dCATE=0.1746 Sens=0.0912 thr=0.25 feasible=1
+[w/o HGNN] Epoch 30/40 | loss_total=1.0036 recon=0.0221 hsic=0.0226 pred=0.2403
+[w/o HGNN] Val@Ep32 | score=1.4652 AUC=0.7187 Acc=0.7873 F1=0.5013 PEHE=0.1288 dCATE=0.2081 Sens=0.1096 thr=0.23 feasible=0
+[w/o HGNN] Epoch 35/40 | loss_total=0.9288 recon=0.0203 hsic=0.0225 pred=0.2201
+[w/o HGNN] Val@Ep36 | score=2.2270 AUC=0.6849 Acc=0.7806 F1=0.4690 PEHE=0.1241 dCATE=0.2078 Sens=0.0905 thr=0.16 feasible=0
+[w/o HGNN] Val@Ep40 | score=-0.9738 AUC=0.6886 Acc=0.7929 F1=0.4804 PEHE=0.1418 dCATE=0.1686 Sens=0.1162 thr=0.24 feasible=0
+[w/o HGNN] Epoch 40/40 | loss_total=0.8884 recon=0.0188 hsic=0.0227 pred=0.2088
+[w/o HGNN] Restored best checkpoint at epoch 12 (score=1003.4349, thr=0.42)
+[w/o VAE] Epoch 5/40 | loss_total=1.4619 recon=0.0433 hsic=0.0239 pred=0.3481
+[w/o VAE] Val@Ep8 | score=1003.4351 AUC=0.7966 Acc=0.8396 F1=0.5789 PEHE=0.0633 dCATE=0.1163 Sens=0.0078 thr=0.32 feasible=1
+[w/o VAE] Epoch 10/40 | loss_total=1.4075 recon=0.0159 hsic=0.0231 pred=0.3446
+[w/o VAE] Val@Ep12 | score=1003.4637 AUC=0.7963 Acc=0.8486 F1=0.5776 PEHE=0.0650 dCATE=0.1392 Sens=0.0087 thr=0.31 feasible=1
+[w/o VAE] Epoch 15/40 | loss_total=1.3931 recon=0.0119 hsic=0.0221 pred=0.3431
+[w/o VAE] Val@Ep16 | score=1003.4518 AUC=0.7969 Acc=0.8363 F1=0.5788 PEHE=0.0478 dCATE=0.1339 Sens=0.0111 thr=0.25 feasible=1
+[w/o VAE] Val@Ep20 | score=1003.4624 AUC=0.7955 Acc=0.8396 F1=0.5765 PEHE=0.0448 dCATE=0.1502 Sens=0.0168 thr=0.32 feasible=1
+[w/o VAE] Epoch 20/40 | loss_total=1.3556 recon=0.0106 hsic=0.0220 pred=0.3341
+[w/o VAE] Val@Ep24 | score=1003.4543 AUC=0.7947 Acc=0.8352 F1=0.5723 PEHE=0.0504 dCATE=0.1649 Sens=0.0150 thr=0.28 feasible=1
+[w/o VAE] Epoch 25/40 | loss_total=1.3311 recon=0.0079 hsic=0.0214 pred=0.3286
+[w/o VAE] Val@Ep28 | score=1003.4133 AUC=0.7935 Acc=0.8252 F1=0.5651 PEHE=0.0551 dCATE=0.1621 Sens=0.0204 thr=0.22 feasible=1
+[w/o VAE] Epoch 30/40 | loss_total=1.3046 recon=0.0078 hsic=0.0215 pred=0.3219
+[w/o VAE] Val@Ep32 | score=1003.4147 AUC=0.7936 Acc=0.8252 F1=0.5602 PEHE=0.0516 dCATE=0.1750 Sens=0.0250 thr=0.25 feasible=1
+[w/o VAE] Epoch 35/40 | loss_total=1.2798 recon=0.0077 hsic=0.0211 pred=0.3163
+[w/o VAE] Val@Ep36 | score=1003.3685 AUC=0.7895 Acc=0.8073 F1=0.5530 PEHE=0.0435 dCATE=0.1738 Sens=0.0287 thr=0.18 feasible=1
+[w/o VAE] Val@Ep40 | score=1003.3776 AUC=0.7879 Acc=0.8318 F1=0.5438 PEHE=0.0351 dCATE=0.1406 Sens=0.0331 thr=0.28 feasible=1
+[w/o VAE] Epoch 40/40 | loss_total=1.2575 recon=0.0076 hsic=0.0210 pred=0.3108
+[w/o VAE] Restored best checkpoint at epoch 12 (score=1003.4637, thr=0.31)
+[w/o HSIC] Epoch 5/40 | loss_total=1.4734 recon=0.0573 hsic=0.0208 pred=0.3479
+[w/o HSIC] Val@Ep8 | score=1003.4426 AUC=0.7974 Acc=0.8408 F1=0.5831 PEHE=0.0659 dCATE=0.1181 Sens=0.0090 thr=0.33 feasible=1
+[w/o HSIC] Epoch 10/40 | loss_total=1.4099 recon=0.0174 hsic=0.0205 pred=0.3446
+[w/o HSIC] Val@Ep12 | score=1003.4626 AUC=0.7956 Acc=0.8497 F1=0.5794 PEHE=0.0628 dCATE=0.1363 Sens=0.0145 thr=0.32 feasible=1
+[w/o HSIC] Epoch 15/40 | loss_total=1.3943 recon=0.0115 hsic=0.0197 pred=0.3435
+[w/o HSIC] Val@Ep16 | score=1003.4525 AUC=0.7956 Acc=0.8430 F1=0.5766 PEHE=0.0565 dCATE=0.1433 Sens=0.0192 thr=0.28 feasible=1
+[w/o HSIC] Val@Ep20 | score=1003.4389 AUC=0.7957 Acc=0.8352 F1=0.5747 PEHE=0.0445 dCATE=0.1372 Sens=0.0215 thr=0.26 feasible=1
+[w/o HSIC] Epoch 20/40 | loss_total=1.3667 recon=0.0102 hsic=0.0193 pred=0.3365
+[w/o HSIC] Val@Ep24 | score=1003.4583 AUC=0.7951 Acc=0.8408 F1=0.5731 PEHE=0.0509 dCATE=0.1619 Sens=0.0221 thr=0.30 feasible=1
+[w/o HSIC] Epoch 25/40 | loss_total=1.3471 recon=0.0087 hsic=0.0190 pred=0.3327
+[w/o HSIC] Val@Ep28 | score=1003.4556 AUC=0.7938 Acc=0.8452 F1=0.5670 PEHE=0.0654 dCATE=0.1837 Sens=0.0268 thr=0.38 feasible=1
+[w/o HSIC] Epoch 30/40 | loss_total=1.3247 recon=0.0086 hsic=0.0190 pred=0.3270
+[w/o HSIC] Val@Ep32 | score=1003.4155 AUC=0.7947 Acc=0.8229 F1=0.5644 PEHE=0.0554 dCATE=0.1845 Sens=0.0331 thr=0.26 feasible=1
+[w/o HSIC] Epoch 35/40 | loss_total=1.3050 recon=0.0085 hsic=0.0191 pred=0.3224
+[w/o HSIC] Val@Ep36 | score=1003.4264 AUC=0.7907 Acc=0.8285 F1=0.5674 PEHE=0.0482 dCATE=0.1756 Sens=0.0311 thr=0.24 feasible=1
+[w/o HSIC] Val@Ep40 | score=1003.3956 AUC=0.7893 Acc=0.8263 F1=0.5618 PEHE=0.0343 dCATE=0.1441 Sens=0.0376 thr=0.23 feasible=1
+[w/o HSIC] Epoch 40/40 | loss_total=1.2810 recon=0.0084 hsic=0.0190 pred=0.3168
+[w/o HSIC] Restored best checkpoint at epoch 12 (score=1003.4626, thr=0.32)
+
+[Seed 43] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 43)
+[Full DLC (SOTA)] Epoch 5/55 | loss_total=2.2602 recon=0.0427 hsic=0.0206 pred=0.3451
+[Full DLC (SOTA)] Val@Ep8 | score=1003.5253 AUC=0.8166 Acc=0.8552 F1=0.5988 PEHE=0.0476 dCATE=0.1128 Sens=0.0123 thr=0.40 feasible=1
+[Full DLC (SOTA)] Epoch 10/55 | loss_total=2.1864 recon=0.0202 hsic=0.0201 pred=0.3438
+[Full DLC (SOTA)] Val@Ep12 | score=1003.5703 AUC=0.8130 Acc=0.8563 F1=0.6006 PEHE=0.0268 dCATE=0.1574 Sens=0.0180 thr=0.37 feasible=1
+[Full DLC (SOTA)] Epoch 15/55 | loss_total=2.1475 recon=0.0144 hsic=0.0201 pred=0.3420
+[Full DLC (SOTA)] Val@Ep16 | score=1003.5320 AUC=0.8126 Acc=0.8385 F1=0.5938 PEHE=0.0288 dCATE=0.1638 Sens=0.0149 thr=0.23 feasible=1
+[Full DLC (SOTA)] Val@Ep20 | score=1003.5452 AUC=0.8068 Acc=0.8575 F1=0.5871 PEHE=0.0491 dCATE=0.1850 Sens=0.0188 thr=0.34 feasible=1
+[Full DLC (SOTA)] Epoch 20/55 | loss_total=2.0886 recon=0.0145 hsic=0.0197 pred=0.3320
+[Full DLC (SOTA)] Val@Ep24 | score=1003.4446 AUC=0.8077 Acc=0.8151 F1=0.5699 PEHE=0.0200 dCATE=0.1606 Sens=0.0239 thr=0.22 feasible=1
+[Full DLC (SOTA)] Epoch 25/55 | loss_total=2.0266 recon=0.0117 hsic=0.0196 pred=0.3232
+[Full DLC (SOTA)] Val@Ep28 | score=1003.4918 AUC=0.8020 Acc=0.8374 F1=0.5756 PEHE=0.0408 dCATE=0.1966 Sens=0.0292 thr=0.23 feasible=1
+[Full DLC (SOTA)] Epoch 30/55 | loss_total=1.9834 recon=0.0114 hsic=0.0193 pred=0.3167
+[Full DLC (SOTA)] Val@Ep32 | score=1003.4656 AUC=0.8049 Acc=0.8307 F1=0.5607 PEHE=0.0269 dCATE=0.1968 Sens=0.0375 thr=0.30 feasible=1
+[Full DLC (SOTA)] Epoch 35/55 | loss_total=1.9595 recon=0.0106 hsic=0.0194 pred=0.3125
+[Full DLC (SOTA)] Val@Ep36 | score=1003.4390 AUC=0.8027 Acc=0.8241 F1=0.5635 PEHE=0.0275 dCATE=0.1761 Sens=0.0379 thr=0.19 feasible=1
+[Full DLC (SOTA)] Val@Ep40 | score=1003.4214 AUC=0.7992 Acc=0.8307 F1=0.5529 PEHE=0.0212 dCATE=0.1523 Sens=0.0353 thr=0.18 feasible=1
+[Full DLC (SOTA)] Epoch 40/55 | loss_total=1.9245 recon=0.0103 hsic=0.0192 pred=0.3068
+[Full DLC (SOTA)] Val@Ep44 | score=1003.3603 AUC=0.7974 Acc=0.8029 F1=0.5426 PEHE=0.0212 dCATE=0.1756 Sens=0.0462 thr=0.15 feasible=1
+[Full DLC (SOTA)] Epoch 45/55 | loss_total=1.8789 recon=0.0091 hsic=0.0191 pred=0.2999
+[Full DLC (SOTA)] Val@Ep48 | score=1003.3746 AUC=0.7962 Acc=0.8096 F1=0.5416 PEHE=0.0225 dCATE=0.1843 Sens=0.0464 thr=0.16 feasible=1
+[Full DLC (SOTA)] Epoch 50/55 | loss_total=1.8489 recon=0.0091 hsic=0.0191 pred=0.2952
+[Full DLC (SOTA)] Val@Ep52 | score=1003.3820 AUC=0.7923 Acc=0.8096 F1=0.5464 PEHE=0.0276 dCATE=0.2008 Sens=0.0495 thr=0.16 feasible=1
+[Full DLC (SOTA)] Epoch 55/55 | loss_total=1.8259 recon=0.0088 hsic=0.0190 pred=0.2911
+[Full DLC (SOTA)] Restored best checkpoint at epoch 12 (score=1003.5703, thr=0.37)
+[w/o HGNN] Epoch 5/40 | loss_total=1.6072 recon=0.2304 hsic=0.0162 pred=0.3422
+[w/o HGNN] Val@Ep8 | score=1003.5633 AUC=0.8046 Acc=0.8641 F1=0.5933 PEHE=0.0392 dCATE=0.1751 Sens=0.0212 thr=0.30 feasible=1
+[w/o HGNN] Epoch 10/40 | loss_total=1.3819 recon=0.0672 hsic=0.0184 pred=0.3275
+[w/o HGNN] Val@Ep12 | score=1003.5229 AUC=0.7994 Acc=0.8541 F1=0.5919 PEHE=0.0443 dCATE=0.1752 Sens=0.0326 thr=0.28 feasible=1
+[w/o HGNN] Epoch 15/40 | loss_total=1.2934 recon=0.0420 hsic=0.0205 pred=0.3107
+[w/o HGNN] Val@Ep16 | score=1003.4905 AUC=0.7910 Acc=0.8563 F1=0.5931 PEHE=0.0639 dCATE=0.1786 Sens=0.0504 thr=0.31 feasible=1
+[w/o HGNN] Val@Ep20 | score=1003.3591 AUC=0.7862 Acc=0.8396 F1=0.5583 PEHE=0.0827 dCATE=0.1727 Sens=0.0788 thr=0.30 feasible=1
+[w/o HGNN] Epoch 20/40 | loss_total=1.2141 recon=0.0316 hsic=0.0216 pred=0.2920
+[w/o HGNN] Val@Ep24 | score=1003.2819 AUC=0.7545 Acc=0.8508 F1=0.5442 PEHE=0.0888 dCATE=0.1604 Sens=0.1082 thr=0.40 feasible=1
+[w/o HGNN] Epoch 25/40 | loss_total=1.0836 recon=0.0240 hsic=0.0221 pred=0.2604
+[w/o HGNN] Val@Ep28 | score=-0.0339 AUC=0.7629 Acc=0.8541 F1=0.5467 PEHE=0.1095 dCATE=0.1791 Sens=0.1384 thr=0.57 feasible=0
+[w/o HGNN] Epoch 30/40 | loss_total=1.0054 recon=0.0214 hsic=0.0224 pred=0.2408
+[w/o HGNN] Val@Ep32 | score=1003.2025 AUC=0.7267 Acc=0.8430 F1=0.5253 PEHE=0.1090 dCATE=0.1906 Sens=0.1175 thr=0.43 feasible=1
+[w/o HGNN] Epoch 35/40 | loss_total=0.9407 recon=0.0201 hsic=0.0223 pred=0.2231
+[w/o HGNN] Val@Ep36 | score=1003.0728 AUC=0.6932 Acc=0.8129 F1=0.4940 PEHE=0.1053 dCATE=0.1846 Sens=0.0977 thr=0.17 feasible=1
+[w/o HGNN] Val@Ep40 | score=1003.0196 AUC=0.6739 Acc=0.8085 F1=0.4850 PEHE=0.1039 dCATE=0.1890 Sens=0.1127 thr=0.16 feasible=1
+[w/o HGNN] Epoch 40/40 | loss_total=0.8725 recon=0.0185 hsic=0.0225 pred=0.2064
+[w/o HGNN] Restored best checkpoint at epoch 8 (score=1003.5633, thr=0.30)
+[w/o VAE] Epoch 5/40 | loss_total=1.4711 recon=0.0448 hsic=0.0233 pred=0.3490
+[w/o VAE] Val@Ep8 | score=1003.5435 AUC=0.8128 Acc=0.8552 F1=0.6012 PEHE=0.0750 dCATE=0.1712 Sens=0.0128 thr=0.36 feasible=1
+[w/o VAE] Epoch 10/40 | loss_total=1.4151 recon=0.0134 hsic=0.0218 pred=0.3469
+[w/o VAE] Val@Ep12 | score=1003.5339 AUC=0.8152 Acc=0.8541 F1=0.5994 PEHE=0.0451 dCATE=0.1362 Sens=0.0216 thr=0.36 feasible=1
+[w/o VAE] Epoch 15/40 | loss_total=1.3976 recon=0.0103 hsic=0.0211 pred=0.3447
+[w/o VAE] Val@Ep16 | score=1003.5575 AUC=0.8137 Acc=0.8552 F1=0.6061 PEHE=0.0463 dCATE=0.1573 Sens=0.0226 thr=0.28 feasible=1
+[w/o VAE] Val@Ep20 | score=1003.5104 AUC=0.8085 Acc=0.8486 F1=0.5928 PEHE=0.0789 dCATE=0.1885 Sens=0.0278 thr=0.27 feasible=1
+[w/o VAE] Epoch 20/40 | loss_total=1.3684 recon=0.0107 hsic=0.0209 pred=0.3371
+[w/o VAE] Val@Ep24 | score=1003.4971 AUC=0.8118 Acc=0.8307 F1=0.5936 PEHE=0.0410 dCATE=0.1671 Sens=0.0293 thr=0.23 feasible=1
+[w/o VAE] Epoch 25/40 | loss_total=1.3321 recon=0.0078 hsic=0.0210 pred=0.3293
+[w/o VAE] Val@Ep28 | score=1003.5027 AUC=0.8090 Acc=0.8374 F1=0.5922 PEHE=0.0615 dCATE=0.1877 Sens=0.0284 thr=0.23 feasible=1
+[w/o VAE] Epoch 30/40 | loss_total=1.3070 recon=0.0075 hsic=0.0206 pred=0.3233
+[w/o VAE] Val@Ep32 | score=1003.5037 AUC=0.8113 Acc=0.8274 F1=0.5932 PEHE=0.0429 dCATE=0.1919 Sens=0.0323 thr=0.21 feasible=1
+[w/o VAE] Epoch 35/40 | loss_total=1.2909 recon=0.0076 hsic=0.0204 pred=0.3188
+[w/o VAE] Val@Ep36 | score=1003.4772 AUC=0.8089 Acc=0.8341 F1=0.5779 PEHE=0.0509 dCATE=0.1820 Sens=0.0314 thr=0.24 feasible=1
+[w/o VAE] Val@Ep40 | score=1003.4465 AUC=0.8093 Acc=0.8252 F1=0.5768 PEHE=0.0335 dCATE=0.1525 Sens=0.0391 thr=0.15 feasible=1
+[w/o VAE] Epoch 40/40 | loss_total=1.2633 recon=0.0078 hsic=0.0202 pred=0.3120
+[w/o VAE] Restored best checkpoint at epoch 16 (score=1003.5575, thr=0.28)
+[w/o HSIC] Epoch 5/40 | loss_total=1.4663 recon=0.0466 hsic=0.0210 pred=0.3488
+[w/o HSIC] Val@Ep8 | score=1003.5564 AUC=0.8132 Acc=0.8563 F1=0.6031 PEHE=0.0731 dCATE=0.1778 Sens=0.0112 thr=0.36 feasible=1
+[w/o HSIC] Epoch 10/40 | loss_total=1.4160 recon=0.0171 hsic=0.0205 pred=0.3462
+[w/o HSIC] Val@Ep12 | score=1003.5428 AUC=0.8146 Acc=0.8541 F1=0.6042 PEHE=0.0538 dCATE=0.1431 Sens=0.0159 thr=0.34 feasible=1
+[w/o HSIC] Epoch 15/40 | loss_total=1.4040 recon=0.0122 hsic=0.0200 pred=0.3455
+[w/o HSIC] Val@Ep16 | score=1003.5447 AUC=0.8107 Acc=0.8575 F1=0.6000 PEHE=0.0592 dCATE=0.1600 Sens=0.0169 thr=0.28 feasible=1
+[w/o HSIC] Val@Ep20 | score=1003.5135 AUC=0.8077 Acc=0.8486 F1=0.5952 PEHE=0.1007 dCATE=0.2088 Sens=0.0231 thr=0.25 feasible=1
+[w/o HSIC] Epoch 20/40 | loss_total=1.3778 recon=0.0113 hsic=0.0195 pred=0.3390
+[w/o HSIC] Val@Ep24 | score=1003.5143 AUC=0.8094 Acc=0.8441 F1=0.5930 PEHE=0.0610 dCATE=0.1824 Sens=0.0271 thr=0.28 feasible=1
+[w/o HSIC] Epoch 25/40 | loss_total=1.3497 recon=0.0086 hsic=0.0195 pred=0.3335
+[w/o HSIC] Val@Ep28 | score=1003.4866 AUC=0.8099 Acc=0.8330 F1=0.5902 PEHE=0.0721 dCATE=0.1950 Sens=0.0315 thr=0.23 feasible=1
+[w/o HSIC] Epoch 30/40 | loss_total=1.3269 recon=0.0083 hsic=0.0193 pred=0.3282
+[w/o HSIC] Val@Ep32 | score=1003.4744 AUC=0.8093 Acc=0.8263 F1=0.5895 PEHE=0.0494 dCATE=0.1780 Sens=0.0371 thr=0.24 feasible=1
+[w/o HSIC] Epoch 35/40 | loss_total=1.3155 recon=0.0083 hsic=0.0197 pred=0.3250
+[w/o HSIC] Val@Ep36 | score=1003.4540 AUC=0.8076 Acc=0.8218 F1=0.5855 PEHE=0.0442 dCATE=0.1623 Sens=0.0333 thr=0.19 feasible=1
+[w/o HSIC] Val@Ep40 | score=1003.4395 AUC=0.8054 Acc=0.8229 F1=0.5760 PEHE=0.0356 dCATE=0.1531 Sens=0.0333 thr=0.16 feasible=1
+[w/o HSIC] Epoch 40/40 | loss_total=1.2914 recon=0.0079 hsic=0.0197 pred=0.3187
+[w/o HSIC] Restored best checkpoint at epoch 8 (score=1003.5564, thr=0.36)
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

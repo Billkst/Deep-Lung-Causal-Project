@@ -1,0 +1,19 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/60 | loss_total=2.8688 recon=0.0489 hsic=0.0208 pred=0.3476
+[Full DLC (SOTA)] Epoch 10/60 | loss_total=2.8160 recon=0.0208 hsic=0.0202 pred=0.3464
+[Full DLC (SOTA)] Epoch 15/60 | loss_total=2.7519 recon=0.0155 hsic=0.0200 pred=0.3397
+[Full DLC (SOTA)] Epoch 20/60 | loss_total=2.7256 recon=0.0156 hsic=0.0202 pred=0.3359
+[Full DLC (SOTA)] Epoch 25/60 | loss_total=2.7560 recon=0.0126 hsic=0.0208 pred=0.3266
+[Full DLC (SOTA)] Epoch 30/60 | loss_total=2.8394 recon=0.0120 hsic=0.0209 pred=0.3229
+[Full DLC (SOTA)] Epoch 35/60 | loss_total=2.8898 recon=0.0113 hsic=0.0209 pred=0.3168
+[Full DLC (SOTA)] Epoch 40/60 | loss_total=2.9671 recon=0.0111 hsic=0.0211 pred=0.3138
+[Full DLC (SOTA)] Epoch 45/60 | loss_total=3.0130 recon=0.0097 hsic=0.0210 pred=0.3079
+[Full DLC (SOTA)] Epoch 50/60 | loss_total=3.0815 recon=0.0095 hsic=0.0210 pred=0.3046
+[Full DLC (SOTA)] Epoch 55/60 | loss_total=3.0567 recon=0.0093 hsic=0.0210 pred=0.3018
+[Full DLC (SOTA)] Epoch 60/60 | loss_total=3.0207 recon=0.0090 hsic=0.0208 pred=0.2983
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

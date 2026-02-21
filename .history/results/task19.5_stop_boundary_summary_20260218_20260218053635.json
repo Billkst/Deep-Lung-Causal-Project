@@ -1,0 +1,61 @@
+{
+  "date": "2026-02-18",
+  "decision": {
+    "stop_blind_search": true,
+    "reason": "连续多轮 E/F/G 结构与权重改造后，best 仍停留在 global 4/6，且 AUC/Acc 对 w/o HGNN 持续为负差。"
+  },
+  "frozen_best": {
+    "name": "current_best_c15",
+    "source": "results/adaptive_stage2_top2_c15_c12_auc_guard_20260215_062704_raw.json",
+    "global_wins": 4,
+    "pairwise_wins": {
+      "w/o HGNN": 4,
+      "w/o VAE": 5,
+      "w/o HSIC": 6
+    },
+    "domination_margin": 0.03357465853369232,
+    "failed_global_metrics": [
+      "AUC",
+      "Acc"
+    ],
+    "full_means": {
+      "AUC": 0.835163996948894,
+      "Acc": 0.7029126213592234,
+      "F1": 0.7100893812070282,
+      "PEHE": 0.038578996807336806,
+      "Delta CATE": 0.16138035356998442,
+      "Sensitivity": 0.023275204375386237
+    }
+  },
+  "latest_runs": {
+    "E_HP": {
+      "summary": "results/minitune_E_hp_summary_20260216_090635.json",
+      "best_candidate": "e06",
+      "global_wins": 2,
+      "cls_gate": 0,
+      "auc_gap_vs_hgnn": -0.008162,
+      "acc_gap_vs_hgnn": -0.011650
+    },
+    "F_HP": {
+      "summary": "results/minitune_F_hp_summary_20260217_033229.json",
+      "best_candidate": "f01",
+      "global_wins": 4,
+      "cls_gate": 0,
+      "auc_gap_vs_hgnn": -0.010679,
+      "acc_gap_vs_hgnn": -0.007767
+    },
+    "G_HP": {
+      "summary": "results/minitune_G_hp_summary_20260217_102057.json",
+      "best_candidate": "g02",
+      "global_wins": 4,
+      "cls_gate": 0,
+      "auc_gap_vs_hgnn": -0.007170,
+      "acc_gap_vs_hgnn": -0.003883
+    }
+  },
+  "boundary_conclusion": {
+    "core_bottleneck": "AUC/Acc vs w/o HGNN",
+    "observation": "双教师蒸馏后分类负差缩小，但仍未转正；说明当前任务设定下存在稳定 Pareto 边界。",
+    "recommendation": "后续若继续冲击 6/6，应转向任务定义或对照口径层面的研究设计，而非继续同分布盲扫。"
+  }
+}

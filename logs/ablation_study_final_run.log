@@ -1,0 +1,139 @@
+Script started...
+
+[Seed 42] Loading data...
+Loading SOTA checkpoint: /home/UserData/ljx/Project_1/results/dlc_final_sota_s_seed_42.pth
+[w/o HGNN] Epoch 5/40 | loss_total=0.9916 recon=0.1358 hsic=0.0167 pred=0.3399
+[w/o HGNN] Epoch 10/40 | loss_total=0.8697 recon=0.0419 hsic=0.0200 pred=0.3288
+[w/o HGNN] Epoch 15/40 | loss_total=0.8219 recon=0.0261 hsic=0.0209 pred=0.3150
+[w/o HGNN] Epoch 20/40 | loss_total=0.7790 recon=0.0217 hsic=0.0208 pred=0.2966
+[w/o HGNN] Epoch 25/40 | loss_total=0.6982 recon=0.0164 hsic=0.0206 pred=0.2673
+[w/o HGNN] Epoch 30/40 | loss_total=0.6467 recon=0.0151 hsic=0.0205 pred=0.2462
+[w/o HGNN] Epoch 35/40 | loss_total=0.6210 recon=0.0143 hsic=0.0203 pred=0.2341
+[w/o HGNN] Epoch 40/40 | loss_total=0.5772 recon=0.0133 hsic=0.0202 pred=0.2178
+[w/o VAE] Epoch 5/40 | loss_total=0.9263 recon=0.0295 hsic=0.0225 pred=0.3488
+[w/o VAE] Epoch 10/40 | loss_total=0.8962 recon=0.0113 hsic=0.0219 pred=0.3488
+[w/o VAE] Epoch 15/40 | loss_total=0.8783 recon=0.0081 hsic=0.0213 pred=0.3443
+[w/o VAE] Epoch 20/40 | loss_total=0.8765 recon=0.0068 hsic=0.0209 pred=0.3437
+[w/o VAE] Epoch 25/40 | loss_total=0.8603 recon=0.0056 hsic=0.0204 pred=0.3395
+[w/o VAE] Epoch 30/40 | loss_total=0.8518 recon=0.0057 hsic=0.0200 pred=0.3360
+[w/o VAE] Epoch 35/40 | loss_total=0.8407 recon=0.0056 hsic=0.0196 pred=0.3314
+[w/o VAE] Epoch 40/40 | loss_total=0.8348 recon=0.0057 hsic=0.0195 pred=0.3291
+[w/o HSIC] Epoch 5/40 | loss_total=0.9235 recon=0.0372 hsic=0.0207 pred=0.3482
+[w/o HSIC] Epoch 10/40 | loss_total=0.8946 recon=0.0133 hsic=0.0211 pred=0.3479
+[w/o HSIC] Epoch 15/40 | loss_total=0.8778 recon=0.0099 hsic=0.0207 pred=0.3439
+[w/o HSIC] Epoch 20/40 | loss_total=0.8778 recon=0.0082 hsic=0.0203 pred=0.3438
+[w/o HSIC] Epoch 25/40 | loss_total=0.8625 recon=0.0063 hsic=0.0202 pred=0.3400
+[w/o HSIC] Epoch 30/40 | loss_total=0.8576 recon=0.0061 hsic=0.0199 pred=0.3382
+[w/o HSIC] Epoch 35/40 | loss_total=0.8499 recon=0.0063 hsic=0.0196 pred=0.3351
+[w/o HSIC] Epoch 40/40 | loss_total=0.8500 recon=0.0063 hsic=0.0195 pred=0.3349
+
+[Seed 43] Loading data...
+Loading SOTA checkpoint: /home/UserData/ljx/Project_1/results/dlc_final_sota_s_seed_43.pth
+[w/o HGNN] Epoch 5/40 | loss_total=1.0007 recon=0.1464 hsic=0.0165 pred=0.3393
+[w/o HGNN] Epoch 10/40 | loss_total=0.8732 recon=0.0447 hsic=0.0197 pred=0.3289
+[w/o HGNN] Epoch 15/40 | loss_total=0.8254 recon=0.0256 hsic=0.0206 pred=0.3164
+[w/o HGNN] Epoch 20/40 | loss_total=0.7845 recon=0.0213 hsic=0.0207 pred=0.3004
+[w/o HGNN] Epoch 25/40 | loss_total=0.7066 recon=0.0150 hsic=0.0207 pred=0.2709
+[w/o HGNN] Epoch 30/40 | loss_total=0.6530 recon=0.0132 hsic=0.0207 pred=0.2493
+[w/o HGNN] Epoch 35/40 | loss_total=0.6175 recon=0.0124 hsic=0.0205 pred=0.2345
+[w/o HGNN] Epoch 40/40 | loss_total=0.5861 recon=0.0115 hsic=0.0204 pred=0.2199
+[w/o VAE] Epoch 5/40 | loss_total=0.9211 recon=0.0280 hsic=0.0225 pred=0.3480
+[w/o VAE] Epoch 10/40 | loss_total=0.8905 recon=0.0111 hsic=0.0213 pred=0.3469
+[w/o VAE] Epoch 15/40 | loss_total=0.8761 recon=0.0086 hsic=0.0198 pred=0.3430
+[w/o VAE] Epoch 20/40 | loss_total=0.8686 recon=0.0076 hsic=0.0194 pred=0.3411
+[w/o VAE] Epoch 25/40 | loss_total=0.8541 recon=0.0058 hsic=0.0193 pred=0.3368
+[w/o VAE] Epoch 30/40 | loss_total=0.8437 recon=0.0060 hsic=0.0194 pred=0.3326
+[w/o VAE] Epoch 35/40 | loss_total=0.8292 recon=0.0063 hsic=0.0192 pred=0.3260
+[w/o VAE] Epoch 40/40 | loss_total=0.8227 recon=0.0065 hsic=0.0194 pred=0.3234
+[w/o HSIC] Epoch 5/40 | loss_total=0.9203 recon=0.0351 hsic=0.0208 pred=0.3478
+[w/o HSIC] Epoch 10/40 | loss_total=0.8914 recon=0.0123 hsic=0.0210 pred=0.3471
+[w/o HSIC] Epoch 15/40 | loss_total=0.8787 recon=0.0094 hsic=0.0207 pred=0.3442
+[w/o HSIC] Epoch 20/40 | loss_total=0.8741 recon=0.0081 hsic=0.0203 pred=0.3430
+[w/o HSIC] Epoch 25/40 | loss_total=0.8595 recon=0.0060 hsic=0.0202 pred=0.3390
+[w/o HSIC] Epoch 30/40 | loss_total=0.8530 recon=0.0061 hsic=0.0201 pred=0.3370
+[w/o HSIC] Epoch 35/40 | loss_total=0.8450 recon=0.0063 hsic=0.0200 pred=0.3333
+[w/o HSIC] Epoch 40/40 | loss_total=0.8419 recon=0.0063 hsic=0.0201 pred=0.3320
+
+[Seed 44] Loading data...
+Loading SOTA checkpoint: /home/UserData/ljx/Project_1/results/dlc_final_sota_s_seed_44.pth
+[w/o HGNN] Epoch 5/40 | loss_total=0.9884 recon=0.1351 hsic=0.0167 pred=0.3389
+[w/o HGNN] Epoch 10/40 | loss_total=0.8684 recon=0.0408 hsic=0.0202 pred=0.3281
+[w/o HGNN] Epoch 15/40 | loss_total=0.8241 recon=0.0263 hsic=0.0210 pred=0.3157
+[w/o HGNN] Epoch 20/40 | loss_total=0.7725 recon=0.0202 hsic=0.0208 pred=0.2966
+[w/o HGNN] Epoch 25/40 | loss_total=0.6952 recon=0.0154 hsic=0.0206 pred=0.2666
+[w/o HGNN] Epoch 30/40 | loss_total=0.6446 recon=0.0144 hsic=0.0204 pred=0.2462
+[w/o HGNN] Epoch 35/40 | loss_total=0.6119 recon=0.0134 hsic=0.0202 pred=0.2333
+[w/o HGNN] Epoch 40/40 | loss_total=0.5730 recon=0.0126 hsic=0.0201 pred=0.2165
+[w/o VAE] Epoch 5/40 | loss_total=0.9230 recon=0.0283 hsic=0.0227 pred=0.3482
+[w/o VAE] Epoch 10/40 | loss_total=0.8913 recon=0.0121 hsic=0.0221 pred=0.3470
+[w/o VAE] Epoch 15/40 | loss_total=0.8747 recon=0.0093 hsic=0.0207 pred=0.3427
+[w/o VAE] Epoch 20/40 | loss_total=0.8704 recon=0.0084 hsic=0.0199 pred=0.3417
+[w/o VAE] Epoch 25/40 | loss_total=0.8535 recon=0.0061 hsic=0.0198 pred=0.3364
+[w/o VAE] Epoch 30/40 | loss_total=0.8416 recon=0.0062 hsic=0.0197 pred=0.3315
+[w/o VAE] Epoch 35/40 | loss_total=0.8298 recon=0.0063 hsic=0.0195 pred=0.3263
+[w/o VAE] Epoch 40/40 | loss_total=0.8234 recon=0.0062 hsic=0.0195 pred=0.3243
+[w/o HSIC] Epoch 5/40 | loss_total=0.9242 recon=0.0389 hsic=0.0211 pred=0.3479
+[w/o HSIC] Epoch 10/40 | loss_total=0.8899 recon=0.0119 hsic=0.0214 pred=0.3467
+[w/o HSIC] Epoch 15/40 | loss_total=0.8774 recon=0.0090 hsic=0.0211 pred=0.3436
+[w/o HSIC] Epoch 20/40 | loss_total=0.8774 recon=0.0074 hsic=0.0205 pred=0.3442
+[w/o HSIC] Epoch 25/40 | loss_total=0.8628 recon=0.0057 hsic=0.0203 pred=0.3400
+[w/o HSIC] Epoch 30/40 | loss_total=0.8562 recon=0.0057 hsic=0.0201 pred=0.3379
+[w/o HSIC] Epoch 35/40 | loss_total=0.8510 recon=0.0058 hsic=0.0197 pred=0.3355
+[w/o HSIC] Epoch 40/40 | loss_total=0.8519 recon=0.0061 hsic=0.0196 pred=0.3354
+
+[Seed 45] Loading data...
+Loading SOTA checkpoint: /home/UserData/ljx/Project_1/results/dlc_final_sota_s_seed_45.pth
+[w/o HGNN] Epoch 5/40 | loss_total=1.0038 recon=0.1460 hsic=0.0166 pred=0.3403
+[w/o HGNN] Epoch 10/40 | loss_total=0.8695 recon=0.0433 hsic=0.0203 pred=0.3280
+[w/o HGNN] Epoch 15/40 | loss_total=0.8239 recon=0.0269 hsic=0.0212 pred=0.3149
+[w/o HGNN] Epoch 20/40 | loss_total=0.7764 recon=0.0214 hsic=0.0210 pred=0.2971
+[w/o HGNN] Epoch 25/40 | loss_total=0.6938 recon=0.0163 hsic=0.0209 pred=0.2650
+[w/o HGNN] Epoch 30/40 | loss_total=0.6414 recon=0.0148 hsic=0.0207 pred=0.2439
+[w/o HGNN] Epoch 35/40 | loss_total=0.6142 recon=0.0140 hsic=0.0205 pred=0.2318
+[w/o HGNN] Epoch 40/40 | loss_total=0.5760 recon=0.0130 hsic=0.0204 pred=0.2162
+[w/o VAE] Epoch 5/40 | loss_total=0.9306 recon=0.0294 hsic=0.0225 pred=0.3499
+[w/o VAE] Epoch 10/40 | loss_total=0.8989 recon=0.0125 hsic=0.0219 pred=0.3493
+[w/o VAE] Epoch 15/40 | loss_total=0.8785 recon=0.0084 hsic=0.0208 pred=0.3442
+[w/o VAE] Epoch 20/40 | loss_total=0.8705 recon=0.0076 hsic=0.0201 pred=0.3420
+[w/o VAE] Epoch 25/40 | loss_total=0.8533 recon=0.0056 hsic=0.0199 pred=0.3365
+[w/o VAE] Epoch 30/40 | loss_total=0.8414 recon=0.0055 hsic=0.0197 pred=0.3317
+[w/o VAE] Epoch 35/40 | loss_total=0.8239 recon=0.0055 hsic=0.0192 pred=0.3247
+[w/o VAE] Epoch 40/40 | loss_total=0.8169 recon=0.0053 hsic=0.0193 pred=0.3219
+[w/o HSIC] Epoch 5/40 | loss_total=0.9238 recon=0.0330 hsic=0.0207 pred=0.3493
+[w/o HSIC] Epoch 10/40 | loss_total=0.8970 recon=0.0118 hsic=0.0211 pred=0.3489
+[w/o HSIC] Epoch 15/40 | loss_total=0.8827 recon=0.0090 hsic=0.0210 pred=0.3460
+[w/o HSIC] Epoch 20/40 | loss_total=0.8792 recon=0.0071 hsic=0.0206 pred=0.3450
+[w/o HSIC] Epoch 25/40 | loss_total=0.8666 recon=0.0055 hsic=0.0204 pred=0.3411
+[w/o HSIC] Epoch 30/40 | loss_total=0.8602 recon=0.0056 hsic=0.0203 pred=0.3395
+[w/o HSIC] Epoch 35/40 | loss_total=0.8511 recon=0.0058 hsic=0.0201 pred=0.3359
+[w/o HSIC] Epoch 40/40 | loss_total=0.8488 recon=0.0058 hsic=0.0202 pred=0.3344
+
+[Seed 46] Loading data...
+Loading SOTA checkpoint: /home/UserData/ljx/Project_1/results/dlc_final_sota_s_seed_46.pth
+[w/o HGNN] Epoch 5/40 | loss_total=0.9910 recon=0.1336 hsic=0.0166 pred=0.3407
+[w/o HGNN] Epoch 10/40 | loss_total=0.8715 recon=0.0427 hsic=0.0200 pred=0.3288
+[w/o HGNN] Epoch 15/40 | loss_total=0.8274 recon=0.0263 hsic=0.0212 pred=0.3170
+[w/o HGNN] Epoch 20/40 | loss_total=0.7797 recon=0.0212 hsic=0.0212 pred=0.2988
+[w/o HGNN] Epoch 25/40 | loss_total=0.7064 recon=0.0163 hsic=0.0210 pred=0.2695
+[w/o HGNN] Epoch 30/40 | loss_total=0.6499 recon=0.0145 hsic=0.0208 pred=0.2476
+[w/o HGNN] Epoch 35/40 | loss_total=0.6147 recon=0.0135 hsic=0.0205 pred=0.2330
+[w/o HGNN] Epoch 40/40 | loss_total=0.5823 recon=0.0125 hsic=0.0204 pred=0.2198
+[w/o VAE] Epoch 5/40 | loss_total=0.9252 recon=0.0297 hsic=0.0228 pred=0.3489
+[w/o VAE] Epoch 10/40 | loss_total=0.8959 recon=0.0123 hsic=0.0223 pred=0.3486
+[w/o VAE] Epoch 15/40 | loss_total=0.8785 recon=0.0081 hsic=0.0213 pred=0.3442
+[w/o VAE] Epoch 20/40 | loss_total=0.8716 recon=0.0068 hsic=0.0204 pred=0.3429
+[w/o VAE] Epoch 25/40 | loss_total=0.8582 recon=0.0053 hsic=0.0199 pred=0.3384
+[w/o VAE] Epoch 30/40 | loss_total=0.8476 recon=0.0053 hsic=0.0197 pred=0.3345
+[w/o VAE] Epoch 35/40 | loss_total=0.8349 recon=0.0052 hsic=0.0193 pred=0.3292
+[w/o VAE] Epoch 40/40 | loss_total=0.8299 recon=0.0052 hsic=0.0193 pred=0.3270
+[w/o HSIC] Epoch 5/40 | loss_total=0.9242 recon=0.0374 hsic=0.0209 pred=0.3483
+[w/o HSIC] Epoch 10/40 | loss_total=0.8929 recon=0.0132 hsic=0.0212 pred=0.3478
+[w/o HSIC] Epoch 15/40 | loss_total=0.8803 recon=0.0098 hsic=0.0208 pred=0.3448
+[w/o HSIC] Epoch 20/40 | loss_total=0.8758 recon=0.0084 hsic=0.0205 pred=0.3439
+[w/o HSIC] Epoch 25/40 | loss_total=0.8613 recon=0.0059 hsic=0.0203 pred=0.3396
+[w/o HSIC] Epoch 30/40 | loss_total=0.8569 recon=0.0061 hsic=0.0201 pred=0.3379
+[w/o HSIC] Epoch 35/40 | loss_total=0.8475 recon=0.0061 hsic=0.0199 pred=0.3345
+[w/o HSIC] Epoch 40/40 | loss_total=0.8465 recon=0.0061 hsic=0.0199 pred=0.3333
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

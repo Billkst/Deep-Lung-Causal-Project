@@ -1,0 +1,24 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/60 | loss_total=4.6209 recon=0.1434 hsic=0.0208 pred=0.3463 distill=0.0000 aux=0.3437
+[Full DLC (SOTA)] Epoch 10/60 | loss_total=4.4252 recon=0.0403 hsic=0.0217 pred=0.3395 distill=0.0000 aux=0.3358
+[Full DLC (SOTA)] Epoch 15/60 | loss_total=4.3171 recon=0.0298 hsic=0.0215 pred=0.3330 distill=0.0000 aux=0.3265
+[Full DLC (SOTA)] Epoch 20/60 | loss_total=4.1651 recon=0.0266 hsic=0.0212 pred=0.3217 distill=0.0000 aux=0.3193
+[Full DLC (SOTA)] Epoch 25/60 | loss_total=3.9595 recon=0.0222 hsic=0.0210 pred=0.3061 distill=0.0000 aux=0.3081
+[Full DLC (SOTA)] Epoch 30/60 | loss_total=3.8871 recon=0.0205 hsic=0.0209 pred=0.3002 distill=0.0000 aux=0.3042
+[Full DLC (SOTA)] Epoch 35/60 | loss_total=3.7819 recon=0.0192 hsic=0.0208 pred=0.2920 distill=0.0000 aux=0.2983
+[Full DLC (SOTA)] Epoch 40/60 | loss_total=3.6870 recon=0.0187 hsic=0.0207 pred=0.2844 distill=0.0000 aux=0.2934
+[Full DLC (SOTA)] Epoch 45/60 | loss_total=3.5561 recon=0.0167 hsic=0.0208 pred=0.2742 distill=0.0000 aux=0.2870
+[Full DLC (SOTA)] Epoch 50/60 | loss_total=3.4912 recon=0.0163 hsic=0.0207 pred=0.2686 distill=0.0000 aux=0.2833
+[Full DLC (SOTA)] Epoch 55/60 | loss_total=3.4222 recon=0.0160 hsic=0.0208 pred=0.2638 distill=0.0000 aux=0.2775
+[Full DLC (SOTA)] Epoch 60/60 | loss_total=3.3952 recon=0.0159 hsic=0.0207 pred=0.2610 distill=0.0000 aux=0.2795
+[w/o HGNN] Epoch 5/8 | loss_total=0.2568 recon=0.1395 hsic=0.0190 pred=0.3637 distill=0.0000 aux=0.0000
+[w/o VAE] Epoch 5/10 | loss_total=0.2415 recon=0.0389 hsic=0.0233 pred=0.3651 distill=0.0000 aux=0.0000
+[w/o VAE] Epoch 10/10 | loss_total=0.2008 recon=0.0140 hsic=0.0233 pred=0.3546 distill=0.0000 aux=0.0000
+[w/o HSIC] Epoch 5/10 | loss_total=0.2526 recon=0.0485 hsic=0.0211 pred=0.3650 distill=0.0000 aux=0.0000
+[w/o HSIC] Epoch 10/10 | loss_total=0.1977 recon=0.0128 hsic=0.0217 pred=0.3527 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

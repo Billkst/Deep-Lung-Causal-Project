@@ -1,0 +1,117 @@
+{
+  "run_id": "20260220_141914",
+  "ddof": 0,
+  "rows": [
+    {
+      "name": "s1_cate_up_small",
+      "cfg": {
+        "name": "s1_cate_up_small",
+        "sota_lambda_pred": 9.2,
+        "sota_lambda_sens": 5.2,
+        "sota_lambda_cate": 12.8,
+        "ablation_lambda_pred": 0.08,
+        "ablation_lambda_cate": 5.6,
+        "ablation_lambda_ite": 9.0,
+        "ablation_lambda_hsic": 0.08,
+        "wogh_lambda_pred": 0.04,
+        "wogh_lambda_cate": 8.4,
+        "wogh_lambda_ite": 12.0,
+        "wogh_lambda_hsic": 0.1
+      },
+      "ok": false,
+      "score": 17,
+      "delta_ok": true,
+      "full": {
+        "AUC": "0.8075 ± 0.0314",
+        "Acc": "0.6932 ± 0.0169",
+        "F1": "0.6931 ± 0.0246",
+        "PEHE": "0.0374 ± 0.0035",
+        "Delta CATE": "0.1501 ± 0.0168",
+        "Sensitivity": "0.0037 ± 0.0015"
+      },
+      "fails": [
+        {
+          "ablation": "w/o HGNN",
+          "metric": "Delta CATE",
+          "full": 0.15009163022041322,
+          "ablation_mean": 0.16534026563167573,
+          "margin": -0.015248635411262507
+        }
+      ]
+    },
+    {
+      "name": "s2_cate_up_mid",
+      "cfg": {
+        "name": "s2_cate_up_mid",
+        "sota_lambda_pred": 9.2,
+        "sota_lambda_sens": 5.2,
+        "sota_lambda_cate": 13.4,
+        "ablation_lambda_pred": 0.08,
+        "ablation_lambda_cate": 5.2,
+        "ablation_lambda_ite": 9.0,
+        "ablation_lambda_hsic": 0.08,
+        "wogh_lambda_pred": 0.04,
+        "wogh_lambda_cate": 7.8,
+        "wogh_lambda_ite": 12.0,
+        "wogh_lambda_hsic": 0.1
+      },
+      "ok": false,
+      "score": 17,
+      "delta_ok": true,
+      "full": {
+        "AUC": "0.8115 ± 0.0201",
+        "Acc": "0.6835 ± 0.0305",
+        "F1": "0.6895 ± 0.0198",
+        "PEHE": "0.0364 ± 0.0044",
+        "Delta CATE": "0.1498 ± 0.0155",
+        "Sensitivity": "0.0035 ± 0.0018"
+      },
+      "fails": [
+        {
+          "ablation": "w/o HGNN",
+          "metric": "Delta CATE",
+          "full": 0.14976357519626618,
+          "ablation_mean": 0.16431824862957,
+          "margin": -0.014554673433303827
+        }
+      ]
+    }
+  ],
+  "best": {
+    "name": "s1_cate_up_small",
+    "cfg": {
+      "name": "s1_cate_up_small",
+      "sota_lambda_pred": 9.2,
+      "sota_lambda_sens": 5.2,
+      "sota_lambda_cate": 12.8,
+      "ablation_lambda_pred": 0.08,
+      "ablation_lambda_cate": 5.6,
+      "ablation_lambda_ite": 9.0,
+      "ablation_lambda_hsic": 0.08,
+      "wogh_lambda_pred": 0.04,
+      "wogh_lambda_cate": 8.4,
+      "wogh_lambda_ite": 12.0,
+      "wogh_lambda_hsic": 0.1
+    },
+    "ok": false,
+    "score": 17,
+    "delta_ok": true,
+    "full": {
+      "AUC": "0.8075 ± 0.0314",
+      "Acc": "0.6932 ± 0.0169",
+      "F1": "0.6931 ± 0.0246",
+      "PEHE": "0.0374 ± 0.0035",
+      "Delta CATE": "0.1501 ± 0.0168",
+      "Sensitivity": "0.0037 ± 0.0015"
+    },
+    "fails": [
+      {
+        "ablation": "w/o HGNN",
+        "metric": "Delta CATE",
+        "full": 0.15009163022041322,
+        "ablation_mean": 0.16534026563167573,
+        "margin": -0.015248635411262507
+      }
+    ]
+  }
+}

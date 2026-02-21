@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_rigorous_ablation.py", line 562, in <module>
+    main()
+  File "/home/UserData/ljx/Project_1/src/run_rigorous_ablation.py", line 495, in main
+    model_sota.fit(X_train, y_train, ite_train, egfr_train)
+  File "/home/UserData/ljx/Project_1/src/run_rigorous_ablation.py", line 216, in fit
+    loss_ite = F.mse_loss(out['ITE'].squeeze(), bite)
+NameError: name 'F' is not defined
+
+ERROR conda.cli.main_run:execute(127): `conda run python src/run_rigorous_ablation.py --epochs 40` failed. (See above for error)
+Script started...
+
+[Seed 42] Loading data...
+

@@ -1,0 +1,101 @@
+{
+  "strict_A": {
+    "full": {
+      "AUC": 0.8127383676582761,
+      "Acc": 0.6504854368932039,
+      "F1": 0.7,
+      "BestThresh": 0.16,
+      "PEHE": 0.03463033214211464,
+      "Delta CATE": 0.16654744744300842,
+      "Sensitivity": 0.018645351752638817,
+      "Params": 180485,
+      "Time_ms": 0.2715795942880575,
+      "Model": "Full DLC (SOTA)",
+      "Seed": 42,
+      "SharedThresh": 0.16
+    },
+    "targets": {
+      "AUC": 0.872234935163997,
+      "Acc": 0.6699029126213593,
+      "F1": 0.72,
+      "PEHE": 0.06260663270950317,
+      "Delta CATE": 0.19213518500328064,
+      "Sensitivity": 0.03372882679104805
+    },
+    "passed": {
+      "AUC": false,
+      "Acc": false,
+      "F1": false,
+      "PEHE": true,
+      "Delta CATE": false,
+      "Sensitivity": true
+    },
+    "pass_count": 2
+  },
+  "strict_B": {
+    "full": {
+      "AUC": 0.8180778032036614,
+      "Acc": 0.6407766990291263,
+      "F1": 0.6942148760330579,
+      "BestThresh": 0.17,
+      "PEHE": 0.028731774538755417,
+      "Delta CATE": 0.18054147064685822,
+      "Sensitivity": 0.026783302426338196,
+      "Params": 180485,
+      "Time_ms": 0.32578625725310983,
+      "Model": "Full DLC (SOTA)",
+      "Seed": 42,
+      "SharedThresh": 0.17
+    },
+    "targets": {
+      "AUC": 0.8714721586575134,
+      "Acc": 0.7281553398058253,
+      "F1": 0.7586206896551724,
+      "PEHE": 0.10203319042921066,
+      "Delta CATE": 0.19589537382125854,
+      "Sensitivity": 0.04080608859658241
+    },
+    "passed": {
+      "AUC": false,
+      "Acc": false,
+      "F1": false,
+      "PEHE": true,
+      "Delta CATE": false,
+      "Sensitivity": true
+    },
+    "pass_count": 2
+  },
+  "strict_C": {
+    "full": {
+      "AUC": 0.7971014492753623,
+      "Acc": 0.6407766990291263,
+      "F1": 0.6890756302521008,
+      "BestThresh": 0.16,
+      "PEHE": 0.038504596799612045,
+      "Delta CATE": 0.181669682264328,
+      "Sensitivity": 0.03792556747794151,
+      "Params": 180485,
+      "Time_ms": 0.27741969210430256,
+      "Model": "Full DLC (SOTA)",
+      "Seed": 42,
+      "SharedThresh": 0.16
+    },
+    "targets": {
+      "AUC": 0.8585049580472921,
+      "Acc": 0.6990291262135923,
+      "F1": 0.7333333333333333,
+      "PEHE": 0.06487691402435303,
+      "Delta CATE": 0.17014211416244507,
+      "Sensitivity": 0.06064918264746666
+    },
+    "passed": {
+      "AUC": false,
+      "Acc": false,
+      "F1": false,
+      "PEHE": true,
+      "Delta CATE": true,
+      "Sensitivity": true
+    },
+    "pass_count": 3
+  }
+}

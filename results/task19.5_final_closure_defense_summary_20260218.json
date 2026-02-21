@@ -1,0 +1,57 @@
+{
+  "task": "Task19.5",
+  "date": "2026-02-18",
+  "decision": "close_under_current_protocol",
+  "best_historical": {
+    "name": "current_best_c15",
+    "global_wins": 4
+  },
+  "recent_rounds": [
+    {
+      "round": "V2",
+      "best": "v2a_cls_bal",
+      "global_wins": 3,
+      "auc_gap_vs_hgnn": -0.017544,
+      "acc_gap_vs_hgnn": 0.009709,
+      "hit": false
+    },
+    {
+      "round": "V3",
+      "best": "v3b_auc_push_fhp",
+      "global_wins": 2,
+      "auc_gap_vs_hgnn": -0.013730,
+      "acc_gap_vs_hgnn": -0.067961,
+      "hit": false
+    },
+    {
+      "round": "V4",
+      "best": "v4a_mech_base",
+      "global_wins": 2,
+      "auc_gap_vs_hgnn": -0.009153,
+      "acc_gap_vs_hgnn": 0.0,
+      "hit": false
+    },
+    {
+      "round": "V5",
+      "best": "v5c_nodetach",
+      "global_wins": 2,
+      "auc_gap_vs_hgnn": -0.004195,
+      "acc_gap_vs_hgnn": -0.029126,
+      "hit": false
+    },
+    {
+      "round": "V6",
+      "best": "v6a_acc_guard",
+      "global_wins": 2,
+      "auc_gap_vs_hgnn": -0.001907,
+      "acc_gap_vs_hgnn": -0.038835,
+      "hit": false
+    }
+  ],
+  "boundary_statement": "AUC gap can be compressed near zero but Acc gap remains negative; joint boundary not crossed.",
+  "recommendation": [
+    "stop_same_protocol_search",
+    "convert_to_boundary_explanation",
+    "start_next_phase_only_if_protocol_or_structure_changes"
+  ]
+}

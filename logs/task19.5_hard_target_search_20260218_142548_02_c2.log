@@ -1,0 +1,26 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/70 | loss_total=2.2093 recon=0.0601 hsic=0.0212 pred=0.3453 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 10/70 | loss_total=2.1165 recon=0.0189 hsic=0.0214 pred=0.3433 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 15/70 | loss_total=2.0875 recon=0.0134 hsic=0.0211 pred=0.3425 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 20/70 | loss_total=2.0347 recon=0.0124 hsic=0.0208 pred=0.3346 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 25/70 | loss_total=1.9936 recon=0.0105 hsic=0.0206 pred=0.3285 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 30/70 | loss_total=1.9554 recon=0.0105 hsic=0.0206 pred=0.3213 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 35/70 | loss_total=1.9200 recon=0.0104 hsic=0.0204 pred=0.3160 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 40/70 | loss_total=1.8870 recon=0.0100 hsic=0.0201 pred=0.3109 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 45/70 | loss_total=1.8535 recon=0.0087 hsic=0.0202 pred=0.3055 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 50/70 | loss_total=1.8319 recon=0.0085 hsic=0.0201 pred=0.3021 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 55/70 | loss_total=1.8151 recon=0.0084 hsic=0.0200 pred=0.2990 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 60/70 | loss_total=1.8131 recon=0.0082 hsic=0.0200 pred=0.2986 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 65/70 | loss_total=1.7852 recon=0.0078 hsic=0.0198 pred=0.2944 distill=0.0000 aux=0.0000
+[Full DLC (SOTA)] Epoch 70/70 | loss_total=1.7679 recon=0.0076 hsic=0.0199 pred=0.2909 distill=0.0000 aux=0.0000
+[w/o HGNN] Epoch 5/8 | loss_total=0.2568 recon=0.1395 hsic=0.0190 pred=0.3637 distill=0.0000 aux=0.0000
+[w/o VAE] Epoch 5/10 | loss_total=0.2415 recon=0.0389 hsic=0.0233 pred=0.3651 distill=0.0000 aux=0.0000
+[w/o VAE] Epoch 10/10 | loss_total=0.2008 recon=0.0140 hsic=0.0233 pred=0.3546 distill=0.0000 aux=0.0000
+[w/o HSIC] Epoch 5/10 | loss_total=0.2526 recon=0.0485 hsic=0.0211 pred=0.3650 distill=0.0000 aux=0.0000
+[w/o HSIC] Epoch 10/10 | loss_total=0.1977 recon=0.0128 hsic=0.0217 pred=0.3527 distill=0.0000 aux=0.0000
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

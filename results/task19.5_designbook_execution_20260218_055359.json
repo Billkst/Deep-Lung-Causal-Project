@@ -1,0 +1,144 @@
+{
+  "run_id": "20260218_055359",
+  "objective": "Push Full DLC toward >=5/6 under strict protocol and verify cls-gate feasibility.",
+  "stage1": [
+    {
+      "run_id": "20260218_055359",
+      "stage": "stage1",
+      "candidate": "c15_baseline",
+      "seeds": [
+        42
+      ],
+      "config": {
+        "name": "c15_baseline",
+        "joint_w_auc": 1.05,
+        "joint_w_acc": 1.4,
+        "joint_w_f1": 1.75,
+        "joint_w_cate": 0.82,
+        "joint_w_pehe": 0.92,
+        "joint_w_sens": 0.88,
+        "constraint_pehe_max": 0.11,
+        "constraint_sens_max": 0.11,
+        "constraint_cate_min": 0.11,
+        "constraint_penalty": 205.0,
+        "sota_lambda_pred": 5.5,
+        "sota_lambda_hsic": 0.009,
+        "sota_lambda_cate": 5.0,
+        "sota_lambda_ite": 9.0,
+        "sota_lambda_sens": 0.009,
+        "fhp_enable_distill": false,
+        "fhp_distill_weight": 0.0,
+        "fhp_teacher_epochs": 35,
+        "ghp_enable_dual_teacher": false,
+        "ghp_teacher_mix": 0.6,
+        "ghp_teacher2_epochs": 35
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/task19.5_designbook_stage1_01_c15_baseline_20260218_055359_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/task19.5_designbook_stage1_01_c15_baseline_20260218_055359_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/task19.5_designbook_stage1_01_c15_baseline_20260218_055359.log",
+      "global_wins": 2,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 5,
+        "w/o HSIC": 3
+      },
+      "domination_margin": 0.042364147693282894,
+      "auc_gap_vs_hgnn": -0.012204424103737566,
+      "acc_gap_vs_hgnn": 0.009708737864077666,
+      "cls_gate": 0
+    },
+    {
+      "run_id": "20260218_055359",
+      "stage": "stage1",
+      "candidate": "g02_dual_teacher",
+      "seeds": [
+        42
+      ],
+      "config": {
+        "name": "g02_dual_teacher",
+        "joint_w_auc": 1.05,
+        "joint_w_acc": 1.4,
+        "joint_w_f1": 1.75,
+        "joint_w_cate": 0.82,
+        "joint_w_pehe": 0.92,
+        "joint_w_sens": 0.88,
+        "constraint_pehe_max": 0.11,
+        "constraint_sens_max": 0.11,
+        "constraint_cate_min": 0.11,
+        "constraint_penalty": 205.0,
+        "sota_lambda_pred": 5.5,
+        "sota_lambda_hsic": 0.009,
+        "sota_lambda_cate": 5.0,
+        "sota_lambda_ite": 9.0,
+        "sota_lambda_sens": 0.009,
+        "fhp_enable_distill": true,
+        "fhp_distill_weight": 0.55,
+        "fhp_teacher_epochs": 35,
+        "ghp_enable_dual_teacher": true,
+        "ghp_teacher_mix": 0.6,
+        "ghp_teacher2_epochs": 35
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/task19.5_designbook_stage1_02_g02_dual_teacher_20260218_055359_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/task19.5_designbook_stage1_02_g02_dual_teacher_20260218_055359_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/task19.5_designbook_stage1_02_g02_dual_teacher_20260218_055359.log",
+      "global_wins": 2,
+      "pairwise_wins": {
+        "w/o HGNN": 3,
+        "w/o VAE": 5,
+        "w/o HSIC": 4
+      },
+      "domination_margin": -0.004519359210641616,
+      "auc_gap_vs_hgnn": -0.011060259344012224,
+      "acc_gap_vs_hgnn": -0.01941747572815533,
+      "cls_gate": 0
+    }
+  ],
+  "stage2": [],
+  "stage2_executed": false,
+  "stop_reason": "No candidate passed cls-gate + global>=5 under current protocol",
+  "final_best": {
+    "run_id": "20260218_055359",
+    "stage": "stage1",
+    "candidate": "c15_baseline",
+    "seeds": [
+      42
+    ],
+    "config": {
+      "name": "c15_baseline",
+      "joint_w_auc": 1.05,
+      "joint_w_acc": 1.4,
+      "joint_w_f1": 1.75,
+      "joint_w_cate": 0.82,
+      "joint_w_pehe": 0.92,
+      "joint_w_sens": 0.88,
+      "constraint_pehe_max": 0.11,
+      "constraint_sens_max": 0.11,
+      "constraint_cate_min": 0.11,
+      "constraint_penalty": 205.0,
+      "sota_lambda_pred": 5.5,
+      "sota_lambda_hsic": 0.009,
+      "sota_lambda_cate": 5.0,
+      "sota_lambda_ite": 9.0,
+      "sota_lambda_sens": 0.009,
+      "fhp_enable_distill": false,
+      "fhp_distill_weight": 0.0,
+      "fhp_teacher_epochs": 35,
+      "ghp_enable_dual_teacher": false,
+      "ghp_teacher_mix": 0.6,
+      "ghp_teacher2_epochs": 35
+    },
+    "raw_path": "/home/UserData/ljx/Project_1/results/task19.5_designbook_stage1_01_c15_baseline_20260218_055359_raw.json",
+    "report_path": "/home/UserData/ljx/Project_1/reports/task19.5_designbook_stage1_01_c15_baseline_20260218_055359_report.md",
+    "log_path": "/home/UserData/ljx/Project_1/logs/task19.5_designbook_stage1_01_c15_baseline_20260218_055359.log",
+    "global_wins": 2,
+    "pairwise_wins": {
+      "w/o HGNN": 4,
+      "w/o VAE": 5,
+      "w/o HSIC": 3
+    },
+    "domination_margin": 0.042364147693282894,
+    "auc_gap_vs_hgnn": -0.012204424103737566,
+    "acc_gap_vs_hgnn": 0.009708737864077666,
+    "cls_gate": 0
+  }
+}

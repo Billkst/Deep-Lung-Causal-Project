@@ -1,0 +1,651 @@
+{
+  "timestamp": "20260214_141459",
+  "stage1_total": 6,
+  "stage1": [
+    {
+      "run_tag": "stage1_02_c14_c12_f1_peak_20260214_141459",
+      "candidate": {
+        "name": "c14_c12_f1_peak",
+        "joint_w_auc": 1.0,
+        "joint_w_acc": 1.4,
+        "joint_w_f1": 1.95,
+        "joint_w_cate": 0.82,
+        "joint_w_pehe": 0.92,
+        "joint_w_sens": 0.88,
+        "constraint_pehe_max": 0.11,
+        "constraint_sens_max": 0.11,
+        "constraint_cate_min": 0.11,
+        "constraint_penalty": 205.0,
+        "sota_lambda_pred": 5.5,
+        "sota_lambda_hsic": 0.009,
+        "sota_lambda_cate": 5.0,
+        "sota_lambda_ite": 9.0,
+        "sota_lambda_sens": 0.009
+      },
+      "stage1_seeds": [
+        42,
+        43
+      ],
+      "stage1_sota_epochs": 26,
+      "stage1_ablation_epochs": 18,
+      "stage1_log": "/home/UserData/ljx/Project_1/logs/adaptive_stage1_02_c14_c12_f1_peak_20260214_141459.log",
+      "stage1_raw": "/home/UserData/ljx/Project_1/results/adaptive_stage1_02_c14_c12_f1_peak_20260214_141459_raw.json",
+      "stage1_report": "/home/UserData/ljx/Project_1/reports/adaptive_stage1_02_c14_c12_f1_peak_20260214_141459_report.md",
+      "global_wins": 3,
+      "pairwise_wins": {
+        "w/o HGNN": 3,
+        "w/o VAE": 6,
+        "w/o HSIC": 4
+      },
+      "min_pairwise_wins": 3,
+      "domination_margin": -0.06386545961312995,
+      "means": {
+        "Full DLC (SOTA)": {
+          "AUC": 0.8297101449275363,
+          "Acc": 0.7038834951456311,
+          "F1": 0.7103603603603603,
+          "PEHE": 0.0448160357773304,
+          "Delta CATE": 0.16991636157035828,
+          "Sensitivity": 0.024841702543199062
+        },
+        "w/o HGNN": {
+          "AUC": 0.8556445461479787,
+          "Acc": 0.7427184466019418,
+          "F1": 0.7457253171538887,
+          "PEHE": 0.06253351271152496,
+          "Delta CATE": 0.15261688083410263,
+          "Sensitivity": 0.03602616675198078
+        },
+        "w/o VAE": {
+          "AUC": 0.818459191456903,
+          "Acc": 0.6941747572815534,
+          "F1": 0.7005772005772006,
+          "PEHE": 0.11175704374909401,
+          "Delta CATE": 0.10588119179010391,
+          "Sensitivity": 0.02609359472990036
+        },
+        "w/o HSIC": {
+          "AUC": 0.8182684973302823,
+          "Acc": 0.7233009708737864,
+          "F1": 0.7189320388349514,
+          "PEHE": 0.11052931845188141,
+          "Delta CATE": 0.09975144267082214,
+          "Sensitivity": 0.03038041479885578
+        }
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": false,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    },
+    {
+      "run_tag": "stage1_03_c15_c12_auc_guard_20260214_141459",
+      "candidate": {
+        "name": "c15_c12_auc_guard",
+        "joint_w_auc": 1.05,
+        "joint_w_acc": 1.4,
+        "joint_w_f1": 1.75,
+        "joint_w_cate": 0.82,
+        "joint_w_pehe": 0.92,
+        "joint_w_sens": 0.88,
+        "constraint_pehe_max": 0.11,
+        "constraint_sens_max": 0.11,
+        "constraint_cate_min": 0.11,
+        "constraint_penalty": 205.0,
+        "sota_lambda_pred": 5.5,
+        "sota_lambda_hsic": 0.009,
+        "sota_lambda_cate": 5.0,
+        "sota_lambda_ite": 9.0,
+        "sota_lambda_sens": 0.009
+      },
+      "stage1_seeds": [
+        42,
+        43
+      ],
+      "stage1_sota_epochs": 26,
+      "stage1_ablation_epochs": 18,
+      "stage1_log": "/home/UserData/ljx/Project_1/logs/adaptive_stage1_03_c15_c12_auc_guard_20260214_141459.log",
+      "stage1_raw": "/home/UserData/ljx/Project_1/results/adaptive_stage1_03_c15_c12_auc_guard_20260214_141459_raw.json",
+      "stage1_report": "/home/UserData/ljx/Project_1/reports/adaptive_stage1_03_c15_c12_auc_guard_20260214_141459_report.md",
+      "global_wins": 3,
+      "pairwise_wins": {
+        "w/o HGNN": 3,
+        "w/o VAE": 6,
+        "w/o HSIC": 4
+      },
+      "min_pairwise_wins": 3,
+      "domination_margin": -0.06386545961312995,
+      "means": {
+        "Full DLC (SOTA)": {
+          "AUC": 0.8297101449275363,
+          "Acc": 0.7038834951456311,
+          "F1": 0.7103603603603603,
+          "PEHE": 0.0448160357773304,
+          "Delta CATE": 0.16991636157035828,
+          "Sensitivity": 0.024841702543199062
+        },
+        "w/o HGNN": {
+          "AUC": 0.8556445461479787,
+          "Acc": 0.7427184466019418,
+          "F1": 0.7457253171538887,
+          "PEHE": 0.06253351271152496,
+          "Delta CATE": 0.15261688083410263,
+          "Sensitivity": 0.03602616675198078
+        },
+        "w/o VAE": {
+          "AUC": 0.818459191456903,
+          "Acc": 0.6941747572815534,
+          "F1": 0.7005772005772006,
+          "PEHE": 0.11175704374909401,
+          "Delta CATE": 0.10588119179010391,
+          "Sensitivity": 0.02609359472990036
+        },
+        "w/o HSIC": {
+          "AUC": 0.8182684973302823,
+          "Acc": 0.7233009708737864,
+          "F1": 0.7189320388349514,
+          "PEHE": 0.11052931845188141,
+          "Delta CATE": 0.09975144267082214,
+          "Sensitivity": 0.03038041479885578
+        }
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": false,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    },
+    {
+      "run_tag": "stage1_01_c13_c12_pred_up_20260214_141459",
+      "candidate": {
+        "name": "c13_c12_pred_up",
+        "joint_w_auc": 1.0,
+        "joint_w_acc": 1.5,
+        "joint_w_f1": 1.85,
+        "joint_w_cate": 0.8,
+        "joint_w_pehe": 0.9,
+        "joint_w_sens": 0.85,
+        "constraint_pehe_max": 0.11,
+        "constraint_sens_max": 0.11,
+        "constraint_cate_min": 0.11,
+        "constraint_penalty": 205.0,
+        "sota_lambda_pred": 5.6,
+        "sota_lambda_hsic": 0.009,
+        "sota_lambda_cate": 5.0,
+        "sota_lambda_ite": 9.0,
+        "sota_lambda_sens": 0.009
+      },
+      "stage1_seeds": [
+        42,
+        43
+      ],
+      "stage1_sota_epochs": 26,
+      "stage1_ablation_epochs": 18,
+      "stage1_log": "/home/UserData/ljx/Project_1/logs/adaptive_stage1_01_c13_c12_pred_up_20260214_141459.log",
+      "stage1_raw": "/home/UserData/ljx/Project_1/results/adaptive_stage1_01_c13_c12_pred_up_20260214_141459_raw.json",
+      "stage1_report": "/home/UserData/ljx/Project_1/reports/adaptive_stage1_01_c13_c12_pred_up_20260214_141459_report.md",
+      "global_wins": 3,
+      "pairwise_wins": {
+        "w/o HGNN": 3,
+        "w/o VAE": 6,
+        "w/o HSIC": 5
+      },
+      "min_pairwise_wins": 3,
+      "domination_margin": -0.06663231157294969,
+      "means": {
+        "Full DLC (SOTA)": {
+          "AUC": 0.8289473684210527,
+          "Acc": 0.7087378640776699,
+          "F1": 0.7167960039247168,
+          "PEHE": 0.04525760281831026,
+          "Delta CATE": 0.1689382642507553,
+          "Sensitivity": 0.025471322238445282
+        },
+        "w/o HGNN": {
+          "AUC": 0.8556445461479787,
+          "Acc": 0.7475728155339806,
+          "F1": 0.7521157521157522,
+          "PEHE": 0.06253351271152496,
+          "Delta CATE": 0.15261688083410263,
+          "Sensitivity": 0.03602616675198078
+        },
+        "w/o VAE": {
+          "AUC": 0.818459191456903,
+          "Acc": 0.6990291262135923,
+          "F1": 0.7071428571428571,
+          "PEHE": 0.11175704374909401,
+          "Delta CATE": 0.10588119179010391,
+          "Sensitivity": 0.02609359472990036
+        },
+        "w/o HSIC": {
+          "AUC": 0.8182684973302823,
+          "Acc": 0.7184466019417476,
+          "F1": 0.7154666923002979,
+          "PEHE": 0.11052931845188141,
+          "Delta CATE": 0.09975144267082214,
+          "Sensitivity": 0.03038041479885578
+        }
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": false,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    },
+    {
+      "run_tag": "stage1_05_c17_c12_sens_guard_20260214_141459",
+      "candidate": {
+        "name": "c17_c12_sens_guard",
+        "joint_w_auc": 1.0,
+        "joint_w_acc": 1.45,
+        "joint_w_f1": 1.8,
+        "joint_w_cate": 0.85,
+        "joint_w_pehe": 1.0,
+        "joint_w_sens": 1.05,
+        "constraint_pehe_max": 0.105,
+        "constraint_sens_max": 0.095,
+        "constraint_cate_min": 0.115,
+        "constraint_penalty": 230.0,
+        "sota_lambda_pred": 5.3,
+        "sota_lambda_hsic": 0.011,
+        "sota_lambda_cate": 5.2,
+        "sota_lambda_ite": 9.6,
+        "sota_lambda_sens": 0.014
+      },
+      "stage1_seeds": [
+        42,
+        43
+      ],
+      "stage1_sota_epochs": 26,
+      "stage1_ablation_epochs": 18,
+      "stage1_log": "/home/UserData/ljx/Project_1/logs/adaptive_stage1_05_c17_c12_sens_guard_20260214_141459.log",
+      "stage1_raw": "/home/UserData/ljx/Project_1/results/adaptive_stage1_05_c17_c12_sens_guard_20260214_141459_raw.json",
+      "stage1_report": "/home/UserData/ljx/Project_1/reports/adaptive_stage1_05_c17_c12_sens_guard_20260214_141459_report.md",
+      "global_wins": 3,
+      "pairwise_wins": {
+        "w/o HGNN": 3,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "min_pairwise_wins": 3,
+      "domination_margin": -0.08207260523157456,
+      "means": {
+        "Full DLC (SOTA)": {
+          "AUC": 0.8283752860411899,
+          "Acc": 0.6941747572815534,
+          "F1": 0.709462915601023,
+          "PEHE": 0.05188677832484245,
+          "Delta CATE": 0.15918395668268204,
+          "Sensitivity": 0.02482567075639963
+        },
+        "w/o HGNN": {
+          "AUC": 0.8556445461479787,
+          "Acc": 0.7330097087378641,
+          "F1": 0.7439130434782608,
+          "PEHE": 0.06253351271152496,
+          "Delta CATE": 0.15261688083410263,
+          "Sensitivity": 0.03602616675198078
+        },
+        "w/o VAE": {
+          "AUC": 0.818459191456903,
+          "Acc": 0.645631067961165,
+          "F1": 0.6758713990132103,
+          "PEHE": 0.11175704374909401,
+          "Delta CATE": 0.10588119179010391,
+          "Sensitivity": 0.02609359472990036
+        },
+        "w/o HSIC": {
+          "AUC": 0.8182684973302823,
+          "Acc": 0.6747572815533981,
+          "F1": 0.6905207624234173,
+          "PEHE": 0.11052931845188141,
+          "Delta CATE": 0.09975144267082214,
+          "Sensitivity": 0.03038041479885578
+        }
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": false,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    },
+    {
+      "run_tag": "stage1_06_c18_c12_hsic_rebalance_20260214_141459",
+      "candidate": {
+        "name": "c18_c12_hsic_rebalance",
+        "joint_w_auc": 1.0,
+        "joint_w_acc": 1.45,
+        "joint_w_f1": 1.8,
+        "joint_w_cate": 0.88,
+        "joint_w_pehe": 0.95,
+        "joint_w_sens": 0.92,
+        "constraint_pehe_max": 0.105,
+        "constraint_sens_max": 0.105,
+        "constraint_cate_min": 0.115,
+        "constraint_penalty": 210.0,
+        "sota_lambda_pred": 5.3,
+        "sota_lambda_hsic": 0.014,
+        "sota_lambda_cate": 5.2,
+        "sota_lambda_ite": 9.8,
+        "sota_lambda_sens": 0.011
+      },
+      "stage1_seeds": [
+        42,
+        43
+      ],
+      "stage1_sota_epochs": 26,
+      "stage1_ablation_epochs": 18,
+      "stage1_log": "/home/UserData/ljx/Project_1/logs/adaptive_stage1_06_c18_c12_hsic_rebalance_20260214_141459.log",
+      "stage1_raw": "/home/UserData/ljx/Project_1/results/adaptive_stage1_06_c18_c12_hsic_rebalance_20260214_141459_raw.json",
+      "stage1_report": "/home/UserData/ljx/Project_1/reports/adaptive_stage1_06_c18_c12_hsic_rebalance_20260214_141459_report.md",
+      "global_wins": 2,
+      "pairwise_wins": {
+        "w/o HGNN": 3,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "min_pairwise_wins": 3,
+      "domination_margin": -0.07313484655481639,
+      "means": {
+        "Full DLC (SOTA)": {
+          "AUC": 0.8300915331807781,
+          "Acc": 0.7038834951456311,
+          "F1": 0.716084766371374,
+          "PEHE": 0.04997008293867111,
+          "Delta CATE": 0.1668671816587448,
+          "Sensitivity": 0.026808617636561394
+        },
+        "w/o HGNN": {
+          "AUC": 0.8556445461479787,
+          "Acc": 0.7427184466019418,
+          "F1": 0.7509303561935141,
+          "PEHE": 0.06253351271152496,
+          "Delta CATE": 0.15261688083410263,
+          "Sensitivity": 0.03602616675198078
+        },
+        "w/o VAE": {
+          "AUC": 0.818459191456903,
+          "Acc": 0.6747572815533981,
+          "F1": 0.6945378151260504,
+          "PEHE": 0.11175704374909401,
+          "Delta CATE": 0.10588119179010391,
+          "Sensitivity": 0.02609359472990036
+        },
+        "w/o HSIC": {
+          "AUC": 0.8182684973302823,
+          "Acc": 0.6844660194174758,
+          "F1": 0.694351279788173,
+          "PEHE": 0.11052931845188141,
+          "Delta CATE": 0.09975144267082214,
+          "Sensitivity": 0.03038041479885578
+        }
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": false,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    },
+    {
+      "run_tag": "stage1_04_c16_c12_cate_recover_20260214_141459",
+      "candidate": {
+        "name": "c16_c12_cate_recover",
+        "joint_w_auc": 1.0,
+        "joint_w_acc": 1.4,
+        "joint_w_f1": 1.75,
+        "joint_w_cate": 0.95,
+        "joint_w_pehe": 0.95,
+        "joint_w_sens": 0.9,
+        "constraint_pehe_max": 0.105,
+        "constraint_sens_max": 0.105,
+        "constraint_cate_min": 0.12,
+        "constraint_penalty": 215.0,
+        "sota_lambda_pred": 5.35,
+        "sota_lambda_hsic": 0.01,
+        "sota_lambda_cate": 5.4,
+        "sota_lambda_ite": 9.8,
+        "sota_lambda_sens": 0.01
+      },
+      "stage1_seeds": [
+        42,
+        43
+      ],
+      "stage1_sota_epochs": 26,
+      "stage1_ablation_epochs": 18,
+      "stage1_log": "/home/UserData/ljx/Project_1/logs/adaptive_stage1_04_c16_c12_cate_recover_20260214_141459.log",
+      "stage1_raw": "/home/UserData/ljx/Project_1/results/adaptive_stage1_04_c16_c12_cate_recover_20260214_141459_raw.json",
+      "stage1_report": "/home/UserData/ljx/Project_1/reports/adaptive_stage1_04_c16_c12_cate_recover_20260214_141459_report.md",
+      "global_wins": 2,
+      "pairwise_wins": {
+        "w/o HGNN": 3,
+        "w/o VAE": 5,
+        "w/o HSIC": 4
+      },
+      "min_pairwise_wins": 3,
+      "domination_margin": -0.09967781481210936,
+      "means": {
+        "Full DLC (SOTA)": {
+          "AUC": 0.8226544622425629,
+          "Acc": 0.6941747572815534,
+          "F1": 0.7009210763951599,
+          "PEHE": 0.05248193442821503,
+          "Delta CATE": 0.17621111869812012,
+          "Sensitivity": 0.027874172665178776
+        },
+        "w/o HGNN": {
+          "AUC": 0.8556445461479787,
+          "Acc": 0.7427184466019418,
+          "F1": 0.7509303561935141,
+          "PEHE": 0.06253351271152496,
+          "Delta CATE": 0.15261688083410263,
+          "Sensitivity": 0.03602616675198078
+        },
+        "w/o VAE": {
+          "AUC": 0.818459191456903,
+          "Acc": 0.6747572815533981,
+          "F1": 0.6945378151260504,
+          "PEHE": 0.11175704374909401,
+          "Delta CATE": 0.10588119179010391,
+          "Sensitivity": 0.02609359472990036
+        },
+        "w/o HSIC": {
+          "AUC": 0.8182684973302823,
+          "Acc": 0.6941747572815534,
+          "F1": 0.7010801080108011,
+          "PEHE": 0.11052931845188141,
+          "Delta CATE": 0.09975144267082214,
+          "Sensitivity": 0.03038041479885578
+        }
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": false,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    }
+  ],
+  "stage2": [
+    {
+      "rank": 1,
+      "run_tag": "stage2_top1_c14_c12_f1_peak_20260214_141459",
+      "candidate": {
+        "name": "c14_c12_f1_peak",
+        "joint_w_auc": 1.0,
+        "joint_w_acc": 1.4,
+        "joint_w_f1": 1.95,
+        "joint_w_cate": 0.82,
+        "joint_w_pehe": 0.92,
+        "joint_w_sens": 0.88,
+        "constraint_pehe_max": 0.11,
+        "constraint_sens_max": 0.11,
+        "constraint_cate_min": 0.11,
+        "constraint_penalty": 205.0,
+        "sota_lambda_pred": 5.5,
+        "sota_lambda_hsic": 0.009,
+        "sota_lambda_cate": 5.0,
+        "sota_lambda_ite": 9.0,
+        "sota_lambda_sens": 0.009
+      },
+      "stage2_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "stage2_log": "/home/UserData/ljx/Project_1/logs/adaptive_stage2_top1_c14_c12_f1_peak_20260214_141459.log",
+      "stage2_raw": "/home/UserData/ljx/Project_1/results/adaptive_stage2_top1_c14_c12_f1_peak_20260214_141459_raw.json",
+      "stage2_report": "/home/UserData/ljx/Project_1/reports/adaptive_stage2_top1_c14_c12_f1_peak_20260214_141459_report.md",
+      "global_wins": 2,
+      "pairwise_wins": {
+        "w/o HGNN": 3,
+        "w/o VAE": 6,
+        "w/o HSIC": 3
+      },
+      "domination_margin": 0.012538486793741453,
+      "means": {
+        "Full DLC (SOTA)": {
+          "AUC": 0.8356979405034325,
+          "Acc": 0.6970873786407767,
+          "F1": 0.7051275758206451,
+          "PEHE": 0.04637282490730286,
+          "Delta CATE": 0.1559038132429123,
+          "Sensitivity": 0.026711007580161095
+        },
+        "w/o HGNN": {
+          "AUC": 0.8440884820747522,
+          "Acc": 0.6990291262135923,
+          "F1": 0.7068952489109028,
+          "PEHE": 0.061499713361263274,
+          "Delta CATE": 0.14545907378196715,
+          "Sensitivity": 0.03456365168094635
+        },
+        "w/o VAE": {
+          "AUC": 0.8316552250190694,
+          "Acc": 0.6854368932038836,
+          "F1": 0.7021822400173939,
+          "PEHE": 0.09707641154527664,
+          "Delta CATE": 0.12472206950187684,
+          "Sensitivity": 0.03201174587011337
+        },
+        "w/o HSIC": {
+          "AUC": 0.8302059496567505,
+          "Acc": 0.6990291262135923,
+          "F1": 0.7062237358953576,
+          "PEHE": 0.11147879660129548,
+          "Delta CATE": 0.09748845249414444,
+          "Sensitivity": 0.025777828693389893
+        }
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": false,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    }
+  ],
+  "best_stage2": {
+    "rank": 1,
+    "run_tag": "stage2_top1_c14_c12_f1_peak_20260214_141459",
+    "candidate": {
+      "name": "c14_c12_f1_peak",
+      "joint_w_auc": 1.0,
+      "joint_w_acc": 1.4,
+      "joint_w_f1": 1.95,
+      "joint_w_cate": 0.82,
+      "joint_w_pehe": 0.92,
+      "joint_w_sens": 0.88,
+      "constraint_pehe_max": 0.11,
+      "constraint_sens_max": 0.11,
+      "constraint_cate_min": 0.11,
+      "constraint_penalty": 205.0,
+      "sota_lambda_pred": 5.5,
+      "sota_lambda_hsic": 0.009,
+      "sota_lambda_cate": 5.0,
+      "sota_lambda_ite": 9.0,
+      "sota_lambda_sens": 0.009
+    },
+    "stage2_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "stage2_log": "/home/UserData/ljx/Project_1/logs/adaptive_stage2_top1_c14_c12_f1_peak_20260214_141459.log",
+    "stage2_raw": "/home/UserData/ljx/Project_1/results/adaptive_stage2_top1_c14_c12_f1_peak_20260214_141459_raw.json",
+    "stage2_report": "/home/UserData/ljx/Project_1/reports/adaptive_stage2_top1_c14_c12_f1_peak_20260214_141459_report.md",
+    "global_wins": 2,
+    "pairwise_wins": {
+      "w/o HGNN": 3,
+      "w/o VAE": 6,
+      "w/o HSIC": 3
+    },
+    "domination_margin": 0.012538486793741453,
+    "means": {
+      "Full DLC (SOTA)": {
+        "AUC": 0.8356979405034325,
+        "Acc": 0.6970873786407767,
+        "F1": 0.7051275758206451,
+        "PEHE": 0.04637282490730286,
+        "Delta CATE": 0.1559038132429123,
+        "Sensitivity": 0.026711007580161095
+      },
+      "w/o HGNN": {
+        "AUC": 0.8440884820747522,
+        "Acc": 0.6990291262135923,
+        "F1": 0.7068952489109028,
+        "PEHE": 0.061499713361263274,
+        "Delta CATE": 0.14545907378196715,
+        "Sensitivity": 0.03456365168094635
+      },
+      "w/o VAE": {
+        "AUC": 0.8316552250190694,
+        "Acc": 0.6854368932038836,
+        "F1": 0.7021822400173939,
+        "PEHE": 0.09707641154527664,
+        "Delta CATE": 0.12472206950187684,
+        "Sensitivity": 0.03201174587011337
+      },
+      "w/o HSIC": {
+        "AUC": 0.8302059496567505,
+        "Acc": 0.6990291262135923,
+        "F1": 0.7062237358953576,
+        "PEHE": 0.11147879660129548,
+        "Delta CATE": 0.09748845249414444,
+        "Sensitivity": 0.025777828693389893
+      }
+    },
+    "global_checks": {
+      "AUC": false,
+      "Acc": false,
+      "F1": false,
+      "PEHE": true,
+      "Delta CATE": true,
+      "Sensitivity": false
+    }
+  },
+  "achieved_full_domination": false
+}

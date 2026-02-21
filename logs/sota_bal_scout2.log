@@ -1,0 +1,8 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/120 | loss_total=2.8720 recon=0.0533 hsic=0.0210 pred=0.3482
+[Full DLC (SOTA)] Epoch 10/120 | loss_total=2.8259 recon=0.0234 hsic=0.0205 pred=0.3469
+[Full DLC (SOTA)] Epoch 15/120 | loss_total=2.7715 recon=0.0162 hsic=0.0203 pred=0.3414
+[Full DLC (SOTA)] Epoch 20/120 | loss_total=2.7529 recon=0.0144 hsic=0.0202 pred=0.3389

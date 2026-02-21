@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_rigorous_ablation.py", line 583, in <module>
+    main()
+  File "/home/UserData/ljx/Project_1/src/run_rigorous_ablation.py", line 514, in main
+    model_sota = DLCWrapper(sota_path, input_dim=23)
+  File "/home/UserData/ljx/Project_1/src/run_rigorous_ablation.py", line 313, in __init__
+    self.model.load_state_dict(payload)
+  File "/home/UserData/ljx/conda_envs/dlc_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2635, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for DLCNet:
+	Missing key(s) in state_dict: "hypergraph_nn.conv_layers.3.weight", "hypergraph_nn.conv_layers.3.bias". 
+	size mismatch for causal_vae.encoder_conf.0.weight: copying a param with shape torch.Size([128, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_conf.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.2.weight: copying a param with shape torch.Size([128, 128]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_conf.2.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_conf.4.weight: copying a param with shape torch.Size([16, 128]) from checkpoint, the shape in current model is torch.Size([16, 256]).
+	size mismatch for causal_vae.encoder_effect.0.weight: copying a param with shape torch.Size([128, 23]) from checkpoint, the shape in current model is torch.Size([256, 23]).
+	size mismatch for causal_vae.encoder_effect.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.2.weight: copying a param with shape torch.Size([128, 128]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.encoder_effect.2.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.encoder_effect.4.weight: copying a param with shape torch.Size([32, 128]) from checkpoint, the shape in current model is torch.Size([32, 256]).
+	size mismatch for causal_vae.decoder.0.weight: copying a param with shape torch.Size([128, 24]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+	size mismatch for causal_vae.decoder.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.2.weight: copying a param with shape torch.Size([128, 128]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for causal_vae.decoder.2.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for causal_vae.decoder.4.weight: copying a param with shape torch.Size([23, 128]) from checkpoint, the shape in current model is torch.Size([23, 256]).
+	size mismatch for hypergraph_nn.gene_embedding.weight: copying a param with shape torch.Size([128, 1]) from checkpoint, the shape in current model is torch.Size([256, 1]).
+	size mismatch for hypergraph_nn.gene_embedding.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_weight: copying a param with shape torch.Size([384, 128]) from checkpoint, the shape in current model is torch.Size([768, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.in_proj_bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([768]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.weight: copying a param with shape torch.Size([128, 128]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.multi_head_attention.out_proj.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.0.weight: copying a param with shape torch.Size([128, 128]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.0.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.1.weight: copying a param with shape torch.Size([128, 128]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.1.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for hypergraph_nn.conv_layers.2.weight: copying a param with shape torch.Size([128, 128]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for hypergraph_nn.conv_layers.2.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for adv_age_head.0.weight: copying a param with shape torch.Size([64, 16]) from checkpoint, the shape in current model is torch.Size([128, 16]).
+	size mismatch for adv_age_head.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for adv_age_head.2.weight: copying a param with shape torch.Size([3, 64]) from checkpoint, the shape in current model is torch.Size([3, 128]).
+	size mismatch for outcome_head_0.0.weight: copying a param with shape torch.Size([64, 128]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_0.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_0.3.weight: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+	size mismatch for outcome_head_1.0.weight: copying a param with shape torch.Size([64, 128]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for outcome_head_1.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for outcome_head_1.3.weight: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 128]).
+
+ERROR conda.cli.main_run:execute(127): `conda run python src/run_rigorous_ablation.py --epochs 40` failed. (See above for error)
+Script started...
+
+[Seed 42] Loading data...
+Loading SOTA checkpoint: /home/UserData/ljx/Project_1/results/dlc_final_sota_s_seed_42.pth
+

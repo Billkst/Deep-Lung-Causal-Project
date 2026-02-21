@@ -1,0 +1,8 @@
+Script started...
+
+[Seed 42] Loading data...
+Loading SOTA checkpoint: /home/UserData/ljx/Project_1/results/dlc_final_sota_s_seed_42.pth
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md
+

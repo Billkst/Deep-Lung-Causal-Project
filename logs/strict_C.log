@@ -1,0 +1,53 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/110 | loss_total=2.1849 recon=0.0673 hsic=0.0208 pred=0.3478
+[Full DLC (SOTA)] Epoch 10/110 | loss_total=2.1100 recon=0.0238 hsic=0.0205 pred=0.3441
+[Full DLC (SOTA)] Epoch 15/110 | loss_total=2.0854 recon=0.0162 hsic=0.0201 pred=0.3423
+[Full DLC (SOTA)] Epoch 20/110 | loss_total=2.0315 recon=0.0141 hsic=0.0204 pred=0.3333
+[Full DLC (SOTA)] Epoch 25/110 | loss_total=2.2158 recon=0.0119 hsic=0.0204 pred=0.3277
+[Full DLC (SOTA)] Epoch 30/110 | loss_total=2.4006 recon=0.0115 hsic=0.0213 pred=0.3223
+[Full DLC (SOTA)] Epoch 35/110 | loss_total=2.5747 recon=0.0113 hsic=0.0215 pred=0.3175
+[Full DLC (SOTA)] Epoch 40/110 | loss_total=2.7496 recon=0.0110 hsic=0.0214 pred=0.3132
+[Full DLC (SOTA)] Epoch 45/110 | loss_total=2.9125 recon=0.0095 hsic=0.0215 pred=0.3081
+[Full DLC (SOTA)] Epoch 50/110 | loss_total=3.0849 recon=0.0094 hsic=0.0215 pred=0.3050
+[Full DLC (SOTA)] Epoch 55/110 | loss_total=3.0504 recon=0.0093 hsic=0.0213 pred=0.3013
+[Full DLC (SOTA)] Epoch 60/110 | loss_total=3.0517 recon=0.0092 hsic=0.0213 pred=0.3013
+[Full DLC (SOTA)] Epoch 65/110 | loss_total=3.0165 recon=0.0086 hsic=0.0210 pred=0.2980
+[Full DLC (SOTA)] Epoch 70/110 | loss_total=2.9843 recon=0.0084 hsic=0.0211 pred=0.2944
+[Full DLC (SOTA)] Epoch 75/110 | loss_total=2.9961 recon=0.0084 hsic=0.0212 pred=0.2956
+[Full DLC (SOTA)] Epoch 80/110 | loss_total=2.9518 recon=0.0084 hsic=0.0211 pred=0.2912
+[Full DLC (SOTA)] Epoch 85/110 | loss_total=2.9386 recon=0.0080 hsic=0.0211 pred=0.2901
+[Full DLC (SOTA)] Epoch 90/110 | loss_total=2.9365 recon=0.0080 hsic=0.0211 pred=0.2899
+[Full DLC (SOTA)] Epoch 95/110 | loss_total=2.9235 recon=0.0080 hsic=0.0211 pred=0.2884
+[Full DLC (SOTA)] Epoch 100/110 | loss_total=2.9399 recon=0.0079 hsic=0.0209 pred=0.2900
+[Full DLC (SOTA)] Epoch 105/110 | loss_total=2.9144 recon=0.0077 hsic=0.0210 pred=0.2876
+[Full DLC (SOTA)] Epoch 110/110 | loss_total=2.9082 recon=0.0077 hsic=0.0210 pred=0.2870
+[w/o HGNN] Epoch 5/40 | loss_total=1.3869 recon=0.2073 hsic=0.0163 pred=0.3366
+[w/o HGNN] Epoch 10/40 | loss_total=1.1855 recon=0.0562 hsic=0.0195 pred=0.3218
+[w/o HGNN] Epoch 15/40 | loss_total=1.1000 recon=0.0344 hsic=0.0218 pred=0.3030
+[w/o HGNN] Epoch 20/40 | loss_total=1.0091 recon=0.0268 hsic=0.0220 pred=0.2777
+[w/o HGNN] Epoch 25/40 | loss_total=0.8778 recon=0.0209 hsic=0.0221 pred=0.2413
+[w/o HGNN] Epoch 30/40 | loss_total=0.8091 recon=0.0198 hsic=0.0217 pred=0.2212
+[w/o HGNN] Epoch 35/40 | loss_total=0.7492 recon=0.0180 hsic=0.0214 pred=0.2032
+[w/o HGNN] Epoch 40/40 | loss_total=0.7067 recon=0.0170 hsic=0.0214 pred=0.1910
+[w/o VAE] Epoch 5/40 | loss_total=1.2629 recon=0.0414 hsic=0.0242 pred=0.3455
+[w/o VAE] Epoch 10/40 | loss_total=1.2263 recon=0.0141 hsic=0.0244 pred=0.3431
+[w/o VAE] Epoch 15/40 | loss_total=1.2196 recon=0.0108 hsic=0.0238 pred=0.3425
+[w/o VAE] Epoch 20/40 | loss_total=1.1885 recon=0.0097 hsic=0.0229 pred=0.3347
+[w/o VAE] Epoch 25/40 | loss_total=1.1618 recon=0.0073 hsic=0.0220 pred=0.3284
+[w/o VAE] Epoch 30/40 | loss_total=1.1427 recon=0.0072 hsic=0.0222 pred=0.3231
+[w/o VAE] Epoch 35/40 | loss_total=1.1266 recon=0.0071 hsic=0.0225 pred=0.3188
+[w/o VAE] Epoch 40/40 | loss_total=1.1002 recon=0.0073 hsic=0.0227 pred=0.3114
+[w/o HSIC] Epoch 5/40 | loss_total=1.2778 recon=0.0565 hsic=0.0210 pred=0.3455
+[w/o HSIC] Epoch 10/40 | loss_total=1.2271 recon=0.0160 hsic=0.0212 pred=0.3428
+[w/o HSIC] Epoch 15/40 | loss_total=1.2202 recon=0.0103 hsic=0.0206 pred=0.3428
+[w/o HSIC] Epoch 20/40 | loss_total=1.1934 recon=0.0100 hsic=0.0199 pred=0.3360
+[w/o HSIC] Epoch 25/40 | loss_total=1.1732 recon=0.0080 hsic=0.0193 pred=0.3314
+[w/o HSIC] Epoch 30/40 | loss_total=1.1576 recon=0.0081 hsic=0.0193 pred=0.3271
+[w/o HSIC] Epoch 35/40 | loss_total=1.1451 recon=0.0084 hsic=0.0193 pred=0.3236
+[w/o HSIC] Epoch 40/40 | loss_total=1.1167 recon=0.0086 hsic=0.0192 pred=0.3155
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

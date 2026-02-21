@@ -1,0 +1,49 @@
+Script started...
+
+[Seed 42] Loading data...
+Training Full DLC (SOTA) from scratch (Seed 42)
+[Full DLC (SOTA)] Epoch 5/90 | loss_total=4.2860 recon=0.0740 hsic=0.0209 pred=0.3443
+[Full DLC (SOTA)] Epoch 10/90 | loss_total=4.1752 recon=0.0277 hsic=0.0208 pred=0.3396
+[Full DLC (SOTA)] Epoch 15/90 | loss_total=4.1063 recon=0.0225 hsic=0.0203 pred=0.3358
+[Full DLC (SOTA)] Epoch 20/90 | loss_total=3.9390 recon=0.0207 hsic=0.0201 pred=0.3235
+[Full DLC (SOTA)] Epoch 25/90 | loss_total=3.8165 recon=0.0170 hsic=0.0198 pred=0.3144
+[Full DLC (SOTA)] Epoch 30/90 | loss_total=3.7472 recon=0.0158 hsic=0.0198 pred=0.3090
+[Full DLC (SOTA)] Epoch 35/90 | loss_total=3.6626 recon=0.0149 hsic=0.0196 pred=0.3020
+[Full DLC (SOTA)] Epoch 40/90 | loss_total=3.5583 recon=0.0147 hsic=0.0194 pred=0.2935
+[Full DLC (SOTA)] Epoch 45/90 | loss_total=3.4698 recon=0.0130 hsic=0.0194 pred=0.2859
+[Full DLC (SOTA)] Epoch 50/90 | loss_total=3.3984 recon=0.0128 hsic=0.0194 pred=0.2803
+[Full DLC (SOTA)] Epoch 55/90 | loss_total=3.3507 recon=0.0126 hsic=0.0193 pred=0.2760
+[Full DLC (SOTA)] Epoch 60/90 | loss_total=3.3261 recon=0.0122 hsic=0.0194 pred=0.2740
+[Full DLC (SOTA)] Epoch 65/90 | loss_total=3.2757 recon=0.0117 hsic=0.0192 pred=0.2698
+[Full DLC (SOTA)] Epoch 70/90 | loss_total=3.2288 recon=0.0115 hsic=0.0192 pred=0.2659
+[Full DLC (SOTA)] Epoch 75/90 | loss_total=3.2256 recon=0.0114 hsic=0.0193 pred=0.2658
+[Full DLC (SOTA)] Epoch 80/90 | loss_total=3.1649 recon=0.0112 hsic=0.0193 pred=0.2609
+[Full DLC (SOTA)] Epoch 85/90 | loss_total=3.1450 recon=0.0109 hsic=0.0193 pred=0.2590
+[Full DLC (SOTA)] Epoch 90/90 | loss_total=3.1332 recon=0.0108 hsic=0.0193 pred=0.2581
+[w/o HGNN] Epoch 5/40 | loss_total=1.5824 recon=0.2293 hsic=0.0162 pred=0.3371
+[w/o HGNN] Epoch 10/40 | loss_total=1.3757 recon=0.0670 hsic=0.0188 pred=0.3250
+[w/o HGNN] Epoch 15/40 | loss_total=1.2882 recon=0.0399 hsic=0.0215 pred=0.3096
+[w/o HGNN] Epoch 20/40 | loss_total=1.2178 recon=0.0315 hsic=0.0222 pred=0.2913
+[w/o HGNN] Epoch 25/40 | loss_total=1.0778 recon=0.0238 hsic=0.0226 pred=0.2584
+[w/o HGNN] Epoch 30/40 | loss_total=1.0017 recon=0.0221 hsic=0.0226 pred=0.2394
+[w/o HGNN] Epoch 35/40 | loss_total=0.9262 recon=0.0203 hsic=0.0224 pred=0.2196
+[w/o HGNN] Epoch 40/40 | loss_total=0.8834 recon=0.0189 hsic=0.0227 pred=0.2079
+[w/o VAE] Epoch 5/40 | loss_total=1.4619 recon=0.0433 hsic=0.0239 pred=0.3481
+[w/o VAE] Epoch 10/40 | loss_total=1.4098 recon=0.0159 hsic=0.0231 pred=0.3450
+[w/o VAE] Epoch 15/40 | loss_total=1.3938 recon=0.0119 hsic=0.0221 pred=0.3432
+[w/o VAE] Epoch 20/40 | loss_total=1.3563 recon=0.0105 hsic=0.0220 pred=0.3342
+[w/o VAE] Epoch 25/40 | loss_total=1.3317 recon=0.0079 hsic=0.0214 pred=0.3287
+[w/o VAE] Epoch 30/40 | loss_total=1.3060 recon=0.0078 hsic=0.0215 pred=0.3222
+[w/o VAE] Epoch 35/40 | loss_total=1.2815 recon=0.0077 hsic=0.0212 pred=0.3167
+[w/o VAE] Epoch 40/40 | loss_total=1.2584 recon=0.0076 hsic=0.0209 pred=0.3109
+[w/o HSIC] Epoch 5/40 | loss_total=1.4734 recon=0.0573 hsic=0.0208 pred=0.3479
+[w/o HSIC] Epoch 10/40 | loss_total=1.4100 recon=0.0173 hsic=0.0205 pred=0.3447
+[w/o HSIC] Epoch 15/40 | loss_total=1.3959 recon=0.0116 hsic=0.0197 pred=0.3439
+[w/o HSIC] Epoch 20/40 | loss_total=1.3678 recon=0.0103 hsic=0.0193 pred=0.3368
+[w/o HSIC] Epoch 25/40 | loss_total=1.3478 recon=0.0086 hsic=0.0190 pred=0.3330
+[w/o HSIC] Epoch 30/40 | loss_total=1.3253 recon=0.0085 hsic=0.0190 pred=0.3273
+[w/o HSIC] Epoch 35/40 | loss_total=1.3070 recon=0.0085 hsic=0.0191 pred=0.3228
+[w/o HSIC] Epoch 40/40 | loss_total=1.2809 recon=0.0083 hsic=0.0190 pred=0.3166
+
+[Done] Raw metrics: /home/UserData/ljx/Project_1/results/ablation_metrics_rigorous.json
+[Done] Report: /home/UserData/ljx/Project_1/reports/task19.5_ablation_study_rigorous.md

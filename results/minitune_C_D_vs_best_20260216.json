@@ -1,0 +1,109 @@
+{
+  "cases": {
+    "current_best_c15": {
+      "raw_path": "/home/UserData/ljx/Project_1/results/adaptive_stage2_top2_c15_c12_auc_guard_20260215_062704_raw.json",
+      "global_wins": 4,
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      },
+      "domination_margin": 0.03357465853369232,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "full_means": {
+        "AUC": 0.835163996948894,
+        "Acc": 0.7029126213592234,
+        "F1": 0.7100893812070282,
+        "PEHE": 0.038578996807336806,
+        "Delta CATE": 0.16138035356998442,
+        "Sensitivity": 0.023275204375386237
+      }
+    },
+    "minitune_C": {
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_C_20260216_040200_raw.json",
+      "global_wins": 4,
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      },
+      "domination_margin": 0.029680699322772366,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "full_means": {
+        "AUC": 0.835545385202136,
+        "Acc": 0.7029126213592234,
+        "F1": 0.7151501944190679,
+        "PEHE": 0.03748578131198883,
+        "Delta CATE": 0.15035744309425353,
+        "Sensitivity": 0.02480556219816208
+      }
+    },
+    "minitune_D": {
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_D_20260216_052521_raw.json",
+      "global_wins": 4,
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      },
+      "domination_margin": 0.02702373126137872,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "full_means": {
+        "AUC": 0.8323417238749047,
+        "Acc": 0.7048543689320389,
+        "F1": 0.7104612098867435,
+        "PEHE": 0.04460723251104355,
+        "Delta CATE": 0.16206986606121063,
+        "Sensitivity": 0.02585667036473751
+      }
+    }
+  },
+  "best_case": {
+    "name": "current_best_c15",
+    "raw_path": "/home/UserData/ljx/Project_1/results/adaptive_stage2_top2_c15_c12_auc_guard_20260215_062704_raw.json",
+    "global_wins": 4,
+    "global_checks": {
+      "AUC": false,
+      "Acc": false,
+      "F1": true,
+      "PEHE": true,
+      "Delta CATE": true,
+      "Sensitivity": true
+    },
+    "domination_margin": 0.03357465853369232,
+    "pairwise_wins": {
+      "w/o HGNN": 4,
+      "w/o VAE": 5,
+      "w/o HSIC": 6
+    },
+    "full_means": {
+      "AUC": 0.835163996948894,
+      "Acc": 0.7029126213592234,
+      "F1": 0.7100893812070282,
+      "PEHE": 0.038578996807336806,
+      "Delta CATE": 0.16138035356998442,
+      "Sensitivity": 0.023275204375386237
+    }
+  }
+}

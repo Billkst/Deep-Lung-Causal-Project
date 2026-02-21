@@ -1,0 +1,652 @@
+{
+  "stamp": "20260217_033229",
+  "stage1_count": 8,
+  "stage2_candidates": [
+    "f01",
+    "f02",
+    "f03",
+    "f04"
+  ],
+  "stage3_candidates": [
+    "f01",
+    "f02"
+  ],
+  "stage1_rows": [
+    {
+      "stage": "stage1",
+      "candidate": "f01",
+      "config": {
+        "name": "f01",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.28,
+        "joint_w_acc": 1.95,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage1_01_f01_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage1_01_f01_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage1_01_f01_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.01563691838291381,
+      "acc_gap_vs_hgnn": 0.01941747572815533,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.01563691838291381,
+      "global_wins": 4,
+      "min_pairwise": 5,
+      "domination_margin": 0.07373375152646211,
+      "pairwise_wins": {
+        "w/o HGNN": 5,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": true,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    },
+    {
+      "stage": "stage1",
+      "candidate": "f02",
+      "config": {
+        "name": "f02",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.28,
+        "joint_w_acc": 2.1,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage1_02_f02_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage1_02_f02_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage1_02_f02_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.01563691838291381,
+      "acc_gap_vs_hgnn": 0.01941747572815533,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.01563691838291381,
+      "global_wins": 4,
+      "min_pairwise": 5,
+      "domination_margin": 0.07373375152646211,
+      "pairwise_wins": {
+        "w/o HGNN": 5,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": true,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    },
+    {
+      "stage": "stage1",
+      "candidate": "f03",
+      "config": {
+        "name": "f03",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.38,
+        "joint_w_acc": 1.95,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage1_03_f03_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage1_03_f03_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage1_03_f03_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.01563691838291381,
+      "acc_gap_vs_hgnn": 0.01941747572815533,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.01563691838291381,
+      "global_wins": 4,
+      "min_pairwise": 5,
+      "domination_margin": 0.07373375152646211,
+      "pairwise_wins": {
+        "w/o HGNN": 5,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": true,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    },
+    {
+      "stage": "stage1",
+      "candidate": "f04",
+      "config": {
+        "name": "f04",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.38,
+        "joint_w_acc": 2.1,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage1_04_f04_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage1_04_f04_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage1_04_f04_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.01563691838291381,
+      "acc_gap_vs_hgnn": 0.01941747572815533,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.01563691838291381,
+      "global_wins": 4,
+      "min_pairwise": 5,
+      "domination_margin": 0.07373375152646211,
+      "pairwise_wins": {
+        "w/o HGNN": 5,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": true,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    },
+    {
+      "stage": "stage1",
+      "candidate": "f05",
+      "config": {
+        "name": "f05",
+        "distill_w": 0.7,
+        "joint_w_auc": 1.28,
+        "joint_w_acc": 1.95,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage1_05_f05_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage1_05_f05_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage1_05_f05_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.016781083142639153,
+      "acc_gap_vs_hgnn": 0.01941747572815533,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.016781083142639153,
+      "global_wins": 4,
+      "min_pairwise": 5,
+      "domination_margin": 0.0748775930128267,
+      "pairwise_wins": {
+        "w/o HGNN": 5,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": true,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    },
+    {
+      "stage": "stage1",
+      "candidate": "f06",
+      "config": {
+        "name": "f06",
+        "distill_w": 0.7,
+        "joint_w_auc": 1.28,
+        "joint_w_acc": 2.1,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage1_06_f06_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage1_06_f06_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage1_06_f06_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.016781083142639153,
+      "acc_gap_vs_hgnn": 0.01941747572815533,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.016781083142639153,
+      "global_wins": 4,
+      "min_pairwise": 5,
+      "domination_margin": 0.0748775930128267,
+      "pairwise_wins": {
+        "w/o HGNN": 5,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": true,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    },
+    {
+      "stage": "stage1",
+      "candidate": "f07",
+      "config": {
+        "name": "f07",
+        "distill_w": 0.7,
+        "joint_w_auc": 1.38,
+        "joint_w_acc": 1.95,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage1_07_f07_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage1_07_f07_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage1_07_f07_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.016781083142639153,
+      "acc_gap_vs_hgnn": 0.01941747572815533,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.016781083142639153,
+      "global_wins": 4,
+      "min_pairwise": 5,
+      "domination_margin": 0.0748775930128267,
+      "pairwise_wins": {
+        "w/o HGNN": 5,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": true,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    },
+    {
+      "stage": "stage1",
+      "candidate": "f08",
+      "config": {
+        "name": "f08",
+        "distill_w": 0.7,
+        "joint_w_auc": 1.38,
+        "joint_w_acc": 2.1,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage1_08_f08_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage1_08_f08_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage1_08_f08_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.016781083142639153,
+      "acc_gap_vs_hgnn": 0.01941747572815533,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.016781083142639153,
+      "global_wins": 4,
+      "min_pairwise": 5,
+      "domination_margin": 0.0748775930128267,
+      "pairwise_wins": {
+        "w/o HGNN": 5,
+        "w/o VAE": 5,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": true,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": false
+      }
+    }
+  ],
+  "stage2_rows": [
+    {
+      "stage": "stage2",
+      "candidate": "f01",
+      "config": {
+        "name": "f01",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.28,
+        "joint_w_acc": 1.95,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage2_01_f01_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage2_01_f01_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage2_01_f01_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.01659038901601828,
+      "acc_gap_vs_hgnn": 0.0,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.01659038901601828,
+      "global_wins": 4,
+      "min_pairwise": 4,
+      "domination_margin": 0.03735076257311587,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    },
+    {
+      "stage": "stage2",
+      "candidate": "f02",
+      "config": {
+        "name": "f02",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.28,
+        "joint_w_acc": 2.1,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage2_02_f02_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage2_02_f02_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage2_02_f02_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.01659038901601828,
+      "acc_gap_vs_hgnn": 0.0,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.01659038901601828,
+      "global_wins": 4,
+      "min_pairwise": 4,
+      "domination_margin": 0.03735076257311587,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    },
+    {
+      "stage": "stage2",
+      "candidate": "f03",
+      "config": {
+        "name": "f03",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.38,
+        "joint_w_acc": 1.95,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage2_03_f03_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage2_03_f03_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage2_03_f03_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.01659038901601828,
+      "acc_gap_vs_hgnn": 0.0,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.01659038901601828,
+      "global_wins": 4,
+      "min_pairwise": 4,
+      "domination_margin": 0.03735076257311587,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    },
+    {
+      "stage": "stage2",
+      "candidate": "f04",
+      "config": {
+        "name": "f04",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.38,
+        "joint_w_acc": 2.1,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage2_04_f04_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage2_04_f04_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage2_04_f04_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.01659038901601828,
+      "acc_gap_vs_hgnn": 0.0,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.01659038901601828,
+      "global_wins": 4,
+      "min_pairwise": 4,
+      "domination_margin": 0.03735076257311587,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    }
+  ],
+  "stage3_rows": [
+    {
+      "stage": "stage3",
+      "candidate": "f01",
+      "config": {
+        "name": "f01",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.28,
+        "joint_w_acc": 1.95,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage3_01_f01_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage3_01_f01_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage3_01_f01_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.010678871090770481,
+      "acc_gap_vs_hgnn": -0.007766990291262155,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.010678871090770481,
+      "global_wins": 4,
+      "min_pairwise": 4,
+      "domination_margin": 0.01978595674944744,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    },
+    {
+      "stage": "stage3",
+      "candidate": "f02",
+      "config": {
+        "name": "f02",
+        "distill_w": 0.45,
+        "joint_w_auc": 1.28,
+        "joint_w_acc": 2.1,
+        "joint_w_f1": 1.35,
+        "joint_w_cate": 0.7,
+        "joint_w_pehe": 0.85,
+        "joint_w_sens": 0.85,
+        "lambda_pred": 6.0,
+        "lambda_hsic": 0.008,
+        "lambda_cate": 4.8,
+        "lambda_ite": 8.8,
+        "lambda_sens": 0.008
+      },
+      "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage3_02_f02_20260217_033229_raw.json",
+      "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage3_02_f02_20260217_033229_report.md",
+      "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage3_02_f02_20260217_033229.log",
+      "auc_gap_vs_hgnn": -0.010983981693364009,
+      "acc_gap_vs_hgnn": -0.007766990291262155,
+      "pass_cls_gate": 0,
+      "cls_margin": -0.010983981693364009,
+      "global_wins": 4,
+      "min_pairwise": 4,
+      "domination_margin": 0.014422499644371041,
+      "pairwise_wins": {
+        "w/o HGNN": 4,
+        "w/o VAE": 6,
+        "w/o HSIC": 6
+      },
+      "global_checks": {
+        "AUC": false,
+        "Acc": false,
+        "F1": true,
+        "PEHE": true,
+        "Delta CATE": true,
+        "Sensitivity": true
+      }
+    }
+  ],
+  "final_best": {
+    "stage": "stage3",
+    "candidate": "f01",
+    "config": {
+      "name": "f01",
+      "distill_w": 0.45,
+      "joint_w_auc": 1.28,
+      "joint_w_acc": 1.95,
+      "joint_w_f1": 1.35,
+      "joint_w_cate": 0.7,
+      "joint_w_pehe": 0.85,
+      "joint_w_sens": 0.85,
+      "lambda_pred": 6.0,
+      "lambda_hsic": 0.008,
+      "lambda_cate": 4.8,
+      "lambda_ite": 8.8,
+      "lambda_sens": 0.008
+    },
+    "raw_path": "/home/UserData/ljx/Project_1/results/minitune_f_hp_stage3_01_f01_20260217_033229_raw.json",
+    "report_path": "/home/UserData/ljx/Project_1/reports/minitune_f_hp_stage3_01_f01_20260217_033229_report.md",
+    "log_path": "/home/UserData/ljx/Project_1/logs/minitune_f_hp_stage3_01_f01_20260217_033229.log",
+    "auc_gap_vs_hgnn": -0.010678871090770481,
+    "acc_gap_vs_hgnn": -0.007766990291262155,
+    "pass_cls_gate": 0,
+    "cls_margin": -0.010678871090770481,
+    "global_wins": 4,
+    "min_pairwise": 4,
+    "domination_margin": 0.01978595674944744,
+    "pairwise_wins": {
+      "w/o HGNN": 4,
+      "w/o VAE": 6,
+      "w/o HSIC": 6
+    },
+    "global_checks": {
+      "AUC": false,
+      "Acc": false,
+      "F1": true,
+      "PEHE": true,
+      "Delta CATE": true,
+      "Sensitivity": true
+    }
+  },
+  "final_achieved_6_of_6": false,
+  "final_passed_cls_gate": false
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/UserData/ljx/Project_1/src/run_minitune_f_hp.py", line 20, in <module>
+    from src.run_adaptive_ablation_search import evaluate_raw
+ModuleNotFoundError: No module named 'src'
+ERROR conda.cli.main_run:execute(127): `conda run python src/run_minitune_f_hp.py` failed. (See above for error)
