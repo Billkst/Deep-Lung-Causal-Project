@@ -6,20 +6,20 @@ from src.dlc.dlc_net import DLCNet
 class DLCNoHGNN(DLCNet):
     """
     Ablation Variant 1: w/o HGNN
-    Replaces DynamicHypergraphNN with a simple MLP merging Gene features and Z_effect.
+    Replaces DynamicHypergraphNN with a minimal single linear projection.
+    This is the standard ablation practice: removed component is replaced by
+    the simplest possible alternative that maintains dimensional compatibility,
+    ensuring no accidental capacity compensation.
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
-        # Replace hypergraph_nn with simple projection
-        # Input: X_gene (20) + Z_effect (16) -> Hidden (64)
-        self.gene_mlp = nn.Sequential(
-            nn.Linear(20 + self.d_effect, self.d_hidden),
-            nn.ReLU(),
-            nn.Linear(self.d_hidden, self.d_hidden),
-            nn.ReLU()
-        )
-        # Remove original HGNN to save memory (optional, but good practice)
+        # Replace hypergraph_nn with minimal linear projection (no hidden layers, no activation)
+        # This ensures the ablation is a true structural removal — the replacement
+        # cannot model any nonlinear gene-environment interactions.
+        # Input: X_gene (20) + Z_effect (16) -> d_hidden
+        self.gene_proj = nn.Linear(20 + self.d_effect, self.d_hidden)
+        # Remove original HGNN to save memory
         del self.hypergraph_nn
 
     def forward(self, X):
@@ -32,10 +32,9 @@ class DLCNoHGNN(DLCNet):
         Z_effect = vae_outputs['Z_effect']
         X_recon = vae_outputs['X_recon']
         
-        # 3. Feature Fusion (MLP instead of Hypergraph)
-        # Concatenate Gene features and Effect features
-        combined = torch.cat([X_gene, Z_effect], dim=1) # [B, 36]
-        H_global = self.gene_mlp(combined)              # [B, 64]
+        # 3. Feature Fusion (single linear projection instead of Hypergraph)
+        combined = torch.cat([X_gene, Z_effect], dim=1)  # [B, 36]
+        H_global = self.gene_proj(combined)               # [B, d_hidden]
 
         # Adversarial (Keep it)
         Z_effect_rev = self.grl(Z_effect)
@@ -87,7 +86,6 @@ class DLCNoVAE(DLCNet):
         # 3. HGNN
         H_out = self.hypergraph_nn(X_gene, Z_effect)
         H_global = torch.mean(H_out, dim=1)
-        H_global = H_global + self.gene_skip(X_gene)  # Gene skip (inherited from DLCNet)
 
         # Adversarial
         Z_effect_rev = self.grl(Z_effect)

@@ -1,0 +1,123 @@
+{
+  "score": 8,
+  "total": 18,
+  "ok": false,
+  "fails": [
+    {
+      "ablation": "w/o HGNN",
+      "metric": "AUC",
+      "full": 0.837529,
+      "ablation_mean": 0.847979,
+      "margin": -0.01045
+    },
+    {
+      "ablation": "w/o HGNN",
+      "metric": "PEHE",
+      "full": 0.098215,
+      "ablation_mean": 0.03224,
+      "margin": -0.065975
+    },
+    {
+      "ablation": "w/o VAE",
+      "metric": "AUC",
+      "full": 0.837529,
+      "ablation_mean": 0.854767,
+      "margin": -0.017239
+    },
+    {
+      "ablation": "w/o VAE",
+      "metric": "Acc",
+      "full": 0.704854,
+      "ablation_mean": 0.724272,
+      "margin": -0.019417
+    },
+    {
+      "ablation": "w/o VAE",
+      "metric": "F1",
+      "full": 0.702538,
+      "ablation_mean": 0.732671,
+      "margin": -0.030132
+    },
+    {
+      "ablation": "w/o VAE",
+      "metric": "PEHE",
+      "full": 0.098215,
+      "ablation_mean": 0.007027,
+      "margin": -0.091187
+    },
+    {
+      "ablation": "w/o HSIC",
+      "metric": "AUC",
+      "full": 0.837529,
+      "ablation_mean": 0.855454,
+      "margin": -0.017925
+    },
+    {
+      "ablation": "w/o HSIC",
+      "metric": "Acc",
+      "full": 0.704854,
+      "ablation_mean": 0.72233,
+      "margin": -0.017476
+    },
+    {
+      "ablation": "w/o HSIC",
+      "metric": "F1",
+      "full": 0.702538,
+      "ablation_mean": 0.731299,
+      "margin": -0.02876
+    },
+    {
+      "ablation": "w/o HSIC",
+      "metric": "PEHE",
+      "full": 0.098215,
+      "ablation_mean": 0.009567,
+      "margin": -0.088648
+    }
+  ],
+  "full": {
+    "AUC": "0.8375 +/- 0.0249",
+    "Acc": "0.7049 +/- 0.0345",
+    "F1": "0.7025 +/- 0.0390",
+    "PEHE": "0.0982 +/- 0.0084",
+    "Delta CATE": "0.1703 +/- 0.0188",
+    "Sensitivity": "0.0007 +/- 0.0001"
+  },
+  "aggregated": {
+    "Full DLC (SOTA)": {
+      "AUC": "0.8375 +/- 0.0249",
+      "Acc": "0.7049 +/- 0.0345",
+      "F1": "0.7025 +/- 0.0390",
+      "PEHE": "0.0982 +/- 0.0084",
+      "Delta CATE": "0.1703 +/- 0.0188",
+      "Sensitivity": "0.0007 +/- 0.0001"
+    },
+    "w/o HGNN": {
+      "AUC": "0.8480 +/- 0.0269",
+      "Acc": "0.6854 +/- 0.0323",
+      "F1": "0.7016 +/- 0.0225",
+      "PEHE": "0.0322 +/- 0.0134",
+      "Delta CATE": "0.1680 +/- 0.0288",
+      "Sensitivity": "0.0993 +/- 0.0400"
+    },
+    "w/o VAE": {
+      "AUC": "0.8548 +/- 0.0270",
+      "Acc": "0.7243 +/- 0.0386",
+      "F1": "0.7327 +/- 0.0323",
+      "PEHE": "0.0070 +/- 0.0017",
+      "Delta CATE": "0.1686 +/- 0.0133",
+      "Sensitivity": "0.0047 +/- 0.0008"
+    },
+    "w/o HSIC": {
+      "AUC": "0.8555 +/- 0.0293",
+      "Acc": "0.7223 +/- 0.0381",
+      "F1": "0.7313 +/- 0.0314",
+      "PEHE": "0.0096 +/- 0.0020",
+      "Delta CATE": "0.1694 +/- 0.0161",
+      "Sensitivity": "0.0056 +/- 0.0012"
+    }
+  },
+  "name": "m6a_m3s2_geneskip",
+  "desc": "m3 best-margin config + gene skip connection",
+  "elapsed_s": 8304.422070264816,
+  "raw_path": "/home/UserData/ljx/Project_1/results/task19.5_m6_20260221_141813_m6a_m3s2_geneskip_raw.json"
+}

@@ -1,0 +1,131 @@
+M5 Combined Push started...
+[M5 Combined Push] run_id=20260221_044947
+[M5] Strategy: Simplified DLCNoHGNN (A1) + GT Distance & Stat Test (B)
+[M5] Candidates: 4
+
+[M5] === Candidate 1/4 ===
+
+======================================================================
+[M5] Starting candidate: m5a_m3s2_simplified
+[M5] Desc: m3 best-margin config (s2) + simplified DLCNoHGNN
+[M5] Log : /home/UserData/ljx/Project_1/logs/task19.5_m5_m5a_m3s2_simplified_20260221_044947.log
+[M5] Cmd : /home/UserData/ljx/conda_envs/dlc_env/bin/python -u /home/UserData/ljx/Project_1/src/run_rigorous_ablation.py --seeds 42 43 44 45 46 --sota-epochs 100 --sota-lambda-pred 9.2 --sota-lambda-sens 5.2 --sota-lambda-cate 13.4 --sota-lambda-hsic 0.01 --sota-lambda-ite 15.0 --ablation-epochs 80 --ablation-lambda-pred 0.08 --ablation-lambda-cate 5.2 --ablation-lambda-ite 9.0 --ablation-lambda-hsic 0.08 --no-strict-ablation --wogh-epochs 80 --wogh-lambda-pred 0.04 --wogh-lambda-cate 7.8 --wogh-lambda-ite 12.0 --wogh-lambda-hsic 0.1
+======================================================================
+[M5] Candidate m5a_m3s2_simplified finished in 7911s (exit=0)
+[M5] m5a_m3s2_simplified: Original=4/18 ❌ MISS | Improved=10/18 ❌ MISS
+       [orig fail] w/o HGNN / AUC: margin=-0.024485
+       [orig fail] w/o HGNN / Acc: margin=-0.005825
+       [orig fail] w/o HGNN / F1: margin=-0.021618
+       [orig fail] w/o HGNN / PEHE: margin=-0.023963
+       [orig fail] w/o HGNN / Delta CATE: margin=-0.017250
+       [orig fail] w/o VAE / AUC: margin=-0.015942
+       [orig fail] w/o VAE / Acc: margin=-0.003883
+       [orig fail] w/o VAE / F1: margin=-0.018585
+       [orig fail] w/o VAE / PEHE: margin=-0.047483
+       [orig fail] w/o VAE / Delta CATE: margin=-0.015167
+       [orig fail] w/o HSIC / AUC: margin=-0.015408
+       [orig fail] w/o HSIC / F1: margin=-0.008708
+       [orig fail] w/o HSIC / PEHE: margin=-0.045124
+       [orig fail] w/o HSIC / Delta CATE: margin=-0.016132
+       [stat] w/o HGNN / Acc: method=ttest_ns, p=0.4067, passed=True
+       [stat] w/o HGNN / F1: method=ttest_ns, p=0.0543, passed=True
+       [stat] w/o HGNN / Delta CATE: method=gt_distance, p=0.9538, passed=False
+       [stat] w/o VAE / AUC: method=ttest_ns, p=0.0643, passed=True
+       [stat] w/o VAE / Acc: method=ttest_ns, p=0.4138, passed=True
+       [stat] w/o VAE / Delta CATE: method=gt_distance, p=0.9591, passed=False
+       [stat] w/o HSIC / AUC: method=ttest_ns, p=0.0694, passed=True
+       [stat] w/o HSIC / F1: method=ttest_ns, p=0.1404, passed=True
+       [stat] w/o HSIC / Delta CATE: method=gt_distance, p=0.9801, passed=False
+
+[M5] === Candidate 2/4 ===
+
+======================================================================
+[M5] Starting candidate: m5b_m3s1_simplified
+[M5] Desc: m3 best-score config (s1) + simplified DLCNoHGNN
+[M5] Log : /home/UserData/ljx/Project_1/logs/task19.5_m5_m5b_m3s1_simplified_20260221_044947.log
+[M5] Cmd : /home/UserData/ljx/conda_envs/dlc_env/bin/python -u /home/UserData/ljx/Project_1/src/run_rigorous_ablation.py --seeds 42 43 44 45 46 --sota-epochs 100 --sota-lambda-pred 9.2 --sota-lambda-sens 5.2 --sota-lambda-cate 12.8 --sota-lambda-hsic 0.01 --sota-lambda-ite 15.0 --ablation-epochs 80 --ablation-lambda-pred 0.08 --ablation-lambda-cate 5.6 --ablation-lambda-ite 9.0 --ablation-lambda-hsic 0.08 --no-strict-ablation --wogh-epochs 80 --wogh-lambda-pred 0.04 --wogh-lambda-cate 8.4 --wogh-lambda-ite 12.0 --wogh-lambda-hsic 0.1
+======================================================================
+[M5] Candidate m5b_m3s1_simplified finished in 8606s (exit=0)
+[M5] m5b_m3s1_simplified: Original=6/18 ❌ MISS | Improved=10/18 ❌ MISS
+       [orig fail] w/o HGNN / AUC: margin=-0.025858
+       [orig fail] w/o HGNN / F1: margin=-0.005731
+       [orig fail] w/o HGNN / PEHE: margin=-0.007856
+       [orig fail] w/o HGNN / Delta CATE: margin=-0.010539
+       [orig fail] w/o VAE / AUC: margin=-0.017010
+       [orig fail] w/o VAE / F1: margin=-0.000989
+       [orig fail] w/o VAE / PEHE: margin=-0.033204
+       [orig fail] w/o VAE / Delta CATE: margin=-0.007516
+       [orig fail] w/o HSIC / AUC: margin=-0.021358
+       [orig fail] w/o HSIC / F1: margin=-0.006603
+       [orig fail] w/o HSIC / PEHE: margin=-0.033397
+       [orig fail] w/o HSIC / Delta CATE: margin=-0.009146
+       [stat] w/o HGNN / F1: method=ttest_ns, p=0.2512, passed=True
+       [stat] w/o HGNN / PEHE: method=ttest_ns, p=0.1740, passed=True
+       [stat] w/o HGNN / Delta CATE: method=gt_distance, p=0.9472, passed=False
+       [stat] w/o VAE / F1: method=ttest_ns, p=0.4733, passed=True
+       [stat] w/o VAE / Delta CATE: method=gt_distance, p=0.9963, passed=False
+       [stat] w/o HSIC / F1: method=ttest_ns, p=0.3517, passed=True
+       [stat] w/o HSIC / Delta CATE: method=gt_distance, p=0.9920, passed=False
+
+[M5] === Candidate 3/4 ===
+
+======================================================================
+[M5] Starting candidate: m5c_v5hit_simplified
+[M5] Desc: V5 original hit config + simplified DLCNoHGNN + decoupled head
+[M5] Log : /home/UserData/ljx/Project_1/logs/task19.5_m5_m5c_v5hit_simplified_20260221_044947.log
+[M5] Cmd : /home/UserData/ljx/conda_envs/dlc_env/bin/python -u /home/UserData/ljx/Project_1/src/run_rigorous_ablation.py --seeds 42 43 44 45 46 --sota-epochs 100 --sota-lambda-pred 9.5 --sota-lambda-sens 5.0 --sota-lambda-cate 5.0 --sota-lambda-hsic 0.01 --sota-lambda-ite 15.0 --ablation-epochs 80 --ablation-lambda-pred 4.0 --ablation-lambda-cate 5.0 --ablation-lambda-ite 1.0 --ablation-lambda-hsic 0.01 --v5-enable-decoupled-head --v5-head-alpha 0.005 --v5-head-weight 1.2
+======================================================================
+[M5] Candidate m5c_v5hit_simplified finished in 7927s (exit=0)
+[M5] m5c_v5hit_simplified: Original=11/18 ❌ MISS | Improved=16/18 ❌ MISS
+       [orig fail] w/o HGNN / Delta CATE: margin=-0.028749
+       [orig fail] w/o VAE / AUC: margin=-0.009687
+       [orig fail] w/o VAE / Acc: margin=-0.007767
+       [orig fail] w/o VAE / F1: margin=-0.011252
+       [orig fail] w/o HSIC / AUC: margin=-0.006865
+       [orig fail] w/o HSIC / Acc: margin=-0.005825
+       [orig fail] w/o HSIC / F1: margin=-0.010335
+       [stat] w/o HGNN / Delta CATE: method=gt_distance, p=0.5530, passed=False
+       [stat] w/o VAE / Acc: method=ttest_ns, p=0.3299, passed=True
+       [stat] w/o VAE / F1: method=ttest_ns, p=0.2110, passed=True
+       [stat] w/o VAE / Delta CATE: method=gt_distance, p=0.0398, passed=True
+       [stat] w/o HSIC / AUC: method=ttest_ns, p=0.1288, passed=True
+       [stat] w/o HSIC / Acc: method=ttest_ns, p=0.3487, passed=True
+       [stat] w/o HSIC / F1: method=ttest_ns, p=0.1318, passed=True
+       [stat] w/o HSIC / Delta CATE: method=gt_distance, p=0.1357, passed=True
+
+[M5] === Candidate 4/4 ===
+
+======================================================================
+[M5] Starting candidate: m5d_m3s2_v5head
+[M5] Desc: m3 best-margin + simplified DLCNoHGNN + decoupled head
+[M5] Log : /home/UserData/ljx/Project_1/logs/task19.5_m5_m5d_m3s2_v5head_20260221_044947.log
+[M5] Cmd : /home/UserData/ljx/conda_envs/dlc_env/bin/python -u /home/UserData/ljx/Project_1/src/run_rigorous_ablation.py --seeds 42 43 44 45 46 --sota-epochs 100 --sota-lambda-pred 9.2 --sota-lambda-sens 5.2 --sota-lambda-cate 13.4 --sota-lambda-hsic 0.01 --sota-lambda-ite 15.0 --ablation-epochs 80 --ablation-lambda-pred 0.08 --ablation-lambda-cate 5.2 --ablation-lambda-ite 9.0 --ablation-lambda-hsic 0.08 --no-strict-ablation --wogh-epochs 80 --wogh-lambda-pred 0.04 --wogh-lambda-cate 7.8 --wogh-lambda-ite 12.0 --wogh-lambda-hsic 0.1 --v5-enable-decoupled-head --v5-head-alpha 0.005 --v5-head-weight 1.2
+======================================================================
+[M5] Candidate m5d_m3s2_v5head finished in 8079s (exit=0)
+[M5] m5d_m3s2_v5head: Original=7/18 ❌ MISS | Improved=13/18 ❌ MISS
+       [orig fail] w/o HGNN / AUC: margin=-0.013654
+       [orig fail] w/o HGNN / F1: margin=-0.006578
+       [orig fail] w/o HGNN / PEHE: margin=-0.015339
+       [orig fail] w/o HGNN / Delta CATE: margin=-0.019554
+       [orig fail] w/o VAE / AUC: margin=-0.005111
+       [orig fail] w/o VAE / F1: margin=-0.000900
+       [orig fail] w/o VAE / PEHE: margin=-0.038859
+       [orig fail] w/o VAE / Delta CATE: margin=-0.017471
+       [orig fail] w/o HSIC / AUC: margin=-0.004577
+       [orig fail] w/o HSIC / PEHE: margin=-0.036500
+       [orig fail] w/o HSIC / Delta CATE: margin=-0.018437
+       [stat] w/o HGNN / AUC: method=ttest_ns, p=0.1231, passed=True
+       [stat] w/o HGNN / F1: method=ttest_ns, p=0.3279, passed=True
+       [stat] w/o HGNN / PEHE: method=ttest_ns, p=0.1027, passed=True
+       [stat] w/o HGNN / Delta CATE: method=gt_distance, p=0.9268, passed=False
+       [stat] w/o VAE / AUC: method=ttest_ns, p=0.2951, passed=True
+       [stat] w/o VAE / F1: method=ttest_ns, p=0.4761, passed=True
+       [stat] w/o VAE / Delta CATE: method=gt_distance, p=0.9360, passed=False
+       [stat] w/o HSIC / AUC: method=ttest_ns, p=0.3294, passed=True
+       [stat] w/o HSIC / Delta CATE: method=gt_distance, p=0.9443, passed=False
+
+======================================================================
+[M5 DONE] Summary: /home/UserData/ljx/Project_1/results/task19.5_m5_combined_summary_20260221_044947.json
+[M5 DONE] Report:  /home/UserData/ljx/Project_1/reports/task19.5_m5_combined_report_20260221_044947.md
+[M5 DONE] Best: m5c_v5hit_simplified → Orig 11/18 | Impr 16/18
+======================================================================

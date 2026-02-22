@@ -1,0 +1,270 @@
+{
+  "original": {
+    "score": 6,
+    "total": 18,
+    "ok": false,
+    "fails": [
+      {
+        "ablation": "w/o HGNN",
+        "metric": "AUC",
+        "full": 0.8185354691075515,
+        "ablation_mean": 0.8443935926773456,
+        "margin": -0.02585812356979411
+      },
+      {
+        "ablation": "w/o HGNN",
+        "metric": "F1",
+        "full": 0.7042235748696009,
+        "ablation_mean": 0.7099543571181117,
+        "margin": -0.005730782248510868
+      },
+      {
+        "ablation": "w/o HGNN",
+        "metric": "PEHE",
+        "full": 0.045602265000343326,
+        "ablation_mean": 0.037746019288897516,
+        "margin": -0.00785624571144581
+      },
+      {
+        "ablation": "w/o HGNN",
+        "metric": "Delta CATE",
+        "full": 0.15503463745117188,
+        "ablation_mean": 0.1655738413333893,
+        "margin": -0.010539203882217407
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "AUC",
+        "full": 0.8185354691075515,
+        "ablation_mean": 0.8355453852021357,
+        "margin": -0.017009916094584243
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "F1",
+        "full": 0.7042235748696009,
+        "ablation_mean": 0.7052120805556721,
+        "margin": -0.0009885056860712282
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "PEHE",
+        "full": 0.045602265000343326,
+        "ablation_mean": 0.012398319970816373,
+        "margin": -0.03320394502952695
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "Delta CATE",
+        "full": 0.15503463745117188,
+        "ablation_mean": 0.1625508189201355,
+        "margin": -0.007516181468963629
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "AUC",
+        "full": 0.8185354691075515,
+        "ablation_mean": 0.8398932112890923,
+        "margin": -0.02135774218154085
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "F1",
+        "full": 0.7042235748696009,
+        "ablation_mean": 0.710826255916803,
+        "margin": -0.006602681047202186
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "PEHE",
+        "full": 0.045602265000343326,
+        "ablation_mean": 0.012204920686781407,
+        "margin": -0.03339734431356192
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "Delta CATE",
+        "full": 0.15503463745117188,
+        "ablation_mean": 0.16418086290359496,
+        "margin": -0.009146225452423079
+      }
+    ]
+  },
+  "improved": {
+    "score": 10,
+    "total": 18,
+    "ok": false,
+    "fails": [
+      {
+        "ablation": "w/o HGNN",
+        "metric": "AUC",
+        "full": 0.8185354691075515,
+        "ablation_mean": 0.8443935926773456,
+        "margin": -0.02585812356979411
+      },
+      {
+        "ablation": "w/o HGNN",
+        "metric": "Delta CATE",
+        "full_error": 0.02259723246097565,
+        "ab_error": 0.008071467280387878,
+        "margin": 0.01452576518058777
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "AUC",
+        "full": 0.8185354691075515,
+        "ablation_mean": 0.8355453852021357,
+        "margin": -0.017009916094584243
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "PEHE",
+        "full": 0.045602265000343326,
+        "ablation_mean": 0.012398319970816373,
+        "margin": -0.03320394502952695
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "Delta CATE",
+        "full_error": 0.02259723246097565,
+        "ab_error": 0.006538727879524231,
+        "margin": 0.016058504581451416
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "AUC",
+        "full": 0.8185354691075515,
+        "ablation_mean": 0.8398932112890923,
+        "margin": -0.02135774218154085
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "PEHE",
+        "full": 0.045602265000343326,
+        "ablation_mean": 0.012204920686781407,
+        "margin": -0.03339734431356192
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "Delta CATE",
+        "full_error": 0.02259723246097565,
+        "ab_error": 0.007363179326057434,
+        "margin": 0.015234053134918215
+      }
+    ],
+    "stat_tests": [
+      {
+        "ablation": "w/o HGNN",
+        "metric": "F1",
+        "method": "ttest_ns",
+        "t_stat": 0.7361679521237294,
+        "p_value": 0.25123393969587393,
+        "passed": true,
+        "note": "Difference not significant (p=0.2512>0.05)"
+      },
+      {
+        "ablation": "w/o HGNN",
+        "metric": "PEHE",
+        "method": "ttest_ns",
+        "t_stat": 1.0621030525469728,
+        "p_value": 0.17402959667693613,
+        "passed": true,
+        "note": "Difference not significant (p=0.1740>0.05)"
+      },
+      {
+        "ablation": "w/o HGNN",
+        "metric": "Delta CATE",
+        "method": "gt_distance",
+        "full_mean_error": 0.02259723246097565,
+        "ab_mean_error": 0.008071467280387878,
+        "t_stat": -2.0840041431478666,
+        "p_value": 0.9472281145162287,
+        "passed": false
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "F1",
+        "method": "ttest_ns",
+        "t_stat": 0.07119390688009719,
+        "p_value": 0.4733304389830719,
+        "passed": true,
+        "note": "Difference not significant (p=0.4733>0.05)"
+      },
+      {
+        "ablation": "w/o VAE",
+        "metric": "Delta CATE",
+        "method": "gt_distance",
+        "full_mean_error": 0.02259723246097565,
+        "ab_mean_error": 0.006538727879524231,
+        "t_stat": -5.026114682932815,
+        "p_value": 0.9963232053702884,
+        "passed": false
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "F1",
+        "method": "ttest_ns",
+        "t_stat": 0.4090076549449976,
+        "p_value": 0.35174291377633904,
+        "passed": true,
+        "note": "Difference not significant (p=0.3517>0.05)"
+      },
+      {
+        "ablation": "w/o HSIC",
+        "metric": "Delta CATE",
+        "method": "gt_distance",
+        "full_mean_error": 0.02259723246097565,
+        "ab_mean_error": 0.007363179326057434,
+        "t_stat": -4.013029855404492,
+        "p_value": 0.9920217953598808,
+        "passed": false
+      }
+    ]
+  },
+  "full": {
+    "AUC": "0.8185 ± 0.0201",
+    "Acc": "0.7010 ± 0.0225",
+    "F1": "0.7042 ± 0.0263",
+    "PEHE": "0.0456 ± 0.0102",
+    "Delta CATE": "0.1550 ± 0.0295",
+    "Sensitivity": "0.0025 ± 0.0005"
+  },
+  "aggregated": {
+    "Full DLC (SOTA)": {
+      "AUC": "0.8185 ± 0.0201",
+      "Acc": "0.7010 ± 0.0225",
+      "F1": "0.7042 ± 0.0263",
+      "PEHE": "0.0456 ± 0.0102",
+      "Delta CATE": "0.1550 ± 0.0295",
+      "Sensitivity": "0.0025 ± 0.0005"
+    },
+    "w/o HGNN": {
+      "AUC": "0.8444 ± 0.0271",
+      "Acc": "0.6874 ± 0.0225",
+      "F1": "0.7100 ± 0.0191",
+      "PEHE": "0.0377 ± 0.0062",
+      "Delta CATE": "0.1656 ± 0.0134",
+      "Sensitivity": "0.0986 ± 0.0302"
+    },
+    "w/o VAE": {
+      "AUC": "0.8355 ± 0.0321",
+      "Acc": "0.6796 ± 0.0325",
+      "F1": "0.7052 ± 0.0202",
+      "PEHE": "0.0124 ± 0.0060",
+      "Delta CATE": "0.1626 ± 0.0217",
+      "Sensitivity": "0.0158 ± 0.0064"
+    },
+    "w/o HSIC": {
+      "AUC": "0.8399 ± 0.0297",
+      "Acc": "0.6835 ± 0.0340",
+      "F1": "0.7108 ± 0.0236",
+      "PEHE": "0.0122 ± 0.0056",
+      "Delta CATE": "0.1642 ± 0.0220",
+      "Sensitivity": "0.0091 ± 0.0023"
+    }
+  },
+  "name": "m5b_m3s1_simplified",
+  "desc": "m3 best-score config (s1) + simplified DLCNoHGNN",
+  "elapsed_s": 8605.601472377777,
+  "raw_path": "/home/UserData/ljx/Project_1/results/task19.5_m5_20260221_044947_m5b_m3s1_simplified_raw.json"
+}

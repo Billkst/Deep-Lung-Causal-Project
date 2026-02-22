@@ -126,12 +126,6 @@ class DLCNet(BaseModel, nn.Module):
             num_layers=num_layers
         )
 
-        # Gene Skip Connection: 保留原始基因信号用于 ITE 预测
-        # 超图卷积的均值池化会平滑 EGFR 等关键基因的极化信号,
-        # skip connection 让原始基因特征直接参与预测,
-        # 确保模型同时利用高阶交互(HGNN)和个体基因信号(skip)。
-        self.gene_skip = nn.Linear(20, d_hidden)
-
         # v25: 结构化修正 - Age 对抗头 (Adversarial Head)
         # 目标: 强制 Z_effect 不包含 Age 信息
         # 结构: Z_effect -> GRL -> MLP -> Predicted Age (Classification via Bins)
@@ -215,11 +209,9 @@ class DLCNet(BaseModel, nn.Module):
         Z_effect_rev = self.grl(Z_effect)
         Age_pred = self.adv_age_head(Z_effect_rev) # [B, 1]
         
-        # 步骤 4: 全局池化 + Gene Skip Connection
+        # 步骤 4: 全局池化
         # 对所有基因节点的表征进行平均池化
         H_global = torch.mean(H_out, dim=1)  # [B, d_hidden]
-        # 残差: 加入原始基因信号，保留 EGFR 等关键基因的极化特征
-        H_global = H_global + self.gene_skip(X_gene)  # [B, d_hidden]
         
         # 步骤 5: 双头预测
         # 使用两个独立的预测头分别预测 Y(0) 和 Y(1)

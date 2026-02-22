@@ -87,7 +87,6 @@ class DLCNoVAE(DLCNet):
         # 3. HGNN
         H_out = self.hypergraph_nn(X_gene, Z_effect)
         H_global = torch.mean(H_out, dim=1)
-        H_global = H_global + self.gene_skip(X_gene)  # Gene skip (inherited from DLCNet)
 
         # Adversarial
         Z_effect_rev = self.grl(Z_effect)

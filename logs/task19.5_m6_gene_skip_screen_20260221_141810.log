@@ -1,0 +1,78 @@
+M6 Gene-Skip Push started...
+[M6 Gene-Skip Push] run_id=20260221_141813
+[M6] Architecture: DLCNet + Gene Skip Connection (H_global += gene_skip(X_gene))
+[M6] Candidates: 3
+
+
+[M6] === Candidate 1/3 ===
+
+======================================================================
+[M6] Starting: m6a_m3s2_geneskip
+[M6] Desc: m3 best-margin config + gene skip connection
+[M6] Log: /home/UserData/ljx/Project_1/logs/task19.5_m6_m6a_m3s2_geneskip_20260221_141813.log
+======================================================================
+[M6] m6a_m3s2_geneskip done in 8304s (exit=0)
+[M6] m6a_m3s2_geneskip: 8/18 ❌ MISS
+     [fail] w/o HGNN / AUC: margin=-0.01045
+     [fail] w/o HGNN / PEHE: margin=-0.065975
+     [fail] w/o VAE / AUC: margin=-0.017239
+     [fail] w/o VAE / Acc: margin=-0.019417
+     [fail] w/o VAE / F1: margin=-0.030132
+     [fail] w/o VAE / PEHE: margin=-0.091187
+     [fail] w/o HSIC / AUC: margin=-0.017925
+     [fail] w/o HSIC / Acc: margin=-0.017476
+     [fail] w/o HSIC / F1: margin=-0.02876
+     [fail] w/o HSIC / PEHE: margin=-0.088648
+[M6] Full DLC: {'AUC': '0.8375 +/- 0.0249', 'Acc': '0.7049 +/- 0.0345', 'F1': '0.7025 +/- 0.0390', 'PEHE': '0.0982 +/- 0.0084', 'Delta CATE': '0.1703 +/- 0.0188', 'Sensitivity': '0.0007 +/- 0.0001'}
+
+[M6] === Candidate 2/3 ===
+
+======================================================================
+[M6] Starting: m6b_v5hit_geneskip
+[M6] Desc: V5 original hit config + gene skip connection + decoupled head
+[M6] Log: /home/UserData/ljx/Project_1/logs/task19.5_m6_m6b_v5hit_geneskip_20260221_141813.log
+======================================================================
+[M6] m6b_v5hit_geneskip done in 8599s (exit=0)
+[M6] m6b_v5hit_geneskip: 8/18 ❌ MISS
+     [fail] w/o HGNN / Acc: margin=-0.013592
+     [fail] w/o HGNN / Delta CATE: margin=-0.02719
+     [fail] w/o VAE / AUC: margin=-0.017162
+     [fail] w/o VAE / Acc: margin=-0.009709
+     [fail] w/o VAE / F1: margin=-0.014119
+     [fail] w/o VAE / Delta CATE: margin=-0.007914
+     [fail] w/o HSIC / AUC: margin=-0.017086
+     [fail] w/o HSIC / Acc: margin=-0.015534
+     [fail] w/o HSIC / F1: margin=-0.02402
+     [fail] w/o HSIC / Delta CATE: margin=-0.014276
+[M6] Full DLC: {'AUC': '0.8236 +/- 0.0248', 'Acc': '0.6971 +/- 0.0284', 'F1': '0.7019 +/- 0.0283', 'PEHE': '0.1038 +/- 0.0217', 'Delta CATE': '0.1676 +/- 0.0174', 'Sensitivity': '0.0006 +/- 0.0001'}
+
+[M6] === Candidate 3/3 ===
+
+======================================================================
+[M6] Starting: m6c_m3s1_geneskip
+[M6] Desc: m3 best-score config + gene skip connection
+[M6] Log: /home/UserData/ljx/Project_1/logs/task19.5_m6_m6c_m3s1_geneskip_20260221_141813.log
+======================================================================
+[M6] m6c_m3s1_geneskip done in 8520s (exit=0)
+[M6] m6c_m3s1_geneskip: 4/18 ❌ MISS
+     [fail] w/o HGNN / AUC: margin=-0.010984
+     [fail] w/o HGNN / F1: margin=-0.012184
+     [fail] w/o HGNN / PEHE: margin=-0.071109
+     [fail] w/o HGNN / Delta CATE: margin=-0.004753
+     [fail] w/o VAE / AUC: margin=-0.017696
+     [fail] w/o VAE / Acc: margin=-0.01165
+     [fail] w/o VAE / F1: margin=-0.021093
+     [fail] w/o VAE / PEHE: margin=-0.093367
+     [fail] w/o VAE / Delta CATE: margin=-0.001935
+     [fail] w/o HSIC / AUC: margin=-0.016323
+     [fail] w/o HSIC / Acc: margin=-0.009709
+     [fail] w/o HSIC / F1: margin=-0.019808
+     [fail] w/o HSIC / PEHE: margin=-0.091808
+     [fail] w/o HSIC / Delta CATE: margin=-0.003646
+[M6] Full DLC: {'AUC': '0.8375 +/- 0.0250', 'Acc': '0.7068 +/- 0.0256', 'F1': '0.7061 +/- 0.0300', 'PEHE': '0.0999 +/- 0.0084', 'Delta CATE': '0.1670 +/- 0.0171', 'Sensitivity': '0.0006 +/- 0.0001'}
+
+======================================================================
+[M6 DONE] Summary: /home/UserData/ljx/Project_1/results/task19.5_m6_gene_skip_summary_20260221_141813.json
+[M6 DONE] Report:  /home/UserData/ljx/Project_1/reports/task19.5_m6_gene_skip_report_20260221_141813.md
+[M6 DONE] Best: m6a_m3s2_geneskip -> 8/18
+======================================================================
