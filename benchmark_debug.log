@@ -1,0 +1,15 @@
+🚀 Taking off: Fair Baseline Ultimate Re-test...
+[Data] Loading PANCAN data...
+[Data] Blacklist applied: 9080 -> 8567
+[Data] Loading LUAD data...
+[Data] LUAD Loaded. Shape: (513, 23)
+
+[Seed 42] Preparing data...
+
+⚡ Processing XGBoost (Seed 42)...
+
+⚡ Processing TabR (Seed 42)...
+INFO:src.baselines.tabr_baseline:开始训练 TabR 模型...
+INFO:src.baselines.tabr_baseline:数据划分：训练集 7630 样本，验证集 1347 样本
+INFO:src.baselines.tabr_baseline:检索池构建完成：7630 个样本，k=5
+Training TabR:   0%|          | 0/50 [00:00<?, ?it/s]Training TabR:   0%|          | 0/50 [00:04<?, ?it/s, train_loss=0.3897, val_loss=0.3880]Training TabR:   2%|▏         | 1/50 [00:04<03:59,  4.88s/it, train_loss=0.3897, val_loss=0.3880]Training TabR:   2%|▏         | 1/50 [00:07<03:59,  4.88s/it, train_loss=0.3505, val_loss=0.3802]Training TabR:   4%|▍         | 2/50 [00:07<03:03,  3.83s/it, train_loss=0.3505, val_loss=0.3802]Training TabR:   4%|▍         | 2/50 [00:10<03:03,  3.83s/it, train_loss=0.3447, val_loss=0.3843]Training TabR:   6%|▌         | 3/50 [00:10<02:38,  3.38s/it, train_loss=0.3447, val_loss=0.3843]Training TabR:   6%|▌         | 3/50 [00:13<02:38,  3.38s/it, train_loss=0.3372, val_loss=0.3891]Training TabR:   8%|▊         | 4/50 [00:13<02:23,  3.12s/it, train_loss=0.3372, val_loss=0.3891]Training TabR:   8%|▊         | 4/50 [00:17<02:23,  3.12s/it, train_loss=0.3302, val_loss=0.3978]Training TabR:  10%|█         | 5/50 [00:17<02:30,  3.34s/it, train_loss=0.3302, val_loss=0.3978]Training TabR:  10%|█         | 5/50 [00:26<02:30,  3.34s/it, train_loss=0.3270, val_loss=0.4129]Training TabR:  12%|█▏        | 6/50 [00:26<03:53,  5.31s/it, train_loss=0.3270, val_loss=0.4129]Training TabR:  12%|█▏        | 6/50 [00:29<03:53,  5.31s/it, train_loss=0.3191, val_loss=0.4063]Training TabR:  14%|█▍        | 7/50 [00:29<03:13,  4.50s/it, train_loss=0.3191, val_loss=0.4063]Training TabR:  14%|█▍        | 7/50 [00:31<03:13,  4.50s/it, train_loss=0.3134, val_loss=0.4375]Training TabR:  16%|█▌        | 8/50 [00:31<02:42,  3.86s/it, train_loss=0.3134, val_loss=0.4375]/tmp/tmpvvjg36e8: line 3: 3501733 Killed                  python -u run_benchmark_fair.py --seeds 42 43

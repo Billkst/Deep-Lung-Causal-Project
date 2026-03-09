@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 from copy import deepcopy
 
 # Project Imports
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.baselines.xgb_baseline import XGBBaseline
@@ -77,10 +77,10 @@ def main():
         if not args.only_dlc:
             models = {
                 "XGBoost": XGBBaseline(random_state=seed),
-                "TabR": TabRBaseline(random_state=seed, batch_size=256, epochs=50),
-                "MOGONET": MOGONETBaseline(random_state=seed, epochs=50),
-                "TransTEE": TransTEEBaseline(random_state=seed, epochs=50, batch_size=64),
-                "HyperFast": HyperFastBaseline(random_state=seed, epochs=50, batch_size=64)
+                "TabR": TabRBaseline(random_state=seed, batch_size=256, epochs=20),
+                "MOGONET": MOGONETBaseline(random_state=seed, epochs=20),
+                "TransTEE": TransTEEBaseline(random_state=seed, epochs=20, batch_size=64),
+                "HyperFast": HyperFastBaseline(random_state=seed, epochs=20, batch_size=64)
             }
 
             for name, model in models.items():
