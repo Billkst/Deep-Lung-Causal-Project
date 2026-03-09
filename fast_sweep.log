@@ -1,0 +1,56 @@
+Imports completed. Initializing device...
+Device used: cuda
+>>> Sweeping HSIC Weight with 128x3 (FAST MODE)...
+    [Fine-tune Seed=42] Ep 20/20 Loss=2.4519
+  -> Seed 42: AUC=0.8150, CATE=0.1687
+    [Fine-tune Seed=43] Ep 20/20 Loss=2.3735
+  -> Seed 43: AUC=0.8101, CATE=0.1456
+    [Fine-tune Seed=44] Ep 20/20 Loss=2.2594
+  -> Seed 44: AUC=0.8112, CATE=0.1722
+HSIC: lambda=0.0 -> AUC=0.8121±0.0021, CATE=0.1622±0.0118
+    [Fine-tune Seed=42] Ep 20/20 Loss=2.4522
+  -> Seed 42: AUC=0.8150, CATE=0.1687
+    [Fine-tune Seed=43] Ep 20/20 Loss=2.3733
+  -> Seed 43: AUC=0.8101, CATE=0.1456
+    [Fine-tune Seed=44] Ep 20/20 Loss=2.2600
+  -> Seed 44: AUC=0.8112, CATE=0.1722
+HSIC: lambda=0.01 -> AUC=0.8121±0.0021, CATE=0.1622±0.0118
+    [Fine-tune Seed=42] Ep 20/20 Loss=2.4534
+  -> Seed 42: AUC=0.8150, CATE=0.1686
+    [Fine-tune Seed=43] Ep 20/20 Loss=2.3759
+  -> Seed 43: AUC=0.8101, CATE=0.1455
+    [Fine-tune Seed=44] Ep 20/20 Loss=2.2609
+  -> Seed 44: AUC=0.8116, CATE=0.1724
+HSIC: lambda=0.1 -> AUC=0.8122±0.0021, CATE=0.1622±0.0119
+    [Fine-tune Seed=42] Ep 20/20 Loss=2.4678
+  -> Seed 42: AUC=0.8150, CATE=0.1686
+    [Fine-tune Seed=43] Ep 20/20 Loss=2.3900
+  -> Seed 43: AUC=0.8101, CATE=0.1455
+    [Fine-tune Seed=44] Ep 20/20 Loss=2.2758
+  -> Seed 44: AUC=0.8116, CATE=0.1723
+HSIC: lambda=1.0 -> AUC=0.8122±0.0021, CATE=0.1622±0.0118
+    [Fine-tune Seed=42] Ep 20/20 Loss=2.6105
+  -> Seed 42: AUC=0.8150, CATE=0.1686
+    [Fine-tune Seed=43] Ep 20/20 Loss=2.5344
+  -> Seed 43: AUC=0.8101, CATE=0.1457
+    [Fine-tune Seed=44] Ep 20/20 Loss=2.4112
+  -> Seed 44: AUC=0.8116, CATE=0.1723
+HSIC: lambda=10.0 -> AUC=0.8122±0.0021, CATE=0.1622±0.0118
+
+>>> Sweeping CATE Weight with 128x3 (FAST MODE)...
+    [Fine-tune Seed=42] Ep 20/20 Loss=2.4658
+  -> Seed 42: AUC=0.8158, CATE=0.1118
+    [Fine-tune Seed=43] Ep 20/20 Loss=2.3736
+  -> Seed 43: AUC=0.8116, CATE=0.0731
+    [Fine-tune Seed=44] Ep 20/20 Loss=2.2664
+  -> Seed 44: AUC=0.8120, CATE=0.1139
+CATE Weight: lambda=0.0 -> AUC=0.8131±0.0019, CATE=0.0996±0.0188
+    [Fine-tune Seed=42] Ep 20/20 Loss=2.4578
+  -> Seed 42: AUC=0.8154, CATE=0.1534
+    [Fine-tune Seed=43] Ep 20/20 Loss=2.3762
+  -> Seed 43: AUC=0.8085, CATE=0.1239
+    [Fine-tune Seed=44] Ep 20/20 Loss=2.2617
+  -> Seed 44: AUC=0.8120, CATE=0.1556
+CATE Weight: lambda=0.5 -> AUC=0.8120±0.0028, CATE=0.1443±0.0145
+    [Fine-tune Seed=42] Ep 20/20 Loss=2.4550
+  -> Seed 42: AUC=0.8154, CATE=0.1601
