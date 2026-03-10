@@ -1,0 +1,370 @@
+Imports completed. Initializing device...
+Device used: cuda
+============================================================
+Lambda CATE密集扫描 (基于最终PARAMS)
+============================================================
+
+>>> lambda_cate = 0
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5320
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4177
+    [Pre-train Seed=42] Ep 150/200 Loss=1.3997
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3815
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7684
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.5898
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6296
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5421
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.5898
+  Seed 42: AUC=0.7918, CATE=0.0625, PEHE=0.1335
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5075
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4155
+    [Pre-train Seed=43] Ep 150/200 Loss=1.3993
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3821
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7556
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7129
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.6720
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5509
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6358
+  Seed 43: AUC=0.7822, CATE=0.0376, PEHE=0.1342
+    [Pre-train Seed=44] Ep 50/200 Loss=1.4990
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4200
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4037
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3887
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8209
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7288
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7201
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6031
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7088
+  Seed 44: AUC=0.7899, CATE=0.0931, PEHE=0.1279
+  平均: AUC=0.7879±0.0050, CATE=0.0644±0.0278
+
+>>> lambda_cate = 0.5
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5317
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4180
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4000
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3817
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7698
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.5973
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6409
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5561
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.5966
+  Seed 42: AUC=0.7914, CATE=0.1210, PEHE=0.1260
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5087
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4164
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4004
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3828
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7543
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7269
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.6836
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5650
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6455
+  Seed 43: AUC=0.7838, CATE=0.0958, PEHE=0.1275
+    [Pre-train Seed=44] Ep 50/200 Loss=1.5019
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4202
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4042
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3895
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8153
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7272
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7262
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6011
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7113
+  Seed 44: AUC=0.7899, CATE=0.1416, PEHE=0.1250
+  平均: AUC=0.7883±0.0040, CATE=0.1195±0.0230
+
+>>> lambda_cate = 1.0
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5325
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4185
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4008
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3826
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7652
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.5995
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6428
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5557
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.5989
+  Seed 42: AUC=0.7910, CATE=0.1446, PEHE=0.1233
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5084
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4174
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4011
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3833
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7484
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7256
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.6867
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5700
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6459
+  Seed 43: AUC=0.7887, CATE=0.1288, PEHE=0.1204
+    [Pre-train Seed=44] Ep 50/200 Loss=1.5021
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4203
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4048
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3898
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8204
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7294
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7271
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6080
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7215
+  Seed 44: AUC=0.7857, CATE=0.1595, PEHE=0.1206
+  平均: AUC=0.7885±0.0027, CATE=0.1443±0.0153
+
+>>> lambda_cate = 1.5
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5319
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4190
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4013
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3831
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7675
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6033
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6477
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5614
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.5994
+  Seed 42: AUC=0.7937, CATE=0.1570, PEHE=0.1222
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5090
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4180
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4016
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3839
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7473
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7235
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.6882
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5709
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6427
+  Seed 43: AUC=0.7864, CATE=0.1423, PEHE=0.1184
+    [Pre-train Seed=44] Ep 50/200 Loss=1.5016
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4204
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4046
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3898
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8213
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7248
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7244
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6088
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7120
+  Seed 44: AUC=0.7860, CATE=0.1732, PEHE=0.1207
+  平均: AUC=0.7887±0.0043, CATE=0.1575±0.0155
+
+>>> lambda_cate = 2.0
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5319
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4192
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4019
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3843
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7657
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6079
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6499
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5635
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.6065
+  Seed 42: AUC=0.7914, CATE=0.1744, PEHE=0.1215
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5087
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4183
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4022
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3842
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7482
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7263
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.6859
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5753
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6451
+  Seed 43: AUC=0.7876, CATE=0.1508, PEHE=0.1201
+    [Pre-train Seed=44] Ep 50/200 Loss=1.5016
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4209
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4048
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3903
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8176
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7277
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7227
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6087
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7195
+  Seed 44: AUC=0.7876, CATE=0.1841, PEHE=0.1193
+  平均: AUC=0.7888±0.0022, CATE=0.1697±0.0171
+
+>>> lambda_cate = 2.5
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5317
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4196
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4021
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3840
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7683
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6085
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6492
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5624
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.6044
+  Seed 42: AUC=0.7879, CATE=0.1822, PEHE=0.1209
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5086
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4190
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4034
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3851
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7453
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7248
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.6885
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5765
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6429
+  Seed 43: AUC=0.7838, CATE=0.1591, PEHE=0.1159
+    [Pre-train Seed=44] Ep 50/200 Loss=1.5013
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4209
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4053
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3901
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8129
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7246
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7201
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6067
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7115
+  Seed 44: AUC=0.7872, CATE=0.1901, PEHE=0.1187
+  平均: AUC=0.7863±0.0022, CATE=0.1771±0.0161
+
+>>> lambda_cate = 3.0
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5306
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4199
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4025
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3845
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7698
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6091
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6510
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5649
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.6090
+  Seed 42: AUC=0.7887, CATE=0.1839, PEHE=0.1176
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5089
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4191
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4035
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3855
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7524
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7228
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.6906
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5867
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6476
+  Seed 43: AUC=0.7845, CATE=0.1675, PEHE=0.1146
+    [Pre-train Seed=44] Ep 50/200 Loss=1.5006
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4213
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4056
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3913
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8107
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7272
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7290
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6117
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7101
+  Seed 44: AUC=0.7879, CATE=0.1947, PEHE=0.1175
+  平均: AUC=0.7871±0.0022, CATE=0.1820±0.0137
+
+>>> lambda_cate = 4.0
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5304
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4207
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4035
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3854
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7734
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6116
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6554
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5718
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.6131
+  Seed 42: AUC=0.7906, CATE=0.1915, PEHE=0.1178
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5091
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4192
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4046
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3866
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7598
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7255
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.6986
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5866
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6538
+  Seed 43: AUC=0.7868, CATE=0.1725, PEHE=0.1128
+    [Pre-train Seed=44] Ep 50/200 Loss=1.4987
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4220
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4060
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3915
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8134
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7231
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7317
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6174
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7093
+  Seed 44: AUC=0.7914, CATE=0.2091, PEHE=0.1140
+  平均: AUC=0.7896±0.0025, CATE=0.1910±0.0183
+
+>>> lambda_cate = 5.0
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5299
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4211
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4043
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3865
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7715
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6130
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6552
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5724
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.6199
+  Seed 42: AUC=0.7967, CATE=0.1991, PEHE=0.1148
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5093
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4199
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4060
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3879
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7599
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7313
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.7013
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5925
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6554
+  Seed 43: AUC=0.7883, CATE=0.1782, PEHE=0.1108
+    [Pre-train Seed=44] Ep 50/200 Loss=1.4992
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4224
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4066
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3930
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8135
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7302
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7292
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6286
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7096
+  Seed 44: AUC=0.7963, CATE=0.2152, PEHE=0.1119
+  平均: AUC=0.7938±0.0047, CATE=0.1975±0.0186
+
+>>> lambda_cate = 6.0
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5296
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4219
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4050
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3878
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7720
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6148
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6581
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5761
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.6203
+  Seed 42: AUC=0.7982, CATE=0.2009, PEHE=0.1155
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5095
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4206
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4074
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3895
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7640
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7367
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.7015
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.5967
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6590
+  Seed 43: AUC=0.7868, CATE=0.1843, PEHE=0.1113
+    [Pre-train Seed=44] Ep 50/200 Loss=1.4998
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4227
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4067
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3927
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8214
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7295
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7423
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6338
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7193
+  Seed 44: AUC=0.7956, CATE=0.2181, PEHE=0.1112
+  平均: AUC=0.7935±0.0060, CATE=0.2011±0.0169
+
+>>> lambda_cate = 7.0
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5297
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4226
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4054
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3884
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7740
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6140
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6582
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5787
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.6227
+  Seed 42: AUC=0.7971, CATE=0.2012, PEHE=0.1153
+    [Pre-train Seed=43] Ep 50/200 Loss=1.5098
+    [Pre-train Seed=43] Ep 100/200 Loss=1.4210
+    [Pre-train Seed=43] Ep 150/200 Loss=1.4088
+    [Pre-train Seed=43] Ep 200/200 Loss=1.3908
+    [Fine-tune Seed=43] Ep 20/100 Loss=1.7676
+    [Fine-tune Seed=43] Ep 40/100 Loss=1.7402
+    [Fine-tune Seed=43] Ep 60/100 Loss=1.7045
+    [Fine-tune Seed=43] Ep 80/100 Loss=1.6014
+    [Fine-tune Seed=43] Ep 100/100 Loss=1.6574
+  Seed 43: AUC=0.7868, CATE=0.1872, PEHE=0.1101
+    [Pre-train Seed=44] Ep 50/200 Loss=1.5003
+    [Pre-train Seed=44] Ep 100/200 Loss=1.4230
+    [Pre-train Seed=44] Ep 150/200 Loss=1.4072
+    [Pre-train Seed=44] Ep 200/200 Loss=1.3933
+    [Fine-tune Seed=44] Ep 20/100 Loss=1.8235
+    [Fine-tune Seed=44] Ep 40/100 Loss=1.7330
+    [Fine-tune Seed=44] Ep 60/100 Loss=1.7376
+    [Fine-tune Seed=44] Ep 80/100 Loss=1.6284
+    [Fine-tune Seed=44] Ep 100/100 Loss=1.7132
+  Seed 44: AUC=0.7937, CATE=0.2172, PEHE=0.1111
+  平均: AUC=0.7925±0.0052, CATE=0.2018±0.0150
+
+结果已保存: /home/UserData/ljx/Project_1/results/final/sweeps/lambda_cate_dense_sweep_results.csv
