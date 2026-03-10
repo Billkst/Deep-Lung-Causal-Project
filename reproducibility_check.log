@@ -1,0 +1,26 @@
+Imports completed. Initializing device...
+Device used: cuda
+============================================================
+验证SOTA性能复现 (128x3, seed=42)
+============================================================
+    [Pre-train Seed=42] Ep 50/200 Loss=1.5319
+    [Pre-train Seed=42] Ep 100/200 Loss=1.4192
+    [Pre-train Seed=42] Ep 150/200 Loss=1.4019
+    [Pre-train Seed=42] Ep 200/200 Loss=1.3843
+    [Fine-tune Seed=42] Ep 20/100 Loss=1.7657
+    [Fine-tune Seed=42] Ep 40/100 Loss=1.6079
+    [Fine-tune Seed=42] Ep 60/100 Loss=1.6499
+    [Fine-tune Seed=42] Ep 80/100 Loss=1.5635
+    [Fine-tune Seed=42] Ep 100/100 Loss=1.6065
+
+结果:
+  AUC: 0.7914
+  Delta CATE: 0.1744
+  PEHE: 0.1215
+
+历史SOTA参考 (seed=42):
+  AUC: ~0.787
+  Delta CATE: ~0.172
+  PEHE: ~0.118
+
+✓ 性能接近历史SOTA,代码可复现
