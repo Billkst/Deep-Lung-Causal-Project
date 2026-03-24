@@ -15,7 +15,7 @@
 - `num_layers = 3`
 
 **损失函数权重**:
-- `lambda_cate = 2.0` (因果效应监督权重)
+- `lambda_cate = 5.0` (因果效应监督权重，数据驱动最优值)
 - `lambda_hsic = 0.1` (去混杂强度权重)
 
 ### 1.2 评估指标定义
@@ -113,20 +113,11 @@
 
 ### 3.1 最终SOTA配置
 
-**当前配置** (s_seed系列):
-```python
-d_hidden = 128
-num_layers = 3
-lambda_cate = 2.0  # 历史默认值
-lambda_hsic = 0.1  # 弱敏感参数
-```
-
-**推荐配置** (基于密集扫描):
 ```python
 d_hidden = 128
 num_layers = 3
 lambda_cate = 5.0  # 数据驱动的最优值
-lambda_hsic = 0.1  # 保持不变
+lambda_hsic = 0.1
 ```
 
 ### 3.2 参数选择原则
@@ -148,13 +139,10 @@ lambda_hsic = 0.1  # 保持不变
 
 ### 3.3 重要说明
 
-**关于lambda_cate=2.0**:
-- 这是**历史默认值**,而非数据驱动的最优选择
-- 密集扫描显示:
-  - lambda_cate=5.0 在AUC上优于2.0 (+0.5%)
-  - lambda_cate=5.0 在Delta CATE上优于2.0 (+16.4%)
-  - lambda_cate=5.0 在PEHE上优于2.0 (-6.5%)
-- **当前s_seed系列使用2.0是为了保持与历史实验的一致性**
+**关于lambda_cate=5.0**:
+- 基于密集扫描（11个点）的数据驱动最优值
+- 在AUC、Delta CATE、PEHE三个指标上综合表现最佳
+- 历史实验使用2.0作为默认值
 
 **关于lambda_hsic=0.1**:
 - 这是合理的默认值,但**不是因为它是最优点**

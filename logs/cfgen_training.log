@@ -1,0 +1,105 @@
+
+============================================================
+CFGen Training - Dual Output (Terminal + Log)
+============================================================
+
+
+============================================================
+Training CFGen - IHDP Replication 1
+============================================================
+
+Device: cuda
+Loading: data/baselines_official/IHDP/ihdp_npci_1.csv
+
+Data: X=(747, 25), t=(747, 1), y=(747, 1)
+
+Training started...
+
+Epoch 20: Loss=531.8521
+Epoch 40: Loss=271.9859
+Epoch 60: Loss=231.6941
+Epoch 80: Loss=190.1476
+Epoch 100: Loss=186.1096
+
+Training completed: 18.61s
+
+Measuring inference time...
+
+Inference: 0.0012±0.0000s total
+Per sample: 0.0082ms
+
+PEHE: 1.8446
+
+============================================================
+
+
+============================================================
+Training CFGen - IHDP Replication 2
+============================================================
+
+Device: cuda
+Loading: data/baselines_official/IHDP/ihdp_npci_2.csv
+
+Data: X=(747, 25), t=(747, 1), y=(747, 1)
+
+Training started...
+
+Epoch 20: Loss=751.5750
+Epoch 40: Loss=335.1058
+Epoch 60: Loss=246.6092
+Epoch 80: Loss=199.7756
+Epoch 100: Loss=181.6090
+
+Training completed: 17.95s
+
+Measuring inference time...
+
+Inference: 0.0012±0.0001s total
+Per sample: 0.0082ms
+
+PEHE: 1.4084
+
+============================================================
+
+
+============================================================
+Training CFGen - IHDP Replication 3
+============================================================
+
+Device: cuda
+Loading: data/baselines_official/IHDP/ihdp_npci_3.csv
+
+Data: X=(747, 25), t=(747, 1), y=(747, 1)
+
+Training started...
+
+Epoch 20: Loss=581.0105
+Epoch 40: Loss=306.5769
+Epoch 60: Loss=231.8192
+Epoch 80: Loss=204.0254
+Epoch 100: Loss=182.9612
+
+Training completed: 17.92s
+
+Measuring inference time...
+
+Inference: 0.0012±0.0001s total
+Per sample: 0.0082ms
+
+PEHE: 1.7745
+
+============================================================
+
+============================================================
+SUMMARY
+============================================================
+
+Training: 18.16±0.32s
+Inference: 0.0082±0.0000ms/sample
+PEHE: 1.6758±0.1913
+
+Seed 1: Train=18.61s, Inf=0.0082ms, PEHE=1.8446
+Seed 2: Train=17.95s, Inf=0.0082ms, PEHE=1.4084
+Seed 3: Train=17.92s, Inf=0.0082ms, PEHE=1.7745
+
+Log saved: logs/cfgen_training.log
